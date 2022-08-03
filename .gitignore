@@ -6,6 +6,7 @@ bin
 /flux
 *.iso
 # Temp folders
+tmpl*
 .temp*
 .private/
 .logs/
