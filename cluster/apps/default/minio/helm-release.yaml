@@ -27,7 +27,7 @@ spec:
       nameOverride: *app
     image:
       repository: quay.io/minio/minio
-      tag: RELEASE.2022-07-30T05-21-40Z
+      tag: RELEASE.2022-08-02T23-59-16Z
     env:
       TZ: "America/New_York"
       MINIO_UPDATE: "off"
