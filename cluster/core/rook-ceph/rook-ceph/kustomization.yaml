@@ -7,7 +7,7 @@ resources:
   - block-storageclass.yaml
   - shared-storageclass.yaml
   - ingress-CRD.yaml
-  - grafana-dashboard.yaml
+#  - grafana-dashboard.yaml
 # labels:
 #   - pairs:
 #       pod-security.kubernetes.io/enforce: privileged
