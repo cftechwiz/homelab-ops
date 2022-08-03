@@ -65,22 +65,22 @@ main() {
         sops --encrypt --in-place "${PROJECT_DIR}/cluster/apps/networking/external-dns/secret.sops.yaml"
         # generate terraform secrets
         envsubst < "${PROJECT_DIR}/tmpl/terraform/secret.sops.yaml" \
-            > "${PROJECT_DIR}/provision/terraform/cloudflare/secret.sops.yaml"
+            > "${PROJECT_DIR}/terraform/cloudflare/secret.sops.yaml"
         # encrypt terraform secrets
-        sops --encrypt --in-place "${PROJECT_DIR}/provision/terraform/cloudflare/secret.sops.yaml"
+        sops --encrypt --in-place "${PROJECT_DIR}/terraform/cloudflare/secret.sops.yaml"
         # generate ansible settings
         envsubst < "${PROJECT_DIR}/tmpl/ansible/kube-vip.yml" \
-            > "${PROJECT_DIR}/provision/ansible/inventory/group_vars/kubernetes/kube-vip.yml"
+            > "${PROJECT_DIR}/ansible/inventory/group_vars/kubernetes/kube-vip.yml"
         # include kube-vip if enabled
         if [[ ${BOOTSTRAP_KUBE_VIP_ENABLED} == "true" ]]; then
             if [[ $(yq eval --no-doc 'contains({"resources": ["kube-vip"]})' "${PROJECT_DIR}/cluster/apps/kube-system/kustomization.yaml") == false ]]; then
                 yq --inplace '.resources += [ "kube-vip" ]' "${PROJECT_DIR}/cluster/apps/kube-system/kustomization.yaml"
             fi
-            if [[ $(yq eval --no-doc 'contains({"k3s_server_manifests_templates": ["kube-vip-daemonset.yaml.j2"]})' "${PROJECT_DIR}/provision/ansible/inventory/group_vars/kubernetes/k3s.yml") == false ]]; then
-                yq --inplace '.k3s_server_manifests_templates += [ "kube-vip-daemonset.yaml.j2" ]' "${PROJECT_DIR}/provision/ansible/inventory/group_vars/kubernetes/k3s.yml"
+            if [[ $(yq eval --no-doc 'contains({"k3s_server_manifests_templates": ["kube-vip-daemonset.yaml.j2"]})' "${PROJECT_DIR}/ansible/inventory/group_vars/kubernetes/k3s.yml") == false ]]; then
+                yq --inplace '.k3s_server_manifests_templates += [ "kube-vip-daemonset.yaml.j2" ]' "${PROJECT_DIR}/ansible/inventory/group_vars/kubernetes/k3s.yml"
             fi
-            if [[ $(yq eval --no-doc 'contains({"k3s_server_manifests_urls": [{"url": "https://kube-vip.io/manifests/rbac.yaml", "filename": "kube-vip-rbac.yaml"}]})' "${PROJECT_DIR}/provision/ansible/inventory/group_vars/kubernetes/k3s.yml") == false ]]; then
-                yq --inplace '.k3s_server_manifests_urls += [{"url": "https://kube-vip.io/manifests/rbac.yaml", "filename": "kube-vip-rbac.yaml"}]' "${PROJECT_DIR}/provision/ansible/inventory/group_vars/kubernetes/k3s.yml"
+            if [[ $(yq eval --no-doc 'contains({"k3s_server_manifests_urls": [{"url": "https://kube-vip.io/manifests/rbac.yaml", "filename": "kube-vip-rbac.yaml"}]})' "${PROJECT_DIR}/ansible/inventory/group_vars/kubernetes/k3s.yml") == false ]]; then
+                yq --inplace '.k3s_server_manifests_urls += [{"url": "https://kube-vip.io/manifests/rbac.yaml", "filename": "kube-vip-rbac.yaml"}]' "${PROJECT_DIR}/ansible/inventory/group_vars/kubernetes/k3s.yml"
             fi
         fi
         # generate ansible hosts file and secrets
@@ -430,8 +430,8 @@ generate_ansible_host_secrets() {
             printf "kind: Secret\n"
             printf "ansible_user: %s\n" "${!node_username}"
             printf "ansible_become_pass: %s\n" "${!node_password}"
-        } > "${PROJECT_DIR}/provision/ansible/inventory/host_vars/${node_hostname}.sops.yml"
-        sops --encrypt --in-place "${PROJECT_DIR}/provision/ansible/inventory/host_vars/${node_hostname}.sops.yml"
+        } > "${PROJECT_DIR}/ansible/kubernetes/inventory/host_vars/${node_hostname}.sops.yml"
+        sops --encrypt --in-place "${PROJECT_DIR}/ansible/kubernetes/inventory/host_vars/${node_hostname}.sops.yml"
     done
 }
 
@@ -484,7 +484,7 @@ generate_ansible_hosts() {
                 fi
             done
         fi
-    } > "${PROJECT_DIR}/provision/ansible/inventory/hosts.yml"
+    } > "${PROJECT_DIR}/ansible/kubernetes/inventory/host_vars/hosts.yml"
 }
 
 success() {
