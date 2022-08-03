@@ -6,7 +6,7 @@ env:
 
 vars:
   ANSIBLE_PLAYBOOK_DIR: "{{.ANSIBLE_DIR}}/playbooks"
-  ANSIBLE_INVENTORY_DIR: "{{.ANSIBLE_DIR}}/inventory"
+  ANSIBLE_INVENTORY_DIR: "{{.PROJECT_DIR}}/ansible/kubernetes/inventory"
 
 tasks:
 
