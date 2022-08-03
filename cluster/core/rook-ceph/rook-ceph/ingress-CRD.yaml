@@ -16,7 +16,7 @@ spec:
     - host: "rook.${SECRET_DOMAIN}"
       http:
         paths:
-          - path: /
+          - path: /rook/
             pathtype: Prefix
             backend:
               service:
