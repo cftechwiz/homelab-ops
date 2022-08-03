@@ -16,7 +16,7 @@ spec:
     - host: "prom.${SECRET_DOMAIN}"
       http:
         paths:
-          - path: /
+          - path: /prometheus/
             pathType: Prefix
             backend:
               service:
