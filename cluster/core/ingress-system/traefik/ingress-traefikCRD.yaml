@@ -1,0 +1,23 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard
+  namespace: default
+  labels:
+    app.kubernetes.io/name: traefik
+spec:
+  entryPoints:
+    - https
+  routes:
+    - kind: Rule
+      match: Host(`traefik.${SECRET_DOMAIN_0}`)
+      middlewares:
+        - name: authelia
+          namespace: default
+        - name: local-only@file
+      services:
+        - name: api@internal
+          kind: TraefikService
+          namespace: ingress-system
+  tls:
+    secretName: "${SECRET_CERT_NAME_0}-prod-tls"

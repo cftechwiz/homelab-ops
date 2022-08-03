@@ -1,0 +1,76 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: traefik-configs
+  namespace: ingress-system
+  labels:
+    app.kubernetes.io/name: traefik
+data:
+  dynamic.yaml: |
+    http:
+      # routers:
+      #   redirect:
+      #     rule: HostRegexp(`{host:.+}`)
+      #     entryPoints:
+      #     - http
+      #     service: noop@internal
+      #     middlewares:
+      #     - redirect
+      middlewares:
+        # redirect:
+        #   redirectScheme:
+        #     scheme: https
+        #     permanent: true
+        headers:
+          headers:
+            sslRedirect: true
+            sslHost: "${SECRET_DOMAIN_0}"
+            stsSeconds: 315360000
+            stsIncludeSubdomains: true
+            stsPreload: true
+            forceSTSHeader: true
+            frameDeny: true
+            customFrameOptionsValue: SAMEORIGIN
+            contentTypeNosniff: true
+            browserXSSFilter: true
+        nextcloud-1:
+          redirectRegex:
+            permanent: true
+            regex: "https://(.*)/.well-known/(card|cal)dav"
+            replacement: "https://$1/remote.php/dav/"
+        nextcloud-2:
+          redirectRegex:
+            permanent: true
+            regex: "^https?://([^/]*)/.well-known/(webfinger|nodeinfo)$"
+            replacement: "https://$1/index.php/.well-known/$2"
+        dashboard-headers:
+          headers:
+            sslRedirect: true
+            sslHost: "${SECRET_DOMAIN_0}"
+            stsSeconds: 315360000
+            stsIncludeSubdomains: true
+            stsPreload: true
+            forceSTSHeader: true
+            frameDeny: false
+            customFrameOptionsValue: SAMEORIGIN
+            contentTypeNosniff: true
+            browserXSSFilter: true
+        site-headers:
+          headers:
+            sslRedirect: true
+            sslHost: "${SECRET_DOMAIN_1}"
+            stsSeconds: 315360000
+            stsIncludeSubdomains: true
+            stsPreload: true
+            forceSTSHeader: true
+            frameDeny: false
+            contentTypeNosniff: true
+            browserXSSFilter: true
+        local-only:
+          ipWhiteList:
+            sourceRange:
+              - 10.244.0.0/16
+              - 10.10.0.0/24
+              - 10.0.8.0/24
+              - 192.168.10.0/24
+              - 192.168.200.0/24
