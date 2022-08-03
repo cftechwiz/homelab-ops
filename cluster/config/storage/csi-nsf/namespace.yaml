@@ -1,8 +1,7 @@
 ---
 apiVersion: v1
-kind: ServiceAccount
+kind: Namespace
 metadata:
   labels:
     toolkit.fluxcd.io/tenant: storage-team
-  name: storage-team
-  namespace: csi-nfs
+  name: csi-nfs
