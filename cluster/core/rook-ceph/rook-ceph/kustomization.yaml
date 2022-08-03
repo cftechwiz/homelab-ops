@@ -6,7 +6,7 @@ resources:
   - cephcluster-rookCRD.yaml
   - block-storageclass.yaml
   - shared-storageclass.yaml
-  - ingress-traefikCRD.yaml
+  - ingress-CRD.yaml
   - grafana-dashboard.yaml
 # labels:
 #   - pairs:
