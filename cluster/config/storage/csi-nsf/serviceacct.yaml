@@ -4,6 +4,4 @@ metadata:
   labels:
     toolkit.fluxcd.io/tenant: storage-team
   name: storage-team
-  namespaces:
-    - csi-nfs
-    - rook-ceph
+  namespace: csi-nfs
