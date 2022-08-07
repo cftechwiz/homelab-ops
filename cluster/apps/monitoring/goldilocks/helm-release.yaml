@@ -40,7 +40,7 @@ spec:
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           external-dns/is-public: "true"
         hosts:
-          - host: &host "goldilocks.${SECRET_PUBLIC_DOMAIN}"
+          - host: &host "goldilocks.${SECRET_DOMAIN}"
             paths:
               - path: /
         tls:
