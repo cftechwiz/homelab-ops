@@ -9,3 +9,6 @@ resources:
   - reflector
   - reloader
   - kube-vip
+  - node-feature-discovery
+  - descheduler
+  - csi-driver-nfs
