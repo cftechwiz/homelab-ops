@@ -1,0 +1,30 @@
+# yamllint disable
+apiVersion: v1
+kind: Secret
+metadata:
+    name: sumologic_secret_keys
+    namespace: monitoring
+stringData:
+    SECRET_SUMO_ACCESSID: ENC[AES256_GCM,data:zIp165Bb3/S3dIVQONg=,iv:5HwI7W/oRgTtUHSrN365/TLdpMdn/b7i/JFVqN9VhRI=,tag:aQNbDllytW3QlYmhLagAWA==,type:str]
+    SECRET_SUMO_ACCESSKEY: ENC[AES256_GCM,data:2WuOPZTRT7LfvTWDXdAU9nNsLkXO/6HZIV6RE7wi5dmKMC9Usn2VDPjT9zcYH40O60OmL8aeFuAH9uURezRDkw==,iv:0hvapNs1yOfqf6iHRgXmGmw6lKWIHue6GeBbyiz/YG8=,tag:ey3yCkuwN/h4OrgAwqLKFw==,type:str]
+    SECRET_SUMO_CLUSTER: ENC[AES256_GCM,data:MaLfruVfIA==,iv:odUWhOIhfJGb/ayvG1141Qa5MrKaQ58ET9qKEL72iEU=,tag:s9VpO/Oze+MjrjlOzPj+qw==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age19rtwpgqe4m68lm9e2m4r8l78uerxwfqd7z20nrx2rcjuv5lafd9qynj467
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHYVVrRnNpaVEzOGJldkM1
+            L2VZNUVVWUxmNHgzd1Avc2hKZ05xbXEzaGdnCjM2Z1k5STE2eWdrM1hoWkxldW5q
+            YzdIZzFzc3k0MzhHSjhMOFhZQW1ybncKLS0tIHg3VUw4M0crQ1NNUVlrbjhLYVVB
+            bGpqcmlUQUxjUVA4ZGMwMEgvaSs4aTAKHRZtudyqiXmWD+o9emYZT8KRW/4QeyTf
+            Xknde/YRu3uEKjjX3Kbft4nASThXOlMxuaqpW6dx58iKQ1a3C6YwEg==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2022-08-07T22:11:08Z"
+    mac: ENC[AES256_GCM,data:/DbY2bUH9V1U0UJSfHBYmxJPSgzsD/tb4F8e2S4dGhUiMzVhx+sw6Lii+03Fdnj2W7xm3WMQHZjssr6y4Yum3FVCMNlfuJvFDLO7J1xIqbX/rfNviUNO5c871puVYy85LsYF+dJjedWLw+RW/TgDnuY+s1bVrDDP/9AUuMQ34R0=,iv:dWmjBmcwwY31g1J0Gwq7c5F6c9Dv2irmP7VJ4h30Vag=,tag:3lb12lFmVVUHHiM+4QVpAA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
