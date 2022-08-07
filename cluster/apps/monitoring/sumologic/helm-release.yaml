@@ -5,27 +5,25 @@ metadata:
   name: sumologic
   namespace: monitoring
 spec:
-  secretRef:
-    name: sumologic_secret_keys
   interval: 15m
   chart:
     spec:
-      chart: sumologic/sumologic
+      chart: sumologic
       version: 2.14.1
-      reconcileStrategy: ChartVersion
       sourceRef:
         kind: HelmRepository
         name: sumologic
-        namespace: monitoring
-      install:
-        createNamespace: true
-      remediation:
-        retries: 5
-      upgrade:
-        remediation:
-          retries: 5
-      values:
-        sumologic:
-          accessId: "${SECRET_SUMO_ACCESSID)"
-          accessKey: "${SECRET_SUMO_ACCESSKEY}"
-          ClusterName: "${SECRET_SUMO_CLUSTER}"
+        namespace: flux-system
+    inverval: 15m
+  install:
+    createNamespace: true
+  remediation:
+    retries: 5
+  upgrade:
+    remediation:
+      retries: 5
+  values:
+    sumologic:
+      accessId: "${SECRET_SUMO_ACCESSID)"
+      accessKey: "${SECRET_SUMO_ACCESSKEY}"
+      ClusterName: "${SECRET_SUMO_CLUSTER}"
