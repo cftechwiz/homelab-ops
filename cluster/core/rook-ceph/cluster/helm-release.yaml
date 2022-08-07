@@ -63,13 +63,13 @@ spec:
         nodes:
           - name: server1.lab
             devices:
-              - name: "/dev/sda"
+              - name: "/dev/disk/by-id/wwn-0x57c35481cb1ca7de"
           - name: server2.lab
             devices:
-              - name: "/dev/sda"
+              - name: "/dev/disk/by-id/wwn-0x57c35481cb1ca7db"
           - name: server3.lab
             devices:
-              - name: "/dev/sda"
+              - name: "/dev/disk/by-id/wwn-0x57c35481cb1ca7da"
       resources:
         mgr:
           limits:
