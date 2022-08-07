@@ -43,10 +43,10 @@ spec:
           - host: &host "goldilocks.${SECRET_PUBLIC_DOMAIN}"
             paths:
               - path: /
-                type: Prefix
         tls:
           - hosts:
               - *host
+            secretName: "goldilocks-server-tls"
       resources:
         requests:
           cpu: 10m
