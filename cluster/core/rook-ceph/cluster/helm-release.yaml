@@ -35,7 +35,7 @@ spec:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           external-dns/is-public: "true"
-          #nginx.ingress.kubernetes.io/ssl-redirect: "true"
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
         host:
           name: &host "rook.${SECRET_PUBLIC_DOMAIN}"
           path: /
@@ -60,20 +60,20 @@ spec:
         useAllNodes: false
         useAllDevices: false
         config:
-          osdsPerDevice: "1"
+          osdsPerDevice: "2"
         nodes:
           - name: server1.lab
             devices:
-              #- name: "/dev/disk/by-id/dm-uuid-LVM-VynW7MMllLFgmeYm0ldmjWvbEJPps3UI3AsPtCO6L45XG5Ap2xjEeWr8nXNvyzDE"
               - name: "/dev/sda"
+              - name: "/dev/fedora_fedora/ceph"
           - name: server2.lab
             devices:
-              #- name: "/dev/disk/by-id/dm-uuid-LVM-VaL5BHS1Pyu2EHmbz9n9QpOcKKMMyQ86oMLLrJf1qf7ZOQwfj9znWqt4KHtaidYf"
               - name: "/dev/sda"
+              - name: "/dev/fedora_fedora/ceph"
           - name: server3.lab
             devices:
-              #- name: "/dev/disk/by-id/dm-uuid-LVM-PnMzdHRoUDebWsw0gyycR6r6G6JjAS3XXZ1SIFYO5pt8h90lemCmapafN0hFkDLa"
               - name: "/dev/sda"
+              - name: "/dev/fedora_fedora/ceph"
       resources:
         mgr:
           limits:
