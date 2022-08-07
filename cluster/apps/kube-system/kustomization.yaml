@@ -10,5 +10,5 @@ resources:
   - reloader
   - kube-vip
   - node-feature-discovery
-  - descheduler
-  - csi-driver-nfs
+  # - descheduler
+  # - csi-driver-nfs
