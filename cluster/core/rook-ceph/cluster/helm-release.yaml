@@ -56,8 +56,8 @@ spec:
         urlPrefix: /
         ssl: true
       storage:
-        useAllNodes: true
-        useAllDevices: true
+        useAllNodes: false
+        useAllDevices: false
         config:
           osdsPerDevice: "1"
         nodes:
