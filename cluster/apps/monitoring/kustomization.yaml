@@ -7,7 +7,7 @@ resources:
   #- blackbox-exporter
   #- cloudflare-exporter
   #- generic-rules
-  - goldilocks
+  #- goldilocks
   #- grafana
   #- intel-gpu-exporter
   #- kube-prometheus-stack
@@ -19,4 +19,4 @@ resources:
   #- uptimerobot-heartbeat
   #- vector
   #- vpa
-  - sumologic
+  #- sumologic
