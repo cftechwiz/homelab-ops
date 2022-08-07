@@ -19,3 +19,4 @@ resources:
   #- uptimerobot-heartbeat
   #- vector
   #- vpa
+  - sumologic
