@@ -60,17 +60,20 @@ spec:
         useAllNodes: false
         useAllDevices: false
         config:
-          osdsPerDevice: "1"
+          osdsPerDevice: "2"
         nodes:
           - name: server1.lab
             devices:
-              - name: "/dev/disk/by-id/wwn-0x57c35481cb1ca7de"
+              - name: "/dev/disk/by-id/dm-uuid-LVM-VynW7MMllLFgmeYm0ldmjWvbEJPps3UI3AsPtCO6L45XG5Ap2xjEeWr8nXNvyzDE"
+              - name: "/dev/sda"
           - name: server2.lab
             devices:
-              - name: "/dev/disk/by-id/wwn-0x57c35481cb1ca7db"
+              - name: "/dev/disk/by-id/dm-uuid-LVM-VaL5BHS1Pyu2EHmbz9n9QpOcKKMMyQ86oMLLrJf1qf7ZOQwfj9znWqt4KHtaidYf"
+              - name: "/dev/sda"
           - name: server3.lab
             devices:
-              - name: "/dev/disk/by-id/wwn-0x57c35481cb1ca7da"
+              - name: "/dev/disk/by-id/dm-uuid-LVM-PnMzdHRoUDebWsw0gyycR6r6G6JjAS3XXZ1SIFYO5pt8h90lemCmapafN0hFkDLa"
+              - name: "/dev/sda"
       resources:
         mgr:
           limits:
