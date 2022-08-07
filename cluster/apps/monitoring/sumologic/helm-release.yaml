@@ -26,6 +26,6 @@ spec:
           retries: 5
       values:
         sumologic:
-          accessId: ${SECRET_SUMO_ACCESSID)
-          accessKey: ${SECRET_SUMO_ACCESSKEY}
-          ClusterName: ${SECRET_SUMO_CLUSTER}
+          accessId: "${SECRET_SUMO_ACCESSID)"
+          accessKey: "${SECRET_SUMO_ACCESSKEY}"
+          ClusterName: "${SECRET_SUMO_CLUSTER}"
