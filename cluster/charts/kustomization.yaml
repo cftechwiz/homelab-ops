@@ -19,4 +19,5 @@ resources:
   - prometheus-community-charts.yaml
   - rook-ceph-charts.yaml
   - stakater.yaml
+  - sumologic.yaml
   - weaveworks-kured.yaml
