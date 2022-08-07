@@ -95,11 +95,17 @@ spec:
         enabled: true
         pathType: Prefix
         ingressClassName: "nginx"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
         hosts:
           - &host "alert-manager.${SECRET_PUBLIC_DOMAIN}"
         tls:
           - hosts:
               - *host
+            secretName: alert-manager-tls-cert
       alertmanagerSpec:
         replicas: 3
         podAntiAffinity: hard
@@ -144,27 +150,22 @@ spec:
     kubeControllerManager:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 172.16.70.15
     kubeScheduler:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 172.16.70.15
     kubeProxy:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 172.16.70.16
+        - 172.16.70.17
     kubeEtcd:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 172.16.70.15
+        - 172.16.70.16
+        - 172.16.70.17
       service:
         enabled: true
         port: 2381
@@ -174,11 +175,17 @@ spec:
         enabled: true
         pathType: Prefix
         ingressClassName: "nginx"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
         hosts:
           - &host "prometheus.${SECRET_PUBLIC_DOMAIN}"
         tls:
           - hosts:
               - *host
+            secretName: prometheus-tls-cert
       thanosService:
         enabled: true
       thanosServiceMonitor:
@@ -188,6 +195,9 @@ spec:
         pathType: Prefix
         ingressClassName: "nginx"
         annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
           nginx.ingress.kubernetes.io/ssl-redirect: "true"
           nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
         hosts:
@@ -195,6 +205,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: thanos-tls-cert
       prometheusSpec:
         replicas: 3
         replicaExternalLabelName: __replica__
@@ -233,37 +244,37 @@ spec:
             memory: 2000Mi
           limits:
             memory: 8000Mi
-        additionalScrapeConfigs:
-          - job_name: coredns
-            scrape_interval: 1m
-            scrape_timeout: 10s
-            honor_timestamps: true
-            static_configs:
-              - targets:
-                  - "opnsense.${SECRET_PRIVATE_DOMAIN}:9153"
-          - job_name: frr-exporter
-            scrape_interval: 1m
-            scrape_timeout: 10s
-            honor_timestamps: true
-            static_configs:
-              - targets:
-                  - "opnsense.${SECRET_PRIVATE_DOMAIN}:9342"
-          - job_name: node-exporter
-            scrape_interval: 1m
-            scrape_timeout: 10s
-            honor_timestamps: true
-            static_configs:
-              - targets:
-                  - "opnsense.${SECRET_PRIVATE_DOMAIN}:9100"
-                  - "expanse.${SECRET_PRIVATE_DOMAIN}:9100"
-          - job_name: pikvm
-            scrape_interval: 1m
-            scrape_timeout: 10s
-            metrics_path: /api/export/prometheus/metrics
-            basic_auth:
-              username: "${SECRET_PIKVM_USERNAME}"
-              password: "${SECRET_PIKVM_PASSWORD}"
-            honor_timestamps: true
-            static_configs:
-              - targets:
-                  - "pikvm.${SECRET_PRIVATE_DOMAIN}"
+        # additionalScrapeConfigs:
+        #   - job_name: coredns
+        #     scrape_interval: 1m
+        #     scrape_timeout: 10s
+        #     honor_timestamps: true
+        #     static_configs:
+        #       - targets:
+        #           - "opnsense.${SECRET_PRIVATE_DOMAIN}:9153"
+        #   - job_name: frr-exporter
+        #     scrape_interval: 1m
+        #     scrape_timeout: 10s
+        #     honor_timestamps: true
+        #     static_configs:
+        #       - targets:
+        #           - "opnsense.${SECRET_PRIVATE_DOMAIN}:9342"
+        #   - job_name: node-exporter
+        #     scrape_interval: 1m
+        #     scrape_timeout: 10s
+        #     honor_timestamps: true
+        #     static_configs:
+        #       - targets:
+        #           - "opnsense.${SECRET_PRIVATE_DOMAIN}:9100"
+        #           - "expanse.${SECRET_PRIVATE_DOMAIN}:9100"
+        #   - job_name: pikvm
+        #     scrape_interval: 1m
+        #     scrape_timeout: 10s
+        #     metrics_path: /api/export/prometheus/metrics
+        #     basic_auth:
+        #       username: "${SECRET_PIKVM_USERNAME}"
+        #       password: "${SECRET_PIKVM_PASSWORD}"
+        #     honor_timestamps: true
+        #     static_configs:
+        #       - targets:
+        #           - "pikvm.${SECRET_PRIVATE_DOMAIN}"

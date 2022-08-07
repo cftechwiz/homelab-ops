@@ -35,6 +35,7 @@ spec:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           external-dns/is-public: "true"
+          nginx.ingress.kubernetes.io/ssl-redirect: "true"
         host:
           name: &host "rook.${SECRET_PUBLIC_DOMAIN}"
           path: /
