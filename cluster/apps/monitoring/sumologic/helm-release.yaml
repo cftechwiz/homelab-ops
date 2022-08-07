@@ -17,10 +17,11 @@ spec:
         namespace: flux-system
     inverval: 15m
     values:
-    sumologic:
-      accessId: "${SECRET_SUMO_ACCESSID)"
-      accessKey: "${SECRET_SUMO_ACCESSKEY}"
-      ClusterName: "${SECRET_SUMO_CLUSTER}"
+      env:
+        sumologic:
+          accessId: "${SECRET_SUMO_ACCESSID)"
+          accessKey: "${SECRET_SUMO_ACCESSKEY}"
+          ClusterName: "${SECRET_SUMO_CLUSTER}"
   install:
     createNamespace: true
   remediation:
