@@ -5,8 +5,6 @@ metadata:
   name: sumologic
   namespace: monitoring
 spec:
-  interval: 5m
-  releaseName: sumo-release
   chart:
     spec:
       chart: sumologic
@@ -15,9 +13,7 @@ spec:
         kind: HelmRepository
         name: sumologic
       version: 2.14.1
-  valuesFrom:
-    - kind: ConfigMap
-      name: sumologic-map
+  interval: 10m
   install:
     createNamespace: true
     remediation:
@@ -25,3 +21,26 @@ spec:
   upgrade:
     remediation:
       retries: 5
+  values:
+    interval: 5m
+    loglevel: debug
+    sumologic:
+      accessId: ${SECRET_SUMO_ACCESSID}
+      accessKey: ${SECRET_SUMO_ACCESSKEY}
+      ClusterName: ${SECRET_SUMO_CLUSTER}
+    # env:
+    #   - name: SUMOLOGIC_ACCESSID
+    #     valueFrom:
+    #       secretKeyRef:
+    #         name: sumologic_secret_keys
+    #         key: accessId
+    #   - name: SUMOLOGIC_ACCESSKEY
+    #     valueFrom:
+    #       secretKeyRef:
+    #         name: sumologic_secret_keys
+    #         key: accessKey
+    #   - name: SUMOLOGIC_CLUSTERNAME
+    #     valueFrom:
+    #       secretKeyRef:
+    #         name: sumologic_secret_keys
+    #         key: ClusterName
