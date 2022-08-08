@@ -1,0 +1,6 @@
+---
+ ## Sumo access ID
+accessId: "${SECRET_SUMO_ACCESSID}"
+
+  ## Sumo access key
+accessKey: "${SECRET_SUMO_ACCESSKEY}"
