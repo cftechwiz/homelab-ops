@@ -4,5 +4,5 @@ nameReference:
     - kind: ConfigMap
       version: v1
       fieldSpecs:
-      - path: sumologicMap
+      - path: sumologic-map
         kind: HelmRelease
