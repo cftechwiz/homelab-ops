@@ -15,9 +15,14 @@ spec:
         kind: HelmRepository
         name: sumologic
       version: 2.14.1
+      decryption:
+        provider: sops
+        secretRef:
+          name: sops-gpg
   valuesFrom:
     - kind: ConfigMap
       name: sumologicMap
+
   install:
     createNamespace: true
     remediation:
