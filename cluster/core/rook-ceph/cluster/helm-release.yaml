@@ -54,7 +54,7 @@ spec:
         disable: false
       dashboard:
         enabled: true
-        urlPrefix: /
+        urlPrefix: /ceph-dashboard
         ssl: false
       storage:
         useAllNodes: false
@@ -65,15 +65,15 @@ spec:
           - name: server1.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
           - name: server2.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
           - name: server3.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
       resources:
         mgr:
           limits:
