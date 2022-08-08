@@ -72,15 +72,15 @@ spec:
           - name: server1.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
           - name: server2.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
           - name: server3.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
       resources:
         mgr:
           limits:
