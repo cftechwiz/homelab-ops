@@ -60,7 +60,7 @@ spec:
         useAllNodes: false
         useAllDevices: false
         config:
-          osdsPerDevice: "2"
+          osdsPerDevice: "1"
         nodes:
           - name: server1.lab
             devices:
