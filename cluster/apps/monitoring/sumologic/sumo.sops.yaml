@@ -5,9 +5,8 @@ metadata:
     name: sumologic_secret_keys
     namespace: monitoring
 stringData:
-    accessId: ENC[AES256_GCM,data:YKQthts0soDzrK+iMM4=,iv:BE77p18uCBVLM8px989+ORIpzhxfUmkpkgVPbyln1gA=,tag:no2Vda4L8pVt5WCfBTjSdw==,type:str]
-    accessKey: ENC[AES256_GCM,data:ZfT/hnpG+VtYMaethzU6WbxgaWZZfVs/fhBKSTI5pO7PtsJFP7QC5h2zhrGA/Ku5MuBC1/MrSFuou/G6z3XJgA==,iv:vDom6XR0kBnRgCBYhdGbrT+BbK7uem10b6VCGVUjZ3I=,tag:dYbsQkSjWUKV+Qabx7CfSQ==,type:str]
-    ClusteName: ENC[AES256_GCM,data:Wex3hm2E/g==,iv:5t0UedAhcRdnke32XtkIPC+GGPH38foxxP2v7/1CbPg=,tag:fPeJCD58G/tIxcqlSKc4rg==,type:str]
+    sumologic.accessId: ENC[AES256_GCM,data:OUyZhSDTM3YvrJc1/r8=,iv:9OoIuFHzsx0kZtKCW2JLs5a31LdGAKhCUxFQqa5aRWs=,tag:a/+hzVQs/AlaSwsSP9+VTw==,type:str]
+    sumologic.accessKey: ENC[AES256_GCM,data:hMjPn/6HpZmNYyOfSgAvcpyFYGL0g1uSuNMwHb7blkUhqgMPR+xUlh6i42LXh6MNHaJ42IMd9SzaPIBQnNSkCA==,iv:dNlHnYRceY9O4B81xDKDJ7wM6WUzqB95MQhE0nkr590=,tag:4V7xdR3ekhupOrmOxPJZfA==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -23,8 +22,8 @@ sops:
             bGpqcmlUQUxjUVA4ZGMwMEgvaSs4aTAKHRZtudyqiXmWD+o9emYZT8KRW/4QeyTf
             Xknde/YRu3uEKjjX3Kbft4nASThXOlMxuaqpW6dx58iKQ1a3C6YwEg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-08-08T00:01:16Z"
-    mac: ENC[AES256_GCM,data:ar0qYYJAAOewbnkbkD3xIxk4YkN72qkeTZdFi0DaJ5TQ760Qx7VEgoxR0s1XlIHPGPSNjtIeMbaVvH4/x8b2t9Pl9eqLviYpRCKzVAVezDzcTK4GjeRPk6d5rg0Sbgae/WFicsB4UNFOCOKGxfSgns0ZZIj65gXNrcu34SObhMU=,iv:bfsCgJeXk7TG2XrDiack8ALuS3kcwyn6jzjnA6lQbuM=,tag:q7ZukYcp+NEyEdy5G1YXuw==,type:str]
+    lastmodified: "2022-08-08T01:44:48Z"
+    mac: ENC[AES256_GCM,data:qfM1gHAYviHa3pSlpsO249chCARvxX6yh3h6tfAfRubhyJEecbQXw9M5OnBqTqKLchmrizyu5ciw4P2qaeX6ow5ggDdYY+xGenk6ovudsSDoGQXpAOUUoqprMrs8fnWCM2g7jZLqFzHgK2wrnV3L0M1z/usztcXHSISJjj6sDCg=,iv:vtu1pVBBHf59WYjYzLdJ4ZDyLh/xqGH6onzdlS8KN4o=,tag:fN3UtI+jqaTzUy7EaUv/zg==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3

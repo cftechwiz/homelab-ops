@@ -35,7 +35,6 @@ spec:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           external-dns/is-public: "true"
-          nginx.ingress.kubernetes.io/ssl-redirect: "true"
         host:
           name: &host "rook.${SECRET_PUBLIC_DOMAIN}"
           path: /
@@ -54,26 +53,33 @@ spec:
         disable: false
       dashboard:
         enabled: true
-        urlPrefix: /
-        ssl: false
+        urlPrefix: /ceph-dashboard
+        ssl: true
+      cleanupPolicy:
+        confirmation: "yes-really-destroy-data"
+        sanitizeDisks:
+          method: quick
+          dataSource: zero
+          iteration: 1
+        allowUninstallWithVolumes: false
       storage:
-        useAllNodes: false
-        useAllDevices: false
+        useAllNodes: true
+        useAllDevices: true
         config:
-          osdsPerDevice: "2"
+          osdsPerDevice: "1"
         nodes:
           - name: server1.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
           - name: server2.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
           - name: server3.lab
             devices:
               - name: "/dev/sda"
-              - name: "/dev/fedora_fedora/ceph"
+              #- name: "/dev/fedora_fedora/ceph"
       resources:
         mgr:
           limits:
@@ -212,7 +218,16 @@ spec:
               interval: 60s
         storageClass:
           enabled: true
-          name: ceph-bucket
+          isDefault: false
+          name: ceph-filesystem
+          pool: data0
           reclaimPolicy: Delete
+          allowVolumeExpansion: true
           parameters:
-            region: us-east-1
+            csi.storage.k8s.io/provisioner-secret-name: rook-csi-cephfs-provisioner
+            csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph
+            csi.storage.k8s.io/controller-expand-secret-name: rook-csi-cephfs-provisioner
+            csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph
+            csi.storage.k8s.io/node-stage-secret-name: rook-csi-cephfs-node
+            csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph
+            csi.storage.k8s.io/fstype: ext4
