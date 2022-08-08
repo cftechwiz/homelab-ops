@@ -55,7 +55,14 @@ spec:
       dashboard:
         enabled: true
         urlPrefix: /ceph-dashboard
-        ssl: false
+        ssl: true
+      cleanupPolicy:
+        confirmation: "YES"
+        sanitizeDisks:
+          method: quick
+          dataSource: zero
+          iteration: 1
+        allowUninstallWithVolumes: false
       storage:
         useAllNodes: true
         useAllDevices: true
@@ -64,15 +71,15 @@ spec:
         nodes:
           - name: server1.lab
             devices:
-              #- name: "/dev/sda"
+              - name: "/dev/sda"
               - name: "/dev/fedora_fedora/ceph"
           - name: server2.lab
             devices:
-              #- name: "/dev/sda"
+              - name: "/dev/sda"
               - name: "/dev/fedora_fedora/ceph"
           - name: server3.lab
             devices:
-              #- name: "/dev/sda"
+              - name: "/dev/sda"
               - name: "/dev/fedora_fedora/ceph"
       resources:
         mgr:
