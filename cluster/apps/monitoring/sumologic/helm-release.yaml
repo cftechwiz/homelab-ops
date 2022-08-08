@@ -22,21 +22,7 @@ spec:
     remediation:
       retries: 5
   values:
-    interval: 5m
-    loglevel: debug
-    env:
-      - name: SUMOLOGIC_ACCESSID
-        valueFrom:
-          secretKeyRef:
-            name: sumologic_secret_keys
-            key: accessId
-      - name: SUMOLOGIC_ACCESSKEY
-        valueFrom:
-          secretKeyRef:
-            name: sumologic_secret_keys
-            key: accessKey
-      - name: SUMOLOGIC_CLUSTERNAME
-        valueFrom:
-          secretKeyRef:
-            name: sumologic_secret_keys
-            key: ClusterName
+    valuesFrom:
+      - kind: ConfigMap
+        name: prod-env-values
+        valuesKey: values.yaml
