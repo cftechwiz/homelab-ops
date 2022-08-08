@@ -2,7 +2,7 @@
 ## Sumo Logic Kubernetes Collection configuration file
 ## All the comments start with two or more # characters
 
-nameOverride: "prod-env-values"
+nameOverride: ""
 fullnameOverride: ""
 
 sumologic:
@@ -20,10 +20,10 @@ sumologic:
   # envFromSecret: sumo-api-secret
 
   ## Sumo access ID
-  accessId: "${SECRET_SUMO_ACCESSID}"
+  #accessId: "${SECRET_SUMO_ACCESSID}"
 
   ## Sumo access key
-  accessKey: "${SECRET_SUMO_ACCESSKEY}"
+  # accessKey: "${SECRET_SUMO_ACCESSKEY}"
 
   ## Sumo API endpoint; Leave blank for automatic endpoint discovery and redirection
   ## ref: https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security

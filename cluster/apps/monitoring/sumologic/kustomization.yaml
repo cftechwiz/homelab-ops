@@ -4,3 +4,9 @@ kind: Kustomization
 resources:
   - helm-release.yaml
   - sumo.sops.yaml
+configMapGenerator:
+  - name: sumologicMap
+    files:
+      - values.yaml=my-values.yaml
+configurations:
+  - kustomizeconfig.yaml
