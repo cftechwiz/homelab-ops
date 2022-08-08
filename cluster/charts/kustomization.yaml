@@ -2,12 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - bitnami.yaml
-  - descheduler-charts.yaml
   - emberstack.yaml
   - external-dns.yaml
-  - fairwinds-charts.yaml
-  - gitea-charts.yaml
-  - grafana-charts.yaml
   - hajimari.yaml
   - ingress-nginx.yaml
   - jetstack.yaml
@@ -15,9 +11,5 @@ resources:
   - k8s-gateway.yaml
   - metallb.yaml
   - metrics-server.yaml
-  - node-feature-discovery-charts.yaml
-  - prometheus-community-charts.yaml
-  - rook-ceph-charts.yaml
   - stakater.yaml
-  - sumologic.yaml
   - weaveworks-kured.yaml

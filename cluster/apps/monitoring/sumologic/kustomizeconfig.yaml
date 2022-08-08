@@ -1,8 +1,0 @@
----
-# yamllint disable
-nameReference:
-    - kind: ConfigMap
-      version: v1
-      fieldSpecs:
-      - path: sumologic-map
-        kind: HelmRelease
