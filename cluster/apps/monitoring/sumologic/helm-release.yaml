@@ -21,8 +21,7 @@ spec:
           name: sops-gpg
   valuesFrom:
     - kind: ConfigMap
-      name: sumologicMap
-
+      name: sumologic-map
   install:
     createNamespace: true
     remediation:
