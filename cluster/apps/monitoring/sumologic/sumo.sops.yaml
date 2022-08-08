@@ -5,9 +5,9 @@ metadata:
     name: sumologic_secret_keys
     namespace: monitoring
 stringData:
-    SECRET_SUMO_ACCESSID: ENC[AES256_GCM,data:zIp165Bb3/S3dIVQONg=,iv:5HwI7W/oRgTtUHSrN365/TLdpMdn/b7i/JFVqN9VhRI=,tag:aQNbDllytW3QlYmhLagAWA==,type:str]
-    SECRET_SUMO_ACCESSKEY: ENC[AES256_GCM,data:2WuOPZTRT7LfvTWDXdAU9nNsLkXO/6HZIV6RE7wi5dmKMC9Usn2VDPjT9zcYH40O60OmL8aeFuAH9uURezRDkw==,iv:0hvapNs1yOfqf6iHRgXmGmw6lKWIHue6GeBbyiz/YG8=,tag:ey3yCkuwN/h4OrgAwqLKFw==,type:str]
-    SECRET_SUMO_CLUSTER: ENC[AES256_GCM,data:MaLfruVfIA==,iv:odUWhOIhfJGb/ayvG1141Qa5MrKaQ58ET9qKEL72iEU=,tag:s9VpO/Oze+MjrjlOzPj+qw==,type:str]
+    accessId: ENC[AES256_GCM,data:YKQthts0soDzrK+iMM4=,iv:BE77p18uCBVLM8px989+ORIpzhxfUmkpkgVPbyln1gA=,tag:no2Vda4L8pVt5WCfBTjSdw==,type:str]
+    accessKey: ENC[AES256_GCM,data:ZfT/hnpG+VtYMaethzU6WbxgaWZZfVs/fhBKSTI5pO7PtsJFP7QC5h2zhrGA/Ku5MuBC1/MrSFuou/G6z3XJgA==,iv:vDom6XR0kBnRgCBYhdGbrT+BbK7uem10b6VCGVUjZ3I=,tag:dYbsQkSjWUKV+Qabx7CfSQ==,type:str]
+    ClusteName: ENC[AES256_GCM,data:Wex3hm2E/g==,iv:5t0UedAhcRdnke32XtkIPC+GGPH38foxxP2v7/1CbPg=,tag:fPeJCD58G/tIxcqlSKc4rg==,type:str]
 sops:
     kms: []
     gcp_kms: []
@@ -23,8 +23,8 @@ sops:
             bGpqcmlUQUxjUVA4ZGMwMEgvaSs4aTAKHRZtudyqiXmWD+o9emYZT8KRW/4QeyTf
             Xknde/YRu3uEKjjX3Kbft4nASThXOlMxuaqpW6dx58iKQ1a3C6YwEg==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2022-08-07T22:11:08Z"
-    mac: ENC[AES256_GCM,data:/DbY2bUH9V1U0UJSfHBYmxJPSgzsD/tb4F8e2S4dGhUiMzVhx+sw6Lii+03Fdnj2W7xm3WMQHZjssr6y4Yum3FVCMNlfuJvFDLO7J1xIqbX/rfNviUNO5c871puVYy85LsYF+dJjedWLw+RW/TgDnuY+s1bVrDDP/9AUuMQ34R0=,iv:dWmjBmcwwY31g1J0Gwq7c5F6c9Dv2irmP7VJ4h30Vag=,tag:3lb12lFmVVUHHiM+4QVpAA==,type:str]
+    lastmodified: "2022-08-08T00:01:16Z"
+    mac: ENC[AES256_GCM,data:ar0qYYJAAOewbnkbkD3xIxk4YkN72qkeTZdFi0DaJ5TQ760Qx7VEgoxR0s1XlIHPGPSNjtIeMbaVvH4/x8b2t9Pl9eqLviYpRCKzVAVezDzcTK4GjeRPk6d5rg0Sbgae/WFicsB4UNFOCOKGxfSgns0ZZIj65gXNrcu34SObhMU=,iv:bfsCgJeXk7TG2XrDiack8ALuS3kcwyn6jzjnA6lQbuM=,tag:q7ZukYcp+NEyEdy5G1YXuw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
