@@ -57,7 +57,7 @@ spec:
         urlPrefix: /ceph-dashboard
         ssl: true
       cleanupPolicy:
-        confirmation: "YES"
+        confirmation: "yes-really-destroy-data"
         sanitizeDisks:
           method: quick
           dataSource: zero
