@@ -26,7 +26,7 @@ spec:
       namespace: kube-system
   values:
     crds:
-      enabled: false
+      enabled: true
     monitoring:
       enabled: true
     resources:
@@ -35,3 +35,11 @@ spec:
         memory: 128Mi
       limits:
         memory: 256Mi
+    csi:
+      kubeletDirPath: /var/lib/kubelet
+      enableCSIHostNetwork: true
+      pluginTolerations:
+        - effect: "NoExecute"
+          operator: "Exists"
+        - effect: "NoSchedule"
+          operator: "Exists"    
