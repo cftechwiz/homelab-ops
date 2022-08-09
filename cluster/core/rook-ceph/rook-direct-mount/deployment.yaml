@@ -70,8 +70,8 @@ spec:
                 path: mon-endpoints
         - name: backups
           nfs:
-            server: "falhallanas.lab"
-            path: /nfs/backups
+            server: "falhalla.lab"
+            path: /nfs/Apps/External/Backups
         - name: direct-mount-backup-script
           projected:
             defaultMode: 0775
