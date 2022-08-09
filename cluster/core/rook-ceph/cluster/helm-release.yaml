@@ -64,13 +64,13 @@ spec:
         nodes:
           - name: server1.lab
             devices:
-              - name: "/dev/sda"
+              - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311360F"
           - name: server2.lab
             devices:
-              - name: "/dev/sda"
+              - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311360F"
           - name: server3.lab
             devices:
-              - name: "/dev/sda"
+              - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311426H"
       resources:
         mgr:
           limits:
