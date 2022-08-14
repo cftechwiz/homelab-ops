@@ -1,19 +1,15 @@
 ---
 - hosts:
-    - master
+    - cluster
   become: true
   gather_facts: true
   any_errors_fatal: true
   pre_tasks:
-    - name: Pausing for 5 seconds...
+    - name: Pausing for 2 seconds...
       ansible.builtin.pause:
-        seconds: 5
+        seconds: 2
   tasks:
-    - name: Install provisioning dependencies
-      apt: name=lxc-dev
 
-    - name: Install provisioning dependencies
-      apt: name=python-lxc
     - name: Delete a container
       community.general.lxd_container:
         name: "{{ item }}"
