@@ -23,6 +23,12 @@ tasks:
     cmds:
       - ansible all -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml --list-hosts
 
+  lxd:
+    desc: Provision VMs
+    dir: provision/ansible
+    cmds:
+      - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/vms-provision.yml}}
+
   prepare:
     desc: Prepare all the k8s nodes for running k3s
     dir: provision/ansible
@@ -42,6 +48,12 @@ tasks:
     cmds:
       - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/cluster-nuke.yml
       - task: reboot
+
+  vmnuke:
+    desc: Destroy the VMs
+    dir: provision/ansible
+    cmds:
+      - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/lxd_hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/vms-nuke.yml
 
   ping:
     desc: Ping all the hosts

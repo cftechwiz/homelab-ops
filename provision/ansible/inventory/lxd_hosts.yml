@@ -1,0 +1,6 @@
+kubernetes:
+  children:
+    master:
+      hosts:
+        server1.lab:
+          ansible_host: 172.16.70.10
