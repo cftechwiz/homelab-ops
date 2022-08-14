@@ -27,13 +27,13 @@ tasks:
     desc: provision BareMetals
     dir: provision/ansible
     cmds:
-      - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/metal.yml {{.ANSIBLE_PLAYBOOK_DIR}}/metal-prepare.yml}}
+      - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/metal.yml {{.ANSIBLE_PLAYBOOK_DIR}}/metal-prepare.yml
 
   lxd:
     desc: Provision VMs
     dir: provision/ansible 
     cmds:
-      - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/vms-provision.yml}}
+      - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/vms-provision.yml
 
   prepare:
     desc: Prepare all the k8s nodes for running k3s
