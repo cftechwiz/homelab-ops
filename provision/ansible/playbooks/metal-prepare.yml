@@ -92,49 +92,49 @@
               net.ipv6.neigh.default.gc_thresh3: 8192
               vm.max_map_count: 262144
         - name: System Configuration (3) | Set * Nofile soft
-          ansible.pm_limits:
+          ansible.pam_limits:
             domain: '*'
             limit_type: soft
             limit_item: nofile
             value: 1048576
         - name: System Configuration (3) | Set * nofile hard
-          ansible.pm_limits:
+          ansible.pam_limits:
             domain: '*'
             limit_type: hard
             limit_item: nofile
             value: 1048576
         - name: System Configuration (3) | Set root nofile soft
-          ansible.pm_limits:
+          ansible.pam_limits:
             domain: rooot
             limit_type: soft
             limit_item: nofile
             value: 1048576
         - name: System Configuration (3) | Set root nofile hard
-          ansible.pm_limits:
+          ansible.pam_limits:
             domain: root
             limit_type: hard
             limit_item: nofile
             value: 1048576
         - name: System Configuration (3) | Set * memlock soft
-          ansible.pm_limits:
+          ansible.pam_limits:
             domain: '*'
             limit_type: soft
             limit_item: memlock
             value: unlimited
         - name: System Configuration (3) | Set * memlock hard
-          ansible.pm_limits:
+          ansible.pam_limits:
             domain: '*'
             limit_type: hard
             limit_item: memlock
             value: unlimited
         - name: System Configuration (3) | Set root memlock soft
-          ansible.pm_limits:
+          ansible.pam_limits:
             domain: root
             limit_type: soft
             limit_item: memlock
             value: unlimited
         - name: System Configuration (3) | Set root memlock hard
-          ansible.pm_limits:
+          ansible.pam_limits:
             domain: root
             limit_type: hard
             limit_item: memlock
