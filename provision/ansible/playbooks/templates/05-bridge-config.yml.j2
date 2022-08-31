@@ -1,0 +1,17 @@
+network:
+    version: 2
+    renderer: networkd
+    ethernets:
+        eno1:
+            dhcp4: no
+            mtu: 9182
+        eno7:
+            dhcp4: no
+            mtu: 9182
+    bridges:
+        br0:
+            macaddress: {{ hostvars[inventory_hostname].ansible_default_ipv4.macaddress }}
+            dhcp4: yes
+            dhcp6: yes
+            interfaces:
+                - eno7
