@@ -1,3 +1,0 @@
-kind: Secret
-ansible_user: cfallwell
-ansible_become_pass: Fal09290
