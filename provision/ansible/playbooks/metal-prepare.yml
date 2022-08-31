@@ -14,8 +14,27 @@
         - name: Locale | Set timezone
           community.general.timezone:
             name: "{{ timezone | default('Etc/UTC') }}"
-    - name: Networking
+    - name: Networking & Initial Upgrades
       block:
+        - name: Run "apt-get update"
+          ansible.builtin.apt:
+            update_cache: yes
+        - name: Update all packages to their latest version
+          ansible.builtin.apt:
+            name: "*"
+            state: latest
+        - name: Upgrade the OS (apt-get dist-upgrade)
+          ansible.builtin.apt:
+            upgrade: dist
+        - name: Packages | Install Network Manager
+          ansible.builtin.apt:
+            name: network-manager
+            state: present
+            update_cache: true
+        - name: Make sure a service unit is running
+          ansible.builtin.systemd:
+            state: started
+            name: network-manager.service
         - name: Networking | Set hostname to inventory hostname
           ansible.builtin.hostname:
             name: "{{ inventory_hostname }}"
@@ -24,7 +43,21 @@
             path: /etc/hosts
             block: |
               127.0.1.1   {{ inventory_hostname }}
-    - name: Packages
+
+        - name: System Configuration (2) | Patch Network Boot
+          ansible.builtin.copy:
+            mode: 0644
+            src: ../playbooks/templates/00-installer-config.yml
+            dest: /etc/netplan/00-installer-config.yaml
+
+
+        - name: System Configuration (2) | Configure Bridge Network
+          ansible.builtin.template:
+            mode: 0644
+            src: ../playbooks/templates/05-bridge-config.yml.j2
+            dest: /etc/netplan/05-bridge-config.yaml
+
+    - name: Continue with packages installation
       block:
         - name: Packages | Install required packages
           ansible.builtin.apt:
@@ -58,13 +91,13 @@
           community.general.modprobe:
             name: "{{ item }}"
             state: present
-          loop: [rbd, bridge, br_netfilter, ip_tables, ip6_tables, ip_vs, netlink_diag, nf_nat, overlay, xt_conntrack]
+          loop: [rbd, bridge, br_netfilter, ip_tables, ip6_tables, ip_vs, netlink_diag, nf_nat, overlay, xt_conntrack, nf_conntrack, vxlan, overlay]
         - name: System Configuration (2) | Enable kernel modules on boot
           ansible.builtin.copy:
             mode: 0644
             content: "{{ item }}"
             dest: "/etc/modules-load.d/{{ item }}.conf"
-          loop: [rbd, bridge, br_netfilter, ip_tables, ip6_tables, ip_vs, netlink_diag, nf_nat, overlay, xt_conntrack]
+          loop: [rbd, bridge, br_netfilter, ip_tables, ip6_tables, ip_vs, netlink_diag, nf_nat, overlay, xt_conntrack, nf_conntrack, vxlan, overlay]
         - name: System Configuration (2) | Set sysctls
           ansible.posix.sysctl:
             name: "{{ item.key }}"
@@ -139,16 +172,17 @@
             limit_type: hard
             limit_item: memlock
             value: unlimited
-        - name: System Configuration (2) | Disable swap
-          ansible.builtin.dnf:
-            name: zram-generator-defaults
-            state: absent
-        - name: System Configuration (2) | Permissive SELinux
-          ansible.posix.selinux:
-            state: permissive
-            policy: targeted
+        - name: Disable SWAP since kubernetes can't work with swap enabled (1/2)
+          shell: |
+            swapoff -a
+        - name: Disable SWAP in fstab since kubernetes can't work with swap enabled (2/2)
+          replace:
+            path: /etc/fstab
+            regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
+            replace: '# \1'
       notify: Reboot
   handlers:
     - name: Reboot
       ansible.builtin.reboot:
         msg: Rebooting nodes
+
