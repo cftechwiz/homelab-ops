@@ -3,9 +3,9 @@ kubernetes:
   children:
     metal:
       hosts:
-        server1.lab:
+        server1:
           ansible_host: 172.16.70.10
-        server2.lab:
+        server2:
           ansible_host: 172.16.70.20
-        server3.lab:
+        server3:
           ansible_host: 172.16.70.30
