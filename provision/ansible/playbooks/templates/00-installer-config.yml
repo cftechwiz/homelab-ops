@@ -1,0 +1,26 @@
+network:
+  ethernets:
+       eno1:
+           dhcp4: true
+           optional: true
+       eno2:
+           dhcp4: true
+           optional: true
+       eno3:
+           dhcp4: true
+           optional: true
+       eno4:
+           dhcp4: true
+           optional: true
+       eno5:
+           dhcp4: true
+           optional: true
+       eno6:
+           dhcp4: true
+           optional: true
+       eno7:
+           dhcp4: true
+       eno8:
+           dhcp4: true
+           optional: true
+  version: 2
