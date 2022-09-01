@@ -4,7 +4,17 @@ kind: Kustomization
 resources:
   #- authelia
   - descheduler
+  - excalidraw
+  - lidarr
   - namespace.yaml
+  - overseerr
+  - prowlarr
+  - qbittorrent
+  - qbitorrent-jobs
+  - readarr
+  - recyclarr
+  - sonarr
+  - unpackerr
   - echo-server
   - glauth
   - hajimari
