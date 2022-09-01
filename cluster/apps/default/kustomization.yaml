@@ -18,6 +18,7 @@ resources:
   - echo-server
   - glauth
   - hajimari
+  - mineo
   - postgres
   - redis
   - theme-park
