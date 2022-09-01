@@ -10,7 +10,6 @@ resources:
   - emberstack.yaml
   - emqx-charts.yaml
   - external-dns.yaml
-  - hajimari.yaml
   - fairwinds-charts.yaml
   - gitea-charts.yaml
   - grafana-charts.yaml
