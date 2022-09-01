@@ -65,7 +65,7 @@ spec:
           - name: server1
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311360F"
-              - name: "/dev/dis/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412424V"
+              - name: "/dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412424V"
           - name: server2
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311423A"
@@ -73,7 +73,7 @@ spec:
           - name: server3
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311426H"
-              - name: "dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412435"
+              - name: "dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412435R"
       resources:
         mgr:
           limits:
