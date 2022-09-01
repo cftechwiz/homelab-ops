@@ -4,4 +4,6 @@ kind: Kustomization
 resources:
   - cert-manager
   - system-upgrade-controller
+  - cloudnative-pg
+  - kube-prometheus-stack
   - rook-ceph
