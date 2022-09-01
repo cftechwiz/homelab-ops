@@ -14,10 +14,6 @@ spec:
         kind: HelmRepository
         name: prometheus-community-charts
         namespace: flux-system
-        annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-staging"
-          external-dns/is-public: "true"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
   install:
     createNamespace: true
     remediation:
