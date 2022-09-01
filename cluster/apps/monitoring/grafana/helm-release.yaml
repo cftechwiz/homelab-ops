@@ -36,31 +36,31 @@ spec:
       - name: grafana
     grafana.ini:
       auth:
-        signout_redirect_url: "https://auth.${SECRET_PUBLIC_DOMAIN}/logout"
-        oauth_auto_login: false
-      auth.generic_oauth:
-        enabled: true
-        name: Authelia
-        client_id: grafana
-        client_secret: "${SECRET_GRAFANA_OAUTH_CLIENT_SECRET}"
-        scopes: "openid profile email groups"
-        empty_scopes: false
-        auth_url: "https://auth.${SECRET_PUBLIC_DOMAIN}/api/oidc/authorization"
-        token_url: "https://auth.${SECRET_PUBLIC_DOMAIN}/api/oidc/token"
-        api_url: "https://auth.${SECRET_PUBLIC_DOMAIN}/api/oidc/userinfo"
-        login_attribute_path: preferred_username
-        groups_attribute_path: groups
-        name_attribute_path: name
-        use_pkce: true
-      auth.generic_oauth.group_mapping:
-        role_attribute_path: |
-          contains(groups[*], 'admins') && 'Admin' || contains(groups[*], 'people') && 'Viewer'
-        org_id: 1
+      #   signout_redirect_url: "https://auth.${SECRET_PUBLIC_DOMAIN}/logout"
+      #   oauth_auto_login: false
+      # auth.generic_oauth:
+      #   enabled: true
+      #   name: Authelia
+      #   client_id: grafana
+      #   client_secret: "${SECRET_GRAFANA_OAUTH_CLIENT_SECRET}"
+      #   scopes: "openid profile email groups"
+      #   empty_scopes: false
+      #   auth_url: "https://auth.${SECRET_PUBLIC_DOMAIN}/api/oidc/authorization"
+      #   token_url: "https://auth.${SECRET_PUBLIC_DOMAIN}/api/oidc/token"
+      #   api_url: "https://auth.${SECRET_PUBLIC_DOMAIN}/api/oidc/userinfo"
+      #   login_attribute_path: preferred_username
+      #   groups_attribute_path: groups
+      #   name_attribute_path: name
+      #   use_pkce: true
+      # auth.generic_oauth.group_mapping:
+      #   role_attribute_path: |
+      #     contains(groups[*], 'admins') && 'Admin' || contains(groups[*], 'people') && 'Viewer'
+      #   org_id: 1
       auth.basic:
-        enabled: false
+        enabled: true
         # disable_login_form: false
       auth.anonymous:
-        enabled: true
+        enabled: false
         org_name: HomeOps
         org_id: 1
         org_role: Viewer
@@ -127,7 +127,9 @@ spec:
       enabled: true
       ingressClassName: "nginx"
       annotations:
-        external-dns.home.arpa/enabled: "true"
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
       hosts:
         - &host "grafana.${SECRET_PUBLIC_DOMAIN}"
       tls:
