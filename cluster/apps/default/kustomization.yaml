@@ -6,4 +6,5 @@ resources:
   - namespace.yaml
   - echo-server
   - hajimari
+  - postgres
   - redis
