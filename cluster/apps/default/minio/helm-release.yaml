@@ -26,7 +26,7 @@ spec:
       repository: quay.io/minio/minio
       tag: RELEASE.2022-08-25T07-17-05Z
     env:
-      TZ: "America/New_York"
+      TZ: "America/Chicago"
       MINIO_UPDATE: "off"
       MINIO_PROMETHEUS_URL: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090
       MINIO_PROMETHEUS_JOB_ID: minio
@@ -55,7 +55,9 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          external-dns.home.arpa/enabled: "true"
+          cert-manager.io/cluster-issue: "letsencrypt-production"
+          external-dns/is-public: "true"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           nginx.ingress.kubernetes.io/proxy-connect-timeout: "300"
           nginx.ingress.kubernetes.io/proxy-body-size: 5000m
           nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
