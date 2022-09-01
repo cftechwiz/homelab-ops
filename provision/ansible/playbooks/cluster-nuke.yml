@@ -40,5 +40,8 @@
         state: absent
       loop: "{{ directory_contents.files }}"
     - name: Wipe Ceph Disks
-      ansible.builtin.shell:
-        shell:  dd if=/dev/zero of=/dev/nvme0n1 bs=1M count=1000 && dd if=/dev/zero of=/dev/sda bs=1M count=1000
+      ansible.builtin.command:
+        cmd: dd if=/dev/zero of=/dev/nvme0n1 bs=1M count=1000 
+    - name: Wipe Ceph Disks
+      ansible.builtin.command:        
+        cmd: dd if=/dev/zero of=/dev/sda bs=1M count=1000
