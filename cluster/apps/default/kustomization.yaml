@@ -9,8 +9,8 @@ resources:
   - namespace.yaml
   - overseerr
   - prowlarr
-  - qbittorrent
-  - qbitorrent-jobs
+  #- qbittorrent
+  #- qbitorrent-jobs
   - readarr
   - recyclarr
   - sonarr
