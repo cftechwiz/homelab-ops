@@ -5,7 +5,7 @@ resources:
   - authelia
   - namespace.yaml
   - echo-server
-  - glauth
+  #- glauth
   - hajimari
   - postgres
   - redis
