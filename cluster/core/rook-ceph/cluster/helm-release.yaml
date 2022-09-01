@@ -62,15 +62,18 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: server1.lab
+          - name: server1
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311360F"
-          - name: server2.lab
+              - name: "/dev/dis/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412424V"
+          - name: server2
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311423A"
-          - name: server3.lab
+              - name: "/dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412421T"
+          - name: server3
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311426H"
+              - name: "dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412435"
       resources:
         mgr:
           limits:
