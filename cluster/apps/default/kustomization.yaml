@@ -5,16 +5,16 @@ resources:
   #- authelia
   - descheduler
   - excalidraw
-  - lidarr
+  #- lidarr
   - namespace.yaml
-  - overseerr
-  - prowlarr
+  #- overseerr
+  #- prowlarr
   #- qbittorrent
   #- qbitorrent-jobs
-  - readarr
-  - recyclarr
-  - sonarr
-  - unpackerr
+  #- readarr
+  #- recyclarr
+  #- sonarr
+  #- unpackerr
   - echo-server
   - glauth
   - hajimari
