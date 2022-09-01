@@ -171,7 +171,7 @@ spec:
         ingressClassName: "nginx"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
-          external-dns/is-public: "true"
+          external-dns/is-public: "false"
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         hosts:
           - &host "prometheus.${SECRET_PUBLIC_DOMAIN}"
@@ -188,7 +188,7 @@ spec:
         ingressClassName: "nginx"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-staging"
-          external-dns/is-public: "true"
+          external-dns/is-public: "false"
           external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           nginx.ingress.kubernetes.io/ssl-redirect: "true"
           nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
