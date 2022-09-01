@@ -15,6 +15,6 @@ resources:
   - snmp-exporter
   - speedtest-exporter
   - thanos
-  - uptimerobot-heartbeat
+  #- uptimerobot-heartbeat
   - vector
   - vpa
