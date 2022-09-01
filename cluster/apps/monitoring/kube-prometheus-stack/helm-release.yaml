@@ -14,10 +14,6 @@ spec:
         kind: HelmRepository
         name: prometheus-community-charts
         namespace: flux-system
-        annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-staging"
-          external-dns/is-public: "true"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
   install:
     createNamespace: true
     remediation:
@@ -90,6 +86,10 @@ spec:
         enabled: true
         pathType: Prefix
         ingressClassName: "nginx"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          external-dns/is-public: "true"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         hosts:
           - &host "alert-manager.${SECRET_PUBLIC_DOMAIN}"
         tls:
@@ -169,6 +169,10 @@ spec:
         enabled: true
         pathType: Prefix
         ingressClassName: "nginx"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          external-dns/is-public: "true"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         hosts:
           - &host "prometheus.${SECRET_PUBLIC_DOMAIN}"
         tls:
@@ -183,6 +187,9 @@ spec:
         pathType: Prefix
         ingressClassName: "nginx"
         annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          external-dns/is-public: "true"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
           nginx.ingress.kubernetes.io/ssl-redirect: "true"
           nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
         hosts:
