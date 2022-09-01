@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - cert-manager
-  # - kured
+  - kured
   - metrics-server
   - reflector
   - reloader
