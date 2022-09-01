@@ -14,6 +14,10 @@ spec:
         kind: HelmRepository
         name: prometheus-community-charts
         namespace: flux-system
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-staging"
+          external-dns/is-public: "true"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
   install:
     createNamespace: true
     remediation:
@@ -135,27 +139,27 @@ spec:
     kubeControllerManager:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 172.16.70.10
+        - 172.16.70.20
+        - 172.16.70.30
     kubeScheduler:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 172.16.70.10
+        - 172.16.70.20
+        - 172.16.70.30
     kubeProxy:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 172.16.70.10
+        - 172.16.70.20
+        - 172.16.70.30
     kubeEtcd:
       enabled: true
       endpoints:
-        - 192.168.42.10
-        - 192.168.42.11
-        - 192.168.42.12
+        - 172.16.70.10
+        - 172.16.70.20
+        - 172.16.70.30
       service:
         enabled: true
         port: 2381
