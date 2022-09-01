@@ -76,7 +76,7 @@ spec:
         enabled: true
         type: nfs
         server: "falhallanas.${SECRET_PRIVATE_DOMAIN}"
-        path: /tycho/Media
+        path: /nfs/Media
         mountPath: /media
       scripts:
         enabled: true
