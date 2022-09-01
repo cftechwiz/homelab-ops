@@ -16,5 +16,5 @@ resources:
   - speedtest-exporter
   - thanos
   #- uptimerobot-heartbeat
-  - vector
+  #- vector
   - vpa
