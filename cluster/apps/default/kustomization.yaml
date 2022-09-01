@@ -20,3 +20,4 @@ resources:
   - hajimari
   - postgres
   - redis
+  - theme-park
