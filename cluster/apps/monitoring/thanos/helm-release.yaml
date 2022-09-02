@@ -22,7 +22,7 @@ spec:
     remediation:
       retries: 5
   dependsOn:
-    - name: sumo214-kube-prometheus-stack
+    - name: prometheus-sumo214-kube-prometheus-st-prometheus-0
       namespace: sumologic
   values:
     query:
