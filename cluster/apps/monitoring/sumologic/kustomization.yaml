@@ -8,7 +8,10 @@ resources:
 configMapGenerator:
   - name: sumologic_values
     files:
-      - values.yaml=my-values.yaml
+      - values.yaml=my_values.yaml
+    options:
+      annotations:
+        kustomize.toolkit.fluxcd.io/substitute: disabled
 configurations:
   - kustomizeconfig.yaml
 patchesStrategicMerge:
