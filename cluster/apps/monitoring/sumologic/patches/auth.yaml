@@ -1,0 +1,19 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: sumologic
+  namespace: monitoring
+spec:
+  values:
+    valueFrom:
+      - name: sumologic.accessId
+        valueFrom:
+          secretKeyRef:
+            name: sumologic_access
+            key: SUMO_ACCESSID
+      - name: sumologic.accessKey
+        valueFrom:
+          secretKeyRef:
+            name: sumologic_access
+            key: SUMO_ACCESSKEY
