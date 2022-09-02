@@ -6,10 +6,10 @@ resources:
   - helm-release.yaml
   - secret.sops.yaml
 configMapGenerator:
-  - name: podinfo-values
+  - name: sumologic-values
     files:
       - values.yaml=my-values.yaml
 configurations:
   - kustomizeconfig.yaml
 patchesStrategicMerge:
-- patches/auth.yaml
+  - patches/auth.yaml
