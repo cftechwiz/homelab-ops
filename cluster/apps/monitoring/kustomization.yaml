@@ -7,13 +7,14 @@ resources:
   #- blackbox-exporter
   - generic-rules
   - goldilocks
-  - grafana
+  #- grafana
   - kube-prometheus-stack
   - loki
   - pushgateway
   - smartctl-exporter
   - snmp-exporter
   - speedtest-exporter
+  - sumologic
   - thanos
   #- uptimerobot-heartbeat
   #- vector
