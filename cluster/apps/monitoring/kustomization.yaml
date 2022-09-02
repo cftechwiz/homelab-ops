@@ -5,7 +5,7 @@ namespace: monitoring
 resources:
   - namespace.yaml
   #- blackbox-exporter
-  - generic-rules
+  #- generic-rules
   - goldilocks
   #- grafana
   - kube-prometheus-stack
