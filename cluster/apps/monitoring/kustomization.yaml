@@ -12,7 +12,7 @@ resources:
   - loki
   - pushgateway
   - smartctl-exporter
-  - snmp-exporter
+  #- snmp-exporter
   - speedtest-exporter
   #- sumologic
   - thanos
