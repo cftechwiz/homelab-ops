@@ -9,11 +9,11 @@ resources:
   - goldilocks
   #- grafana
   - kube-prometheus-stack
-  - loki
-  - pushgateway
-  - smartctl-exporter
+  #- loki
+  #- pushgateway
+  #- smartctl-exporter
   #- snmp-exporter
-  - speedtest-exporter
+  #- speedtest-exporter
   #- sumologic
   - thanos
   #- uptimerobot-heartbeat
