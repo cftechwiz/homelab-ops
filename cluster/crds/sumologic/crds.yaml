@@ -2,7 +2,7 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: sumologic
+  name: crds-sumologic-kubernetes-monitoring
   namespace: monitoring
 spec:
   interval: 1m0s
