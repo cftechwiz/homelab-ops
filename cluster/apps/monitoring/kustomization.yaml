@@ -7,9 +7,9 @@ resources:
   #- blackbox-exporter
   #- generic-rules
   - goldilocks
-  #- grafana
+  - grafana
   #- kube-prometheus-stack
-  #- loki
+  - loki
   #- pushgateway
   #- smartctl-exporter
   #- snmp-exporter
