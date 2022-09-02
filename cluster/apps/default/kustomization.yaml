@@ -21,4 +21,4 @@ resources:
   #- minio
   - postgres
   - redis
-  - theme-park
+  #- theme-park
