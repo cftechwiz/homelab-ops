@@ -6,14 +6,15 @@ metadata:
   namespace: monitoring
 spec:
   values:
-    valueFrom:
-      - name: sumologic.accessId
-        valueFrom:
-          secretKeyRef:
-            name: sumologic_access
-            key: SUMO_ACCESSID
-      - name: sumologic.accessKey
-        valueFrom:
-          secretKeyRef:
-            name: sumologic_access
-            key: SUMO_ACCESSKEY
+    env:
+      valueFrom:
+        - name: SUMOLOGIC_ACCESSID
+          valueFrom:
+            secretKeyRef:
+              name: sumologic_access
+              key: SUMO_ACCESSID
+        - name: SUMOLOGIC_ACCESSKEY
+          valueFrom:
+            secretKeyRef:
+              name: sumologic_access
+              key: SUMO_ACCESSKEY
