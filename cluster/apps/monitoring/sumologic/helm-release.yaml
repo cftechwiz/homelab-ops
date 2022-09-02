@@ -23,5 +23,5 @@ spec:
       retries: 5
   valuesFrom:
     - kind: ConfigMap
-      name: sumologic_values
+      name: sumologic-values
     
