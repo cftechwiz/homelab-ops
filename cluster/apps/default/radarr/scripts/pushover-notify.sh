@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
 PUSHOVER_DEBUG="${PUSHOVER_DEBUG:-"true"}"
-# kubectl port-forward service/radarr -n default 7878:7878
-# export PUSHOVER_STARR_INSTANCE_NAME=Radarr;
-# export PUSHOVER_APP_URL="";
-# export PUSHOVER_TOKEN="";
-# export PUSHOVER_USER_KEY="";
-# export radarr_eventtype=Download;
-# ./notify.sh
 
 CONFIG_FILE="/config/config.xml" && [[ "${PUSHOVER_DEBUG}" == "true" ]] && CONFIG_FILE="config.xml"
 ERRORS=()
