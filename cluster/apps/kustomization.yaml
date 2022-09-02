@@ -6,7 +6,7 @@ resources:
   - default
   - flux-system
   - kube-system
-  - kyverno
+  #- kyverno
   - monitoring
   - networking
   #- system-upgrade
