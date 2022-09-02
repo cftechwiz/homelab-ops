@@ -6,7 +6,7 @@ resources:
   - helm-release.yaml
   - secret.sops.yaml
 configMapGenerator:
-  - name: sumologic-values
+  - name: sumologic_values
     files:
       - values.yaml=my-values.yaml
 configurations:
