@@ -14,7 +14,7 @@ resources:
   - smartctl-exporter
   - snmp-exporter
   - speedtest-exporter
-  - sumologic
+  #- sumologic
   - thanos
   #- uptimerobot-heartbeat
   #- vector
