@@ -7,9 +7,8 @@ resources:
   - secret.sops.yaml
 configMapGenerator:
   - name: my-sumologic-values
-    behavior: merge
     files:
-      - values.yaml
+      - values.yaml=my-values.yaml
 configurations:
   - kustomizeconfig.yaml
 patchesStrategicMerge:
