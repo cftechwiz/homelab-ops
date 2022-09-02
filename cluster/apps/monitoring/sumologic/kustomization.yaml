@@ -6,9 +6,10 @@ resources:
   - helm-release.yaml
   - secret.sops.yaml
 configMapGenerator:
-  - name: sumologic-values
+  - name: my-sumologic-values
+    behavior: merge
     files:
-      - values.yaml=my-values.yaml
+      - values.yaml
 configurations:
   - kustomizeconfig.yaml
 patchesStrategicMerge:
