@@ -8,7 +8,7 @@ resources:
   - generic-rules
   - goldilocks
   #- grafana
-  #- kube-prometheus-stack
+  - kube-prometheus-stack
   - loki
   - pushgateway
   - smartctl-exporter
