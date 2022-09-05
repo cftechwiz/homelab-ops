@@ -74,11 +74,11 @@ spec:
             devices:
               - name: "/dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311426H"
               - name: "/dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412435R"
-    # cephBlockPoolsVolumeSnapshotClass:
-    #   enabled: true
-    #   name: csi-rbdplugin-snapclass
-    #   annotations:
-    #     velero.io/csi-volumesnapshot-class: "true"
+    cephBlockPoolsVolumeSnapshotClass:
+      enabled: true
+      name: csi-rbdplugin-snapclass
+      annotations:
+        velero.io/csi-volumesnapshot-class: "true"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
