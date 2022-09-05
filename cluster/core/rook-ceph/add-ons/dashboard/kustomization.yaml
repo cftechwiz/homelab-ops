@@ -19,4 +19,4 @@ generatorOptions:
   annotations:
     kustomize.toolkit.fluxcd.io/substitute: disabled
   labels:
-    grafana_dashboard: "false"
+    grafana_dashboard: "true"
