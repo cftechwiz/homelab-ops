@@ -17,6 +17,7 @@ resources:
   #- unpackerr
   - echo-server
   - glauth
+  - gitea
   - hajimari
   #- minio
   - postgres

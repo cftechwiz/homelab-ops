@@ -107,22 +107,22 @@ spec:
           groupClaimName: groups
           adminGroup: admins
           restrictedGroup: people
-      # ldap:
-      #   - name: glauth
-      #     securityProtocol: unencrypted
-      #     host: glauth.default
-      #     port: "389"
-      #     userSearchBase: ou=people,dc=home,dc=arpa
-      #     userFilter: (&(objectClass=posixAccount)(|(uid=%[1]s)(mail=%[1]s)))
-      #     adminFilter: (memberOf=ou=admins,ou=groups,dc=home,dc=arpa)
-      #     emailAttribute: mail
-      #     usernameAttribute: uid
-      #     firstnameAttribute: givenname
-      #     surnameAttribute: sn
-      #     publicSSHKeyAttribute: publicSSHKey
-      #     synchronizeUsers: "true"
-      #     attributesInBind: "true"
-      #     existingSecret: gitea-config
+      ldap:
+        - name: glauth
+          securityProtocol: unencrypted
+          host: glauth.default
+          port: "389"
+          userSearchBase: ou=people,dc=home,dc=arpa
+          userFilter: (&(objectClass=posixAccount)(|(uid=%[1]s)(mail=%[1]s)))
+          adminFilter: (memberOf=ou=admins,ou=groups,dc=home,dc=arpa)
+          emailAttribute: mail
+          usernameAttribute: uid
+          firstnameAttribute: givenname
+          surnameAttribute: sn
+          publicSSHKeyAttribute: publicSSHKey
+          synchronizeUsers: "true"
+          attributesInBind: "true"
+          existingSecret: gitea-config
       metrics:
         enabled: true
         serviceMonitor:
