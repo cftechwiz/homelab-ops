@@ -11,7 +11,7 @@ spec:
   storageClassName: minio-nfs
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: "falhallanas.${SECRET_PRIVATE_DOMAIN}"
+    server: "falhallanas.lab"
     path: /nfs/Apps/External/Minio
   mountOptions:
     - nfsvers=4.2
