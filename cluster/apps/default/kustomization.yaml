@@ -4,7 +4,7 @@ kind: Kustomization
 resources:
   - authelia
   - descheduler
-  #- excalidraw
+  - excalidraw
   #- lidarr
   - namespace.yaml
   #- overseerr
