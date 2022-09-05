@@ -31,8 +31,8 @@ spec:
     env:
       DEBUG: "true"
       SMTP_DOMAIN: "${SECRET_EMAIL_DOMAIN}"
-      SMTP_SERVER: "smtp.fastmail.com"
-      SMTP_USERNAME: "devin@${SECRET_EMAIL_DOMAIN}"
+      SMTP_SERVER: "smtp-relay.gmail.com"
+      SMTP_USERNAME: "cfallwell@${SECRET_EMAIL_DOMAIN}"
       SMTP_PORT: "465"
     envFrom:
       - secretRef:
