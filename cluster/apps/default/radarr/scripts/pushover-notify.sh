@@ -1,4 +1,4 @@
-# yamllint disable
+/* jscpd:ignore-start */
 
 #!/usr/bin/env bash
 
@@ -98,3 +98,4 @@ if [[ "${status_code}" -ne 200 ]] ; then
 else
     printf "%s - Sent notification with status code %s and payload: %s\n" "$(date)" "${status_code}" "$(echo "${notification}" | jq -c)"
 fi
+/* jscpd:ignore-end */
