@@ -1,3 +1,4 @@
+# yamllint disable
 #!/usr/bin/env bash
 
 PUSHOVER_DEBUG="${PUSHOVER_DEBUG:-"true"}"
