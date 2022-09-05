@@ -63,12 +63,12 @@ identity_providers:
         scopes: ["openid", "profile", "email", "offline_access"]
         redirect_uris: ["https://docs.${SECRET_PUBLIC_DOMAIN}/auth/oidc.callback"]
         userinfo_signing_algorithm: none
-      # - id: minio
-      #   description: Minio
-      #   secret: "${SECRET_MINIO_OAUTH_CLIENT_SECRET}"
-      #   public: false
-      #   authorization_policy: two_factor
-      #   pre_configured_consent_duration: 1y
-      #   scopes: ["openid", "profile", "groups", "email"]
-      #   redirect_uris: ["https://minio.${SECRET_PUBLIC_DOMAIN}/oauth_callback"]
-      #   userinfo_signing_algorithm: none
+      - id: minio
+        description: Minio
+        secret: "${SECRET_MINIO_OAUTH_CLIENT_SECRET}"
+        public: false
+        authorization_policy: two_factor
+        pre_configured_consent_duration: 1y
+        scopes: ["openid", "profile", "groups", "email"]
+        redirect_uris: ["https://minio.${SECRET_PUBLIC_DOMAIN}/oauth_callback"]
+        userinfo_signing_algorithm: none
