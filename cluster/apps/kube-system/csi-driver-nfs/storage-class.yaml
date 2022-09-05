@@ -5,7 +5,7 @@ metadata:
   name: nfs-csi
 provisioner: nfs.csi.k8s.io
 parameters:
-  server: "falhallanas.${SECRET_PRIVATE_DOMAIN}"
+  server: "falhallanas.lab"
   share: /nfs/Apps/External/PVCs
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
