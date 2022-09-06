@@ -82,7 +82,7 @@ spec:
         type: nfs
         server: "falhallanas.${SECRET_PRIVATE_DOMAIN}"
         path: /nfs/Media
-        mountPath: /media
+        mountPath: /mnt/media
     resources:
       requests:
         cpu: 10m
