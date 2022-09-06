@@ -29,9 +29,7 @@ packages:
   - openssh-server
   - network-manager
   - conntrack
-  ## Add in CEPH
-  - cephadm
-  - ceph-base
+  - nfs-common
   # TODO(ansible): Might be required for newer Intel CPU generations
   # https://ask.fedoraproject.org/t/intel-graphics-best-practices-and-settings-for-hardware-acceleration/21119
   # - intel-media-driver
