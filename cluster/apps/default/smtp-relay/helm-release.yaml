@@ -33,7 +33,7 @@ spec:
       SMTP_DOMAIN: "${SECRET_EMAIL_DOMAIN}"
       SMTP_SERVER: "smtp-relay.gmail.com"
       SMTP_USERNAME: "cfallwell@${SECRET_EMAIL_DOMAIN}"
-      SMTP_PORT: "465"
+      SMTP_PORT: "587"
     envFrom:
       - secretRef:
           name: *app
