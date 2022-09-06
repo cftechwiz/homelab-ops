@@ -13,7 +13,7 @@ resources:
   #- qbitorrent-jobs
   #- readarr
   #- recyclarr
-  #- sonarr
+  - sonarr
   #- unpackerr
   - echo-server
   - glauth
