@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - dashboard
   - rook-direct-mount
-  - toolbox
+  #- toolbox
