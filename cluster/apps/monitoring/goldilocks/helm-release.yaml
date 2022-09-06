@@ -35,11 +35,9 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-production"
-          external-dns/is-public: "false"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_PRIVATE_DOMAIN}"
         hosts:
-          - host: &host "goldilocks.${SECRET_PUBLIC_DOMAIN}"
+          - host: &host "goldilocks.${SECRET_PRIVATE_DOMAIN}"
             paths:
               - path: /
                 type: Prefix
