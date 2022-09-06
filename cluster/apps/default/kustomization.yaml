@@ -19,7 +19,7 @@ resources:
   - glauth
   - gitea
   - hajimari
-  - minio
+  #- minio
   - postgres
   - redis
   - theme-park
