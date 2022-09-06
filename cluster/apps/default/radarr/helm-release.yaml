@@ -75,9 +75,9 @@ spec:
       media:
         enabled: true
         type: nfs
-        server: "falhallanas.${SECRET_PRIVATE_DOMAIN}"
+        server: "falhallanas.lab"
         path: /nfs/Media
-        mountPath: /media
+        mountPath: /mnt/media
       scripts:
         enabled: true
         type: configMap
