@@ -69,7 +69,7 @@ spec:
       media:
         enabled: true
         type: nfs
-        server: "falhallanas.${SECRET_PRIVATE_DOMAIN}"
+        server: "falhallanas.lab"
         path: /nfs/Media
         mountPath: /media
     podAnnotations:
