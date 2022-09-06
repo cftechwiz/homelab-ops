@@ -91,6 +91,11 @@ spec:
       config:
         enabled: true
         existingClaim: minio-nfs
+      media:
+        enabled: true
+        type: nfs
+        server: "falhallanas.lab"
+        path: /nfs/Apps/External/Minio
         mountPath: /mnt/data
     podAnnotations:
       secret.reloader.stakater.com/reload: *app
