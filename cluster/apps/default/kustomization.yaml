@@ -17,9 +17,9 @@ resources:
   - unpackerr
   - echo-server
   - glauth
-  - gitea
+  #- gitea
   - hajimari
-  - minio
+  #- minio
   - postgres
   - redis
   - theme-park
