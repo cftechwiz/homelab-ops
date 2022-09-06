@@ -23,4 +23,4 @@ resources:
   - postgres
   - redis
   - theme-park
-  - smtp-relay
+  #- smtp-relay
