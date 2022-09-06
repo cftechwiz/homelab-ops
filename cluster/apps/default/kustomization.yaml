@@ -10,7 +10,7 @@ resources:
   - overseerr
   - prowlarr
   - qbittorrent
-  - qbitorrent-jobs
+  - qbittorrent-jobs
   - readarr
   - recyclarr
   - sonarr
