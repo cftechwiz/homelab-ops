@@ -8,14 +8,14 @@ resources:
   #- generic-rules
   - goldilocks
   - grafana
-  #- kube-prometheus-stack
-  #- loki
+  - kube-prometheus-stack
+  - loki
   #- pushgateway
   #- smartctl-exporter
   #- snmp-exporter
   #- speedtest-exporter
   #- sumologic
-  #- thanos
+  - thanos
   #- uptimerobot-heartbeat
   #- vector
   - vpa
