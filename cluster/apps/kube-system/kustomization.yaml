@@ -5,7 +5,7 @@ resources:
   - namespace.yaml
   - cert-manager
   - csi-driver-nfs
-  - kured
+  #- kured
   - metrics-server
   - reflector
   - reloader
