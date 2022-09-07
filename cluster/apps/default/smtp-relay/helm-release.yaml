@@ -32,7 +32,7 @@ spec:
       DEBUG: "true"
       SMTP_DOMAIN: "${SECRET_EMAIL_DOMAIN}"
       SMTP_SERVER: "smtp-relay.gmail.com"
-      SMTP_USERNAME: "cfallwell@${SECRET_EMAIL_DOMAIN}"
+      SMTP_USERNAME: "${SECRET_EMAIL}"
       SMTP_PORT: "25"
     envFrom:
       - secretRef:
