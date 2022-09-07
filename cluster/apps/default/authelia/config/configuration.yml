@@ -22,12 +22,6 @@ access_control:
     - domain: ["navidrome.${SECRET_PUBLIC_DOMAIN}"]
       policy: bypass
       resources: ["^/rest.*$"]
-  webauthn:
-    disable: false
-    display_name: Authelia
-    attestation_conveyance_preference: indirect
-    user_verification: preferred
-    timeout: 60s
 
 identity_providers:
   oidc:
