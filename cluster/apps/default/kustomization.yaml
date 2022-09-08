@@ -9,7 +9,7 @@ resources:
   - intel-gpu-exporter
   - lidarr
   - namespace.yaml
-  #- node-feature-discovery
+  - node-feature-discovery
   - overseerr
   - qbittorrent
   - qbittorrent-jobs
