@@ -28,3 +28,6 @@ resources:
   - theme-park
   - smtp-relay
   - plex
+  - shlink-api
+  - shlink-web
+  - overseerr
