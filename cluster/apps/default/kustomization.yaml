@@ -15,6 +15,7 @@ resources:
   - qbittorrent
   - qbittorrent-jobs
   - readarr
+  - radarr
   - recyclarr
   - sonarr
   - unpackerr
