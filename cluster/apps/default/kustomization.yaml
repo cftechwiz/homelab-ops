@@ -17,7 +17,7 @@ resources:
   - radarr
   - recyclarr
   - sonarr
-  - prowlarr
+  #- prowlarr
   - unpackerr
   - echo-server
   - glauth
