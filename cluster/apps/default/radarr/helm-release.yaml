@@ -77,7 +77,7 @@ spec:
         type: nfs
         server: "falhallanas.lab"
         path: /nfs/Media
-        mountPath: /mnt/media
+        mountPath: /data
       scripts:
         enabled: true
         type: configMap
