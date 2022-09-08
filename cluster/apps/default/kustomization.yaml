@@ -31,3 +31,4 @@ resources:
   - plex
   #- shlink-api
   #- shlink-web
+  - n8n
