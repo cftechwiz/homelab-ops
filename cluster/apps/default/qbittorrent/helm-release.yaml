@@ -84,7 +84,9 @@ spec:
         enabled: true
         type: nfs
         server: "falhallanas.lab"
-        path: /nfs/Media
+        path: /nfs
+        subDir: Media
+        mountPermissions: 0777
         mountPath: /data
     resources:
       requests:
