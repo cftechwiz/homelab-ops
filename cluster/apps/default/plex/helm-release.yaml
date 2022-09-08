@@ -85,7 +85,7 @@ spec:
         mountPath: /media
         readOnly: true
       transcode:
-        enabled: true
+        enabled: false
         type: emptyDir
     # affinity:
     #   nodeAffinity:
