@@ -5,8 +5,11 @@ resources:
   - authelia
   - descheduler
   - excalidraw
+  - intel-gpu-plugin
+  - intel-gpu-exporter
   - lidarr
   - namespace.yaml
+  - node-feature-discovery
   - overseerr
   - prowlarr
   - qbittorrent
