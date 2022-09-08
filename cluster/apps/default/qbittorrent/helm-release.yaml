@@ -85,7 +85,7 @@ spec:
         type: nfs
         server: "falhallanas.lab"
         path: /nfs/Media
-        mountPath: /mnt/media
+        mountPath: /data
     resources:
       requests:
         cpu: 10m
