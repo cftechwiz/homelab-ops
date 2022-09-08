@@ -27,3 +27,4 @@ resources:
   - redis
   - theme-park
   - smtp-relay
+  - plex
