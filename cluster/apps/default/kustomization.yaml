@@ -24,8 +24,8 @@ resources:
   #- gitea
   - hajimari
   #- minio
-  - postgres
-  - redis
+  # - postgres
+  # - redis
   - theme-park
   - smtp-relay
   - plex
