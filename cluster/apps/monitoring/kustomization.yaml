@@ -10,7 +10,7 @@ resources:
   - grafana
   - kube-prometheus-stack
   - loki
-  #- pushgateway
+  - pushgateway
   #- smartctl-exporter
   #- snmp-exporter
   #- speedtest-exporter
