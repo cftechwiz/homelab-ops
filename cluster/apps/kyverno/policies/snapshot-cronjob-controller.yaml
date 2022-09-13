@@ -127,7 +127,7 @@ spec:
                           claimName: "{{ claimName }}"
                       - name: snapshots
                         nfs:
-                          server: "falhallanas.${SECRET_PRIVATE_DOMAIN}"
+                          server: "falhallanas.lab"
                           path: /nas/Apps/External/Kopia
                     affinity:
                       podAffinity:
