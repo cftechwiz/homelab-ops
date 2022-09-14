@@ -128,7 +128,7 @@ spec:
                       - name: snapshots
                         nfs:
                           server: "falhallanas.lab"
-                          path: /nas/Apps/External/Kopia
+                          path: /nfs/Apps/External/Kopia
                     affinity:
                       podAffinity:
                         requiredDuringSchedulingIgnoredDuringExecution:
