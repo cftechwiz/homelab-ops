@@ -5,8 +5,8 @@ resources:
   - authelia
   - descheduler
   - excalidraw
-  #- kopia-jobs
-  #- kopia-web
+  - kopia-jobs
+  - kopia-web
   #- intel-gpu-plugin
   #- intel-gpu-exporter
   - lidarr
@@ -25,12 +25,10 @@ resources:
   - glauth
   #- gitea
   - hajimari
-  #- minio
-  # - postgres
-  # - redis
+  - minio
   - theme-park
   - smtp-relay
   - plex
-  #- shlink-api
+  - shlink-api
   #- shlink-web
   - n8n
