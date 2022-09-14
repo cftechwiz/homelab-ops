@@ -59,8 +59,8 @@ spec:
           volumes:
             - name: snapshots
               nfs:
-                server: "expanse.${SECRET_PRIVATE_DOMAIN}"
-                path: /tycho/Apps/External/Kopia
+                server: "falhallanas.lab"
+                path: /nfs/Apps/External/Kopia
 ---
 apiVersion: batch/v1
 kind: CronJob
@@ -124,8 +124,8 @@ spec:
           volumes:
             - name: snapshots
               nfs:
-                server: "expanse.${SECRET_PRIVATE_DOMAIN}"
-                path: /tycho/Apps/External/Kopia
+                server: "falhallanas.lab"
+                path: /nfs/Apps/External/Kopia
             - name: remote-config
               secret:
                 secretName: *name
