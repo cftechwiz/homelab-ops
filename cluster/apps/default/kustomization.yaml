@@ -5,8 +5,8 @@ resources:
   - authelia
   - descheduler
   - excalidraw
-  - kopia-jobs
-  - kopia-web
+  #- kopia-jobs
+  #- kopia-web
   #- intel-gpu-plugin
   #- intel-gpu-exporter
   - lidarr
