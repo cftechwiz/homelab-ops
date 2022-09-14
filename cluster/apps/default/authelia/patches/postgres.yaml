@@ -13,7 +13,7 @@ spec:
           - name: POSTGRES_HOST
             value: postgres-rw.default.svc.cluster.local
           - name: POSTGRES_DB
-            value: authelia
+            value: authelia1
           - name: POSTGRES_SUPER_PASS
             valueFrom:
               secretKeyRef:
