@@ -1,4 +1,10 @@
 ---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sumologic
+data:
+
 ## Sumo Logic Kubernetes Collection configuration file
 ## All the comments start with two or more # characters
 
