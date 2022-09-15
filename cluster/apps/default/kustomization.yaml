@@ -14,7 +14,7 @@ resources:
   #- node-feature-discovery
   - overseerr
   - qbittorrent
-  - qbittorrent-jobs
+  #- qbittorrent-jobs
   - readarr
   - radarr
   - recyclarr
