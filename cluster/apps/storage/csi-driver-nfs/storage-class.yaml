@@ -5,7 +5,7 @@ metadata:
   name: nfs-csi
 provisioner: nfs.csi.k8s.io
 parameters:
-  server: ""${SECRET_NAS}""
+  server: "${SECRET_NAS}"
   share: /nfs/Apps/External/PVCs
   # csi.storage.k8s.io/provisioner-secret is only needed for providing mountOptions in DeleteVolume
   csi.storage.k8s.io/provisioner-secret-name: "mount-options"

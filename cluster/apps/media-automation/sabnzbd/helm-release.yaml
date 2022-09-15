@@ -74,14 +74,14 @@ spec:
       downloads:
         enabled: true
         type: nfs
-        server: "expanse.${SECRET_PRIVATE_DOMAIN}"
+        server: "${SECTRET_NAS}"
         path: /share/Downloads
         mountPath: /downloads
       media:
         enabled: true
         type: nfs
-        server: "expanse.${SECRET_PRIVATE_DOMAIN}"
-        path: /tycho/Media
+        server: "${SECTRET_NAS}"
+        path: /nfs/Media
         mountPath: /media
       incomplete:
         enabled: true

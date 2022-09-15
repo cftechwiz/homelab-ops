@@ -70,7 +70,7 @@ spec:
                 path: mon-endpoints
         - name: backups
           nfs:
-            server: ""${SECRET_NAS}""
+            server: "${SECRET_NAS}"
             path: /nfs/Apps/External/Backups
         - name: direct-mount-backup-script
           projected:

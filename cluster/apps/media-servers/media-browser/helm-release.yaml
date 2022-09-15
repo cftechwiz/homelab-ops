@@ -70,7 +70,7 @@ spec:
       media:
         enabled: true
         type: nfs
-        server: ""${SECRET_NAS}""
+        server: "${SECRET_NAS}"
         path: /nfs/Media
         mountPath: /media
     resources:

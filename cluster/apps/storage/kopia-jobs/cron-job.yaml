@@ -59,7 +59,7 @@ spec:
           volumes:
             - name: snapshots
               nfs:
-                server: ""${SECRET_NAS}""
+                server: "${SECRET_NAS}"
                 path: /nfs/Apps/External/Kopia
 ---
 apiVersion: batch/v1
@@ -124,7 +124,7 @@ spec:
           volumes:
             - name: snapshots
               nfs:
-                server: ""${SECRET_NAS}""
+                server: "${SECRET_NAS}"
                 path: /nfs/Apps/External/Kopia
             - name: remote-config
               secret:

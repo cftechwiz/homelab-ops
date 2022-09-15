@@ -84,7 +84,7 @@ spec:
       media:
         enabled: true
         type: nfs
-        server: ""${SECRET_NAS}""
+        server: "${SECRET_NAS}"
         path: /nfs
         subDir: Media
         mountPermissions: 0777
