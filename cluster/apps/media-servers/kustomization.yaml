@@ -7,4 +7,4 @@ resources:
   - media-browser
   #- navidrome
   - plex
-  - plex-jobs
+  #- plex-jobs
