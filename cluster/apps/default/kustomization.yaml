@@ -30,5 +30,5 @@ resources:
   - smtp-relay
   - plex
   - shlink-api
-  #- shlink-web
+  - shlink-web
   - n8n
