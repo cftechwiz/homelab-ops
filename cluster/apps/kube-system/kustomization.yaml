@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: kube-system
 resources:
   - cert-manager
+  - csi-driver-nfs
   - kube-vip
   #- kured
   - metrics-server
