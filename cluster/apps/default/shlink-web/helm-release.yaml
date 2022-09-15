@@ -29,7 +29,7 @@ spec:
       repository: ghcr.io/shlinkio/shlink-web-client
       tag: 3.7.2
     env:
-      SHLINK_SERVER_URL: "https://ln.${SECRET_PUBLIC_DOMAIN}"
+      SHLINK_SERVER_URL: "https://ln.${SECRET_DOMAIN}"
     envFrom:
       - secretRef:
           name: *app
@@ -43,13 +43,14 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         hosts:
-          - host: &host "shlink.${SECRET_PUBLIC_DOMAIN}"
+          - host: &host "shlink.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
               - *host
+              secretName: "shlink-server-tls"
     topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
