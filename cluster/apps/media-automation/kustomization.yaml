@@ -10,7 +10,7 @@ resources:
   - radarr
   - readarr
   - recyclarr
-  - sabnzbd
+  #- sabnzbd
   - sonarr
   - tautulli
   - unpackerr
