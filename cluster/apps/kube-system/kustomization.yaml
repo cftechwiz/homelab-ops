@@ -4,9 +4,8 @@ kind: Kustomization
 resources:
   - namespace.yaml
   - cert-manager
-  - csi-driver-nfs
+  - kube-vip
   #- kured
   - metrics-server
   - reflector
   - reloader
-  - kube-vip
