@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: default
 resources:
   - echo-server
-  - excelidraw
+  - excalidraw
   - hajimari
   #- miniflux
   - shlink-api
