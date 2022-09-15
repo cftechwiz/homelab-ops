@@ -5,6 +5,6 @@ namespace: default
 resources:
   - jellyfin
   - media-browser
-  - navidrome
+  #- navidrome
   - plex
   - plex-jobs
