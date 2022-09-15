@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: default
+resources:
+  - echo-server
+  - excelidraw
+  - hajimari
+  #- miniflux
+  - shlink-api
+  - shlink-web
+  - smtp-relay
+  - theme-park
