@@ -94,7 +94,7 @@ spec:
       snapshots:
         enabled: true
         type: nfs
-        server: ""${SECRET_NAS}""
+        server: "${SECRET_NAS}"
         path: /nfs/Apps/External/Kopia
         mountPath: /snapshots
     podAnnotations:

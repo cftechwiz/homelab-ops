@@ -60,7 +60,7 @@ spec:
       complete:
         enabled: true
         type: nfs
-        server: ""${SECRET_NAS}""
+        server: "${SECRET_NAS}"
         path: /nfs/Media/downloads/torrents/
         mountPath: /nfs/complete
     podAnnotations:

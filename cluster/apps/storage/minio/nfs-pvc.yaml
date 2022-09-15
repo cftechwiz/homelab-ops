@@ -11,7 +11,7 @@ spec:
   storageClassName: minio-nfs
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: ""${SECRET_NAS}""
+    server: "${SECRET_NAS}"
     path: /nfs/Apps/External/Minio
   mountOptions:
     - nfsvers=4.2
