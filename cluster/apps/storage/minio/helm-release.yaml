@@ -36,7 +36,7 @@ spec:
       MINIO_IDENTITY_OPENID_CLIENT_ID: minio
       MINIO_IDENTITY_OPENID_CLIENT_SECRET: "${SECRET_MINIO_OAUTH_CLIENT_SECRET}"
       MINIO_IDENTITY_OPENID_SCOPES: "openid,profile,email,groups"
-      MINIO_IDENTITY_OPENID_REDIRECT_URI: "https://minio.${SECRET_DOMAIN}/oauth_callback"
+      MINIO_IDENTITY_OPENID_REDIRECT_URI: 'https://minio.${SECRET_DOMAIN}/oauth_callback'
     envFrom:
       - secretRef:
           name: *app
