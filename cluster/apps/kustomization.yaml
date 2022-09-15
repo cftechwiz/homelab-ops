@@ -2,12 +2,20 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  #- calico-system
+  - namespaces.yaml
+  - authentication
   - databases
-  - default
+  - development
+  - documentation
+  - downloaders
   - flux-system
+  - home-automation
   - kube-system
-  - kyverno
+  - kube-tools
+  - media-automation
+  - media-servers
+  - miscellaneous
   - monitoring
   - networking
-  #- system-upgrade
+  - storage
+  - web-tools
