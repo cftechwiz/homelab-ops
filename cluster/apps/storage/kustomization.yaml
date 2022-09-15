@@ -5,4 +5,4 @@ namespace: default
 resources:
   - kopia-web
   - kopia-jobs
-  #- minio
+  - minio
