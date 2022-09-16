@@ -27,11 +27,11 @@ spec:
       repository: quay.io/prometheus/blackbox-exporter
     ingress:
       enabled: true
-      className: nginx
-        annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-production"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
-          external-dns/is-public: "true"
+      ingressClassName: nginx
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
+        external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        external-dns/is-public: "true"
       hosts:
         - host: &host "blackbox.${SECRET_DOMAIN}"
           paths:
