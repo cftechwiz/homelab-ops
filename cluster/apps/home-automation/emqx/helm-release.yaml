@@ -42,9 +42,9 @@ spec:
         pathType: Prefix
         hosts:
           - &host "emqx.${SECRET_PUBLIC_DOMAIN}"
-        # tls:
-        #   - hosts:
-        #       - *host
+        tls:
+          - hosts:
+              - *host
     metrics:
       enabled: false
     persistence:

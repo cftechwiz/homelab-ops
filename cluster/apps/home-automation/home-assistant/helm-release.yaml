@@ -59,9 +59,9 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-        # tls:
-        #   - hosts:
-        #       - *host
+        tls:
+          - hosts:
+              - *host
     probes:
       liveness:
         enabled: false
@@ -106,9 +106,9 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
-          # tls:
-          #   - hosts:
-          #       - *host
+          tls:
+            - hosts:
+                - *host
         volumeMounts:
           - name: config
             mountPath: /config
