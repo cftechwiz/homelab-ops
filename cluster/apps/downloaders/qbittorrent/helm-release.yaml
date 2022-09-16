@@ -52,7 +52,7 @@ spec:
         ingressClassName: "nginx"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_PUBLIC_DOMAIN}"
           external-dns.home.arpa/enabled: "true"
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_hide_header "x-webkit-csp";
@@ -62,7 +62,7 @@ spec:
             sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.${SECRET_PUBLIC_DOMAIN}/css/base/qbittorrent/nord.css"></head>';
             sub_filter_once on;
         hosts:
-          - host: &host "qb.${SECRET_DOMAIN}"
+          - host: &host "qb.${SECRET_PUBLIC_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
