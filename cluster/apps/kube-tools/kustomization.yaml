@@ -4,6 +4,6 @@ kind: Kustomization
 namespace: default
 resources:
   - descheduler
-  #- kyverno
+  - kyverno
   - node-feature-discovery
   - system-upgrade
