@@ -2,7 +2,7 @@
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
-  name: apply-ingress-external-dns-annotations
+  name: apply-ingress-external-dns-annotations2
   annotations:
     policies.kyverno.io/title: Apply Ingress External-DNS Annotations
     policies.kyverno.io/subject: Ingress
