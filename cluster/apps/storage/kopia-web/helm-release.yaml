@@ -71,7 +71,7 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: "kopia-tls-request"
+            secretName: kopia-tls-request
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568
