@@ -45,6 +45,10 @@ spec:
       main:
         enabled: true
         ingressClassName: "nginx"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_PUBLIC_DOMAIN}"
+          external-dns/is-public: "true"
         hosts:
           - host: &host "{{ .Release.Name }}.${SECRET_PUBLIC_DOMAIN}"
             paths:
@@ -53,6 +57,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: jellyfin-tls-certificate
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568

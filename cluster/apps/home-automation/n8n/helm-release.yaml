@@ -65,6 +65,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: n8n-tls-certificate
     persistence:
       config:
         enabled: true

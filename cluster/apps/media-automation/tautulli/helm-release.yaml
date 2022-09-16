@@ -38,7 +38,7 @@ spec:
         ingressClassName: "nginx"
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_PUBLIC_DOMAIN}"
           external-dns/is-public: "true"
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Accept-Encoding "";
@@ -52,6 +52,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: tautuli-tls-certificate
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568

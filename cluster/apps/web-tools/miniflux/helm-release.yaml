@@ -67,6 +67,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: miniflux-tls-certificate
     probes:
       liveness: &probes
         enabled: true

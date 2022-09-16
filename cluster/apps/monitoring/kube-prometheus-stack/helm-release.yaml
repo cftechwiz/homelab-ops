@@ -89,12 +89,13 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           external-dns/is-public: "false"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_PUBLIC_DOMAIN}"
         hosts:
           - &host "alert-manager.${SECRET_PUBLIC_DOMAIN}"
         tls:
           - hosts:
               - *host
+            secretName: alertmgr-tls-certificate
       alertmanagerSpec:
         replicas: 3
         podAntiAffinity: hard
@@ -172,12 +173,13 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           external-dns/is-public: "false"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_PUBLIC_DOMAIN}"
         hosts:
           - &host "prometheus.${SECRET_PUBLIC_DOMAIN}"
         tls:
           - hosts:
               - *host
+            secretName: prometheus-tls-certificate
       thanosService:
         enabled: true
       thanosServiceMonitor:
@@ -189,7 +191,7 @@ spec:
         annotations:
           cert-manager.io/cluster-issuer: "letsencrypt-production"
           external-dns/is-public: "false"
-          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_PUBLIC_DOMAIN}"
           nginx.ingress.kubernetes.io/ssl-redirect: "true"
           nginx.ingress.kubernetes.io/backend-protocol: "GRPC"
         hosts:
@@ -197,6 +199,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: thanos-tls-certificate
       prometheusSpec:
         replicas: 3
         replicaExternalLabelName: __replica__

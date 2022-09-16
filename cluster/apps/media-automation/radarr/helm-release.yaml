@@ -46,9 +46,9 @@ spec:
         enabled: true
         ingressClassName: "nginx"
         annotations:
-          # cert-manager.io/cluster-issuer: "letsencrypt-production"
-          # external-dns/is-public: "true"
-          # external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          external-dns/is-public: "true"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_PUBLIC_DOMAIN}"
           nginx.ingress.kubernetes.io/configuration-snippet: |
             proxy_set_header Accept-Encoding "";
             sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.${SECRET_PUBLIC_DOMAIN}/css/base/radarr/nord.css"></head>';
@@ -61,6 +61,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: radarr-tls-certificate
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568

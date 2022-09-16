@@ -62,6 +62,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: hass-tls-certificate
     probes:
       liveness:
         enabled: false
@@ -109,6 +110,7 @@ spec:
           tls:
             - hosts:
                 - *host
+              secretName: hass-code-tls-certificate
         volumeMounts:
           - name: config
             mountPath: /config

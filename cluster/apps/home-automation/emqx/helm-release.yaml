@@ -45,6 +45,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: emqx-tls-certificate
     metrics:
       enabled: false
     persistence:

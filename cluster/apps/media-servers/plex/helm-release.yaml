@@ -64,6 +64,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: plex-tls-certificate
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568

@@ -80,6 +80,7 @@ spec:
           - hosts:
               - *host-console
               - *host-api
+            secretName: minio-tls-certificate
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568

@@ -54,6 +54,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: shlink-web-tls-certificate
     topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: kubernetes.io/hostname
