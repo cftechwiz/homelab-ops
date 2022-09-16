@@ -131,7 +131,7 @@ spec:
       tls:
         - hosts:
             - *host
-          secretName: grafana-tls-certificate
+          secretName: grafana-tls-certificates
     persistence:
       enabled: false
     affinity:
