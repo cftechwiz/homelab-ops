@@ -6,8 +6,8 @@ resources:
   - blackbox-exporter
   #- generic-rules
   - goldilocks
-  #- grafana
-  #- kube-prometheus-stack
+  - grafana
+  - kube-prometheus-stack
   - loki
   - pushgateway
   - smartctl-exporter
