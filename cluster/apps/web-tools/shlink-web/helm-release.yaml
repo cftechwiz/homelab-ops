@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 0.1.1
+      version: 0.2.1
       sourceRef:
         kind: HelmRepository
         name: bjw-s-charts
@@ -27,7 +27,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: ghcr.io/shlinkio/shlink-web-client
-      tag: 3.7.2
+      tag: 3.7.3
     env:
       SHLINK_SERVER_URL: "https://ln.${SECRET_PUBLIC_DOMAIN}"
     envFrom:
