@@ -43,7 +43,7 @@ spec:
       tls:
         - hosts:
             - *host
-          secretName: gitea_tls_certificate
+          secretName: gitea-tls-certificate
     memcached:
       enabled: false
     postgresql:
