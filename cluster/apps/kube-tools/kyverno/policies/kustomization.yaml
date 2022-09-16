@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - apply-ingress-auth-annotations.yaml
   - apply-ingress-external-dns-annotations.yaml
+  - apply-ingress-external-dns-annotations2.yaml
   - apply-ingress-whitelist-annotations.yaml
   - delete-cpu-limits.yaml
   - snapshot-cronjob-controller.yaml
