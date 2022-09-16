@@ -67,7 +67,7 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: mediaBrowser-tls-certificate
+            secretName: media-browser-tls-certificate
     persistence:
       config:
         enabled: true
