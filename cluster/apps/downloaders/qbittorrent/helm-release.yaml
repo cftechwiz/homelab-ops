@@ -69,7 +69,7 @@ spec:
         tls:
           - hosts:
               - *host
-            secretName: "qb-tls"
+            secretName: qbitorrent-tls
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568
