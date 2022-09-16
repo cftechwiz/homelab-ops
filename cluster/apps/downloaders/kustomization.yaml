@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: default
 resources:
   - qbittorrent
-  - qbittorrent-jobs
+  #- qbittorrent-jobs
