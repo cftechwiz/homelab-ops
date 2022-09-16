@@ -128,9 +128,9 @@ spec:
         external-dns/is-public: "true"
       hosts:
         - &host "grafana.${SECRET_PUBLIC_DOMAIN}"
-      tls:
-        - hosts:
-            - *host
+      # tls:
+      #   - hosts:
+      #       - *host
     persistence:
       enabled: false
     affinity:

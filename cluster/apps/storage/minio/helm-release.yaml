@@ -76,10 +76,10 @@ spec:
                 pathType: Prefix
                 service:
                   port: *port-api
-        tls:
-          - hosts:
-              - *host-console
-              - *host-api
+        # tls:
+        #   - hosts:
+        #       - *host-console
+        #       - *host-api
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568

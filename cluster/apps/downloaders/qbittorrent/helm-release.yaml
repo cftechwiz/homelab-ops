@@ -66,10 +66,10 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
-        tls:
-          - hosts:
-              - *host
-            secretName: "qb-tls"
+        # tls:
+        #   - hosts:
+        #       - *host
+        #     secretName: "qb-tls"
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568

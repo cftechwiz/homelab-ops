@@ -41,9 +41,9 @@ spec:
             paths:
               - path: /
                 type: Prefix
-        tls:
-          - hosts:
-              - *host
+        # tls:
+        #   - hosts:
+        #       - *host
       resources:
         requests:
           cpu: 10m
