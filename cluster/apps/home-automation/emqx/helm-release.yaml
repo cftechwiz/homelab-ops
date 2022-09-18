@@ -55,7 +55,7 @@ spec:
     persistence:
       enabled: true
       storageClass: ceph-block
-        size: 100Mi
+      size: 100Mi
     # affinity:
     #   podAntiAffinity:
     #     preferredDuringSchedulingIgnoredDuringExecution:
