@@ -25,6 +25,7 @@ spec:
           - resources:
               annotations:
                 external-dns.home.arpa/enabled: "true"
+                external-dns/is-public: "true"
       mutate:
         patchStrategicMerge:
           metadata:
