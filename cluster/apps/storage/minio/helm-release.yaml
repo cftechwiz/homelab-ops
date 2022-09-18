@@ -67,7 +67,6 @@ spec:
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
             proxy_set_header X-Forwarded-Proto $scheme;
             proxy_set_header Host $http_host;
-            proxy_pass http://minio.falhalla.com:9000;
         hosts:
           - host: &host-console "{{ .Release.Name }}.${SECRET_PUBLIC_DOMAIN}"
             paths:
