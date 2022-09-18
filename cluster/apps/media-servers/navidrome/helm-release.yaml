@@ -60,6 +60,7 @@ spec:
         tls:
           - hosts:
               - *host
+            secretName: navi-tls-certificate
     podSecurityContext:
       runAsUser: 568
       runAsGroup: 568
