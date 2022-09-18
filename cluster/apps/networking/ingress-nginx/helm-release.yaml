@@ -27,7 +27,7 @@ spec:
       namespace: kube-system
   values:
     controller:
-      replicaCount: 1
+      replicaCount: 3
       extraEnvs:
         - name: TZ
           value: "${TIMEZONE}"
@@ -45,7 +45,7 @@ spec:
         client-body-buffer-size: "100M"
         client-body-timeout: 120
         custom-http-errors: |-
-          401,403,404,500,501,502,503
+          400,401,403,404,500,502,503,504
         enable-brotli: "true"
         forwarded-for-header: "CF-Connecting-IP"
         hsts-max-age: "31449600"
@@ -55,7 +55,23 @@ spec:
         ssl-protocols: "TLSv1.3 TLSv1.2"
         use-forwarded-headers: "true"
       metrics:
-        enabled: false
+        enabled: true
+        serviceMonitor:
+          enabled: true
+          namespace: default
+          namespaceSelector:
+            any: true
+      extraArgs:
+        default-ssl-certificate: |-
+          default/${SECRET_PUBLIC_DOMAIN/./-}-tls
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app.kubernetes.io/name: ingress-nginx
+              app.kubernetes.io/component: controller
       podAnnotations:
         configmap.reloader.stakater.com/reload: "cloudflare-proxied-networks"
       resources:
@@ -69,12 +85,26 @@ spec:
       image:
         repository: ghcr.io/tarampampam/error-pages
         tag: 2.18.0
-      replicaCount: 1
+      replicaCount: 3
       extraEnvs:
         - name: TEMPLATE_NAME
           value: lost-in-space
         - name: SHOW_DETAILS
           value: "false"
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app.kubernetes.io/name
+                      operator: In
+                      values: ["ingress-nginx"]
+                    - key: app.kubernetes.io/component
+                      operator: In
+                      values: ["default-backend"]
+                topologyKey: kubernetes.io/hostname
   valuesFrom:
     # Cloudflare Networks
     # https://www.cloudflare.com/ips/
