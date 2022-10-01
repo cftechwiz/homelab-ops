@@ -265,7 +265,7 @@ sumologic:
       image:
         ## TODO: Serve this image from the sumologic public ECR
         repository: public.ecr.aws/nginx/nginx
-        tag: 1.21-alpine
+        tag: 1.23-alpine
         pullPolicy: IfNotPresent
       resources:
         limits:
