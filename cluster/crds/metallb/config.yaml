@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   namespace: metallb-system
   name: config
+install:
+  createNamespace: true
 data:
   config: |
     peers:

@@ -5,6 +5,8 @@ metadata:
   creationTimestamp: null
   name: peer1
   namespace: metallb-system
+  install:
+    createNamespace: true
 spec:
   holdTime: 1m30s
   keepaliveTime: 0s
