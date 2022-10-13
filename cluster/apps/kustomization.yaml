@@ -10,15 +10,15 @@ resources:
 
 ## After Core
 
-  # - authentication
-  # - databases
-  # - development
-  # - documentation
-  # - downloaders
-  # - home-automation
-  # - media-automation
-  # - media-servers
-  # - miscellaneous
-  # - monitoring
-  # - storage
-  # - web-tools
+  - authentication
+  - databases
+  - development
+  - documentation
+  - downloaders
+  - home-automation
+  - media-automation
+  - media-servers
+  - miscellaneous
+  - monitoring
+  - storage
+  - web-tools
