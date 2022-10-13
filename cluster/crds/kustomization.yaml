@@ -7,4 +7,3 @@ resources:
   - cloudnative-pg
   - kube-prometheus-stack
   - rook-ceph
-  #- Otel

@@ -11,14 +11,14 @@ resources:
 
 ## After Core
 
-  #- authentication
-  #- databases
-  #- development
-  #- documentation
-  #- downloaders
-  #- home-automation
-  #- media-automation
-  #- media-servers
-  #- miscellaneous
-  #- monitoring
-  #- web-tools
+  - authentication
+  - databases
+  - development
+  - documentation
+  - downloaders
+  - home-automation
+  - media-automation
+  - media-servers
+  - miscellaneous
+  - monitoring
+  - web-tools

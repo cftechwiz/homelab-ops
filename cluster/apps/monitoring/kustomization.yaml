@@ -18,3 +18,4 @@ resources:
   #- uptimerobot-heartbeat
   #- vector
   - vpa
+  #- open-telemetry
