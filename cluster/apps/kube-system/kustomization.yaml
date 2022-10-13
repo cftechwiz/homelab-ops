@@ -6,7 +6,7 @@ resources:
   - cert-manager
   - csi-driver-nfs
   - kube-vip
-  #- kured
+  # - kured
   - metrics-server
   - reflector
   - reloader
