@@ -14,8 +14,6 @@ spec:
   dependsOn:
     - name: core
     - name: crds
-    - name: rook-ceph-cluster
-      namespace: rook-ceph
   decryption:
     provider: sops
     secretRef:
