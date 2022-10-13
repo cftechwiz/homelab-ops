@@ -6,6 +6,5 @@ resources:
   - cloudflare-ddns
   - external-dns
   - ingress-nginx
-  - metallb
   - k8s-gateway
   - tigera-operator
