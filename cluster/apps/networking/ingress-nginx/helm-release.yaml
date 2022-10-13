@@ -32,9 +32,7 @@ spec:
         - name: TZ
           value: "${TIMEZONE}"
       service:
-        annotations:
-          metallb.universe.tf/loadBalancerIPs: |-
-            ${METALLB_INGRESS_ADDR}
+        externalIPs: ["${SVC_NGINX_ADDR}"]
         externalTrafficPolicy: Local
       publishService:
         enabled: true
