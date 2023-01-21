@@ -6,7 +6,7 @@ resources:
   - flux-system
   - kube-system
   - kube-tools
-  - networking
+  # - networking
   # - tigera-operator
 
 ## After Core
