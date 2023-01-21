@@ -6,14 +6,40 @@
         "**/provision/ansible/**/*.sops.yml": "yaml",
         "**/provision/ansible/**/inventory/**/*.yml": "yaml",
         "**/provision/terraform/**/*.tf": "terraform",
-        "**/cluster/**/*.sops.toml": "plaintext"
+        "**/kubernetes/**/*.sops.toml": "plaintext"
     },
-    "prettier.configPath": ".github/linters/.prettierrc.yaml",
-    "prettier.ignorePath": ".github/linters/.prettierignore",
+    "material-icon-theme.folders.associations": {
+        ".taskfiles": "utils",
+        "bootstrap": "import",
+        "charts": "kubernetes",
+        "hack": "scripts",
+        "repositories": "database",
+        "terraforms": "terraform",
+        "vars": "other",
+        // namespaces
+        "cert-manager": "guard",
+        "external-secrets": "keys",
+        "kube-system": "kubernetes",
+        "monitoring": "event",
+        "networking": "connection",
+        "rook-ceph": "dump",
+    },
+    "yaml.schemaStore.enable": true,
     "yaml.schemas": {
-        "Kubernetes": "cluster/*.yaml"
+      "ansible": "ansible/**/*.yml",
+      "kubernetes": "kubernetes/**/*.yaml"
     },
+    "editor.fontFamily": "FiraCode Nerd Font",
+    "editor.fontLigatures": true,
     "editor.bracketPairColorization.enabled": true,
-    "editor.guides.bracketPairs":"active",
-    "editor.hover.delay": 1500
+    "editor.guides.bracketPairs": true,
+    "editor.guides.bracketPairsHorizontal": true,
+    "editor.guides.highlightActiveBracketPair": true,
+    "editor.hover.delay": 1500,
+    "editor.stickyScroll.enabled": false,
+    "editor.rulers": [
+      100
+    ],
+    "explorer.autoReveal": false,
+    "files.trimTrailingWhitespace": true,
 }
