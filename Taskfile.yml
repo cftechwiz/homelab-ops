@@ -4,27 +4,35 @@ version: "3"
 vars:
   PROJECT_DIR:
     sh: "git rev-parse --show-toplevel"
-  CLUSTER_DIR: "{{.PROJECT_DIR}}/cluster"
-  ANSIBLE_DIR: "{{.PROJECT_DIR}}/provision/ansible"
+  ANSIBLE_DIR: "{{.ROOT_DIR}}/ansible"
+  CLUSTER_DIR: "{{.ROOT_DIR}}/kubernetes"
   TERRAFORM_DIR: "{{.PROJECT_DIR}}/provision/terraform"
 
 dotenv: [".config.env"]
 
 env:
-  KUBECONFIG: "{{.PROJECT_DIR}}/provision/kubeconfig"
+  KUBECONFIG: "{{.ANSIBLE_DIR}}/kubernetes/kubeconfig"
 
 includes:
-  an: .taskfiles/AnsibleTasks.yml
-  cl: .taskfiles/ClusterTasks.yml
-  pc: .taskfiles/PrecommitTasks.yml
-  tf: .taskfiles/TerraformTasks.yml
+  ansible: .taskfiles/AnsibleTasks.yml
+  cluster: .taskfiles/ClusterTasks.yml
+  precommit: .taskfiles/PrecommitTasks.yml
+  terraform: .taskfiles/TerraformTasks.yml
   sops: .taskfiles/SopsTasks.yml
+  an: .taskfiles/Ansible/Tasks.yml
   es: .taskfiles/ExternalSecrets/Tasks.yml
   fx: .taskfiles/Flux/Tasks.yml
   ku: .taskfiles/Kubernetes/Tasks.yml
   vs: .taskfiles/VolSync/Tasks.yml
 
 tasks:
+
+  default:
+    silent: true
+    cmds: ["task -l"]
+
+
+
 
   init:
     desc: Initialize workstation dependencies with Brew
