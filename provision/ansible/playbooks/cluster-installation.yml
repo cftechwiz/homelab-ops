@@ -68,7 +68,7 @@
       ansible.builtin.replace:
         path: "{{ repo_abs_path.stdout }}/provision/kubeconfig"
         regexp: "https://127.0.0.1:6443"
-        replace: "https://{{ k3s_registration_address }}:6444"
+        replace: "https://{{ k3s_registration_address }}:6443"
 
     # Cleaning up the manifests from the /var/lib/rancher/k3s/server/manifests
     # directory is needed because k3s has an awesome
