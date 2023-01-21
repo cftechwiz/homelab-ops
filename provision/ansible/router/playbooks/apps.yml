@@ -1,7 +1,7 @@
 ---
 - name: Configure Opnsense
   hosts:
-    - opnsense
+    - unifi
   become: false
   gather_facts: false
   any_errors_fatal: true
@@ -9,6 +9,6 @@
     - name: Deploy k8s_gateway
       role: "k8s_gateway.router"
       tags: [k8s_gateway]
-    - name: Deploy FRR Exporter
-      role: "frr_exporter.router"
-      tags: [frr_exporter]
+    # - name: Deploy FRR Exporter
+    #   role: "frr_exporter.router"
+    #   tags: [frr_exporter]

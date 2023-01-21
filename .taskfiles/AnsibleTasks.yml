@@ -29,6 +29,12 @@ tasks:
     cmds:
       - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/metal-prepare.yml
 
+  router:
+    desc: Provision Router w/CoreDNS
+    dir: provision/router
+    cmds:
+      - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/apps.yml
+
   install:
     desc: Install Kubernetes on the nodes
     dir: provision/ansible
