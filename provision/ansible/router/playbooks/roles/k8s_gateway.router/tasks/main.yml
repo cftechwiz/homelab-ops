@@ -40,7 +40,7 @@
 - name: Create k8s_gateway log rotation config
   ansible.builtin.template:
     src: k8s_gateway-newsyslog.conf.j2
-    dest: /etc/newsyslog.conf.d/k8s_gateway
+    dest: /etc/syslog.conf.d/k8s_gateway
     mode: 0755
 
 - name: Configure k8s_gateway
