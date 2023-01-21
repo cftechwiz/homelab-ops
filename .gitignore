@@ -5,6 +5,7 @@ Thumbs.db
 kubeconfig
 # vscode-sops
 .decrypted~*.yaml
+.Archive
 .config.env
 *.agekey
 *.pub

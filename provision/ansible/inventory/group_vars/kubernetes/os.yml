@@ -3,7 +3,7 @@
 timezone: "America/Chicago"
 
 # (list) Additional ssh public keys to add to the nodes
-ssh_authorized_keys: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOdorMN2jRq08LisRe1qubhOCa9/LdweToE8U0cMu1E13uuRswgGWmFVP1jgIm5AhsgvK6+9tryb2Hja1gWmo/2IvuqZrM2HHbJxv9rJjzDfMZj4aiRv8BwNLuwFnTMbzBF4/ak++0okXYhYGZX9D3py8uoRF9hxP4Etn2HIWIBtB49sq53ltbnZD9LqUUEIW1VWWt1B/NxoxHfGHyncmZGBlQg1spu1Ikk8DedYjn0XdT5L5Ms+yr+I4BDSJhGHPBifLYiMzMR5vqryPNpf3LbrHSZgc4L+diuFs3iDjoQ6YnRbxeTwafg268I38RV8SpLBt+uNzYVJTGjUezA6rh colinfallwell@iMac-Pro.attlocal.net
+ssh_authorized_keys: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOdorMN2jRq08LisRe1qubhOCa9/LdweToE8U0cMu1E13uuRswgGWmFVP1jgIm5AhsgvK6+9tryb2Hja1gWmo/2IvuqZrM2HHbJxv9rJjzDfMZj4aiRv8BwNLuwFnTMbzBF4/ak++0okXYhYGZX9D3py8uoRF9hxP4Etn2HIWIBtB49sq53ltbnZD9LqUUEIW1VWWt1B/NxoxHfGHyncmZGBlQg1spu1Ikk8DedYjn0XdT5L5Ms+yr+I4BDSJhGHPBifLYiMzMR5vqryPNpf3LbrHSZgc4L+diuFs3iDjoQ6YnRbxeTwafg268I38RV8SpLBt+uNzYVJTGjUezA6rh
 sshd_Port: 22
 sshd_PermitRootLogin: 'yes'
 sshd_ChallengeResponseAuthentication: 'no'
@@ -13,7 +13,9 @@ sshd_ClientAliveInterval: 0
 sshd_ClientAliveCountMax: 3
 sshd_PasswordAuthentication: 'yes'
 sshd_Banner: 'none'
-packages:
+packages_repositories:
+  - ppa:fish-shell/release-3
+packages_install:
   - ansible
   - apt-utils
   - hdparm
@@ -30,12 +32,25 @@ packages:
   - network-manager
   - conntrack
   - nfs-common
-  # TODO(ansible): Might be required for newer Intel CPU generations
-  # https://ask.fedoraproject.org/t/intel-graphics-best-practices-and-settings-for-hardware-acceleration/21119
-  # - intel-media-driver
-  # - mesa-dri-drivers
-  # - libva-intel-driver
-  # - libva-intel-hybrid-driver
-  # - libva-utils
-  # - libva-vdpau-driver
-  # - libvdpau-va-gl
+  - arptables
+  - cacertificates
+  - curl
+  - ebtables
+  - fish
+  - fzf
+  - gdisk
+  - iptools-ping
+  - lm-sensors
+  - lvm2
+  - net-tools
+  - ntpupdate
+  - open-iscsi
+  - psmisc
+  - python3-kubernetes
+  - python3-yaml
+  - smartmontools
+  - software-properties-common
+  - unzip
+packages_remove:
+  - apparmor
+  - ufw

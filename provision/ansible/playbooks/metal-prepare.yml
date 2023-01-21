@@ -181,6 +181,37 @@
             path: /etc/fstab
             regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
             replace: '# \1'
+    # - name: finalize configuration with storage configuration
+    #   block:
+    #     - name: Perform a discovery on 172.16.70.155 and show available target nodes
+    #       community.general.open_iscsi:
+    #         show_nodes: true
+    #         discover: true
+    #         ip: 172.16.70.155
+
+    #     - name: Connect to the named target, after updating the local persistent database (cache)
+    #       community.general.open_iscsi:
+    #         login: true
+    #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server1.67e5db
+    #       when: ansible_host == server1
+            
+    #     - name: Connect to the named target, after updating the local persistent database (cache)
+    #       community.general.open_iscsi:
+    #         login: true
+    #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server2.67e5db
+    #       when: ansible_host == server2
+
+    #     - name: Connect to the named target, after updating the local persistent database (cache)
+    #       community.general.open_iscsi:
+    #         login: true
+    #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server3.67e5db
+    #       when: ansible_host == server3
+
+    #     - name: Connect to the named target, after updating the local persistent database (cache)
+    #       community.general.open_iscsi:
+    #         login: true
+    #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.shared.67e5db
+
       notify: Reboot
   handlers:
     - name: Reboot

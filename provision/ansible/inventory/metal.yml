@@ -4,8 +4,14 @@ kubernetes:
     metal:
       hosts:
         server1:
-          ansible_host: 172.16.70.10
-        server2:
-          ansible_host: 172.16.70.20
-        server3:
           ansible_host: 172.16.70.30
+        server2:
+          ansible_host: 172.16.70.31
+        server3:
+          ansible_host: 172.16.70.32
+        # k8s-3:
+        #   ansible_host: 172.16.70.33
+        # k8s-4:
+        #   ansible_host: 172.16.70.34
+        # k8s-5:
+        #   ansible_host: 172.16.70.35
