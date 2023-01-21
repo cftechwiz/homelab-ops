@@ -23,16 +23,16 @@
     - name: Download k8s_gateway
       ansible.builtin.get_url:
         url: "{{ k8s_gateway_download_url }}"
-        dest: "/tmp/k8s_gateway_{{ k8s_gateway_version }}_freebsd_amd64.tar.gz"
+        dest: "/tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_amd64.tar.gz"
         mode: 0755
     - name: Extract k8s_gateway
       ansible.builtin.shell:
         cmd: >-
-          mkdir -p /tmp/k8s_gateway_{{ k8s_gateway_version }}_freebsd_amd64;
-          tar xvf /tmp/k8s_gateway_{{ k8s_gateway_version }}_freebsd_amd64.tar.gz -C /tmp/k8s_gateway_{{ k8s_gateway_version }}_freebsd_amd64
+          mkdir -p /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_amd64;
+          tar xvf /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_amd64.tar.gz -C /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_amd64
     - name: Move k8s_gateway binary into place
       ansible.builtin.copy:
-        src: /tmp/k8s_gateway_{{ k8s_gateway_version }}_freebsd_amd64/coredns
+        src: /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_amd64/coredns
         dest: /usr/local/sbin/k8s_gateway
         mode: 0755
         remote_src: true
