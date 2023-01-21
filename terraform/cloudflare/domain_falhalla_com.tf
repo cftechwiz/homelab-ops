@@ -4,7 +4,7 @@ data "http" "ipv4" {
 
 data "cloudflare_zones" "public_domain" {
   filter {
-    name = "devbu.io"
+    name = "falhalla.com"
   }
 }
 
@@ -18,9 +18,9 @@ resource "cloudflare_record" "public_domain_apex" {
 }
 
 resource "cloudflare_record" "public_domain_root" {
-  name    = "devbu.io"
+  name    = "falhalla.com"
   zone_id = lookup(data.cloudflare_zones.public_domain.zones[0], "id")
-  value   = "ipv4.devbu.io"
+  value   = "ipv4.falhalla.com"
   proxied = true
   type    = "CNAME"
   ttl     = 1
@@ -29,7 +29,7 @@ resource "cloudflare_record" "public_domain_root" {
 resource "cloudflare_record" "public_domain_www" {
   name    = "www"
   zone_id = lookup(data.cloudflare_zones.public_domain.zones[0], "id")
-  value   = "ipv4.devbu.io"
+  value   = "ipv4.falhalla.com"
   proxied = true
   type    = "CNAME"
   ttl     = 1
@@ -38,7 +38,7 @@ resource "cloudflare_record" "public_domain_www" {
 resource "cloudflare_record" "public_domain_public_cname" {
   name    = data.sops_file.secrets.data["cloudflare_unproxied_cname"]
   zone_id = lookup(data.cloudflare_zones.public_domain.zones[0], "id")
-  value   = "ipv4.devbu.io"
+  value   = "ipv4.falhalla.com"
   proxied = false
   type    = "CNAME"
   ttl     = 1
@@ -55,7 +55,7 @@ resource "cloudflare_record" "public_domain_uptimerobot" {
 
 resource "cloudflare_page_rule" "public_domain_plex_bypass" {
   zone_id  = lookup(data.cloudflare_zones.public_domain.zones[0], "id")
-  target   = "plex.devbu.io/*"
+  target   = "plex.falhalla.com/*"
   status   = "active"
   priority = 1
 
@@ -66,7 +66,7 @@ resource "cloudflare_page_rule" "public_domain_plex_bypass" {
 
 resource "cloudflare_page_rule" "public_domain_home_assistant_bypass" {
   zone_id  = lookup(data.cloudflare_zones.public_domain.zones[0], "id")
-  target   = "hass.devbu.io/*"
+  target   = "hass.falhalla.com/*"
   status   = "active"
   priority = 2
 
@@ -95,7 +95,7 @@ resource "cloudflare_zone_settings_override" "public_domain_settings" {
       js   = "on"
       html = "on"
     }
-    rocket_loader       = "off"
+    rocket_loader       = "on"
     always_online       = "off"
     development_mode    = "off"
     http3               = "on"

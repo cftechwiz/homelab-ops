@@ -1,12 +1,37 @@
 ---
-timezone: America/New_York
-public_ssh_keys:
-  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJnRHFdQWqxfTRuioNM4G3vZyWQy18Xty1+vQV0qm/6G devin@macbook"
-  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB75L4ZEN17wcsK765dWzqlf0lY+sbK25QCIvebB/+1x devin@phone"
+# (string) Timezone for the servers
+timezone: "America/Chicago"
+
+# (list) Additional ssh public keys to add to the nodes
+ssh_authorized_keys: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOdorMN2jRq08LisRe1qubhOCa9/LdweToE8U0cMu1E13uuRswgGWmFVP1jgIm5AhsgvK6+9tryb2Hja1gWmo/2IvuqZrM2HHbJxv9rJjzDfMZj4aiRv8BwNLuwFnTMbzBF4/ak++0okXYhYGZX9D3py8uoRF9hxP4Etn2HIWIBtB49sq53ltbnZD9LqUUEIW1VWWt1B/NxoxHfGHyncmZGBlQg1spu1Ikk8DedYjn0XdT5L5Ms+yr+I4BDSJhGHPBifLYiMzMR5vqryPNpf3LbrHSZgc4L+diuFs3iDjoQ6YnRbxeTwafg268I38RV8SpLBt+uNzYVJTGjUezA6rh
+sshd_Port: 22
+sshd_PermitRootLogin: 'yes'
+sshd_ChallengeResponseAuthentication: 'no'
+sshd_GSSAPICleanupCredentials: 'no'
+sshd_X11Forwarding: 'yes'
+sshd_ClientAliveInterval: 0
+sshd_ClientAliveCountMax: 3
+sshd_PasswordAuthentication: 'yes'
+sshd_Banner: 'none'
 packages_repositories:
   - ppa:fish-shell/release-3
 packages_install:
-  - apt-transport-https
+  - ansible
+  - apt-utils
+  - hdparm
+  - htop
+  - intel-gpu-tools
+  - ipvsadm
+  - wmtemp
+  - nano
+  - zsh
+  - nvme-cli
+  - socat
+  - python3-selinux
+  - openssh-server
+  - network-manager
+  - conntrack
+  - nfs-common
   - arptables
   - ca-certificates
   - curl
@@ -14,10 +39,7 @@ packages_install:
   - fish
   - fzf
   - gdisk
-  - hdparm
-  - htop
-  - iputils-ping
-  - ipvsadm
+  - iptools-ping
   - lm-sensors
   - lvm2
   - nano
