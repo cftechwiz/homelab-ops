@@ -8,4 +8,4 @@ resources:
   - k8s-gateway
   # - metallb
   - ingress-nginx
-  - tigera-operator
+  # - tigera-operator
