@@ -18,7 +18,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: off-deck
-              image: ghcr.io/onedr0p/jbops:1.0.880@sha256:aa77a04b21d65b3b9e44cc44b5c598242a21c792e0ed7160a41b39622b9aebca
+              image: ghcr.io/onedr0p/jbops:1.0.887@sha256:edb319acca440d1e1967e7e79509772721adf4983cf3f301cfc9b3d910af4ba4
               env:
                 - name: TZ
                   value: "${TIMEZONE}"
