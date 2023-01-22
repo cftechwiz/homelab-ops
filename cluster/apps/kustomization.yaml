@@ -5,10 +5,9 @@ resources:
   - namespaces.yaml
   - flux-system
   - kube-system
-  - kube-tools
   - networking
   - tigera-operator
-
+  # - kube-tools
 ## After Core
 
   # - authentication
