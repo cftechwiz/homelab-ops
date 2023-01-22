@@ -2,7 +2,7 @@
 .github/
 .taskfiles/
 .vscode/
-provision/
+Ansible/
 tmpl/
 .config.sample.env
 .envrc
