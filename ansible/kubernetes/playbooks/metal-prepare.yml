@@ -52,11 +52,11 @@
             dest: /etc/netplan/00-installer-config.yaml
 
 
-        - name: System Configuration (2) | Configure Bridge Network
-          ansible.builtin.template:
-            mode: 0644
-            src: ../playbooks/templates/05-bridge-config.yml.j2
-            dest: /etc/netplan/05-bridge-config.yaml
+        # - name: System Configuration (2) | Configure Bridge Network
+        #   ansible.builtin.template:
+        #     mode: 0644
+        #     src: ../playbooks/templates/05-bridge-config.yml.j2
+        #     dest: /etc/netplan/05-bridge-config.yaml
 
     - name: Continue with packages installation
       block:
@@ -194,7 +194,7 @@
     #         login: true
     #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server1.67e5db
     #       when: ansible_host == server1
-            
+
     #     - name: Connect to the named target, after updating the local persistent database (cache)
     #       community.general.open_iscsi:
     #         login: true
