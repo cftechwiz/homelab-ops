@@ -24,7 +24,7 @@ spec:
   values:
     image:
       repository: ghcr.io/onedr0p/navidrome
-      tag: 0.47.5@sha256:17ef739628ad46a05d111ac9324a8b8cb89a7e2bbb1c1277a01b08d395243b64
+      tag: 0.48.0@sha256:3a7f99b239a46a8be7c98c460fee7ddd5bc5d54721cb152c35abc45d5143cff0
     env:
       TZ: "${TIMEZONE}"
       ND_DATAFOLDER: /config
