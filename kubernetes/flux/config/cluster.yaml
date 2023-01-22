@@ -9,7 +9,7 @@ spec:
   interval: 30m
   url: ssh://git@github.com/cfallwell/homelab-ops
   ref:
-    branch: main
+    branch: Reinit
   secretRef:
     name: github-deploy-key
   ignore: |
