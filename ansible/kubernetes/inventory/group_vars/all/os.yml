@@ -28,6 +28,7 @@ packages_install:
   - nvme-cli
   - socat
   - python3-selinux
+  - python3-pip
   - openssh-server
   - network-manager
   - conntrack
