@@ -30,7 +30,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: &host unifi.devbu.io
+    - host: &host unifi.falhalla.com
       http:
         paths:
           - path: /

@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -47,7 +47,7 @@ spec:
         annotations:
           hajimari.io/enabled: "false"
         hosts:
-          - host: &host qbvpn.devbu.io
+          - host: &host qbvpn.falhalla.com
             paths:
               - path: /
                 pathType: Prefix
@@ -72,13 +72,13 @@ spec:
       downloads:
         enabled: true
         type: nfs
-        server: expanse.turbo.ac
+        server: falhallanas.lab
         path: /eros/Downloads
         mountPath: /downloads
       media:
         enabled: true
         type: nfs
-        server: expanse.turbo.ac
+        server: falhallanas.lab
         path: /eros/Media
         mountPath: /media
       incomplete:

@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -48,7 +48,7 @@ spec:
         path: /
         pathType: Prefix
         hosts:
-          - &host emqx.devbu.io
+          - &host emqx.falhalla.com
         tls:
           - hosts:
               - *host

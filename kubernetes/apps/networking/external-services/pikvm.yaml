@@ -29,7 +29,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: &host pikvm.devbu.io
+    - host: &host pikvm.falhalla.com
       http:
         paths:
           - path: /

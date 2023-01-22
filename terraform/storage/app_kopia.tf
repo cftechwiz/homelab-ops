@@ -75,7 +75,7 @@ resource "kubernetes_stateful_set_v1" "kopia" {
             "--address",
             "0.0.0.0:51515",
             "--override-hostname",
-            "expanse.turbo.ac",
+            "falhallanas.lab",
             "--override-username",
             "devin",
             "--without-password"

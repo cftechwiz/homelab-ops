@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -46,7 +46,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-query.devbu.io
+        hostname: &host thanos-query.falhalla.com
         tls: true
         extraTls:
           - hosts:
@@ -60,7 +60,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-bucketweb.devbu.io
+        hostname: &host thanos-bucketweb.falhalla.com
         tls: true
         extraTls:
           - hosts:
@@ -76,7 +76,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-compactor.devbu.io
+        hostname: &host thanos-compactor.falhalla.com
         tls: true
         extraTls:
           - hosts:
@@ -94,7 +94,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-storegateway.devbu.io
+        hostname: &host thanos-storegateway.falhalla.com
         tls: true
         extraTls:
           - hosts:
@@ -124,7 +124,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-ruler.devbu.io
+        hostname: &host thanos-ruler.falhalla.com
         tls: true
         extraTls:
           - hosts:

@@ -29,7 +29,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: &host adguard.devbu.io
+    - host: &host adguard.falhalla.com
       http:
         paths:
           - path: /

@@ -9,7 +9,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: devbu.io
+  commonName: falhalla.com
   dnsNames:
-    - devbu.io
-    - "*.devbu.io"
+    - falhalla.com
+    - "*.falhalla.com"

@@ -40,7 +40,7 @@ spec:
       existingSecret:
         enabled: true
         secretName: nextcloud
-      host: &host cloud.devbu.io
+      host: &host cloud.falhalla.com
       mail:
         enabled: true
         fromAddress: admin

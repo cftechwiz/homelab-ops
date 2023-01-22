@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -34,7 +34,7 @@ spec:
       tag: 1.0.2
     env:
       TZ: America/New_York
-      APP_URL: https://wizarr.devbu.io
+      APP_URL: https://wizarr.falhalla.com
       DISABLE_BUILTIN_AUTH: "true"
     service:
       main:
@@ -50,7 +50,7 @@ spec:
           external-dns.home.arpa/enabled: "true"
           hajimari.io/icon: mdi:account-question
         hosts:
-          - host: &host "{{ .Release.Name }}.devbu.io"
+          - host: &host "{{ .Release.Name }}.falhalla.com"
             paths:
               - path: /
                 pathType: Prefix

@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -44,7 +44,7 @@ spec:
       - name: grafana-secret
     grafana.ini:
       auth:
-        signout_redirect_url: https://auth.devbu.io/logout
+        signout_redirect_url: https://auth.falhalla.com/logout
         oauth_auto_login: false
       auth.generic_oauth:
         enabled: true
@@ -146,7 +146,7 @@ spec:
         external-dns.home.arpa/enabled: "true"
         hajimari.io/icon: simple-icons:grafana
       hosts:
-        - &host grafana.devbu.io
+        - &host grafana.falhalla.com
       tls:
         - hosts:
             - *host

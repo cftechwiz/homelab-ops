@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -33,15 +33,15 @@ spec:
     # oidcSecret:
     #   create: true
     #   clientID: weave-gitops
-    #   issuerURL: https://auth.devbu.io
-    #   redirectURL: https://gitops.devbu.io/oauth2/callback
+    #   issuerURL: https://auth.falhalla.com
+    #   redirectURL: https://gitops.falhalla.com/oauth2/callback
     ingress:
       enabled: true
       className: nginx
       annotations:
         hajimari.io/icon: mdi:sawtooth-wave
       hosts:
-        - host: &host gitops.devbu.io
+        - host: &host gitops.falhalla.com
           paths:
             - path: /
               pathType: Prefix

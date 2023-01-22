@@ -5,12 +5,12 @@ creation_rules:
     key_groups:
       - age:
           - age19rtwpgqe4m68lm9e2m4r8l78uerxwfqd7z20nrx2rcjuv5lafd9qynj467
-  - path_regex: cluster/.*\.sops\.ya?ml
+  - path_regex: kubernetes/.*\.sops\.ya?ml
     encrypted_regex: "^(data|stringData)$"
     key_groups:
       - age:
           - age19rtwpgqe4m68lm9e2m4r8l78uerxwfqd7z20nrx2rcjuv5lafd9qynj467
-  - path_regex: cluster/.*\.sops\.toml
+  - path_regex: kubernetes/.*\.sops\.toml
     key_groups:
       - age:
           - age19rtwpgqe4m68lm9e2m4r8l78uerxwfqd7z20nrx2rcjuv5lafd9qynj467

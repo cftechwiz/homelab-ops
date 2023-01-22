@@ -28,14 +28,14 @@ metadata:
     jobLabel: node-exporter
 spec:
   type: ExternalName
-  externalName: expanse.turbo.ac.
+  externalName: falhallanas.lab.
   ports:
     - name: metrics
       port: &port 9100
       protocol: TCP
       targetPort: *port
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/servicemonitor_v1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/servicemonitor_v1.json
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:

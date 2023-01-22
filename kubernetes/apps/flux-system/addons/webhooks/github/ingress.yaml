@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: &host flux-webhook.devbu.io
+    - host: &host flux-webhook.falhalla.com
       http:
         paths:
           - path: /hook/

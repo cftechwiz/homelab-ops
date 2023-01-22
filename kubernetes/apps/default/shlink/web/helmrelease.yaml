@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -36,7 +36,7 @@ spec:
       repository: ghcr.io/shlinkio/shlink-web-client
       tag: 3.9.1
     env:
-      SHLINK_SERVER_URL: https://ln.devbu.io
+      SHLINK_SERVER_URL: https://ln.falhalla.com
     envFrom:
       - secretRef:
           name: shlink-secret
@@ -52,7 +52,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:link
         hosts:
-          - host: &host shlink.devbu.io
+          - host: &host shlink.falhalla.com
             paths:
               - path: /
                 pathType: Prefix
