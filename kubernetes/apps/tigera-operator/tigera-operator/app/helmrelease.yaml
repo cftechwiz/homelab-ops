@@ -48,5 +48,7 @@ spec:
         nodeAddressAutodetectionV4:
           cidrs:
             - "${NET_NODE_CIDR}"
+          interface:
+            - br0
       nodeMetricsPort: 9091
       typhaMetricsPort: 9093

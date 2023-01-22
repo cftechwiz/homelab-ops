@@ -72,48 +72,48 @@
         regexp: "https://127.0.0.1:6443"
         replace: "https://{{ k3s_registration_address }}:6443"
 
-    - NAME: RESOURCE READINESS CHECK
-      RUN_ONCE: TRUE
-      KUBERNETES.CORE.K8S_INFO:
-        KUBECONFIG: /ETC/RANCHER/K3S/K3S.YAML
-        KIND: "{{ ITEM.KIND }}"
-        NAME: "{{ ITEM.NAME }}"
-        NAMESPACE: "{{ ITEM.NAMESPACE | DEFAULT('') }}"
-        WAIT: TRUE
-        WAIT_SLEEP: 10
-        WAIT_TIMEOUT: 360
-      LOOP:
-        - KIND: DEPLOYMENT
-          NAME: TIGERA-OPERATOR
-          NAMESPACE: TIGERA-OPERATOR
-        - KIND: INSTALLATION
-          NAME: DEFAULT
-        - KIND: BGPCONFIGURATION
-          NAME: DEFAULT
-        - KIND: BGPPEER
-          NAME: GLOBAL
-        - KIND: CUSTOMRESOURCEDEFINITION
-          NAME: ALERTMANAGERCONFIGS.MONITORING.COREOS.COM
-        - KIND: CUSTOMRESOURCEDEFINITION
-          NAME: ALERTMANAGERS.MONITORING.COREOS.COM
-        - KIND: CUSTOMRESOURCEDEFINITION
-          NAME: PODMONITORS.MONITORING.COREOS.COM
-        - KIND: CUSTOMRESOURCEDEFINITION
-          NAME: PROBES.MONITORING.COREOS.COM
-        - KIND: CUSTOMRESOURCEDEFINITION
-          NAME: PROMETHEUSES.MONITORING.COREOS.COM
-        - KIND: CUSTOMRESOURCEDEFINITION
-          NAME: PROMETHEUSRULES.MONITORING.COREOS.COM
-        - KIND: CUSTOMRESOURCEDEFINITION
-          NAME: SERVICEMONITORS.MONITORING.COREOS.COM
-        - KIND: CUSTOMRESOURCEDEFINITION
-          NAME: THANOSRULERS.MONITORING.COREOS.COM
-      REGISTER: RESOURCE_CHECK
-      WHEN:
-        - K3S_SERVER_MANIFESTS_TEMPLATES | LENGTH > 0
-            OR K3S_SERVER_MANIFESTS_URLS | LENGTH > 0
-        - K3S_CONTROL_NODE IS DEFINED
-        - K3S_CONTROL_NODE
+    - name: Resource Readiness Check
+      run_once: true
+      kubernetes.core.k8s_info:
+        kubeconfig: /etc/rancher/k3s/k3s.yaml
+        kind: "{{ item.kind }}"
+        name: "{{ item.name }}"
+        namespace: "{{ item.namespace | default('') }}"
+        wait: true
+        wait_sleep: 10
+        wait_timeout: 360
+      loop:
+        - kind: Deployment
+          name: tigera-operator
+          namespace: tigera-operator
+        - kind: Installation
+          name: default
+        - kind: BGPConfiguration
+          name: default
+        - kind: BGPPeer
+          name: global
+        - kind: CustomResourceDefinition
+          name: alertmanagerconfigs.monitoring.coreos.com
+        - kind: CustomResourceDefinition
+          name: alertmanagers.monitoring.coreos.com
+        - kind: CustomResourceDefinition
+          name: podmonitors.monitoring.coreos.com
+        - kind: CustomResourceDefinition
+          name: probes.monitoring.coreos.com
+        - kind: CustomResourceDefinition
+          name: prometheuses.monitoring.coreos.com
+        - kind: CustomResourceDefinition
+          name: prometheusrules.monitoring.coreos.com
+        - kind: CustomResourceDefinition
+          name: servicemonitors.monitoring.coreos.com
+        - kind: CustomResourceDefinition
+          name: thanosrulers.monitoring.coreos.com
+      register: resource_check
+      when:
+        - k3s_server_manifests_templates | length > 0
+            or k3s_server_manifests_urls | length > 0
+        - k3s_control_node is defined
+        - k3s_control_node
 
     # Cleaning up the manifests from the /var/lib/rancher/k3s/server/manifests
     # directory is needed because k3s has an awesome
