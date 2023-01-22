@@ -57,14 +57,14 @@ While kube-vip is very nice for having a API server ready to go and running in y
     2. `Name` = `k8s-apiserver-be`
     3. `Mode` = `TCP (Layer 4)`
     4. `Servers` = `k8s-apiserver-x` ... (Add one for each server you created. Use TAB key to complete typing each server)
-    5. `Source address` = `192.168.1.1` (Your Opnsense IP address)
+    5. `Source address` = `172.16.0.254` (Your Opnsense IP address)
     6. `Enable Health Checking` = `true`
     7. `Health Monitor` = `k8s-apiserver-health`
     8. Apply/Save
 4. Services > HAProxy | Virtual Services > Public Services
     1. `Enabled` = `true`
     2. `Name` = `k8s-apiserver-fe`
-    3. `Listen Addresses` = `192.168.1.1:6443` (Your Opnsense IP address. Use TAB key to complete typing a listen address)
+    3. `Listen Addresses` = `172.16.0.254:6443` (Your Opnsense IP address. Use TAB key to complete typing a listen address)
     4. `Type` = `TCP`
     5. `Default Backend Pool` = `k8s-apiserver-be`
     6. Apply/Save
