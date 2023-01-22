@@ -8,7 +8,7 @@ title = "Home Operations"
 [output.html]
 default-theme = "navy"
 preferred-dark-theme = "navy"
-git-repository-url = "https://github.com/onedr0p/home-ops"
+git-repository-url = "https://github.com/cfallwell/homelab-ops"
 git-repository-icon = "fa-github"
 no-section-label = true
 additional-css = ["././mdbook-admonish.css"]

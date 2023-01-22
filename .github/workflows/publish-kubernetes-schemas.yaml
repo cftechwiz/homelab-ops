@@ -96,5 +96,5 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           labels: |
-            org.opencontainers.image.source="https://github.com/onedr0p/home-ops"
+            org.opencontainers.image.source="https://github.com/cfallwell/homelab-ops"
             org.opencontainers.image.authors="Devin Buhl <devin.kray@gmail.com>"
