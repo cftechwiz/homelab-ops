@@ -40,10 +40,10 @@ Outside of using [Ansible](https://github.com/ansible/ansible) for configuring t
 2. Share dataset over NFS
     ```sh
     sudo zfs set \
-        sharenfs="no_subtree_check,all_squash,anonuid=568,anongid=100,rw=@192.168.42.0/24,rw=@192.168.1.0/24,ro=192.168.150.21,ro=192.168.150.28" \
+        sharenfs="no_subtree_check,all_squash,anonuid=568,anongid=100,rw=@172.16.70.0/24,rw=@192.168.1.0/24,ro=192.168.150.21,ro=192.168.150.28" \
         eros/Media
     sudo zfs set \
-        sharenfs="no_subtree_check,all_squash,anonuid=568,anongid=100,rw=@192.168.42.0/24,rw=@192.168.1.0/24" \
+        sharenfs="no_subtree_check,all_squash,anonuid=568,anongid=100,rw=@172.16.70.0/24,rw=@192.168.1.0/24" \
         eros/Apps/MinIO
     ```
 
@@ -87,7 +87,7 @@ Outside of using [Ansible](https://github.com/ansible/ansible) for configuring t
 1. Add or replace file `/etc/exports.d/local.exports`
     ```text
     /share/PVCs 192.168.1.0/24(sec=sys,rw,no_subtree_check,all_squash,anonuid=568,anongid=100)
-    /share/PVCs 192.168.42.0/24(sec=sys,rw,no_subtree_check,all_squash,anonuid=568,anongid=100)
+    /share/PVCs 172.16.70.0/24(sec=sys,rw,no_subtree_check,all_squash,anonuid=568,anongid=100)
     ```
 
 2. Dataset Permissions

@@ -7,12 +7,12 @@ Instead of using Metallb for L2/L3 load balancer IPs I am using the Kubernetes C
 1. Routing > BPG | General
     1. `enable` = `true`
     2. `BGP AS Number` = `64512`
-    3. `Network` = `192.168.42.0/24` (Subnet your Kubernetes nodes are on)
+    3. `Network` = `172.16.70.0/24` (Subnet your Kubernetes nodes are on)
     4. Save
 2. Routing > BGP | Neighbors
     - Add a neighbor for each Kubernetes node
       1. `Enabled` = `true`
-      2. `Peer-IP` = `192.168.42.x` (Kubernetes Node IP)
+      2. `Peer-IP` = `172.16.70.x` (Kubernetes Node IP)
       3. `Remote AS` = `64512`
       4. `Update-Source Interface` = `HOME_SERVER` (VLAN of Kubernetes nodes)
       5. Save
@@ -39,7 +39,7 @@ While kube-vip is very nice for having a API server ready to go and running in y
     - Add a server for each **master node** in your Kubernetes cluster
       1. `Enabled` = `true`
       2. `Name or Prefix` = `k8s-apiserver-x`
-      3. `FQDN or IP` = `192.168.42.x`
+      3. `FQDN or IP` = `172.16.70.x`
       4. `Port` = `6443`
       5. `Verify SSL Certificate` = `false`
       6. Apply/Save
