@@ -91,7 +91,7 @@
         - kind: BGPConfiguration
           name: default
         - kind: BGPPeer
-          name: global
+          name: default
         - kind: CustomResourceDefinition
           name: alertmanagerconfigs.monitoring.coreos.com
         - kind: CustomResourceDefinition
