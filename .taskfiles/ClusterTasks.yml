@@ -3,6 +3,10 @@ version: "3"
 
 tasks:
 
+  bootstrap:
+    desc: bootstrap Flux
+    cmds:
+      -  flux bootstrap github --owner=cfallwell --repository=homelab-ops --path=kubernetes/ --personal --kubeconfig=ansible/kubeconfig --context=default
   verify:
     desc: Verify flux meets the prerequisites
     cmds:
