@@ -15,8 +15,7 @@ tasks:
       - sops --decrypt kubernetes/bootstrap/flux/github-deploy-key.sops.yaml | kubectl apply -f -
       - sops --decrypt kubernetes/flux/vars/cluster-secrets.sops.yaml | kubectl apply -f -
       - kubectl apply --kustomize {{.CLUSTER_DIR}}/bootstrap/flux
-      - cat {{.SOPS_AGE_KEY_FILE}} | kubectl -n flux-system create secret generic sops-age --from-file=age.agekey=/dev/stdin
-      - kubectl apply --kustomize {{.CLUSTER_DIR}}/flux/flux-system/
+      - kubectl apply --kustomize {{.CLUSTER_DIR}}/flux-system/
       - task: reconcile
     preconditions:
       - sh: test -f {{.SOPS_AGE_KEY_FILE}}
