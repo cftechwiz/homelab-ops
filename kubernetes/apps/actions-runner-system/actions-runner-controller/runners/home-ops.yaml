@@ -26,11 +26,11 @@ spec:
 apiVersion: actions.summerwind.dev/v1alpha1
 kind: HorizontalRunnerAutoscaler
 metadata:
-  name: home-ops
+  name: homelab-ops
   namespace: actions-runner-system
 spec:
   scaleTargetRef:
-    name: home-ops
+    name: homelab-ops
   scaleUpTriggers:
     - githubEvent:
         workflowJob: {}
@@ -40,4 +40,4 @@ spec:
   maxReplicas: 3
   metrics:
     - type: TotalNumberOfQueuedAndInProgressWorkflowRuns
-      repositoryNames: ["home-ops"]
+      repositoryNames: ["homelab-ops"]
