@@ -4,13 +4,4 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: kube-system
 resources:
-<<<<<<< HEAD:kubernetes/apps/kube-system/external-secrets/stores/kustomization.yaml
   - ./onepassword
-=======
-  - cert-manager
-  # - csi-driver-nfs
-  # - kured
-  - metrics-server
-  - reflector
-  - reloader
->>>>>>> fbfbb51b70b0743b786239275ee4759cba684ab0:cluster/apps/kube-system/kustomization.yaml
