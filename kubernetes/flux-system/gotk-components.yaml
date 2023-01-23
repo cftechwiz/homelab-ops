@@ -43,7 +43,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: Alert is the Schema for the alerts API
@@ -269,7 +269,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: Bucket is the Schema for the buckets API
@@ -788,7 +788,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: GitRepository is the Schema for the gitrepositories API
@@ -1545,7 +1545,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: HelmChart is the Schema for the helmcharts API
@@ -2963,7 +2963,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: HelmRepository is the Schema for the helmrepositories API
@@ -3469,7 +3469,7 @@ spec:
     - jsonPath: .metadata.creationTimestamp
       name: Age
       type: date
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: Kustomization is the Schema for the kustomizations API.
@@ -4889,7 +4889,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: Provider is the Schema for the providers API
@@ -5099,7 +5099,7 @@ spec:
     - jsonPath: .status.conditions[?(@.type=="Ready")].message
       name: Status
       type: string
-    name: v1beta2
+    name: v1beta1
     schema:
       openAPIV3Schema:
         description: Receiver is the Schema for the receivers API
