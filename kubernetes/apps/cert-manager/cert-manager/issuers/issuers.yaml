@@ -35,7 +35,7 @@ spec:
     solvers:
       - dns01:
           cloudflare:
-            email:
+            email: cftechwiz@gmail.com
             apiKeySecretRef:
               name: cloudflare-secret
               key: CLOUDFLARE_APIKEY
