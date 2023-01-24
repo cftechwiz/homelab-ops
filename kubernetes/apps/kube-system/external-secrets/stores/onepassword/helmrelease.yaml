@@ -75,7 +75,7 @@ spec:
         annotations:
           hajimari.io/enable: "false"
         hosts:
-          - host: &host "{{ .Release.Name }}.lab"
+          - host: &host "{{ .Release.Name }}"
             paths:
               - path: /
                 pathType: Prefix
