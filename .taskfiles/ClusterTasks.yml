@@ -21,7 +21,7 @@ tasks:
       - sops --decrypt kubernetes/flux/vars/cluster-secrets.sops.yaml | kubectl apply -f -
       - kubectl apply -f kubernetes/flux/vars/cluster-settings.yaml
       - kubectl apply --server-side --kustomize ./kubernetes/flux/config
-      - task: reconcile
+      # - task: reconcile
     preconditions:
       - sh: test -f {{.SOPS_AGE_KEY_FILE}}
         msg: |
@@ -32,8 +32,8 @@ tasks:
   reconcile:
     desc: Force update Flux to pull in changes from your Git repository
     cmds:
-      - flux reconcile -n flux-system source git flux-cluster
-      - flux reconcile -n flux-system kustomization flux-cluster
+      - flux reconcile -n flux-system source git flux-system
+      - flux reconcile -n flux-system kustomization flux-system
 
   nodes:
     desc: List all the nodes in your cluster

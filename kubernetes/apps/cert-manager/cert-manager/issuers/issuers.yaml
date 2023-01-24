@@ -7,13 +7,13 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: devin.kray@gmail.com
+    email: cftechiz@gmail.com
     privateKeySecretRef:
       name: letsencrypt-production
     solvers:
       - dns01:
           cloudflare:
-            email: devin.kray@gmail.com
+            email: cftechiz@gmail.com
             apiKeySecretRef:
               name: cloudflare-secret
               key: CLOUDFLARE_APIKEY
@@ -29,13 +29,13 @@ metadata:
 spec:
   acme:
     server: https://acme-staging-v02.api.letsencrypt.org/directory
-    email: devin.kray@gmail.com
+    email: cftechiz@gmail.com
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
       - dns01:
           cloudflare:
-            email: devin.kray@gmail.com
+            email:
             apiKeySecretRef:
               name: cloudflare-secret
               key: CLOUDFLARE_APIKEY
