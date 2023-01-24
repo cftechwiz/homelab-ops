@@ -7,9 +7,6 @@ metadata:
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
-    app.kubernetes.io/managed-by: "Helm"
-  annotations:
-    meta.helm.sh/release-name: "tigera-operator"
 spec:
   path: ./kubernetes/apps/tigera-operator/tigera-operator/app
   prune: true
@@ -20,7 +17,7 @@ spec:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
       name: tigera-operator
-      namespace: calico
+      namespace: tigera-operator
   interval: 30m
   retryInterval: 1m
   timeout: 3m

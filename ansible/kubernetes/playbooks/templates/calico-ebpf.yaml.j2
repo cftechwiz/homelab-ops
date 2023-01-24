@@ -3,6 +3,11 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: tigera-operator
+  labels:
+    substitution.flux.home.arpa/enabled: "true"
+    app.kubernetes.io/managed-by: "Helm"
+  annotations:
+    meta.helm.sh/release-name: "tigera-operator"
 ---
 apiVersion: v1
 kind: ConfigMap
