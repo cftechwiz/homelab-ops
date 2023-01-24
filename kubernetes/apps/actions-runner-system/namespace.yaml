@@ -5,4 +5,4 @@ metadata:
   name: actions-runner-system
   labels:
     goldilocks.fairwinds.com/enabled: "true"
-    kustomize.toolkit.fluxcd.io/prune: disabled
+    kustomize.toolkit.fluxcd.io/prune: enabled
