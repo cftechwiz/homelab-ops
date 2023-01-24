@@ -54,7 +54,7 @@ spec:
       storageClass: ceph-block
     gitea:
       admin:
-        email: admin@buhl.casa
+        email: admin@falhalla.casa
         username: gitea
       config:
         APP_NAME: Tea, Git, Hot
@@ -102,7 +102,7 @@ spec:
           MAILER_TYPE: smtp
           SMTP_ADDR: opnsense.falhalla.com
           SMTP_PORT: 25
-          FROM: "Admin <admin@buhl.casa>"
+          FROM: "Admin <admin@falhalla.casa>"
         openid:
           ENABLE_OPENID_SIGNIN: false
           ENABLE_OPENID_SIGNUP: true

@@ -44,7 +44,7 @@ spec:
       mail:
         enabled: true
         fromAddress: admin
-        domain: buhl.casa
+        domain: falhalla.casa
         smtp:
           host: opnsense.falhalla.com
           port: 25
