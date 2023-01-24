@@ -4,7 +4,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: tigera-operator
-  namespace: tigera-operator
+  namespace: calico
 spec:
   interval: 15m
   chart:

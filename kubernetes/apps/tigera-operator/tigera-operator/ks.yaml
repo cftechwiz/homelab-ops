@@ -20,7 +20,7 @@ spec:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
       name: tigera-operator
-      namespace: tigera-operator
+      namespace: calico
   interval: 30m
   retryInterval: 1m
   timeout: 3m
