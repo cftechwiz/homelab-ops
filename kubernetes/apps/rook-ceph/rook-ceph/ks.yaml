@@ -20,7 +20,7 @@ spec:
       namespace: rook-ceph
   interval: 30m
   retryInterval: 1m
-  timeout: 3m
+  timeout: 8mm
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/kustomization_v1beta2.json
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
@@ -45,4 +45,4 @@ spec:
       namespace: rook-ceph
   interval: 30m
   retryInterval: 1m
-  timeout: 5m
+  timeout: 8m

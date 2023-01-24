@@ -9,7 +9,7 @@ metadata:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-external-secrets
+    - name: cluster-apps-external-secrets-stores
   path: ./kubernetes/apps/networking/external-dns/app
   prune: true
   sourceRef:
@@ -22,4 +22,4 @@ spec:
       namespace: networking
   interval: 30m
   retryInterval: 1m
-  timeout: 3m
+  timeout: 15m

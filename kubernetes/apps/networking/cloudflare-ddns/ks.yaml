@@ -21,4 +21,4 @@ spec:
       name: cloudflare-ddns
       namespace: networking
   interval: 30m
-  timeout: 5m
+  timeout: 15m
