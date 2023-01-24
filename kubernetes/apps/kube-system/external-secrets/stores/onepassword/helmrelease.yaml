@@ -41,7 +41,7 @@ spec:
         valueFrom:
           secretKeyRef:
             name: onepassword-connect-secret
-            key: 1password-credentials.json
+            key: 1password-credentials
     service:
       main:
         ports:
@@ -75,7 +75,7 @@ spec:
         annotations:
           hajimari.io/enable: "false"
         hosts:
-          - host: &host "{{ .Release.Name }}.falhalla.com"
+          - host: &host "{{ .Release.Name }}.lab"
             paths:
               - path: /
                 pathType: Prefix
