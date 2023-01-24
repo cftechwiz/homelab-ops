@@ -7,6 +7,9 @@ metadata:
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
+    app.kubernetes.io/managed-by: "Helm"
+  annotations:
+    meta.helm.sh/release-name: "tigera-operator"
 spec:
   path: ./kubernetes/apps/tigera-operator/tigera-operator/app
   prune: true
