@@ -8,7 +8,7 @@ provider "kubernetes" {
 provider "nexus" {
   alias    = "nas"
   insecure = true
-  url      = "http://nexus.turbo.ac"
+  url      = "http://nexus.falhalla.com"
   username = "admin"
   password = var.nexus_password
 }

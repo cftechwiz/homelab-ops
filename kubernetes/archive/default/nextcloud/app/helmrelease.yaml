@@ -46,7 +46,7 @@ spec:
         fromAddress: admin
         domain: buhl.casa
         smtp:
-          host: opnsense.turbo.ac
+          host: opnsense.falhalla.com
           port: 25
           authtype: NONE
           name: ""

@@ -224,7 +224,7 @@ resource "kubernetes_ingress_v1" "kopia" {
   spec {
     ingress_class_name = "traefik"
     rule {
-      host = "kopia.turbo.ac"
+      host = "kopia.falhalla.com"
       http {
         path {
           path      = "/"

@@ -100,7 +100,7 @@ spec:
         mailer:
           ENABLED: true
           MAILER_TYPE: smtp
-          SMTP_ADDR: opnsense.turbo.ac
+          SMTP_ADDR: opnsense.falhalla.com
           SMTP_PORT: 25
           FROM: "Admin <admin@buhl.casa>"
         openid:

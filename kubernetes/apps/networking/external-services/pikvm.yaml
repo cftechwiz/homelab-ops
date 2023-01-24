@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/instance: *app
 spec:
   type: ExternalName
-  externalName: pikvm.turbo.ac.
+  externalName: pikvm.falhalla.com.
   ports:
     - name: http
       port: &port 443

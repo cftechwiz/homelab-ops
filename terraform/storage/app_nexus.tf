@@ -150,7 +150,7 @@ resource "kubernetes_ingress_v1" "nexus" {
   spec {
     ingress_class_name = "traefik"
     rule {
-      host = "nexus.turbo.ac"
+      host = "nexus.falhalla.com"
       http {
         path {
           path      = "/"
@@ -183,7 +183,7 @@ resource "kubernetes_ingress_v1" "mirror" {
   spec {
     ingress_class_name = "traefik"
     rule {
-      host = "mirror.turbo.ac"
+      host = "mirror.falhalla.com"
       http {
         path {
           path      = "/"

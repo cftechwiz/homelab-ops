@@ -229,7 +229,7 @@ spec:
               password: 1NtERnALOnLYuS3
             honor_timestamps: true
             static_configs:
-              - targets: ["pikvm.turbo.ac"]
+              - targets: ["pikvm.falhalla.com"]
           - job_name: nexus
             scrape_interval: 1m
             scrape_timeout: 10s
@@ -238,4 +238,4 @@ spec:
               username: admin
               password: 1NtERnALOnLYuS3
             static_configs:
-              - targets: ["nexus.turbo.ac"]
+              - targets: ["nexus.falhalla.com"]
