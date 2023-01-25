@@ -28,11 +28,11 @@
     - name: Extract k8s_gateway
       ansible.builtin.shell:
         cmd: >-
-          mkdir -p /tmp/k8s_gateway_{{ k8s_gateway_version }}_inux_arm64";
-          tar xvf /tmp/k8s_gateway_{{ k8s_gateway_version }}_inux_arm64.tar.gz" -C /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_arm64
+          mkdir -p /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_arm64";
+          tar xvf /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_arm64.tar.gz" -C /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_arm64
     - name: Move k8s_gateway binary into place
       ansible.builtin.copy:
-        src: /tmp/k8s_gateway_{{ k8s_gateway_version }}_inux_arm64/coredns
+        src: /tmp/k8s_gateway_{{ k8s_gateway_version }}_linux_arm64/coredns
         dest: /usr/local/sbin/k8s_gateway
         mode: 0755
         remote_src: true

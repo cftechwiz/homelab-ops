@@ -13,7 +13,17 @@
 # k8s_gateway_logfile (str):         Set to /var/log/k8s_gateway/k8s_gateway.log by default.
 #
 
-. /etc/rc.subr
+[Unit]
+Description=k8s_gateway Service
+
+[Service]
+User=root
+WorkingDirectory=/usr/local/etc/k8s_gateway/
+ExecStart=<script which needs to be executed>
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
 
 name=k8s_gateway
 rcvar=k8s_gateway_enable
