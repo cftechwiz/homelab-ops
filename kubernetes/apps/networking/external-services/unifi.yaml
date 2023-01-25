@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/instance: *app
 spec:
   type: ExternalName
-  externalName: unifi.falhalla.com.
+  externalName: unifi.lan.
   ports:
     - name: http
       port: &port 443
