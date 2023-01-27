@@ -31,7 +31,7 @@ spec:
       repository: ghcr.io/unpoller/unpoller
       tag: v2.7.10
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
       UP_UNIFI_DEFAULT_ROLE: home-ops
       UP_UNIFI_DEFAULT_URL: https://unifi.falhalla.com
       UP_UNIFI_DEFAULT_VERIFY_SSL: false

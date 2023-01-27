@@ -41,8 +41,8 @@ spec:
       repository: docker.io/n8nio/n8n
       tag: 0.212.0
     env:
-      GENERIC_TIMEZONE: America/New_York
-      TZ: America/New_York
+      GENERIC_TIMEZONE: America/Chicago
+      TZ: America/Chicago
       N8N_PORT: &port 80
       N8N_EMAIL_MODE: smtp
       N8N_SMTP_HOST: opnsense.falhalla.com

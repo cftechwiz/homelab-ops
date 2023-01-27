@@ -14,7 +14,7 @@
       block:
         - name: Locale | Set timezone
           community.general.timezone:
-            name: "{{ timezone | default('America/New_York') }}"
+            name: "{{ timezone | default('America/Chicago') }}"
     - name: Packages
       block:
         - name: Packages | Add apt repositories

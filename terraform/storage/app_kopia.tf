@@ -67,7 +67,7 @@ resource "kubernetes_stateful_set_v1" "kopia" {
           }
           env {
             name  = "TZ"
-            value = "America/New_York"
+            value = "America/Chicago"
           }
           args = [
             "server",

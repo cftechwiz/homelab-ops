@@ -33,7 +33,7 @@ spec:
       repository: docker.io/filebrowser/filebrowser
       tag: v2.23.0
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
       FB_DATABASE: "/config/filebrowser.db"
       FB_ROOT: "/media"
       FB_LOG: "stdout"

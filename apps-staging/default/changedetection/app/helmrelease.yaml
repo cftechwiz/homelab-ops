@@ -33,7 +33,7 @@ spec:
       repository: ghcr.io/dgtlmoon/changedetection.io
       tag: 0.40.0.4
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
       PORT: &port 5000
       USE_X_SETTINGS: 1
       PLAYWRIGHT_DRIVER_URL: ws://localhost:3000/?stealth=1&--disable-web-security=true&--user-data-dir=~/browserless-cache-123

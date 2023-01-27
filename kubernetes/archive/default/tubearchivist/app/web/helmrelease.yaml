@@ -38,7 +38,7 @@ spec:
       repository: docker.io/bbilly1/tubearchivist
       tag: v0.3.2
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
       ES_URL: http://tubearchivist-elasticsearch.default.svc.cluster.local:9200
       REDIS_HOST: tubearchivist-redis.default.svc.cluster.local
       HOST_UID: 568

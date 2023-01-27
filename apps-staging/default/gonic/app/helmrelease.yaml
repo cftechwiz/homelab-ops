@@ -40,7 +40,7 @@ spec:
       repository: ghcr.io/sentriz/gonic
       tag: v0.15.2
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
       GONIC_MUSIC_PATH: /media/Library/Music
       GONIC_PODCAST_PATH: /media/Library/Podcasts
       GONIC_CACHE_PATH: /data/cache

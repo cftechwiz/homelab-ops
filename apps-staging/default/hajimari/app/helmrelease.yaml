@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
     hajimari:
       title: Apps
       darkTheme: espresso

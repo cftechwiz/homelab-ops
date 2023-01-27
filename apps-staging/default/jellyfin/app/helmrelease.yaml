@@ -33,7 +33,7 @@ spec:
       repository: ghcr.io/onedr0p/jellyfin
       tag: 10.8.8@sha256:788708d85a097a30807a091d0ff6cd0df5b2202c358be661b10449806cc910c0
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
     service:
       main:
         type: LoadBalancer

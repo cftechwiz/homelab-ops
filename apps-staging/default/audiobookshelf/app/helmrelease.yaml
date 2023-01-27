@@ -33,7 +33,7 @@ spec:
       repository: ghcr.io/advplyr/audiobookshelf
       tag: 2.2.12
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
       AUDIOBOOKSHELF_UID: 568
       AUDIOBOOKSHELF_GID: 568
       CONFIG_PATH: /config

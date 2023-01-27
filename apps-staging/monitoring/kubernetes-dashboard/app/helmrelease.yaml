@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
     extraArgs:
       - --enable-skip-login
       - --disable-settings-authorizer

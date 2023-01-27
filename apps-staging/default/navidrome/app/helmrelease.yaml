@@ -35,7 +35,7 @@ spec:
       repository: ghcr.io/onedr0p/navidrome
       tag: 0.48.0@sha256:3a7f99b239a46a8be7c98c460fee7ddd5bc5d54721cb152c35abc45d5143cff0
     env:
-      TZ: America/New_York
+      TZ: America/Chicago
       ND_DATAFOLDER: /config
       ND_ENABLEGRAVATAR: "true"
       ND_LOGLEVEL: info
