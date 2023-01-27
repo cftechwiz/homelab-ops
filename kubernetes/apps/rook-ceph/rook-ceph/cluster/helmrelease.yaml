@@ -36,9 +36,9 @@ spec:
         annotations:
           hajimari.io/appName: "Rook"
           hajimari.io/icon: mdi:chess-rook
-          external-dns.home.arpa/enabled: "false"
+          external-dns.home.arpa/enabled: "true"
         host:
-          name: &host rook.intra.falhalla.com
+          name: &host rook.falhalla.com
           path: /
         tls:
           - hosts:
