@@ -42,7 +42,7 @@ spec:
           - blockSize: 26
             cidr: "${NET_POD_CIDR}"
             encapsulation: None
-            natOutgoing: Disabled
+            natOutgoing: Enabled
             nodeSelector: all()
         multiInterfaceMode: None
         nodeAddressAutodetectionV4:
