@@ -143,5 +143,5 @@ To ease the use of application configuration I have a SMTP Relay running on Opns
     - Apply
 4. Verify
     ```sh
-    swaks --server opnsense.falhalla.com --port 25 --to <email-address> --from <email-address>
+    swaks --server opnsense.intra.lab --port 25 --to <email-address> --from <email-address>
     ```

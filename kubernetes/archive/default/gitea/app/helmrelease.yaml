@@ -36,7 +36,7 @@ spec:
       enabled: true
       ingressClassName: nginx
       hosts:
-        - host: &host gitea.falhalla.com
+        - host: &host gitea.intra.lab
           paths:
             - path: /
               pathType: Prefix
@@ -60,8 +60,8 @@ spec:
         APP_NAME: Tea, Git, Hot
         server:
           DISABLE_SSH: true
-          DOMAIN: gitea.falhalla.com
-          ROOT_URL: https://gitea.falhalla.com
+          DOMAIN: gitea.intra.lab
+          ROOT_URL: https://gitea.intra.lab
           ENABLE_GZIP: true
           LANDING_PAGE: login
           LFS_START_SERVER: true
@@ -100,18 +100,18 @@ spec:
         mailer:
           ENABLED: true
           MAILER_TYPE: smtp
-          SMTP_ADDR: opnsense.falhalla.com
+          SMTP_ADDR: opnsense.intra.lab
           SMTP_PORT: 25
           FROM: "Admin <admin@falhalla.casa>"
         openid:
           ENABLE_OPENID_SIGNIN: false
           ENABLE_OPENID_SIGNUP: true
-          WHITELISTED_URIS: auth.falhalla.com
+          WHITELISTED_URIS: auth.intra.lab
       oauth:
         - name: authelia
           existingSecret: gitea-config-secret
           provider: openidConnect
-          autoDiscoverUrl: https://auth.falhalla.com/.well-known/openid-configuration
+          autoDiscoverUrl: https://auth.intra.lab/.well-known/openid-configuration
           groupClaimName: groups
           adminGroup: admins
           restrictedGroup: people

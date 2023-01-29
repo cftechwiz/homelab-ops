@@ -33,15 +33,15 @@ spec:
     # oidcSecret:
     #   create: true
     #   clientID: weave-gitops
-    #   issuerURL: https://auth.falhalla.com
-    #   redirectURL: https://gitops.falhalla.com/oauth2/callback
+    #   issuerURL: https://auth.intra.lab
+    #   redirectURL: https://gitops.intra.lab/oauth2/callback
     ingress:
       enabled: true
       className: nginx
       annotations:
         hajimari.io/icon: mdi:sawtooth-wave
       hosts:
-        - host: &host gitops.falhalla.com
+        - host: &host gitops.intra.lab
           paths:
             - path: /
               pathType: Prefix

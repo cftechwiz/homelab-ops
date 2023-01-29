@@ -75,7 +75,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:cctv
         hosts:
-          - host: &host "{{ .Release.Name }}.falhalla.com"
+          - host: &host "{{ .Release.Name }}.intra.lab"
             paths:
               - path: /
                 pathType: Prefix

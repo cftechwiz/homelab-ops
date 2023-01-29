@@ -62,11 +62,11 @@ spec:
             proxy_hide_header "content-security-policy";
             proxy_hide_header "X-Frame-Options";
             proxy_set_header Accept-Encoding "";
-            sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.falhalla.com/css/base/qbittorrent/nord.css"></head>';
+            sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.intra.lab/css/base/qbittorrent/nord.css"></head>';
             sub_filter_once on;
           hajimari.io/icon: mdi:download
         hosts:
-          - host: &host qb.falhalla.com
+          - host: &host qb.intra.lab
             paths:
               - path: /
                 pathType: Prefix

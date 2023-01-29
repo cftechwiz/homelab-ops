@@ -37,7 +37,7 @@ spec:
       annotations:
         hajimari.io/enable: "false"
       hosts:
-        - host: &host blackbox.falhalla.com
+        - host: &host blackbox.intra.lab
           paths:
             - path: /
               pathType: Prefix

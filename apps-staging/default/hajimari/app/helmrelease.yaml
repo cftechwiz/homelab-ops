@@ -54,7 +54,7 @@ spec:
         annotations:
           hajimari.io/enable: "false"
         hosts:
-          - host: &host apps.falhalla.com
+          - host: &host apps.intra.lab
             paths:
               - path: /
                 pathType: Prefix

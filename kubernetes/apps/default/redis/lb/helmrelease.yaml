@@ -67,7 +67,7 @@ spec:
         annotations:
           hajimari.io/icon: simple-icons:redis
         hosts:
-          - host: redis-lb.falhalla.com
+          - host: redis-lb.intra.lab
             paths:
               - path: /
                 pathType: Prefix

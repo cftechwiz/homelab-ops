@@ -42,7 +42,7 @@ spec:
       repository: ghcr.io/shlinkio/shlink
       tag: 3.4.0
     env:
-      DEFAULT_DOMAIN: &host ln.falhalla.com
+      DEFAULT_DOMAIN: &host ln.intra.lab
       DISABLE_TRACKING_FROM: 10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
       ENABLE_PERIODIC_VISIT_LOCATE: "true"
       IS_HTTPS_ENABLED: "true"

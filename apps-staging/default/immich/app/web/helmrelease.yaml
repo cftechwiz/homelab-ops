@@ -63,7 +63,7 @@ spec:
           hajimari.io/appName: Immich
           hajimari.io/icon: heroicons:photo
         hosts:
-          - host: &host photos.falhalla.com
+          - host: &host photos.intra.lab
             paths:
               - path: /
                 pathType: Prefix

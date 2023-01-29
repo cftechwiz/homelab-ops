@@ -38,7 +38,7 @@ spec:
       tag: 3.17.1@sha256:da2846e0398d55a5178448f7cb9ee1eeeeee13830fba40289152798595f78c8a
     command: ["/bin/bash", "/app/opnsense-backup.sh"]
     env:
-      OPNSENSE_URL: "http://opnsense.falhalla.com"
+      OPNSENSE_URL: "http://opnsense.intra.lab"
       S3_URL: "http://minio.default.svc.cluster.local:9000"
     envFrom:
       - secretRef:

@@ -19,9 +19,9 @@ k3s_use_unsupported_config: true
 k3s_registries:
   mirrors:
     "docker.io":
-      endpoint: ["http://mirror.falhalla.com"]
+      endpoint: ["http://mirror.ingra.lab"]
     "*":
-      endpoint: ["http://mirror.falhalla.com"]
+      endpoint: ["http://mirror.intra.lab"]
 k3s_server_manifests_templates:
   - calico-installation.yaml.j2
   - calico-bgpconfiguration.yaml.j2

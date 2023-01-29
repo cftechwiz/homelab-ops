@@ -45,7 +45,7 @@ spec:
       TZ: America/Chicago
       N8N_PORT: &port 80
       N8N_EMAIL_MODE: smtp
-      N8N_SMTP_HOST: opnsense.falhalla.com
+      N8N_SMTP_HOST: opnsense.intra.lab
       N8N_SMTP_PORT: 25
       N8N_SMTP_SENDER: admin@falhalla.casa
       N8N_METRICS: "true"
@@ -64,7 +64,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:workflow
         hosts:
-          - host: &host n8n.falhalla.com
+          - host: &host n8n.intra.lab
             paths:
               - path: /
                 pathType: Prefix

@@ -55,7 +55,7 @@ spec:
         annotations:
           hajimari.io/enable: "false"
         hosts:
-          - host: &host "{{ .Release.Name }}.falhalla.com"
+          - host: &host "{{ .Release.Name }}.intra.lab"
             paths:
               - path: /
                 pathType: Prefix

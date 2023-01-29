@@ -1,6 +1,6 @@
 data "cloudflare_zones" "email_domain" {
   filter {
-    name = "infra.falhalla.com"
+    name = "falhalla.com"
   }
 }
 
