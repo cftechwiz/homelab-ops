@@ -4,6 +4,7 @@ Thumbs.db
 # temp folders
 .private/
 .secrets/
+.cluster/
 # ansible
 xanmanning.k3s*
 # terraform
