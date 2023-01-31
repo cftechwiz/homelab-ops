@@ -97,4 +97,4 @@ jobs:
           cache-to: type=gha,mode=max
           labels: |
             org.opencontainers.image.source="https://github.com/cfallwell/homelab-ops"
-            org.opencontainers.image.authors="Devin Buhl <devin.kray@gmail.com>"
+            org.opencontainers.image.authors="Colin Fallwell <colinfallwell@gmail.com>"

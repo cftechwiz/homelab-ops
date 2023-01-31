@@ -72,9 +72,9 @@ Below are the decrypted versions of the sops encrypted toml files.
             action = "search"
             object = "*"
     [[users]]
-        name = "devin"
+        name = "colin"
         mail = ""
-        givenname = "Devin"
+        givenname = "colin"
         sn = "Buhl"
         uidnumber = 5001
         primarygroup = 6502

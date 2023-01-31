@@ -77,7 +77,7 @@ resource "kubernetes_stateful_set_v1" "kopia" {
             "--override-hostname",
             "falhallanas.lab",
             "--override-username",
-            "devin",
+            "colin",
             "--without-password"
           ]
           port {
