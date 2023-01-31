@@ -125,7 +125,7 @@ To ease the use of application configuration I have a SMTP Relay running on Opns
     1. `SMTP Client Security` = `encrypt`
     2. `Smart Host` = `[smtp.fastmail.com]:465`
     3. `Enable SMTP Authentication` = `true`
-    4. `Authentication Username` = `devin@<email-domain>`
+    4. `Authentication Username` = `colin@<email-domain>`
     5. `Authentication Password` = `<app-password>`
     6. `Permit SASL Authenticated` = `false`
     7. Save

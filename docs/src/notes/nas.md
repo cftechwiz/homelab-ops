@@ -50,7 +50,7 @@ Outside of using [Ansible](https://github.com/ansible/ansible) for configuring t
 3. Dataset Permissions
     ```sh
     sudo chmod 770 /eros/Media
-    sudo chown -R devin:users /eros/Media
+    sudo chown -R colin:users /eros/Media
     ```
 
 ### Snapshots
@@ -93,7 +93,7 @@ Outside of using [Ansible](https://github.com/ansible/ansible) for configuring t
 2. Dataset Permissions
     ```sh
     sudo chmod 770 /share/PVCs
-    sudo chown -R devin:users /share/PVCs
+    sudo chown -R colin:users /share/PVCs
     ```
 
 3. Reload exports

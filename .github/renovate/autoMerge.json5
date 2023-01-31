@@ -8,7 +8,7 @@
       "automergeType": "branch",
       "ignoreTests": true,
       "matchUpdateTypes": ["digest"],
-      "matchPackagePattern": ["ghcr.io/onedr0p"]
+      "matchPackagePattern": ["ghcr.io/cfallwell"]
     },
     {
       "description": "Auto merge containers",
@@ -17,7 +17,7 @@
       "automergeType": "branch",
       "ignoreTests": true,
       "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": ["ghcr.io/onedr0p/prowlarr-nightly"]
+      "matchPackageNames": ["ghcr.io/cfallwell/prowlarr-nightly"]
     },
     {
       "description": "Auto merge GitHub Actions",

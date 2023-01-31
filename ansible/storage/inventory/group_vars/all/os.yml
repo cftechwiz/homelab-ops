@@ -2,15 +2,15 @@
 timezone: "America/Chicago"
 create_user:
   id: 568
-  name: devin
-  group: devin
+  name: cfallwell
+  group: cfallwell
   additional_groups: ["users"]
 create_group:
   id: 568
-  name: devin
+  name: cfallwell
 ssh_authorized_keys:
-  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJnRHFdQWqxfTRuioNM4G3vZyWQy18Xty1+vQV0qm/6G devin@macbook"
-  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIB75L4ZEN17wcsK765dWzqlf0lY+sbK25QCIvebB/+1x devin@phone"
+  - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDOdorMN2jRq08LisRe1qubhOCa9/LdweToE8U0cMu1E13uuRswgGWmFVP1jgIm5AhsgvK6+9tryb2Hja1gWmo/2IvuqZrM2HHbJxv9rJjzDfMZj4aiRv8BwNLuwFnTMbzBF4/ak++0okXYhYGZX9D3py8uoRF9hxP4Etn2HIWIBtB49sq53ltbnZD9LqUUEIW1VWWt1B/NxoxHfGHyncmZGBlQg1spu1Ikk8DedYjn0XdT5L5Ms+yr+I4BDSJhGHPBifLYiMzMR5vqryPNpf3LbrHSZgc4L+diuFs3iDjoQ6YnRbxeTwafg268I38RV8SpLBt+uNzYVJTGjUezA6rh cfallwell@github/69291038 # ssh-import-id gh:cfallwell"
+  - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDza6jbt4u5uif3WrQ4hE9f32EisYs1bMKnT2iYYbAapy9JF68Pi08PkD+YJqRbpua7Ldj6R9vt3Sp4BgJ9V01QWVA3sbnKsEP4bsmRcfItyBqncF1gsbt9gcqX1zKYQZi7rzV6N8ZeXqigaqRGbW9qwa6Ik4J06qkdbe6aCFigwlPE7/9Z8hFKk2tSKhgdavBvB2aMpW7O7ZO+Vr0GkHyQfw2XjosITYaBUzs+Yl+8kiH7CFz3XQ+w+MTNGFBETxqCfGT8urygwAtnpnxtA5LbPtlW2IkI7kJ1lEBHkz2soDgloP2Uxi97DjAw5tN2aj1OK0fEuFeYA4C2jjGzppnlQSpmxxYDPrLEBKFVlKWfUSHr4Fhkppq0Xq32pLhQxPhLkXbHAP5gBVB7AjNoLnJ1C3Ie+JzCURrYeerHlKgGb1VxsZVN49/xv0khFe6MrzHJ67wI+/5JBVyCuwPxy3pY6LqWKcGCYYiFrSp1qeqG/MxXEzwNlBequjJZttatqM0= cfallwell@github/70163718 # ssh-import-id gh:cfallwell"
 packages_repositories:
   - ppa:fish-shell/release-3
 packages_install:
