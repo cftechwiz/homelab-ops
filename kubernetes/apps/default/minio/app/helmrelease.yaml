@@ -125,11 +125,11 @@ spec:
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 100
-    # persistence:
-    #   config:
-    #     enabled: true
-    #     existingClaim: minio-nfs
-    #     mountPath: /data
+    persistence:
+      config:
+        enabled: true
+        existingClaim: minio-nfs
+        mountPath: /data
     resources:
       requests:
         memory: 100Mi
