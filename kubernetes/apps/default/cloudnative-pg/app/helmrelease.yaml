@@ -6,6 +6,8 @@ metadata:
   name: cloudnative-pg
   namespace: default
 spec:
+  dependsOn:
+    - name: cluster-apps-external-secrets-stores
   interval: 15m
   chart:
     spec:
