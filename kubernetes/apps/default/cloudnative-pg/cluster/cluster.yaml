@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/cluster_v1.json
 apiVersion: postgresql.cnpg.io/v1
-kind: Cluster
+kind: Deployment
 metadata:
   name: postgres
   namespace: default
