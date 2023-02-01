@@ -15,7 +15,7 @@ sshd_PasswordAuthentication: 'yes'
 sshd_Banner: 'none'
 packages_repositories:
   - ppa:fish-shell/release-3
-packages_install:
+packages:
   - ansible
   - apt-utils
   - hdparm
