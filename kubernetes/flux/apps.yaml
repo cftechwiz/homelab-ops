@@ -6,6 +6,8 @@ metadata:
   name: cluster-apps
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cluster-apps-external-secrets-stores
   interval: 10m
   path: ./kubernetes/apps
   prune: true
