@@ -88,7 +88,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:pail
         hosts:
-          - host: &console-host "{{ .Release.Name }}.intra.lab"
+          - host: &console-host "{{ .Release.Name }}.falhalla.com"
             paths:
               - path: /
                 pathType: Prefix
@@ -109,7 +109,7 @@ spec:
             chunked_transfer_encoding off;
           hajimari.io/enable: "false"
         hosts:
-          - host: &api-host s3.intra.lab
+          - host: &api-host s3.falhalla.com
             paths:
               - path: /
                 pathType: Prefix
