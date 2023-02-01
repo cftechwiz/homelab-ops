@@ -1,7 +1,7 @@
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/scheduledbackup_v1.json
 apiVersion: postgresql.cnpg.io/v1
-kind: scheduledbackup
+kind: ScheduledBackup
 metadata:
   name: postgres
   namespace: default
