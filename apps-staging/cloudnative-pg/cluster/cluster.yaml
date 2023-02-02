@@ -12,7 +12,7 @@ spec:
   primaryUpdateStrategy: unsupervised
   storage:
     size: 30Gi
-    storageClass: rook-ceph-block
+    storageClass: local-path-provisioner
   superuserSecret:
     name: cloudnative-pg-secret
   bootstrap:
