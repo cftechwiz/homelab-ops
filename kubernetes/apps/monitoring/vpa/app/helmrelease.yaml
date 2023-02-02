@@ -34,7 +34,7 @@ spec:
         tag: 0.13.0
       resources:
         requests:
-          cpu: 10m
+          cpu: 1m
           memory: 100M
         limits:
           memory: 200M

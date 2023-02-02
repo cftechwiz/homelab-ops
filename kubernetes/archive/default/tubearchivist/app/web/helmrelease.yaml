@@ -87,7 +87,7 @@ spec:
         mountPath: /youtube
     resources:
       requests:
-        cpu: 100m
+        cpu: 10m
         memory: 250Mi
       limits:
         memory: 2000Mi

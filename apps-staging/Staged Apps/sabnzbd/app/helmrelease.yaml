@@ -103,7 +103,7 @@ spec:
       node-role.kubernetes.io/worker: "true"
     resources:
       requests:
-        cpu: 10m
+        cpu: 1m
         memory: 250Mi
       limits:
         memory: 8000Mi
