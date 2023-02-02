@@ -40,7 +40,7 @@ packages:
   - fish
   - fzf
   - gdisk
-  - iptools-ping
+  - iputils-ping
   - lm-sensors
   - lvm2
   - nano
