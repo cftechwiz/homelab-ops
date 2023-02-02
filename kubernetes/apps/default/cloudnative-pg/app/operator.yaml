@@ -11342,7 +11342,7 @@ metadata:
   name: cnpg-controller-manager
   namespace: flux-system
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: cloudnative-pg
