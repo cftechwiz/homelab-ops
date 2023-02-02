@@ -6,6 +6,10 @@ metadata:
   name: cluster-apps
   namespace: flux-system
 spec:
+  dependsOn:
+    - name: cluster-apps-external-secrets
+    - name: cluster-apps-local-path-provisioner
+    - name: cluster-apps-ingress-nginx
   interval: 10m
   path: ./kubernetes/apps
   prune: true
