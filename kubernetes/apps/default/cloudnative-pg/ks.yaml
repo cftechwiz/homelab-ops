@@ -15,8 +15,8 @@ spec:
     name: flux-system
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
-      kind: HelmRelease
-      name: cloudnative-pg
+      kind: CustomResourceDefiniton
+      name: postgres
       namespace: default
   interval: 30m
   retryInterval: 1m
