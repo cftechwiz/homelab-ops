@@ -7,7 +7,7 @@ metadata:
 spec:
   secretName: falhalla-com-tls
   issuerRef:
-    name: letsencrypt-production
+    name: letsencrypt-staging
     kind: ClusterIssuer
   commonName: falhalla.com
   dnsNames:
