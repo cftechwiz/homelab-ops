@@ -29,6 +29,4 @@ spec:
   values:
     crds:
       create: true
-    config:
-      data:
-        inherited_annotaions: kyverno.io/ignore
+

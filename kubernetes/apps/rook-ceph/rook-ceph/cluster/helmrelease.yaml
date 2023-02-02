@@ -36,7 +36,7 @@ spec:
         annotations:
           hajimari.io/appName: "Rook"
           hajimari.io/icon: mdi:chess-rook
-          external-dns.home.arpa/enabled: "true"
+          external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
         host:
           name: &host rook.falhalla.com
           path: /
