@@ -38,9 +38,9 @@ spec:
       MINIO_UPDATE: "off"
       MINIO_PROMETHEUS_URL: http://kube-prometheus-stack-prometheus.monitoring.svc.cluster.local:9090
       MINIO_PROMETHEUS_JOB_ID: minio
-      MINIO_BROWSER_REDIRECT_URL: https://minio.intra.lab
-      MINIO_SERVER_URL: https://s3.intra.lab
-      MINIO_API_CORS_ALLOW_ORIGIN: https://minio.intra.lab,https://s3.intralab
+      MINIO_BROWSER_REDIRECT_URL: https://minio.falhalla.com
+      MINIO_SERVER_URL: https://s3.falhalla.com
+      MINIO_API_CORS_ALLOW_ORIGIN: https://minio.falhalla.com,https://s3.falhalla.com
     envFrom:
       - secretRef:
           name: minio-secret
