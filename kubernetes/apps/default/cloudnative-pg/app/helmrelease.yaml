@@ -31,4 +31,4 @@ spec:
       create: true
     config:
       data:
-        INHERITED_ANNOTATIONS: kyverno.io/ignore
+        inherited_annotaions: kyverno.io/ignore
