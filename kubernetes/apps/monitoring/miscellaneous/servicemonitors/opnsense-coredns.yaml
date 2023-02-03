@@ -25,7 +25,7 @@ metadata:
     app.kubernetes.io/instance: *app
 spec:
   type: ExternalName
-  externalName: opnsense.intra.lab.
+  externalName: unifi.lan
   ports:
     - name: metrics
       port: &port 9153

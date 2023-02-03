@@ -45,9 +45,9 @@ spec:
       TZ: America/Chicago
       N8N_PORT: &port 80
       N8N_EMAIL_MODE: smtp
-      N8N_SMTP_HOST: opnsense.intra.lab
-      N8N_SMTP_PORT: 25
-      N8N_SMTP_SENDER: admin@falhalla.casa
+      N8N_SMTP_HOST: smtp.mailgun.org
+      N8N_SMTP_PORT: 587
+      N8N_SMTP_SENDER: postmaster@sandbox1380f255e6ab4f2e920607b037796a35.mailgun.org
       N8N_METRICS: "true"
     envFrom:
       - secretRef:

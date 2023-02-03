@@ -28,7 +28,7 @@ metadata:
     jobLabel: node-exporter
 spec:
   type: ExternalName
-  externalName: opnsense.intra.lab.
+  externalName: unfi.lab
   ports:
     - name: metrics
       port: &port 9100
