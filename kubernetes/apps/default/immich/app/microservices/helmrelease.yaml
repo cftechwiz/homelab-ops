@@ -58,6 +58,13 @@ spec:
         labelSelector:
           matchLabels:
             app.kubernetes.io/name: *app
+    podSecurityContext:
+      runAsUser: 1004
+      runAsGroup: 1000
+      fsGroup: 1000
+      fsGroupChangePolicy: "OnRootMismatch"
+      supplementalGroups:
+        - 100
     resources:
       requests:
         cpu: 1m
