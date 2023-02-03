@@ -58,7 +58,7 @@ spec:
           external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
           hajimari.io/icon: mdi:notebook-edit-outline
         hosts:
-          - host: &host docs.intra.lab
+          - host: &host docs.falhalla.com
             paths:
               - path: /
                 pathType: Prefix

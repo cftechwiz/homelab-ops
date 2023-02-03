@@ -51,7 +51,7 @@ spec:
             sub_filter_once on;
           hajimari.io/icon: mdi:chart-bar
         hosts:
-          - host: &host "{{ .Release.Name }}.intra.lab"
+          - host: &host "{{ .Release.Name }}.falhalla.com"
             paths:
               - path: /
                 pathType: Prefix
