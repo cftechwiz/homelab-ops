@@ -12,7 +12,7 @@ spec:
   primaryUpdateStrategy: unsupervised
   storage:
     size: 30Gi
-    storageClass: local-path-provisioner
+    storageClass: local-path
   superuserSecret:
     name: cloudnative-pg-secret
   bootstrap:
