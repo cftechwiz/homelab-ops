@@ -15,8 +15,8 @@ spec:
     storageClass: ceph-block
   superuserSecret:
     name: cloudnative-pg-secret
-  # bootstrap:
-  #   recovery:
+  bootstrap:
+    initdb:
   #     source: &active-cluster
   postgresql:
     parameters:
