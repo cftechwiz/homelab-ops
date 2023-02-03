@@ -101,7 +101,7 @@ spec:
               - *host
       persistence:
         enabled: true
-        storageClass: ceph-block
+        storageClass: ceph-filesystem
         size: 20Gi
     ruler:
       enabled: true
