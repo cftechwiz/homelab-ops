@@ -83,7 +83,7 @@ spec:
               - *host
       persistence:
         enabled: true
-        storageClass: local-path
+        storageClass: ceph-block
         size: 20Gi
     storegateway:
       enabled: true
@@ -101,7 +101,7 @@ spec:
               - *host
       persistence:
         enabled: true
-        storageClass: local-path
+        storageClass: ceph-block
         size: 20Gi
     ruler:
       enabled: true
@@ -131,7 +131,7 @@ spec:
               - *host
       persistence:
         enabled: true
-        storageClass: local-path
+        storageClass: ceph-block
         size: 20Gi
     metrics:
       enabled: true
