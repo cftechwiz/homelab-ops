@@ -15,9 +15,9 @@ spec:
     storageClass: ceph-block
   superuserSecret:
     name: cloudnative-pg-secret
-  bootstrap:
-    initdb:
-  #     source: &active-cluster
+  # bootstrap:
+  #   recovery:
+  #     source: &active-cluster postgres-v2
   postgresql:
     parameters:
       max_connections: "300"
