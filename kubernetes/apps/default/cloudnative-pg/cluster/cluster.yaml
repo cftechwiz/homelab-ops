@@ -17,6 +17,10 @@ spec:
     name: cloudnative-pg-secret
   bootstrap:
     initdb:
+      database: app
+      owner: app
+      secret:
+        name: username
   #     source: &active-cluster
   postgresql:
     parameters:
