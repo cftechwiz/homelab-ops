@@ -143,5 +143,5 @@ To ease the use of application configuration I have a SMTP Relay running on Opns
     - Apply
 4. Verify
     ```sh
-    swaks --server smtp.mailgun.org --port 587 --to <email-address> --from <email-address>
+    swaks --server hassio.lab --port 25 --to <email-address> --from <email-address>
     ```

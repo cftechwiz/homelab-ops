@@ -54,7 +54,7 @@ spec:
       storageClass: ceph-block
     gitea:
       admin:
-        email: admin@falhalla.casa
+        email: admin@falhalla.com
         username: gitea
       config:
         APP_NAME: Tea, Git, Hot
@@ -100,9 +100,9 @@ spec:
         mailer:
           ENABLED: true
           MAILER_TYPE: smtp
-          SMTP_ADDR: smtp.mailgun.org
-          SMTP_PORT: 587
-          FROM: "postmaster@sandbox1380f255e6ab4f2e920607b037796a35.mailgun.org"
+          SMTP_ADDR: hassio.lab
+          SMTP_PORT: 25
+          FROM: "admin@falhalla.com"
         openid:
           ENABLE_OPENID_SIGNIN: false
           ENABLE_OPENID_SIGNUP: true

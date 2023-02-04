@@ -44,9 +44,9 @@ spec:
       mail:
         enabled: true
         fromAddress: admin
-        domain: falhalla.casa
+        domain: falhalla.com
         smtp:
-          host: opnsense.intra.lab
+          host: hassio.lab
           port: 25
           authtype: NONE
           name: ""
