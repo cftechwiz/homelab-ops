@@ -59,9 +59,9 @@ spec:
           - hosts:
               - *host
     podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
+      runAsUser: 1004
+      runAsGroup: 1000
+      fsGroup: 1000
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 44
@@ -100,9 +100,9 @@ spec:
             topologyKey: kubernetes.io/hostname
     resources:
       requests:
-        gpu.intel.com/i915: 1
+        gpu.intel.com/i915: 0
         cpu: 10m
         memory: 2000Mi
       limits:
-        gpu.intel.com/i915: 1
+        gpu.intel.com/i915: 0
         memory: 10000Mi
