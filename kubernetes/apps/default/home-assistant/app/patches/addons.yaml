@@ -30,7 +30,7 @@ spec:
             hajimari.io/appName: "Hass Config"
             hajimari.io/icon: cib:visual-studio-code
           hosts:
-            - host: &host hass-code.falhalla.com
+            - host: &host hass-code.intra.lab
               paths:
                 - path: /
                   pathType: Prefix

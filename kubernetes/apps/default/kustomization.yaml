@@ -17,7 +17,7 @@ resources:
   - ./glauth/ks.yaml
   - ./gonic/ks.yaml
   - ./hajimari/ks.yaml
-  # - ./home-assistant/ks.yaml
+  - ./home-assistant/ks.yaml
   - ./immich/ks.yaml
   - ./jellyfin/ks.yaml
   - ./kubernetes-schemas/ks.yaml
@@ -31,7 +31,7 @@ resources:
   - ./overseerr/ks.yaml
   - ./plex/ks.yaml
   - ./prowlarr/ks.yaml
-  # - ./qbittorrent/ks.yaml
+  - ./qbittorrent/ks.yaml
   - ./radarr/ks.yaml
   - ./recyclarr/ks.yaml
   - ./redis/ks.yaml
