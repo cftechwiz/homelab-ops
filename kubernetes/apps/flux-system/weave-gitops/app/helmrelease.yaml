@@ -30,18 +30,19 @@ spec:
     adminUser:
       create: true
       username: admin
-    # oidcSecret:
-    #   create: true
-    #   clientID: weave-gitops
-    #   issuerURL: https://auth.intra.lab
-    #   redirectURL: https://gitops.intra.lab/oauth2/callback
+    oidcSecret:
+      create: true
+      clientID: weave-gitops
+      issuerURL: https://auth.falhalla.com
+      redirectURL: https://gitops.falhalla.com/oauth2/callback
     ingress:
       enabled: true
       className: nginx
       annotations:
         hajimari.io/icon: mdi:sawtooth-wave
+        external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
       hosts:
-        - host: &host gitops.intra.lab
+        - host: &host gitops.falhalla.com
           paths:
             - path: /
               pathType: Prefix
@@ -66,7 +67,7 @@ spec:
       name: weave-gitops-secret
       valuesKey: adminPassword
       targetPath: adminUser.passwordHash
-    # - kind: Secret
-    #   name: weave-gitops-secret
-    #   valuesKey: WEAVEGITOPS_OAUTH_CLIENT_SECRET
-    #   targetPath: oidcSecret.clientSecret
+    - kind: Secret
+      name: weave-gitops-secret
+      valuesKey: WEAVEGITOPS_OAUTH_CLIENT_SECRET
+      targetPath: oidcSecret.clientSecret
