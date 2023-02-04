@@ -14,20 +14,20 @@ tasks:
 
   init:
     desc: Install / Upgrade Ansible galaxy deps
-    dir: provision/ansible
+    dir: ansible
     cmds:
       - ansible-galaxy install -r requirements.yml --roles-path ~/.ansible/roles --force
       - ansible-galaxy collection install -r requirements.yml --collections-path ~/.ansible/collections --force
 
   list:
     desc: List all the hosts
-    dir: provision/ansible
+    dir: ansible
     cmds:
       - ansible all -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml --list-hosts
 
   metal:
     desc: provision BareMetals
-    dir: provision/ansible
+    dir: ansible
     cmds:
       - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/metal-prepare.yml
 
@@ -39,13 +39,13 @@ tasks:
 
   install:
     desc: Install Kubernetes on the nodes
-    dir: provision/ansible
+    dir: ansible
     cmds:
       - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/cluster-installation.yml
 
   nuke:
     desc: Uninstall Kubernetes on the nodes
-    dir: provision/ansible
+    dir: ansible
     interactive: true
     cmds:
       - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/cluster-nuke.yml
@@ -53,31 +53,31 @@ tasks:
 
   nuke-rook:
     desc: Uninstall Kubernetes on the nodes
-    dir: provision/ansible
+    dir: ansible
     interactive: true
     cmds:
       - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/cluster-rook-nuke.yml
 
   ping:
     desc: Ping all the hosts
-    dir: provision/ansible
+    dir: ansible
     cmds:
       - ansible all -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml --one-line -m 'ping'
 
   uptime:
     desc: Uptime of all the hosts
-    dir: provision/ansible
+    dir: ansible
     cmds:
       - ansible all -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml --one-line -a 'uptime'
 
   reboot:
     desc: Reboot all the k8s nodes
-    dir: provision/ansible
+    dir: ansible
     cmds:
       - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/cluster-reboot.yml
 
   poweroff:
     desc: Shutdown all the k8s nodes
-    dir: provision/ansible
+    dir: ansible
     cmds:
       - ansible kubernetes -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml -a '/usr/bin/systemctl poweroff' --become
