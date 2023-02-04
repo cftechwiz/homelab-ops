@@ -92,7 +92,7 @@ spec:
         enabled: true
         type: nfs
         server: falhallanas.lab
-        path: /eros/Media/Library/Music
+        path: /nfs/Media/Library/Music
         mountPath: /music
         readOnly: true
     resources:

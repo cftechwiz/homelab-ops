@@ -93,13 +93,13 @@ spec:
         enabled: true
         type: nfs
         server: falhallanas.lab
-        path: /eros/Downloads
+        path: /nfs/Downloads
         mountPath: /downloads
       media:
         enabled: true
         type: nfs
         server: falhallanas.lab
-        path: /eros/Media
+        path: /nfs/Media
         mountPath: /media
       incomplete:
         enabled: true

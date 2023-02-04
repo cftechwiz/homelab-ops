@@ -32,32 +32,32 @@ Outside of using [Ansible](https://github.com/ansible/ansible) for configuring t
 
 1. Create datasets
     ```sh
-    sudo zfs create eros/Apps
-    sudo zfs create eros/Apps/MinIO
-    sudo zfs create eros/Media
+    sudo zfs create nfs/Apps
+    sudo zfs create nfs/Apps/MinIO
+    sudo zfs create nfs/Media
     ```
 
 2. Share dataset over NFS
     ```sh
     sudo zfs set \
         sharenfs="no_subtree_check,all_squash,anonuid=568,anongid=100,rw=@172.16.70.0/24,rw=@192.168.1.0/24,ro=192.168.150.21,ro=192.168.150.28" \
-        eros/Media
+        nfs/Media
     sudo zfs set \
         sharenfs="no_subtree_check,all_squash,anonuid=568,anongid=100,rw=@172.16.70.0/24,rw=@192.168.1.0/24" \
-        eros/Apps/MinIO
+        nfs/Apps/MinIO
     ```
 
 3. Dataset Permissions
     ```sh
-    sudo chmod 770 /eros/Media
-    sudo chown -R colin:users /eros/Media
+    sudo chmod 770 /nfs/Media
+    sudo chown -R colin:users /nfs/Media
     ```
 
 ### Snapshots
 
 1. Add or replace the file `/etc/sanoid/sanoid.conf`
     ```ini
-    [eros/Media]
+    [nfs/Media]
     use_template = media
 
     [template_media]
@@ -77,7 +77,7 @@ Outside of using [Ansible](https://github.com/ansible/ansible) for configuring t
 
 3. Give a local user access to a specific datasets snapshots
     ```sh
-    sudo zfs allow -u jeff send,snapshot,hold eros/Media
+    sudo zfs allow -u jeff send,snapshot,hold nfs/Media
     ```
 
 ## NFS

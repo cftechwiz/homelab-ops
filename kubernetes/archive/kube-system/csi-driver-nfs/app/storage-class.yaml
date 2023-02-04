@@ -6,7 +6,7 @@ metadata:
 provisioner: nfs.csi.k8s.io
 parameters:
   server: falhallanas.lab
-  share: /eros/Apps/PVCs
+  share: /nfs/Apps/PVCs
 reclaimPolicy: Delete
 volumeBindingMode: Immediate
 mountOptions:

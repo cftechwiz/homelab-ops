@@ -89,7 +89,7 @@ spec:
         enabled: true
         type: nfs
         server: falhallanas.lab
-        path: /eros/Media
+        path: /nfs/Media
         mountPath: /media
     resources:
       requests:
