@@ -6,10 +6,10 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
-  # - ./audiobookshelf/ks.yaml
+  - ./audiobookshelf/ks.yaml
   - ./authelia/ks.yaml
-  # - ./bazarr/ks.yaml
-  # - ./changedetection/ks.yaml
+  - ./bazarr/ks.yaml
+  - ./changedetection/ks.yaml
   - ./cloudnative-pg/ks.yaml
   # - ./emqx/ks.yaml
   # - ./excalidraw/ks.yaml
