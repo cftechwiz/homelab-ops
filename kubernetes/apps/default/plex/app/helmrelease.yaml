@@ -40,7 +40,7 @@ spec:
         externalIPs: ["${SVC_PLEX_ADDR}"]
         externalTrafficPolicy: Local
         ports:
-          https:
+          http:
             port: 32400
     ingress:
       main:
@@ -49,6 +49,8 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+          nginx.ingress.kubernetes.io/enable-cors: "true"
+          nginx.ingress.kubernetes.io/cors-allow-origin: "https://*.falhalla.com:32400, http://*.falhalla.com"
           hajimari.io/icon: mdi:plex
         hosts:
           - host: &host plex.falhalla.com
