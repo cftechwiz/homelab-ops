@@ -48,7 +48,7 @@ spec:
         ingressClassName: nginx
         annotations:
           external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
-          # nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+          nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           hajimari.io/icon: mdi:plex
         hosts:
           - host: &host plex.falhalla.com
