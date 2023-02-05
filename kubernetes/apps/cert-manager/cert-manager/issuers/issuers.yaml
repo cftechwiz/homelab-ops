@@ -42,11 +42,12 @@ spec:
         selector:
           dnsZones:
             - falhalla.com
----
-# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/clusterissuer_v1.json
-apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
-metadata:
-  name: localCertIssuer
-spec:
-  selfSigned: {}
+
+# ---
+# # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/clusterissuer_v1.json
+# apiVersion: cert-manager.io/v1
+# kind: ClusterIssuer
+# metadata:
+#   name: localCertIssuer
+# spec:
+#   selfSigned: {}
