@@ -51,7 +51,7 @@ spec:
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           hajimari.io/icon: mdi:plex
         hosts:
-          - host: &host "{{ .Release.Name }}.falhalla.com"
+          - host: &host plex.falhalla.com
             paths:
               - path: /
                 pathType: Prefix
