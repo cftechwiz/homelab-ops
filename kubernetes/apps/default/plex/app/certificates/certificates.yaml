@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: plex-falhalla-com
+  namespace: default
+spec:
+  secretName: plex-falhalla-com-tls
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
+  commonName: plex.falhalla.com
+  dnsNames:
+    - plex.falhalla.com
