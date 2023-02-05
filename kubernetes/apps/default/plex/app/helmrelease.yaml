@@ -40,7 +40,7 @@ spec:
         externalIPs: ["${SVC_PLEX_ADDR}"]
         externalTrafficPolicy: Local
         ports:
-          http:
+          https:
             port: 32400
     ingress:
       main:
