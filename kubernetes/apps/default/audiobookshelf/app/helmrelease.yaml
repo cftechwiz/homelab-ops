@@ -50,7 +50,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:podcast
         hosts:
-          - host: &host "{{ .Release.Name }}.intra.lab"
+          - host: &host "{{ .Release.Name }}.intra.falhalla.com"
             paths:
               - path: /
                 pathType: Prefix

@@ -48,7 +48,7 @@ spec:
         path: /
         pathType: Prefix
         hosts:
-          - &host emqx.intra.lab
+          - &host emqx.intra.falhalla.com
         tls:
           - hosts:
               - *host

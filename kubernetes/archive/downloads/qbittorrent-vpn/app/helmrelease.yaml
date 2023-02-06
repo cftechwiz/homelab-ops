@@ -47,7 +47,7 @@ spec:
         annotations:
           hajimari.io/enabled: "false"
         hosts:
-          - host: &host qbvpn.intra.lab
+          - host: &host qbvpn.intra.falhalla.com
             paths:
               - path: /
                 pathType: Prefix

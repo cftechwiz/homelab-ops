@@ -64,7 +64,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:workflow
         hosts:
-          - host: &host n8n.intra.lab
+          - host: &host n8n.intra.falhalla.com
             paths:
               - path: /
                 pathType: Prefix

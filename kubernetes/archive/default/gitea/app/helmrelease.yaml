@@ -36,7 +36,7 @@ spec:
       enabled: true
       ingressClassName: nginx
       hosts:
-        - host: &host gitea.intra.lab
+        - host: &host gitea.intra.falhalla.com
           paths:
             - path: /
               pathType: Prefix
@@ -60,8 +60,8 @@ spec:
         APP_NAME: Tea, Git, Hot
         server:
           DISABLE_SSH: true
-          DOMAIN: gitea.intra.lab
-          ROOT_URL: https://gitea.intra.lab
+          DOMAIN: gitea.intra.falhalla.com
+          ROOT_URL: https://gitea.intra.falhalla.com
           ENABLE_GZIP: true
           LANDING_PAGE: login
           LFS_START_SERVER: true
@@ -106,12 +106,12 @@ spec:
         openid:
           ENABLE_OPENID_SIGNIN: false
           ENABLE_OPENID_SIGNUP: true
-          WHITELISTED_URIS: auth.intra.lab
+          WHITELISTED_URIS: auth.intra.falhalla.com
       oauth:
         - name: authelia
           existingSecret: gitea-config-secret
           provider: openidConnect
-          autoDiscoverUrl: https://auth.intra.lab/.well-known/openid-configuration
+          autoDiscoverUrl: https://auth.intra.falhalla.com/.well-known/openid-configuration
           groupClaimName: groups
           adminGroup: admins
           restrictedGroup: people

@@ -28,7 +28,7 @@ metadata:
     jobLabel: node-exporter
 spec:
   type: ExternalName
-  externalName: pikvm.intra.lab.
+  externalName: pikvm.intra.falhalla.com.
   ports:
     - name: metrics
       port: &port 9100

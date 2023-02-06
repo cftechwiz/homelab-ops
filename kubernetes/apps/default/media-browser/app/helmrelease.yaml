@@ -65,7 +65,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:folder-play-outline
         hosts:
-          - host: &host "{{ .Release.Name }}.intra.lab"
+          - host: &host "{{ .Release.Name }}.intra.falhalla.com"
             paths:
               - path: /
                 pathType: Prefix

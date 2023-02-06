@@ -36,7 +36,7 @@ spec:
       repository: ghcr.io/shlinkio/shlink-web-client
       tag: 3.9.1
     env:
-      SHLINK_SERVER_URL: https://ln.intra.lab
+      SHLINK_SERVER_URL: https://ln.intra.falhalla.com
     envFrom:
       - secretRef:
           name: shlink-secret
@@ -52,7 +52,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:link
         hosts:
-          - host: &host shlink.intra.lab
+          - host: &host shlink.intra.falhalla.com
             paths:
               - path: /
                 pathType: Prefix

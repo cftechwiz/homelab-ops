@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/instance: *app
 spec:
   type: ExternalName
-  externalName: valetudo.intra.lab.
+  externalName: valetudo.intra.falhalla.com.
   ports:
     - name: http
       port: &port 80
@@ -29,7 +29,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: &host valetudo.intra.lab
+    - host: &host valetudo.intra.falhalla.com
       http:
         paths:
           - path: /

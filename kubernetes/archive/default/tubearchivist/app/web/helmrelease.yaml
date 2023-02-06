@@ -43,7 +43,7 @@ spec:
       REDIS_HOST: tubearchivist-redis.default.svc.cluster.local
       HOST_UID: 568
       HOST_GID: 568
-      TA_HOST: &host tubearchivist.intra.lab
+      TA_HOST: &host tubearchivist.intra.falhalla.com
       TA_USERNAME: admin
     envFrom:
       - secretRef:

@@ -21,7 +21,7 @@ k3s_registries:
     "docker.io":
       endpoint: ["http://mirror.ingra.lab"]
     "*":
-      endpoint: ["http://mirror.intra.lab"]
+      endpoint: ["http://mirror.falhalla.com"]
 k3s_server_manifests_templates:
   - calico-installation.yaml.j2
   - calico-bgpconfiguration.yaml.j2

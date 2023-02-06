@@ -61,7 +61,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:zigbee
         hosts:
-          - host: &host "{{ .Release.Name }}.intra.lab"
+          - host: &host "{{ .Release.Name }}.intra.falhalla.com"
             paths:
               - path: /
                 pathType: Prefix

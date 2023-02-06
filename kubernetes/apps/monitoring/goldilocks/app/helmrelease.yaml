@@ -42,7 +42,7 @@ spec:
         annotations:
           hajimari.io/icon: mdi:align-vertical-top
         hosts:
-          - host: &host goldilocks.intra.lab
+          - host: &host goldilocks.intra.falhalla.com
             paths:
               - path: /
                 type: Prefix

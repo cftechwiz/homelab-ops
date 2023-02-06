@@ -109,7 +109,7 @@ spec:
           hajimari.io/appName: "Alert Manager"
           hajimari.io/icon: mdi:alert-decagram-outline
         hosts:
-          - &host alert-manager.intra.lab
+          - &host alert-manager.intra.falhalla.com
         tls:
           - hosts:
               - *host
@@ -176,7 +176,7 @@ spec:
           hajimari.io/icon: simple-icons:prometheus
         pathType: Prefix
         hosts:
-          - &host prometheus.intra.lab
+          - &host prometheus.intra.falhalla.com
         tls:
           - hosts:
               - *host
@@ -229,7 +229,7 @@ spec:
               password: 1NtERnALOnLYuS3
             honor_timestamps: true
             static_configs:
-              - targets: ["pikvm.intra.lab"]
+              - targets: ["pikvm.intra.falhalla.com"]
           - job_name: nexus
             scrape_interval: 1m
             scrape_timeout: 10s
@@ -238,4 +238,4 @@ spec:
               username: admin
               password: 1NtERnALOnLYuS3
             static_configs:
-              - targets: ["nexus.intra.lab"]
+              - targets: ["nexus.intra.falhalla.com"]

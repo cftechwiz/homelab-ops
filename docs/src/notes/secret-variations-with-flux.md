@@ -31,7 +31,7 @@ envFrom:
 ```
 
 ```admonish example
-View example <ins>[Helm Release](https://ln.intra.lab/ngLju)</ins> and corresponding <ins>[Secret](https://ln.intra.lab/ULgnl)</ins>.
+View example <ins>[Helm Release](https://ln.intra.falhalla.com/ngLju)</ins> and corresponding <ins>[Secret](https://ln.intra.falhalla.com/ULgnl)</ins>.
 ```
 
 ### Method 2: `env.valueFrom`
@@ -48,7 +48,7 @@ env:
 ```
 
 ```admonish example
-View example <ins>[Helm Release](https://ln.intra.lab/0lbMT)</ins> and corresponding <ins>[Secret](https://ln.intra.lab/KYjhP)</ins>.
+View example <ins>[Helm Release](https://ln.intra.falhalla.com/0lbMT)</ins> and corresponding <ins>[Secret](https://ln.intra.falhalla.com/KYjhP)</ins>.
 ```
 
 ### Method 3: `spec.valuesFrom`
@@ -66,7 +66,7 @@ valuesFrom:
 ```
 
 ```admonish example
-View example <ins>[Helm Release](https://ln.intra.lab/ARdun)</ins> and corresponding <ins>[Secret](https://ln.intra.lab/hNef8)</ins>.
+View example <ins>[Helm Release](https://ln.intra.falhalla.com/ARdun)</ins> and corresponding <ins>[Secret](https://ln.intra.falhalla.com/hNef8)</ins>.
 ```
 
 ### Method 4: Variable Substitution with Flux
@@ -100,7 +100,7 @@ spec:
 ```
 
 ```admonish example
-View example <ins>[Fluxtomization](https://ln.intra.lab/ZMbfI)</ins>, <ins>[Helm Release](https://ln.intra.lab/y6DJS)</ins>, and corresponding <ins>[Secret](https://ln.intra.lab/kRoHj)</ins>.
+View example <ins>[Fluxtomization](https://ln.intra.falhalla.com/ZMbfI)</ins>, <ins>[Helm Release](https://ln.intra.falhalla.com/y6DJS)</ins>, and corresponding <ins>[Secret](https://ln.intra.falhalla.com/kRoHj)</ins>.
 ```
 
 ## Final Thoughts

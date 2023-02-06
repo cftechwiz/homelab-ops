@@ -46,7 +46,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-query.intra.lab
+        hostname: &host thanos-query.intra.falhalla.com
         tls: true
         extraTls:
           - hosts:
@@ -60,7 +60,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-bucketweb.intra.lab
+        hostname: &host thanos-bucketweb.intra.falhalla.com
         tls: true
         extraTls:
           - hosts:
@@ -76,7 +76,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-compactor.intra.lab
+        hostname: &host thanos-compactor.intra.falhalla.com
         tls: true
         extraTls:
           - hosts:
@@ -94,7 +94,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-storegateway.intra.lab
+        hostname: &host thanos-storegateway.intra.falhalla.com
         tls: true
         extraTls:
           - hosts:
@@ -124,7 +124,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
-        hostname: &host thanos-ruler.intra.lab
+        hostname: &host thanos-ruler.intra.falhalla.com
         tls: true
         extraTls:
           - hosts:

@@ -5,7 +5,7 @@ metadata:
   name: &app postgres-lb
   namespace: default
   annotations:
-    coredns.io/hostname: postgres.intra.lab
+    coredns.io/hostname: postgres.intra.falhalla.com
   labels:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app

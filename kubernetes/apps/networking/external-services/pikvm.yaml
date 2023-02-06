@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/instance: *app
 spec:
   type: ExternalName
-  externalName: pikvm.intra.lab.
+  externalName: pikvm.intra.falhalla.com.
   ports:
     - name: http
       port: &port 443
@@ -29,7 +29,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: &host pikvm.intra.lab
+    - host: &host pikvm.intra.falhalla.com
       http:
         paths:
           - path: /

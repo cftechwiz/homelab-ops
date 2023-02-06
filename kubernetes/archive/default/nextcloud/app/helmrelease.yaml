@@ -40,7 +40,7 @@ spec:
       existingSecret:
         enabled: true
         secretName: nextcloud
-      host: &host cloud.intra.lab
+      host: &host cloud.intra.falhalla.com
       mail:
         enabled: true
         fromAddress: admin
