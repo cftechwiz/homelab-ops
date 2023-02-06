@@ -50,6 +50,39 @@ spec:
           external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
           hajimari.io/icon: mdi:plex
+          nginx.ingress.kubernetes.io/configuration-snippet: |
+            client_max_body_size 500M;
+            send_timeout 100m;
+            add_header Strict-Transport-Security max-age=15768000;
+            add_header Referrer-Policy strict-origin-when-cross-origin;
+            add_header X-Frame-Options deny;
+            add_header X-Content-Type-Options nosniff;
+            add_header X-XSS-Protection "1; mode=block";
+            add_header Permissions-Policy "geolocation=(self), midi=(self), sync-xhr=(self), microphone=(self), camera=(self), magnetometer=(self), gyroscope=(self), fullscreen=(self), payment=(self)";
+            add_header Content-Security-Policy "default-src 'none'; base-uri 'self' plex.falhalla.com; font-src 'self' data: plex.falhalla.com; media-src 'self' data: blob: plex.falhalla.com https://*.plex.direct:32400 https://video.internetvideoarchive.net https://*.cloudfront.net; script-src 'self' 'unsafe-inline' 'unsafe-eval' falhalla.com plex.falhalla.com; style-src 'self' 'unsafe-inline' plex.falhalla.com; img-src 'self' data: blob: https: plex.falhalla.com; worker-src * blob:; frame-src 'self'; connect-src 'self' https: falhalla.com plex.falhalla.com wss://*.plex.direct:32400 wss://pubsub.plex.tv; object-src 'self' plex.falhalla.com; frame-ancestors 'self' falhalla.com plex.falhalla.com; form-action 'self' plex.falhalla.com; manifest-src 'self' plex.falhalla.com; script-src-elem 'self' 'unsafe-inline' falhalla.com plex.falhalla.com www.gstatic.com";
+            gzip on;
+            gzip_vary on;
+            gzip_min_length 1000;
+            gzip_proxied any;
+            gzip_types text/plain text/css text/xml application/xml text/javascript application/x-javascript image/svg+xml;
+            gzip_disable "MSIE [1-6]\.";
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For '$proxy_add_x_forwarded_for,$realip_remote_addr';
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header Sec-WebSocket-Extensions $http_sec_websocket_extensions;
+            proxy_set_header Sec-WebSocket-Key $http_sec_websocket_key;
+            proxy_set_header Sec-WebSocket-Version $http_sec_websocket_version;
+            location /plex/ {
+              proxy_pass http://plex/;
+              proxy_set_header X-Forwarded-For $remote_addr;
+              proxy_ssl_verify off;
+              proxy_http_version 1.1;
+              proxy_set_header Host $http_host;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection "upgrade";
+              proxy_read_timeout 86400;
+              }
         hosts:
           - host: &host plex.falhalla.com
             paths:
