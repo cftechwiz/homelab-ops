@@ -23,6 +23,7 @@ metadata:
   namespace: networking
   annotations:
     hajimari.io/icon: mdi:robot-vacuum
+    hajimari.io/group: Intranet Apps
   labels:
     app.kubernetes.io/name: *app
     app.kubernetes.io/instance: *app

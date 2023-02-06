@@ -45,6 +45,7 @@ spec:
         annotations:
           hajimari.io/appName: "EMQX"
           hajimari.io/icon: simple-icons:eclipsemosquitto
+          hajimari.io/group: Intranet Apps
         path: /
         pathType: Prefix
         hosts:

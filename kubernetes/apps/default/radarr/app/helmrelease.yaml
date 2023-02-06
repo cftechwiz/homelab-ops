@@ -60,6 +60,7 @@ spec:
             sub_filter '</head>' '<link rel="stylesheet" type="text/css" href="https://theme-park.intra.falhalla.com/css/base/radarr/nord.css"></head>';
             sub_filter_once on;
           hajimari.io/icon: mdi:filmstrip
+          hajimari.io/group: Intranet Apps
         hosts:
           - host: *host
             paths:

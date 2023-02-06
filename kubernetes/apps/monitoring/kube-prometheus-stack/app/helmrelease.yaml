@@ -108,6 +108,7 @@ spec:
         annotations:
           hajimari.io/appName: "Alert Manager"
           hajimari.io/icon: mdi:alert-decagram-outline
+          hajimari.io/group: Intranet Apps
         hosts:
           - &host alert-manager.intra.falhalla.com
         tls:

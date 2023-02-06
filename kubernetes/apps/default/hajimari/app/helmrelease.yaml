@@ -34,7 +34,7 @@ spec:
       darkTheme: espresso
       alwaysTargetBlank: true
       showGreeting: false
-      showAppGroups: false
+      showAppGroups: true
       showAppStatus: false
       showBookmarkGroups: false
       showGlobalBookmarks: false
@@ -53,6 +53,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/enable: "false"
+          hajimari.io/group: Intranet Apps
         hosts:
           - host: &host apps.intra.falhalla.com
             paths:

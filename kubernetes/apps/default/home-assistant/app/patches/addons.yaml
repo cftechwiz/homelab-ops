@@ -29,6 +29,7 @@ spec:
           annotations:
             hajimari.io/appName: "Hass Config"
             hajimari.io/icon: cib:visual-studio-code
+            hajimari.io/group: Intranet Apps
           hosts:
             - host: &host hass-code.intra.falhalla.com
               paths:

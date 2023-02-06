@@ -66,6 +66,7 @@ spec:
         ingressClassName: nginx
         annotations:
           hajimari.io/icon: simple-icons:redis
+          hajimari.io/group: Intranet Apps
         hosts:
           - host: redis-lb.intra.falhalla.com
             paths:
