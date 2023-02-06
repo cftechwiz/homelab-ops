@@ -31,7 +31,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/dgtlmoon/changedetection.io
-      tag: 0.40.0.4
+      tag: 0.40.2
     env:
       TZ: America/Chicago
       PORT: &port 5000
