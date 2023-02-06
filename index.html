@@ -1,0 +1,662 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Introduction - Home Operations</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="././mdbook-admonish.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Welcome</li><li class="spacer"></li><li class="chapter-item expanded "><a href="introduction.html" class="active">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Basement Notes</li><li class="spacer"></li><li class="chapter-item expanded "><a href="notes/nas.html">NAS</a></li><li class="chapter-item expanded "><a href="notes/opnsense.html">Opnsense</a></li><li class="chapter-item expanded "><a href="notes/pikvm.html">PiKVM</a></li><li class="chapter-item expanded "><a href="notes/proxmox-considerations.html">Proxmox Considerations</a></li><li class="chapter-item expanded "><a href="notes/s3-buckets.html">S3 buckets</a></li><li class="chapter-item expanded "><a href="notes/secret-variations-with-flux.html">Secret variations with Flux</a></li><li class="chapter-item expanded "><a href="notes/yaml-madness.html">YAML Madness</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Home Operations</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/cfallwell/homelab-ops" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="introduction"><a class="header" href="#introduction">Introduction</a></h1>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p>These docs contain information that relates to my setup. They may or may not work for you.</p>
+</div>
+</div>
+<hr />
+<br />
+<p>#yamllint disable</p>
+<h1 id="template-for-deploying-k3s-backed-by-flux"><a class="header" href="#template-for-deploying-k3s-backed-by-flux">Template for deploying k3s backed by Flux</a></h1>
+<p>Highly opinionated template for deploying a single <a href="https://k3s.io">k3s</a> cluster with <a href="https://www.ansible.com">Ansible</a> and <a href="https://www.terraform.io">Terraform</a> backed by <a href="https://toolkit.fluxcd.io/">Flux</a> and <a href="https://toolkit.fluxcd.io/guides/mozilla-sops/">SOPS</a>.</p>
+<p>The purpose here is to showcase how you can deploy an entire Kubernetes cluster and show it off to the world using the <a href="https://www.weave.works/blog/what-is-gitops-really">GitOps</a> tool <a href="https://toolkit.fluxcd.io/">Flux</a>. When completed, your Git repository will be driving the state of your Kubernetes cluster. In addition with the help of the <a href="https://github.com/ansible-collections/community.sops">Ansible</a>, <a href="https://github.com/carlpett/terraform-provider-sops">Terraform</a> and <a href="https://toolkit.fluxcd.io/guides/mozilla-sops/">Flux</a> SOPS integrations you'll be able to commit <a href="https://github.com/FiloSottile/age">Age</a> encrypted secrets to your public repo.</p>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<ul>
+<li><a href="https://github.com/k8s-at-home/flux-cluster-template#-introduction">Introduction</a></li>
+<li><a href="https://github.com/k8s-at-home/flux-cluster-template#-prerequisites">Prerequisites</a></li>
+<li><a href="https://github.com/k8s-at-home/flux-cluster-template#-repository-structure">Repository structure</a></li>
+<li><a href="https://github.com/k8s-at-home/flux-cluster-template#-lets-go">Lets go!</a></li>
+<li><a href="https://github.com/k8s-at-home/flux-cluster-template#-post-installation">Post installation</a></li>
+<li><a href="https://github.com/k8s-at-home/flux-cluster-template#-troubleshooting">Troubleshooting</a></li>
+<li><a href="https://github.com/k8s-at-home/flux-cluster-template#-whats-next">What's next</a></li>
+<li><a href="https://github.com/k8s-at-home/flux-cluster-template#-thanks">Thanks</a></li>
+</ul>
+<h2 id="-introduction"><a class="header" href="#-introduction">👋 Introduction</a></h2>
+<p>The following components will be installed in your <a href="https://k3s.io/">k3s</a> cluster by default. Most are only included to get a minimum viable cluster up and running.</p>
+<ul>
+<li><a href="https://toolkit.fluxcd.io/">flux</a> - GitOps operator for managing Kubernetes clusters from a Git repository</li>
+<li><a href="https://kube-vip.io/">kube-vip</a> - Load balancer for the Kubernetes control plane nodes</li>
+<li><a href="https://metallb.universe.tf/">metallb</a> - Load balancer for Kubernetes services</li>
+<li><a href="https://cert-manager.io/">cert-manager</a> - Operator to request SSL certificates and store them as Kubernetes resources</li>
+<li><a href="https://www.tigera.io/project-calico/">calico</a> - Container networking interface for inter pod and service networking</li>
+<li><a href="https://github.com/kubernetes-sigs/external-dns">external-dns</a> - Operator to publish DNS records to Cloudflare (and other providers) based on Kubernetes ingresses</li>
+<li><a href="https://github.com/ori-edge/k8s_gateway">k8s_gateway</a> - DNS resolver that provides local DNS to your Kubernetes ingresses</li>
+<li><a href="https://kubernetes.github.io/ingress-nginx/">ingress-nginx</a> - Kubernetes ingress controller used for a HTTP reverse proxy of Kubernetes ingresses</li>
+<li><a href="https://github.com/rancher/local-path-provisioner">local-path-provisioner</a> - provision persistent local storage with Kubernetes</li>
+</ul>
+<p><em>Additional applications include <a href="https://github.com/toboshii/hajimari">hajimari</a>, <a href="https://github.com/tarampampam/error-pages">error-pages</a>, <a href="https://github.com/Ealenn/Echo-Server">echo-server</a>, <a href="https://github.com/rancher/system-upgrade-controller">system-upgrade-controller</a>, <a href="https://github.com/emberstack/kubernetes-reflector">reflector</a>, <a href="https://github.com/stakater/Reloader">reloader</a>, and <a href="https://github.com/weaveworks/kured">kured</a></em></p>
+<p>For provisioning the following tools will be used:</p>
+<ul>
+<li><a href="https://getfedora.org/en/server/download/">Fedora 36 Server</a> - Universal operating system that supports running all kinds of home related workloads in Kubernetes and has a faster release cycle</li>
+<li><a href="https://www.ansible.com">Ansible</a> - Provision Fedora Server and install k3s</li>
+<li><a href="https://www.terraform.io">Terraform</a> - Provision an already existing Cloudflare domain and certain DNS records to be used with your k3s cluster</li>
+</ul>
+<h2 id="-prerequisites"><a class="header" href="#-prerequisites">📝 Prerequisites</a></h2>
+<p><strong>Note:</strong> <em>This template has not been tested on cloud providers like AWS EC2, Hetzner, Scaleway etc... Those cloud offerings probably have a better way of provsioning a Kubernetes cluster and it's advisable to use those instead of the Ansible playbooks included here. This repository can still be tweaked for the GitOps/Flux portion if there's a cluster working in one those environments.</em></p>
+<h3 id="-reading-material"><a class="header" href="#-reading-material">📚 Reading material</a></h3>
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/">Organizing Cluster Access Using kubeconfig Files</a></li>
+</ul>
+<h3 id="-systems"><a class="header" href="#-systems">💻 Systems</a></h3>
+<ul>
+<li>One or more nodes with a fresh install of <a href="https://getfedora.org/en/server/download/">Fedora Server 36</a>.
+<ul>
+<li>These nodes can be ARM64/AMD64 bare metal or VMs.</li>
+<li>An odd number of control plane nodes, greater than or equal to 3 is required if deploying more than one control plane node.</li>
+</ul>
+</li>
+<li>A <a href="https://www.cloudflare.com/">Cloudflare</a> account with a domain, this will be managed by Terraform and external-dns. You can <a href="https://www.cloudflare.com/products/registrar/">register new domains</a> directly thru Cloudflare.</li>
+<li>Some experience in debugging problems and a positive attitude ;)</li>
+</ul>
+<p>📍 It is recommended to have 3 master nodes for a highly available control plane.</p>
+<h3 id="-workstation-tools"><a class="header" href="#-workstation-tools">🔧 Workstation Tools</a></h3>
+<ol>
+<li>
+<p>Install the <strong>most recent versions</strong> of the following CLI tools on your workstation, if you are using <a href="https://brew.sh/">Homebrew</a> on MacOS or Linux skip to steps 3 and 4.</p>
+<ul>
+<li>
+<p>Required: <a href="https://github.com/FiloSottile/age">age</a>, <a href="https://www.ansible.com">ansible</a>, <a href="https://toolkit.fluxcd.io/">flux</a>, <a href="https://github.com/go-task/task">go-task</a>, <a href="http://jodies.de/ipcalc">ipcalc</a>, <a href="https://stedolan.github.io/jq/">jq</a>, <a href="https://kubernetes.io/docs/tasks/tools/">kubectl</a>, <a href="https://github.com/pre-commit/pre-commit">pre-commit</a>, <a href="https://github.com/mozilla/sops">sops</a>, <a href="https://www.terraform.io">terraform</a>, <a href="https://github.com/mikefarah/yq">yq v4</a></p>
+</li>
+<li>
+<p>Recommended: <a href="https://github.com/direnv/direnv">direnv</a>, <a href="https://helm.sh/">helm</a>, <a href="https://github.com/kubernetes-sigs/kustomize">kustomize</a>, <a href="https://github.com/prettier/prettier">prettier</a>, <a href="https://github.com/stern/stern">stern</a>, <a href="https://github.com/adrienverge/yamllint">yamllint</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>This guide heavily relies on <a href="https://github.com/go-task/task">go-task</a> as a framework for setting things up. It is advised to learn and understand the commands it is running under the hood.</p>
+</li>
+<li>
+<p>Install <a href="https://github.com/go-task/task">go-task</a> via Brew</p>
+<pre><code class="language-sh">brew install go-task/tap/go-task
+</code></pre>
+</li>
+<li>
+<p>Install workstation dependencies via Brew</p>
+<pre><code class="language-sh">task init
+</code></pre>
+</li>
+</ol>
+<h3 id="-pre-commit"><a class="header" href="#-pre-commit">⚠️ pre-commit</a></h3>
+<p>It is advisable to install <a href="https://pre-commit.com/">pre-commit</a> and the pre-commit hooks that come with this repository.
+<a href="https://github.com/k8s-at-home/sops-pre-commit">sops-pre-commit</a> will check to make sure you are not committing non-encrypted Kubernetes secrets to your repository.</p>
+<ol>
+<li>
+<p>Enable Pre-Commit</p>
+<pre><code class="language-sh">task precommit:init
+</code></pre>
+</li>
+<li>
+<p>Update Pre-Commit, though it will occasionally make mistakes, so verify its results.</p>
+<pre><code class="language-sh">task precommit:update
+</code></pre>
+</li>
+</ol>
+<h2 id="-repository-structure"><a class="header" href="#-repository-structure">📂 Repository structure</a></h2>
+<p>The Git repository contains the following directories under <code>cluster</code> and are ordered below by how Flux will apply them.</p>
+<pre><code class="language-sh">📁 cluster      # k8s cluster defined as code
+├─📁 flux       # flux, gitops operator, loaded before everything
+├─📁 crds       # custom resources, loaded before 📁 core and 📁 apps
+├─📁 charts     # helm repos, loaded before 📁 core and 📁 apps
+├─📁 config     # cluster config, loaded before 📁 core and 📁 apps
+├─📁 core       # crucial apps, namespaced dir tree, loaded before 📁 apps
+└─📁 apps       # regular apps, namespaced dir tree, loaded last
+</code></pre>
+<h2 id="-lets-go"><a class="header" href="#-lets-go">🚀 Lets go</a></h2>
+<p>Very first step will be to create a new repository by clicking the <strong>Use this template</strong> button on this page.</p>
+<p>Clone the repo to you local workstation and <code>cd</code> into it.</p>
+<p>📍 <strong>All of the below commands</strong> are run on your <strong>local</strong> workstation, <strong>not</strong> on any of your cluster nodes.</p>
+<h3 id="-setting-up-age"><a class="header" href="#-setting-up-age">🔐 Setting up Age</a></h3>
+<p>📍 Here we will create a Age Private and Public key. Using <a href="https://github.com/mozilla/sops">SOPS</a> with <a href="https://github.com/FiloSottile/age">Age</a> allows us to encrypt secrets and use them in Ansible, Terraform and Flux.</p>
+<ol>
+<li>
+<p>Create a Age Private / Public Key</p>
+<pre><code class="language-sh">age-keygen -o age.agekey
+</code></pre>
+</li>
+<li>
+<p>Set up the directory for the Age key and move the Age file to it</p>
+<pre><code class="language-sh">mkdir -p ~/.config/sops/age
+mv age.agekey ~/.config/sops/age/keys.txt
+</code></pre>
+</li>
+<li>
+<p>Export the <code>SOPS_AGE_KEY_FILE</code> variable in your <code>bashrc</code>, <code>zshrc</code> or <code>config.fish</code> and source it, e.g.</p>
+<pre><code class="language-sh">export SOPS_AGE_KEY_FILE=~/.config/sops/age/keys.txt
+source ~/.bashrc
+</code></pre>
+</li>
+<li>
+<p>Fill out the Age public key in the <code>.config.env</code> under <code>BOOTSTRAP_AGE_PUBLIC_KEY</code>, <strong>note</strong> the public key should start with <code>age</code>...</p>
+</li>
+</ol>
+<h3 id="-global-cloudflare-api-key"><a class="header" href="#-global-cloudflare-api-key">☁️ Global Cloudflare API Key</a></h3>
+<p>In order to use Terraform and <code>cert-manager</code> with the Cloudflare DNS challenge you will need to create a API key.</p>
+<ol>
+<li>
+<p>Head over to Cloudflare and create a API key by going <a href="https://dash.cloudflare.com/profile/api-tokens">here</a>.</p>
+</li>
+<li>
+<p>Under the <code>API Keys</code> section, create a global API Key.</p>
+</li>
+<li>
+<p>Use the API Key in the configuration section below.</p>
+</li>
+</ol>
+<p>📍 You may wish to update this later on to a Cloudflare <strong>API Token</strong> which can be scoped to certain resources. I do not recommend using a Cloudflare <strong>API Key</strong>, however for the purposes of this template it is easier getting started without having to define which scopes and resources are needed. For more information see the <a href="https://developers.cloudflare.com/api/">Cloudflare docs on API Keys and Tokens</a>.</p>
+<h3 id="-configuration"><a class="header" href="#-configuration">📄 Configuration</a></h3>
+<p>📍 The <code>.config.env</code> file contains necessary configuration that is needed by Ansible, Terraform and Flux.</p>
+<ol>
+<li>
+<p>Copy the <code>.config.sample.env</code> to <code>.config.env</code> and start filling out all the environment variables.</p>
+<p><strong>All are required</strong> unless otherwise noted in the comments.</p>
+<pre><code class="language-sh">cp .config.sample.env .config.env
+</code></pre>
+</li>
+<li>
+<p>Once that is done, verify the configuration is correct by running:</p>
+<pre><code class="language-sh">task verify
+</code></pre>
+</li>
+<li>
+<p>If you do not encounter any errors run start having the script wire up the templated files and place them where they need to be.</p>
+<pre><code class="language-sh">task configure
+</code></pre>
+</li>
+</ol>
+<h3 id="-preparing-fedora-server-with-ansible"><a class="header" href="#-preparing-fedora-server-with-ansible">⚡ Preparing Fedora Server with Ansible</a></h3>
+<p>📍 Here we will be running a Ansible Playbook to prepare Fedora Server for running a Kubernetes cluster.</p>
+<p>📍 Nodes are not security hardened by default, you can do this with <a href="https://github.com/dev-sec/ansible-collection-hardening">dev-sec/ansible-collection-hardening</a> or similar if it supports Fedora Server.</p>
+<ol>
+<li>
+<p>Ensure you are able to SSH into your nodes from your workstation using a private SSH key <strong>without a passphrase</strong>. This is how Ansible is able to connect to your remote nodes.</p>
+<p><a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">How to configure SSH key-based authentication</a></p>
+</li>
+<li>
+<p>Install the Ansible deps</p>
+<pre><code class="language-sh">task ansible:init
+</code></pre>
+</li>
+<li>
+<p>Verify Ansible can view your config</p>
+<pre><code class="language-sh">task ansible:list
+</code></pre>
+</li>
+<li>
+<p>Verify Ansible can ping your nodes</p>
+<pre><code class="language-sh">task ansible:ping
+</code></pre>
+</li>
+<li>
+<p>Run the Fedora Server Ansible prepare playbook</p>
+<pre><code class="language-sh">task ansible:prepare
+</code></pre>
+</li>
+<li>
+<p>Reboot the nodes</p>
+<pre><code class="language-sh">task ansible:reboot
+</code></pre>
+</li>
+</ol>
+<h3 id="-installing-k3s-with-ansible"><a class="header" href="#-installing-k3s-with-ansible">⛵ Installing k3s with Ansible</a></h3>
+<p>📍 Here we will be running a Ansible Playbook to install <a href="https://k3s.io/">k3s</a> with <a href="https://galaxy.ansible.com/xanmanning/k3s">this</a> wonderful k3s Ansible galaxy role. After completion, Ansible will drop a <code>kubeconfig</code> in <code>./provision/kubeconfig</code> for use with interacting with your cluster with <code>kubectl</code>.</p>
+<p>☢️ If you run into problems, you can run <code>task ansible:nuke</code> to destroy the k3s cluster and start over.</p>
+<ol>
+<li>
+<p>Verify Ansible can view your config</p>
+<pre><code class="language-sh">task ansible:list
+</code></pre>
+</li>
+<li>
+<p>Verify Ansible can ping your nodes</p>
+<pre><code class="language-sh">task ansible:ping
+</code></pre>
+</li>
+<li>
+<p>Install k3s with Ansible</p>
+<pre><code class="language-sh">task ansible:install
+</code></pre>
+</li>
+<li>
+<p>Verify the nodes are online</p>
+<pre><code class="language-sh">task cluster:nodes
+# NAME           STATUS   ROLES                       AGE     VERSION
+# k8s-0          Ready    control-plane,master      4d20h   v1.21.5+k3s1
+# k8s-1          Ready    worker                    4d20h   v1.21.5+k3s1
+</code></pre>
+</li>
+</ol>
+<h3 id="-configuring-cloudflare-dns-with-terraform"><a class="header" href="#-configuring-cloudflare-dns-with-terraform">☁️ Configuring Cloudflare DNS with Terraform</a></h3>
+<p>📍 Review the Terraform scripts under <code>./provision/terraform/cloudflare/</code> and make sure you understand what it's doing (no really review it).</p>
+<p>If your domain already has existing DNS records <strong>be sure to export those DNS settings before you continue</strong>.</p>
+<ol>
+<li>
+<p>Pull in the Terraform deps</p>
+<pre><code class="language-sh">task terraform:init
+</code></pre>
+</li>
+<li>
+<p>Review the changes Terraform will make to your Cloudflare domain</p>
+<pre><code class="language-sh">task terraform:plan
+</code></pre>
+</li>
+<li>
+<p>Have Terraform apply your Cloudflare settings</p>
+<pre><code class="language-sh">task terraform:apply
+</code></pre>
+</li>
+</ol>
+<p>If Terraform was ran successfully you can log into Cloudflare and validate the DNS records are present.</p>
+<p>The cluster application <a href="https://github.com/kubernetes-sigs/external-dns">external-dns</a> will be managing the rest of the DNS records you will need.</p>
+<h3 id="-gitops-with-flux"><a class="header" href="#-gitops-with-flux">🔹 GitOps with Flux</a></h3>
+<p>📍 Here we will be installing <a href="https://toolkit.fluxcd.io/">flux</a> after some quick bootstrap steps.</p>
+<ol>
+<li>
+<p>Verify Flux can be installed</p>
+<pre><code class="language-sh">task cluster:verify
+# ► checking prerequisites
+# ✔ kubectl 1.21.5 &gt;=1.18.0-0
+# ✔ Kubernetes 1.21.5+k3s1 &gt;=1.16.0-0
+# ✔ prerequisites checks passed
+</code></pre>
+</li>
+<li>
+<p>Push you changes to git</p>
+<p>📍 <strong>Verify</strong> all the <code>*.sops.yaml</code> and <code>*.sops.yml</code> files under the <code>./cluster</code> and <code>./provision</code> folders are <strong>encrypted</strong> with SOPS</p>
+<pre><code class="language-sh">git add -A
+git commit -m &quot;Initial commit 🚀&quot;
+git push
+</code></pre>
+</li>
+<li>
+<p>Install Flux and sync the cluster to the Git repository</p>
+<pre><code class="language-sh">task cluster:install
+# namespace/flux-system configured
+# customresourcedefinition.apiextensions.k8s.io/alerts.notification.toolkit.fluxcd.io created
+</code></pre>
+</li>
+<li>
+<p>Verify Flux components are running in the cluster</p>
+<pre><code class="language-sh">task cluster:pods -- -n flux-system
+# NAME                                       READY   STATUS    RESTARTS   AGE
+# helm-controller-5bbd94c75-89sb4            1/1     Running   0          1h
+# kustomize-controller-7b67b6b77d-nqc67      1/1     Running   0          1h
+# notification-controller-7c46575844-k4bvr   1/1     Running   0          1h
+# source-controller-7d6875bcb4-zqw9f         1/1     Running   0          1h
+</code></pre>
+</li>
+</ol>
+<h3 id="-verification-steps"><a class="header" href="#-verification-steps">🎤 Verification Steps</a></h3>
+<p><em>Mic check, 1, 2</em> - In a few moments applications should be lighting up like a Christmas tree 🎄</p>
+<p>You are able to run all the commands below with one task</p>
+<pre><code class="language-sh">task cluster:resources
+</code></pre>
+<ol>
+<li>
+<p>View the Flux Git Repositories</p>
+<pre><code class="language-sh">task cluster:gitrepositories
+</code></pre>
+</li>
+<li>
+<p>View the Flux kustomizations</p>
+<pre><code class="language-sh">task cluster:kustomizations
+</code></pre>
+</li>
+<li>
+<p>View all the Flux Helm Releases</p>
+<pre><code class="language-sh">task cluster:helmreleases
+</code></pre>
+</li>
+<li>
+<p>View all the Flux Helm Repositories</p>
+<pre><code class="language-sh">task cluster:helmrepositories
+</code></pre>
+</li>
+<li>
+<p>View all the Pods</p>
+<pre><code class="language-sh">task cluster:pods
+</code></pre>
+</li>
+<li>
+<p>View all the certificates and certificate requests</p>
+<pre><code class="language-sh">task cluster:certificates
+</code></pre>
+</li>
+<li>
+<p>View all the ingresses</p>
+<pre><code class="language-sh">task cluster:ingresses
+</code></pre>
+</li>
+</ol>
+<p>🏆 <strong>Congratulations</strong> if all goes smooth you'll have a Kubernetes cluster managed by Flux, your Git repository is driving the state of your cluster.</p>
+<p>☢️ If you run into problems, you can run <code>task ansible:nuke</code> to destroy the k3s cluster and start over.</p>
+<p>🧠 Now it's time to pause and go get some coffee ☕ because next is describing how DNS is handled.</p>
+<h2 id="-post-installation"><a class="header" href="#-post-installation">📣 Post installation</a></h2>
+<h3 id="-dns"><a class="header" href="#-dns">🌐 DNS</a></h3>
+<p>📍 The <a href="https://github.com/kubernetes-sigs/external-dns">external-dns</a> application created in the <code>networking</code> namespace will handle creating public DNS records. By default, <code>echo-server</code> is the only public domain exposed on your Cloudflare domain. In order to make additional applications public you must set an ingress annotation like in the <code>HelmRelease</code> for <code>echo-server</code>. You do not need to use Terraform to create additional DNS records unless you need a record outside the purposes of your Kubernetes cluster (e.g. setting up MX records).</p>
+<p><a href="https://github.com/ori-edge/k8s_gateway">k8s_gateway</a> is deployed on the IP choosen for <code>${BOOTSTRAP_METALLB_K8S_GATEWAY_ADDR}</code>. Inorder to test DNS you can point your clients DNS to the <code>${BOOTSTRAP_METALLB_K8S_GATEWAY_ADDR}</code> IP address and load <code>https://hajimari.${BOOTSTRAP_CLOUDFLARE_DOMAIN}</code> in your browser.</p>
+<p>You can also try debugging with the command <code>dig</code>, e.g. <code>dig @${BOOTSTRAP_METALLB_K8S_GATEWAY_ADDR} hajimari.${BOOTSTRAP_CLOUDFLARE_DOMAIN}</code> and you should get a valid answer containing your <code>${BOOTSTRAP_METALLB_INGRESS_ADDR}</code> IP address.</p>
+<p>If your router (or Pi-Hole, Adguard Home or whatever) supports conditional DNS forwarding (also know as split-horizon DNS) you may have DNS requests for <code>${SECRET_DOMAIN}</code> only point to the  <code>${BOOTSTRAP_METALLB_K8S_GATEWAY_ADDR}</code> IP address. This will ensure only DNS requests for <code>${SECRET_DOMAIN}</code> will only get routed to your <a href="https://github.com/ori-edge/k8s_gateway">k8s_gateway</a> service thus providing DNS resolution to your cluster applications/ingresses.</p>
+<p>To access services from the outside world port forwarded <code>80</code> and <code>443</code> in your router to the <code>${BOOTSTRAP_METALLB_INGRESS_ADDR}</code> IP, in a few moments head over to your browser and you <em>should</em> be able to access <code>https://echo-server.${BOOTSTRAP_CLOUDFLARE_DOMAIN}</code> from a device outside your LAN.</p>
+<p>Now if nothing is working, that is expected. This is DNS after all!</p>
+<h3 id="-ssl"><a class="header" href="#-ssl">🔐 SSL</a></h3>
+<p>By default in this template Kubernetes ingresses are set to use the <a href="https://letsencrypt.org/docs/staging-environment/">Let's Encrypt Staging Environment</a>. This will hopefully reduce issues from ACME on requesting certificates until you are ready to use this in &quot;Production&quot;.</p>
+<p>Once you have confirmed there are no issues requesting your certificates replace <code>letsencrypt-staging</code> with <code>letsencrypt-production</code> in your ingress annotations for <code>cert-manager.io/cluster-issuer</code></p>
+<h3 id="-renovatebot"><a class="header" href="#-renovatebot">🤖 Renovatebot</a></h3>
+<p><a href="https://www.mend.io/free-developer-tools/renovate/">Renovatebot</a> will scan your repository and offer PRs when it finds dependencies out of date. Common dependencies it will discover and update are Flux, Ansible Galaxy Roles, Terraform Providers, Kubernetes Helm Charts, Kubernetes Container Images, Pre-commit hooks updates, and more!</p>
+<p>The base Renovate configuration provided in your repository can be view at <a href="https://github.com/k8s-at-home/flux-cluster-template/blob/main/.github/renovate.json5">.github/renovate.json5</a>. If you notice this only runs on weekends and you can <a href="https://docs.renovatebot.com/presets-schedule/">change the schedule to anything you want</a> or simply remove it.</p>
+<p>To enable Renovate on your repository, click the 'Configure' button over at their <a href="https://github.com/apps/renovate">Github app page</a> and choose your repository. Over time Renovate will create PRs for out-of-date dependencies it finds. Any merged PRs that are in the cluster directory Flux will deploy.</p>
+<h3 id="-github-webhook"><a class="header" href="#-github-webhook">🪝 Github Webhook</a></h3>
+<p>Flux is pull-based by design meaning it will periodically check your git repository for changes, using a webhook you can enable Flux to update your cluster on <code>git push</code>. In order to configure Github to send <code>push</code> events from your repository to the Flux webhook receiver you will need two things:</p>
+<ol>
+<li>
+<p>Webhook URL - Your webhook receiver will be deployed on <code>https://flux-receiver.${BOOTSTRAP_CLOUDFLARE_DOMAIN}/hook/:hookId</code>. In order to find out your hook id you can run the following command:</p>
+<pre><code class="language-sh">kubectl -n flux-system get receiver/github-receiver --kubeconfig=./provision/kubeconfig
+# NAME              AGE    READY   STATUS
+# github-receiver   6h8m   True    Receiver initialized with URL: /hook/12ebd1e363c641dc3c2e430ecf3cee2b3c7a5ac9e1234506f6f5f3ce1230e123
+</code></pre>
+<p>So if my domain was <code>k8s-at-home.com</code> the full url would look like this:</p>
+<pre><code class="language-text">https://flux-receiver.k8s-at-home.com/hook/12ebd1e363c641dc3c2e430ecf3cee2b3c7a5ac9e1234506f6f5f3ce1230e123
+</code></pre>
+</li>
+<li>
+<p>Webhook secret - Your webhook secret can be found by decrypting the <code>secret.sops.yaml</code> using the following command:</p>
+<pre><code class="language-sh">sops -d ./cluster/apps/flux-system/webhooks/github/secret.sops.yaml | yq .stringData.token
+</code></pre>
+<p><strong>Note:</strong> Don't forget to update the <code>BOOTSTRAP_FLUX_GITHUB_WEBHOOK_SECRET</code> variable in your <code>.config.env</code> file so it matches the generated secret if applicable</p>
+</li>
+</ol>
+<p>Now that you have the webhook url and secret, it's time to set everything up on the Github repository side. Navigate to the settings of your repository on Github, under &quot;Settings/Webhooks&quot; press the &quot;Add webhook&quot; button. Fill in the webhook url and your secret.</p>
+<h3 id="-storage"><a class="header" href="#-storage">💾 Storage</a></h3>
+<p>Rancher's <code>local-path-provisioner</code> is a great start for storage but soon you might find you need more features like replicated block storage, or to connect to a NFS/SMB/iSCSI server. Check out the projects below to read up more on some storage solutions that might work for you.</p>
+<ul>
+<li><a href="https://github.com/rook/rook">rook-ceph</a></li>
+<li><a href="https://github.com/longhorn/longhorn">longhorn</a></li>
+<li><a href="https://github.com/openebs/openebs">openebs</a></li>
+<li><a href="https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner">nfs-subdir-external-provisioner</a></li>
+<li><a href="https://github.com/democratic-csi/democratic-csi">democratic-csi</a></li>
+<li><a href="https://github.com/kubernetes-csi/csi-driver-nfs">csi-driver-nfs</a></li>
+<li><a href="https://github.com/SynologyOpenSource/synology-csi">synology-csi</a></li>
+</ul>
+<h3 id="-authenticate-flux-over-ssh"><a class="header" href="#-authenticate-flux-over-ssh">🔏 Authenticate Flux over SSH</a></h3>
+<p>Authenticating Flux to your git repository has a couple benefits like using a private git repository and/or using the Flux <a href="https://fluxcd.io/docs/components/image/">Image Automation Controllers</a>.</p>
+<p>By default this template only works on a public GitHub repository, it is advised to keep your repository public.</p>
+<p>The benefits of a public repository include:</p>
+<ul>
+<li>Debugging or asking for help, you can provide a link to a resource you are having issues with.</li>
+<li>Adding a topic to your repository of <code>k8s-at-home</code> to be included in the <a href="https://whazor.github.io/k8s-at-home-search/">k8s-at-home-search</a>. This search helps people discover different configurations of Helm charts across others Flux based repositories.</li>
+</ul>
+<details>
+  <summary>Expand to read guide on adding Flux SSH authentication</summary>
+<ol>
+<li>Generate new SSH key:
+<pre><code class="language-sh">ssh-keygen -t ecdsa -b 521 -C &quot;github-deploy-key&quot; -f ./cluster/github-deploy-key -q -P &quot;&quot;
+</code></pre>
+</li>
+<li>Paste public key in the deploy keys section of your repository settings</li>
+<li>Create sops secret in <code>cluster/flux/flux-system/github-deploy-key.sops.yaml</code> with the contents of:
+<pre><code class="language-yaml"># yamllint disable
+apiVersion: v1
+kind: Secret
+metadata:
+    name: github-deploy-key
+    namespace: flux-system
+stringData:
+    # 3a. Contents of github-deploy-key
+    identity: 
+    # 3b. Output of curl --silent https://api.github.com/meta | jq --raw-output '&quot;github.com &quot;+.ssh_keys[]'
+    known_hosts: |
+        github.com ssh-ed25519 ...
+        github.com ecdsa-sha2-nistp256 ...
+        github.com ssh-rsa ...
+</code></pre>
+</li>
+<li>Encrypt secret:
+<pre><code class="language-sh">sops --encrypt --in-place ./cluster/flux/flux-system/github-deploy-key.sops.yaml
+</code></pre>
+</li>
+<li>Apply secret to cluster:
+<pre><code class="language-sh">sops --decrypt cluster/flux/flux-system/github-deploy-key.sops.yaml | kubectl apply -f -
+</code></pre>
+</li>
+<li>Update <code>cluster/flux/flux-system/flux-cluster.yaml</code>:
+<pre><code class="language-yaml">---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: flux-cluster
+  namespace: flux-system
+spec:
+  interval: 10m
+  # 6a: Change this to your user and repo names
+  url: ssh://git@github.com/$user/$repo
+  ref:
+    branch: main
+  secretRef:
+    name: github-deploy-key
+</code></pre>
+</li>
+<li>Commit and push changes</li>
+<li>Force flux to reconcile your changes
+<pre><code class="language-sh">task cluster:reconcile
+</code></pre>
+</li>
+<li>Verify git repository is now using SSH:
+<pre><code class="language-sh">task cluster:gitrepositories
+</code></pre>
+</li>
+<li>Optionally set your repository to Private in your repository settings.</li>
+</ol>
+</details>
+<h2 id="-troubleshooting"><a class="header" href="#-troubleshooting">👉 Troubleshooting</a></h2>
+<p>Our <a href="https://github.com/k8s-at-home/flux-cluster-template/wiki">wiki</a> (WIP, contributions welcome) is a good place to start troubleshooting issues. If that doesn't cover your issue, come join and say Hi in our <a href="https://discord.gg/k8s-at-home">Discord</a> server by starting a new thread in the #kubernetes support channel.</p>
+<p>You may also open a issue on this GitHub repo or open a <a href="https://github.com/k8s-at-home/organization/discussions">discussion on GitHub</a>.</p>
+<h2 id="-whats-next"><a class="header" href="#-whats-next">❔ What's next</a></h2>
+<p>The world is your cluster, see below for important things you could work on adding.</p>
+<p>Our Check out our <a href="https://github.com/k8s-at-home/flux-cluster-template/wiki">wiki</a> (WIP, contributions welcome) for more integrations!</p>
+<h2 id="-thanks"><a class="header" href="#-thanks">🤝 Thanks</a></h2>
+<p>Big shout out to all the authors and contributors to the projects that we are using in this repository.</p>
+<p>Community member @Whazor created <a href="https://whazor.github.io/k8s-at-home-search/">this website</a> as a creative way to search Helm Releases across GitHub. You may use it as a means to get ideas on how to configure an applications' Helm values.</p>
+<p>Many people have shared their awesome repositories over at <a href="https://github.com/k8s-at-home/awesome-home-kubernetes">awesome-home-kubernetes</a>.</p>
+<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/introduction.md">Edit this page on GitHub</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+                            <a rel="next" href="notes/nas.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+                    <a rel="next" href="notes/nas.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

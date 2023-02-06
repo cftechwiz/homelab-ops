@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Opnsense - Home Operations</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../././mdbook-admonish.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('navy')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Welcome</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../introduction.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Basement Notes</li><li class="spacer"></li><li class="chapter-item expanded "><a href="../notes/nas.html">NAS</a></li><li class="chapter-item expanded "><a href="../notes/opnsense.html" class="active">Opnsense</a></li><li class="chapter-item expanded "><a href="../notes/pikvm.html">PiKVM</a></li><li class="chapter-item expanded "><a href="../notes/proxmox-considerations.html">Proxmox Considerations</a></li><li class="chapter-item expanded "><a href="../notes/s3-buckets.html">S3 buckets</a></li><li class="chapter-item expanded "><a href="../notes/secret-variations-with-flux.html">Secret variations with Flux</a></li><li class="chapter-item expanded "><a href="../notes/yaml-madness.html">YAML Madness</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Home Operations</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/cfallwell/homelab-ops" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="opnsense"><a class="header" href="#opnsense">Opnsense</a></h1>
+<h2 id="bgp"><a class="header" href="#bgp">BGP</a></h2>
+<p>Instead of using Metallb for L2/L3 load balancer IPs I am using the Kubernetes Calico CNI with BGP which allows me to advertise load balancer IPs directly over BGP. This has some benefits like having equal cost multipath (ECMP) for scaled workloads in my cluster.</p>
+<ol>
+<li>Routing &gt; BPG | General
+<ol>
+<li><code>enable</code> = <code>true</code></li>
+<li><code>BGP AS Number</code> = <code>64512</code></li>
+<li><code>Network</code> = <code>172.16.70.0/24</code> (Subnet your Kubernetes nodes are on)</li>
+<li>Save</li>
+</ol>
+</li>
+<li>Routing &gt; BGP | Neighbors
+<ul>
+<li>Add a neighbor for each Kubernetes node
+<ol>
+<li><code>Enabled</code> = <code>true</code></li>
+<li><code>Peer-IP</code> = <code>172.16.70.x</code> (Kubernetes Node IP)</li>
+<li><code>Remote AS</code> = <code>64512</code></li>
+<li><code>Update-Source Interface</code> = <code>HOME_SERVER</code> (VLAN of Kubernetes nodes)</li>
+<li>Save</li>
+<li>Continue adding neighbors until all your nodes are present</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Routing &gt; General
+<ol>
+<li><code>Enable</code> = <code>true</code></li>
+<li>Save</li>
+</ol>
+</li>
+<li>System &gt; Settings &gt; Tunables
+<ol>
+<li>Add <code>net.route.multipath</code> and set the value to <code>1</code></li>
+<li>Save</li>
+</ol>
+</li>
+<li>Reboot</li>
+<li>Verify
+<ol>
+<li>Routing &gt; Diagnostics | Summary</li>
+</ol>
+</li>
+</ol>
+<div id="admonition-warning" class="admonition warning">
+<div class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="#admonition-warning"></a></p>
+</div>
+<div>
+<p>Without updating the configuration described in <strong>step 4</strong> the routes from a client will only take a <strong>single path to your Kubernetes workloads</strong> even if they are scaled to more than one.</p>
+</div>
+</div>
+<h2 id="haproxy"><a class="header" href="#haproxy">HAProxy</a></h2>
+<p>While kube-vip is very nice for having a API server ready to go and running in your cluster I had issues with mixing layer 2 and layer 3 between Calico in BGP and kube-vip using L2 ARP. You also cannot run Calico in BGP with kube-vip in BGP, they will fight and you will lose. Instead I choose to use Haproxy which you can install from the Opnsense Plugins.</p>
+<ol>
+<li>Services &gt; HAProxy | Real Servers
+<ul>
+<li>Add a server for each <strong>master node</strong> in your Kubernetes cluster
+<ol>
+<li><code>Enabled</code> = <code>true</code></li>
+<li><code>Name or Prefix</code> = <code>k8s-apiserver-x</code></li>
+<li><code>FQDN or IP</code> = <code>172.16.70.x</code></li>
+<li><code>Port</code> = <code>6443</code></li>
+<li><code>Verify SSL Certificate</code> = <code>false</code></li>
+<li>Apply/Save</li>
+<li>Continue adding servers until all your <strong>master nodes</strong> are present</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>Services &gt; HAProxy | Rules &amp; Checks &gt; Health Monitors
+<ol>
+<li><code>Name</code> = <code>k8s-apiserver-health</code></li>
+<li><code>SSL preferences</code> = <code>Force SSL for health checks</code></li>
+<li><code>Port to check</code> = <code>6443</code></li>
+<li><code>HTTP method</code> = <code>GET</code></li>
+<li><code>Request URI</code> = <code>/healthz</code></li>
+<li><code>HTTP version</code> = <code>HTTP/1.1</code></li>
+<li>Apply/Save</li>
+</ol>
+</li>
+<li>Services &gt; HAProxy | Virtual Services &gt; Backend Pools
+<ol>
+<li><code>Enabled</code> = <code>true</code></li>
+<li><code>Name</code> = <code>k8s-apiserver-be</code></li>
+<li><code>Mode</code> = <code>TCP (Layer 4)</code></li>
+<li><code>Servers</code> = <code>k8s-apiserver-x</code> ... (Add one for each server you created. Use TAB key to complete typing each server)</li>
+<li><code>Source address</code> = <code>172.16.0.254</code> (Your Opnsense IP address)</li>
+<li><code>Enable Health Checking</code> = <code>true</code></li>
+<li><code>Health Monitor</code> = <code>k8s-apiserver-health</code></li>
+<li>Apply/Save</li>
+</ol>
+</li>
+<li>Services &gt; HAProxy | Virtual Services &gt; Public Services
+<ol>
+<li><code>Enabled</code> = <code>true</code></li>
+<li><code>Name</code> = <code>k8s-apiserver-fe</code></li>
+<li><code>Listen Addresses</code> = <code>172.16.0.254:6443</code> (Your Opnsense IP address. Use TAB key to complete typing a listen address)</li>
+<li><code>Type</code> = <code>TCP</code></li>
+<li><code>Default Backend Pool</code> = <code>k8s-apiserver-be</code></li>
+<li>Apply/Save</li>
+</ol>
+</li>
+<li>Services &gt; HAProxy | Settings &gt; Service
+<ol>
+<li><code>Enable HAProxy</code> = <code>true</code></li>
+<li>Apply/Save</li>
+</ol>
+</li>
+<li>Services &gt; HAProxy | Settings &gt; Global Parameters
+<ol>
+<li><code>Verify SSL Server Certificates</code> = <code>disable-verify</code></li>
+<li>Apply/Save</li>
+</ol>
+</li>
+<li>Services &gt; HAProxy | Settings &gt; Default Parameters
+<ol>
+<li><code>Client Timeout</code> = <code>4h</code></li>
+<li><code>Connection Timeout</code> = <code>10s</code></li>
+<li><code>Server Timeout</code> = <code>4h</code></li>
+<li>Apply/Save</li>
+</ol>
+</li>
+</ol>
+<h2 id="receive-side-scaling-rss"><a class="header" href="#receive-side-scaling-rss">Receive Side Scaling (RSS)</a></h2>
+<p>RSS is used to distribute packets over CPU cores using a hashing function – either with support in the hardware which offloads the hashing for you, or in software. Click <ins><a href="https://forum.opnsense.org/index.php?topic=24409.0">here</a></ins> to learn more about it.</p>
+<ol>
+<li>System &gt; Settings &gt; Tunables
+<ol>
+<li>Add <code>net.inet.rss.enabled</code> and set the value to <code>1</code></li>
+<li>Add <code>net.inet.rss.bits</code> and set to <code>2</code></li>
+<li>Add <code>net.isr.dispatch</code> and set to <code>hybrid</code></li>
+<li>Add <code>net.isr.bindthreads</code> and set to <code>1</code></li>
+<li>Add <code>net.isr.maxthreads</code> and set to <code>-1</code></li>
+<li>Save</li>
+</ol>
+</li>
+<li>Reboot</li>
+<li>Verify with <code>sudo netstat -Q</code>
+<pre><code class="language-text">Configuration:
+Setting                        Current        Limit
+Thread count                         8            8
+Default queue limit                256        10240
+Dispatch policy                 hybrid          n/a
+Threads bound to CPUs          enabled          n/a
+</code></pre>
+</li>
+</ol>
+<h2 id="syslog"><a class="header" href="#syslog">Syslog</a></h2>
+<p>Firewall logs are being sent to <a href="https://github.com/vectordotdev/vector">Vector</a> which is running in my Kubernetes cluster. Vector is then shipping the logs to <a href="https://github.com/grafana/loki">Loki</a> which is also running in my cluster.</p>
+<ol>
+<li>System &gt; Settings &gt; Logging / targets
+<ul>
+<li>Add new logging target
+<ol>
+<li><code>Enabled</code> = <code>true</code></li>
+<li><code>Transport</code> = <code>UDP(4)</code></li>
+<li><code>Applications</code> = <code>filter (filterlog)</code></li>
+<li><code>Hostname</code> = <code>192.168.69.111</code> (Loki's Load Balancer IP)</li>
+<li><code>Port</code> = <code>5140</code></li>
+<li><code>rfc5424</code> = <code>true</code></li>
+<li>Save</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="smtp-relay"><a class="header" href="#smtp-relay">SMTP Relay</a></h2>
+<p>To ease the use of application configuration I have a SMTP Relay running on Opnsense using the Postfix plugin. From applications deployed in my Kubernetes cluster, to my nas, to my printer, all use the same configuration for SMTP without authentication.</p>
+<ol>
+<li>System &gt; Services &gt; Postfix &gt; General
+<ol>
+<li><code>SMTP Client Security</code> = <code>encrypt</code></li>
+<li><code>Smart Host</code> = <code>[smtp.fastmail.com]:465</code></li>
+<li><code>Enable SMTP Authentication</code> = <code>true</code></li>
+<li><code>Authentication Username</code> = <code>colin@&lt;email-domain&gt;</code></li>
+<li><code>Authentication Password</code> = <code>&lt;app-password&gt;</code></li>
+<li><code>Permit SASL Authenticated</code> = <code>false</code></li>
+<li>Save</li>
+</ol>
+</li>
+<li>System &gt; Services &gt; Postfix &gt; Domains
+<ul>
+<li>Add new domain
+<ol>
+<li><code>Domainname</code> = <code>&lt;email-domain&gt;</code></li>
+<li><code>Destination</code> = <code>[smtp.fastmail.com]:465</code></li>
+<li>Save</li>
+</ol>
+</li>
+<li>Apply</li>
+</ul>
+</li>
+<li>System &gt; Services &gt; Postfix &gt; Senders
+<ul>
+<li>Add new sender
+<ol>
+<li><code>Enabled</code> = <code>true</code></li>
+<li><code>Sender Address</code> = <code>admin@&lt;email-domain&gt;</code></li>
+<li>Save</li>
+</ol>
+</li>
+<li>Apply</li>
+</ul>
+</li>
+<li>Verify
+<pre><code class="language-sh">swaks --server hassio.lab --port 25 --to &lt;email-address&gt; --from &lt;email-address&gt;
+</code></pre>
+</li>
+</ol>
+<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/notes/opnsense.md">Edit this page on GitHub</a></footer>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../notes/nas.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../notes/pikvm.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../notes/nas.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../notes/pikvm.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
