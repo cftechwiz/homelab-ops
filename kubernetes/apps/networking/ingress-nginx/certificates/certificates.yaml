@@ -13,4 +13,3 @@ spec:
   dnsNames:
     - falhalla.com
     - "*.falhalla.com"
-    - "*.intra.lab"
