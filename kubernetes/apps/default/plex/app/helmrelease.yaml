@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.3.1
+      version: 1.2.1
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -40,7 +40,7 @@ spec:
         externalIPs: ["${SVC_PLEX_ADDR}"]
         externalTrafficPolicy: Local
         ports:
-          http:
+          https:
             port: 32400
     ingress:
       main:
@@ -49,7 +49,6 @@ spec:
         annotations:
           external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
           nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-          nginx.ingress.kubernetes.io/auth-tls-secret: default/plex-falhalla-com-tls
           hajimari.io/icon: mdi:plex
         hosts:
           - host: &host plex.falhalla.com
