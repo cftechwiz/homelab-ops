@@ -22,7 +22,7 @@
   "requireConfig": "optional",
   "dependencyDashboardTitle": "Renovate Dashboard 🤖",
   "suppressNotifications": ["prIgnoreNotification"],
-  "rebaseWhen": "conflicted",
+  "rebaseWhen": "behind-base-branch",
   "commitBodyTable": true,
   "flux": {
     "fileMatch": ["kubernetes/.+\\.ya?ml$"]
