@@ -1,4 +1,5 @@
 #yamllint disable
+#Brokenlinks disable
 # Template for deploying k3s backed by Flux
 
 Highly opinionated template for deploying a single [k3s](https://k3s.io) cluster with [Ansible](https://www.ansible.com) and [Terraform](https://www.terraform.io) backed by [Flux](https://toolkit.fluxcd.io/) and [SOPS](https://toolkit.fluxcd.io/guides/mozilla-sops/).
@@ -480,7 +481,7 @@ The benefits of a public repository include:
           namespace: flux-system
       stringData:
           # 3a. Contents of github-deploy-key
-          identity: 
+          identity:
           # 3b. Output of curl --silent https://api.github.com/meta | jq --raw-output '"github.com "+.ssh_keys[]'
           known_hosts: |
               github.com ssh-ed25519 ...
