@@ -158,7 +158,8 @@
 </div>
 <hr />
 <br />
-<p>#yamllint disable</p>
+<p>#yamllint disable
+#Brokenlinks disable</p>
 <h1 id="template-for-deploying-k3s-backed-by-flux"><a class="header" href="#template-for-deploying-k3s-backed-by-flux">Template for deploying k3s backed by Flux</a></h1>
 <p>Highly opinionated template for deploying a single <a href="https://k3s.io">k3s</a> cluster with <a href="https://www.ansible.com">Ansible</a> and <a href="https://www.terraform.io">Terraform</a> backed by <a href="https://toolkit.fluxcd.io/">Flux</a> and <a href="https://toolkit.fluxcd.io/guides/mozilla-sops/">SOPS</a>.</p>
 <p>The purpose here is to showcase how you can deploy an entire Kubernetes cluster and show it off to the world using the <a href="https://www.weave.works/blog/what-is-gitops-really">GitOps</a> tool <a href="https://toolkit.fluxcd.io/">Flux</a>. When completed, your Git repository will be driving the state of your Kubernetes cluster. In addition with the help of the <a href="https://github.com/ansible-collections/community.sops">Ansible</a>, <a href="https://github.com/carlpett/terraform-provider-sops">Terraform</a> and <a href="https://toolkit.fluxcd.io/guides/mozilla-sops/">Flux</a> SOPS integrations you'll be able to commit <a href="https://github.com/FiloSottile/age">Age</a> encrypted secrets to your public repo.</p>
@@ -564,7 +565,7 @@ metadata:
     namespace: flux-system
 stringData:
     # 3a. Contents of github-deploy-key
-    identity: 
+    identity:
     # 3b. Output of curl --silent https://api.github.com/meta | jq --raw-output '&quot;github.com &quot;+.ssh_keys[]'
     known_hosts: |
         github.com ssh-ed25519 ...
