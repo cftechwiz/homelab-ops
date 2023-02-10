@@ -7,7 +7,7 @@ resources:
   - ./namespace.yaml
   # Flux-Kustomizations
   - ./audiobookshelf/ks.yaml
-  # - ./authelia/ks.yaml
+  - ./authelia/ks.yaml
   - ./bazarr/ks.yaml
   - ./changedetection/ks.yaml
   - ./cloudnative-pg/ks.yaml
@@ -30,7 +30,7 @@ resources:
   - ./overseerr/ks.yaml
   # - ./plex/ks.yaml
   - ./prowlarr/ks.yaml
-  - ./qbittorrent/ks.yaml
+  # - ./qbittorrent/ks.yaml
   - ./radarr/ks.yaml
   - ./recyclarr/ks.yaml
   - ./redis/ks.yaml
