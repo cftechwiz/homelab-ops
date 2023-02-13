@@ -30,6 +30,8 @@ spec:
     sumologic:
       setupEnabled: true
       cleanupEnabled: false
+      setup:
+        debug: true
       envFromSecret:
         - name: sumologic-secret
 
