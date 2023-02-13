@@ -27,10 +27,11 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    envFromSecrets:
-      - name: sumologic-secret
+    sumologic:
+      envFromSecrets:
+        - name: sumologic-secret
   # valuesFrom:
-  #   - targetPath: sumologic.accessId
+  #   - targetPath: sumologic.metadata.name.setup.secret
   #     kind: Secret
   #     name: values-yaml
   #     valesKey: SUMO_ACCESS_ID
