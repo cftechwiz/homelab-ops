@@ -32,6 +32,7 @@ resources:
   - ./prometheus-community.yaml
   - ./redis-operator.yaml
   - ./rook-ceph.yaml
+  - ./sumologic.yaml
   - ./stakater.yaml
   - ./tf-controller.yaml
   - ./weave-gitops.yaml
