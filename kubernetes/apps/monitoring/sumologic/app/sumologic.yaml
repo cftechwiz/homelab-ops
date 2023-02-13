@@ -3950,7 +3950,7 @@ spec:
   alerting:
     alertmanagers:
       []
-  image: "quay.io/prometheus/prometheus:v2.39.0"
+  image: "quay.io/prometheus/prometheus:v2.42.0"
   version: v2.39.0
   externalUrl: http://sumologic-kube-prometheus-prometheus.monitoring:9090
   paused: false
