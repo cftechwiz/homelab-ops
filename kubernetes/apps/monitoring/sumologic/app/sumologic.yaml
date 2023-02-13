@@ -8150,7 +8150,7 @@ data:
   setup.sh: |
     #!/bin/bash
 
-    readonly DEBUG_MODE=${DEBUG_MODE:="false"}
+    readonly DEBUG_MODE=${DEBUG_MODE:="true"}
     readonly DEBUG_MODE_ENABLED_FLAG="true"
 
     # Let's compare the variables ignoring the case with help of ${VARIABLE,,} which makes the string lowercased
