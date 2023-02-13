@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     sumologic:
-      # setupEnabled: true
+      setupEnabled: false
       envFromSecret:
         - name: sumologic-secret
 
