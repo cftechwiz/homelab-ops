@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: sumologic
+  name: sumologic/sumologic-3.1.0
   namespace: monitoring
 spec:
   interval: 15m
@@ -27,12 +27,12 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    envFromSecrets:
+    FromSecrets:
       - name: sumologic-secret
-    serviceMonitor:
-      enabled: true
-    persistence:
-      enabled: false
-    accessId: ${SUMO_ACCESS_ID}
-    accessKey: ${SUMO_ACCESS_KEY}
-    clusterName: ${SUMO_CLUSTER_NAME}
+    # serviceMonitor:
+    #   enabled: true
+    # persistence:
+    #   enabled: false
+    sumologic.accessId: ${SUMO_ACCESS_ID}
+    sumologic.accessKey: ${SUMO_ACCESS_KEY}
+    sumologic.clusterName: ${SUMO_CLUSTER_NAME}
