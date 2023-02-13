@@ -112,7 +112,7 @@ sumologic:
           cpu: 2000m
         requests:
           memory: 64Mi
-          cpu: 200m
+          cpu: 20m
       nodeSelector: {}
       ## Add custom labels only to setup job pod
 
@@ -746,12 +746,12 @@ fluentd:
       resources:
         limits:
           memory: 1Gi
-          cpu: 1000m
+          cpu: 100m
         requests:
           memory: 768Mi
           ## Warning! Increasing the CPU requests for Fluentd above 1000m might result in broken autoscaling
           ## ref: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/best-practices.md#cpu-resources-warning
-          cpu: 500m
+          cpu: 50m
       ## Option to define priorityClassName to assign a priority class to pods.
       priorityClassName:
 
@@ -942,12 +942,12 @@ fluentd:
       resources:
         limits:
           memory: 1Gi
-          cpu: 1000m
+          cpu: 100m
         requests:
           memory: 768Mi
           ## Warning! Increasing the CPU requests for Fluentd above 1000m might result in broken autoscaling
           ## ref: https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/docs/best-practices.md#cpu-resources-warning
-          cpu: 500m
+          cpu: 50m
       ## Option to define priorityClassName to assign a priority class to pods.
       priorityClassName:
 
@@ -1085,10 +1085,10 @@ fluentd:
       resources:
         limits:
           memory: 512Mi
-          cpu: 200m
+          cpu: 20m
         requests:
           memory: 256Mi
-          cpu: 100m
+          cpu: 10m
       ## Option to define priorityClassName to assign a priority class to pods.
       priorityClassName:
 
@@ -1916,10 +1916,10 @@ kube-prometheus-stack:
       ## Define resources requests and limits for single Pods.
       resources:
         limits:
-          cpu: 2000m
+          cpu: 200m
           memory: 8Gi
         requests:
-          cpu: 500m
+          cpu: 50m
           memory: 1Gi
       initContainers:
         - name: "init-config-reloader"
@@ -3446,10 +3446,10 @@ otelcolInstrumentation:
     resources:
       limits:
         memory: 4Gi
-        cpu: 2000m
+        cpu: 200m
       requests:
         memory: 768Mi
-        cpu: 500m
+        cpu: 50m
     ## Option to define priorityClassName to assign a priority class to pods.
     priorityClassName:
 
@@ -3677,10 +3677,10 @@ tracesSampler:
     resources:
       limits:
         memory: 4Gi
-        cpu: 2000m
+        cpu: 200m
       requests:
         memory: 384Mi
-        cpu: 200m
+        cpu: 20m
     ## Option to define priorityClassName to assign a priority class to pods.
     priorityClassName:
 
@@ -3853,7 +3853,7 @@ metadata:
           cpu: 1000m
         requests:
           memory: 768Mi
-          cpu: 500m
+          cpu: 50m
       ## Option to define priorityClassName to assign a priority class to pods.
       priorityClassName:
 
@@ -3953,7 +3953,7 @@ metadata:
           cpu: 1000m
         requests:
           memory: 768Mi
-          cpu: 500m
+          cpu: 50m
       ## Option to define priorityClassName to assign a priority class to pods.
       priorityClassName:
 
@@ -4181,7 +4181,7 @@ otelevents:
         cpu: 2000m
       requests:
         memory: 500Mi
-        cpu: 200m
+        cpu: 20m
     ## Option to define priorityClassName to assign a priority class to pods.
     priorityClassName:
 
@@ -4293,7 +4293,7 @@ otellogs:
         cpu: 1000m
       requests:
         memory: 32Mi
-        cpu: 100m
+        cpu: 10m
     ## Option to define priorityClassName to assign a priority class to pods.
     ## If not set then temaplates/priorityclass.yaml is used.
     priorityClassName:
@@ -4495,7 +4495,7 @@ tailing-sidecar-operator:
 ## Configure OpenTelemetry Operator - Instrumentation
 ## ref: https://github.com/open-telemetry/opentelemetry-helm-charts/tree/main/charts/opentelemetry-operator
 opentelemetry-operator:
-  enabled: false
+  enabled: true
 
   ## Specific for Sumo Logic chart - Instrumentation resource creation
   instrumentationJobImage:
@@ -4503,17 +4503,15 @@ opentelemetry-operator:
       repository: sumologic/kubernetes-tools
       tag: 2.19.0
 
-  createDefaultInstrumentation: false
-  instrumentationNamespaces: ""
+  createDefaultInstrumentation: true
+  instrumentationNamespaces: "default"
 
   ## Specific for OpenTelemetry Operator chart values
   admissionWebhooks:
     failurePolicy: Fail
     enabled: true
-
     certManager:
       enabled: false
       issuerRef: {}
-
   manager:
-    env:
+    env: {}
