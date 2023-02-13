@@ -28,11 +28,10 @@ spec:
     keepHistory: false
   values:
     sumologic:
-      setupEnabled: true
+      setupEnabled: false
       cleanupEnabled: false
       envFromSecret:
         - name: sumologic-secret
-      clusterName: homelab-ops
     events:
       persistence:
         persistentVolume:
