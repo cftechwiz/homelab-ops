@@ -40,7 +40,7 @@ spec:
       annotations:
         hajimari.io/icon: mdi:kubernetes
       hosts:
-        - &host kubernetes.falhalla.com
+        - &host kubernetes.intra.falhalla.com
       tls:
         - hosts:
             - *host

@@ -34,7 +34,3 @@ spec:
         debug: true
       envFromSecret:
         - name: sumologic-secret
-
-  #         - Values.sumologic.accessId: ${SUMO_ACCESS_ID}
-  #         - Values.sumologic.accessKey: ${SUMO_ACCESS_KEY}
-  #         - Values.sumologic.clusterName: ${SUMO_CLUSTER_NAME}
