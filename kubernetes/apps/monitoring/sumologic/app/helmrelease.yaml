@@ -29,10 +29,7 @@ spec:
   values:
     FromSecrets:
       - name: sumologic-secret
-    # serviceMonitor:
-    #   enabled: true
-    # persistence:
-    #   enabled: false
-    sumologic.accessId: ${SUMO_ACCESS_ID}
-    sumologic.accessKey: ${SUMO_ACCESS_KEY}
-    sumologic.clusterName: ${SUMO_CLUSTER_NAME}
+        valuesKey:
+          - sumologic.accessId: ${SUMO_ACCESS_ID}
+          - sumologic.accessKey: ${SUMO_ACCESS_KEY}
+          - sumologic.clusterName: ${SUMO_CLUSTER_NAME}
