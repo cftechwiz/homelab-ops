@@ -32,14 +32,12 @@
       "matchUpdateTypes": ["minor", "patch"]
     },
     {
-      "description": "Auto merge public containers",
-      "matchDatasources": ["docker"],
+      "description": "Auto merge on successful tests",
       "automerge": true,
-      "ignoreTests": true,
+      "ignoreTests": false,
       "automergeType": "pr",
       "automergeStrategy": "auto",
-      "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": ["docker.io"]
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ]
 }
