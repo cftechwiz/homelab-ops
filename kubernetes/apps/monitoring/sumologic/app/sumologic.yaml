@@ -1,6 +1,6 @@
 ---
 # Source: sumologic/templates/logs/common/pdb.yaml
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: sumologic-sumologic-otelcol-logs-pdb
@@ -16,7 +16,7 @@ spec:
   minAvailable: 2
 ---
 # Source: sumologic/templates/metrics/common/pdb.yaml
-apiVersion: policy/v1beta1
+apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: sumologic-sumologic-otelcol-metrics-pdb
