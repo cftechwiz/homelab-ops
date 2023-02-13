@@ -29,7 +29,7 @@ spec:
   values:
     sumologic:
       setupEnabled: true
-      cleanupEnabled: true
+      cleanupEnabled: false
       envFromSecret:
         - name: sumologic-secret
 
