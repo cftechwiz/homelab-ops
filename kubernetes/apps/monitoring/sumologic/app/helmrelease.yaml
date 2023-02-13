@@ -28,7 +28,7 @@ spec:
     keepHistory: false
   values:
     sumologic:
-      envFromSecrets:
+      envFromSecret:
         - name: sumologic-secret
   # valuesFrom:
   #   - targetPath: sumologic.metadata.name.setup.secret
