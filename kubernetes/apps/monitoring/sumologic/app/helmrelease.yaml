@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: sumologic
-      version: 3.1.0
+      version: 3.0.1
       sourceRef:
         kind: HelmRepository
         name: sumologic
@@ -32,6 +32,7 @@ spec:
       cleanupEnabled: false
       envFromSecret:
         - name: sumologic-secret
+      clusterName: homelab-ops
       multiline:
         enabled: true
         first_line_regex: "^\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}"
