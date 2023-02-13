@@ -2439,7 +2439,7 @@ spec:
       containers:
       - args:
         - --config=/etc/otelcol/config.yaml
-        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.69.0-sumo-0
+        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.71.0-sumo-0
         imagePullPolicy: IfNotPresent
         name: otelcol
         livenessProbe:
@@ -2698,7 +2698,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: otelcol
-        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.69.0-sumo-0
+        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.71.0-sumo-0
         imagePullPolicy: IfNotPresent
         args:
           - "--config=/conf/traces.gateway.conf.yaml"
@@ -2802,7 +2802,7 @@ spec:
       serviceAccountName: sumologic-sumologic
       containers:
       - name: otelcol
-        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.69.0-sumo-0
+        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.71.0-sumo-0
         imagePullPolicy: IfNotPresent
         args:
           - --config=/conf/traces.sampler.conf.yaml
@@ -2984,7 +2984,7 @@ spec:
         fsGroup: 999
       containers:
       - name: otelcol
-        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.69.0-sumo-0
+        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.71.0-sumo-0
         imagePullPolicy: IfNotPresent
         args:
           - --config=/etc/otel/config.yaml
@@ -3101,7 +3101,7 @@ spec:
         fsGroup: 999
       containers:
       - name: otelcol
-        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.69.0-sumo-0
+        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.71.0-sumo-0
         imagePullPolicy: IfNotPresent
         args:
           - "--config=/conf/otelcol.instrumentation.conf.yaml"
@@ -3215,7 +3215,7 @@ spec:
         fsGroup: 999
       containers:
       - name: otelcol
-        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.69.0-sumo-0
+        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.71.0-sumo-0
         imagePullPolicy: IfNotPresent
         args:
           - --config=/etc/otel/config.yaml
@@ -3338,7 +3338,7 @@ spec:
         fsGroup: 999
       containers:
       - name: otelcol
-        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.69.0-sumo-0
+        image: public.ecr.aws/sumologic/sumologic-otel-collector:0.71.0-sumo-0
         imagePullPolicy: IfNotPresent
         args:
           - --config=/etc/otel/config.yaml
