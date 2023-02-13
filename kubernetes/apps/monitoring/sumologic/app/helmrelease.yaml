@@ -30,7 +30,9 @@ spec:
     sumologic:
       setupEnabled: true
       cleanupEnabled: false
-      setup:
-        debug: true
       envFromSecret:
         - name: sumologic-secret
+      multiline:
+        enabled: true
+        first_line_regex: "^\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}"
+
