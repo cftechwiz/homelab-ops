@@ -30,6 +30,16 @@
       "automergeType": "pr",
       "automergeStrategy": "auto",
       "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "description": "Auto merge public containers",
+      "matchDatasources": ["docker"],
+      "automerge": true,
+      "ignoreTests": true,
+      "automergeType": "pr",
+      "automergeStrategy": "auto",
+      "matchUpdateTypes": ["minor", "patch"],
+      "matchPackageNames": ["docker.io"]
     }
   ]
 }
