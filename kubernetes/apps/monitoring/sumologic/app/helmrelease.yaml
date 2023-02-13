@@ -28,21 +28,10 @@ spec:
     keepHistory: false
   values:
     sumologic:
+      setupEnabled: true
       envFromSecret:
         - name: sumologic-secret
-  # valuesFrom:
-  #   - targetPath: sumologic.metadata.name.setup.secret
-  #     kind: Secret
-  #     name: values-yaml
-  #     valesKey: SUMO_ACCESS_ID
-  #   - targetPath: sumologic.accessKey
-  #     kind: Secret
-  #     name: values-yaml
-  #     valesKey: SUMO_ACCESS_KEY
-  #   - targetPath: sumologic.clusterName
-  #     kind: Secret
-  #     name: values-yaml
-  #     valesKey: SUMO_CLUSTER_NAME
+
   #         - Values.sumologic.accessId: ${SUMO_ACCESS_ID}
   #         - Values.sumologic.accessKey: ${SUMO_ACCESS_KEY}
   #         - Values.sumologic.clusterName: ${SUMO_CLUSTER_NAME}
