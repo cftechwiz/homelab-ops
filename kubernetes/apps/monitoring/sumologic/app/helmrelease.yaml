@@ -33,7 +33,22 @@ spec:
       envFromSecret:
         - name: sumologic-secret
       clusterName: homelab-ops
+    events:
+      persistence:
+        persistentVolume:
+          enabled: true
+          storageClass: ceph-filesystem
+          accessMode: ReadWriteOnce
+          size: 10g
+    logs:
       multiline:
         enabled: true
         first_line_regex: "^\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}"
+    metadata:
+      persistence:
+        enabled: true
+        storageClass: ceph-filesystem
+        accessMode: ReadWriteOnce
+        size: 10g
+
 
