@@ -2339,7 +2339,7 @@ spec:
         runAsUser: 65534
       containers:
         - name: node-exporter
-          image: quay.io/prometheus/node-exporter:v1.3.1
+          image: quay.io/prometheus/node-exporter:v1.5.0
           imagePullPolicy: IfNotPresent
           args:
             - --path.procfs=/host/proc
@@ -2582,7 +2582,7 @@ spec:
         - --port=8080
         - --resources=certificatesigningrequests,configmaps,cronjobs,daemonsets,deployments,endpoints,horizontalpodautoscalers,ingresses,jobs,limitranges,mutatingwebhookconfigurations,namespaces,networkpolicies,nodes,persistentvolumeclaims,persistentvolumes,poddisruptionbudgets,pods,replicasets,replicationcontrollers,resourcequotas,secrets,services,statefulsets,storageclasses,validatingwebhookconfigurations,volumeattachments
         imagePullPolicy: IfNotPresent
-        image: "registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.6.0"
+        image: "registry.k8s.io/kube-state-metrics/kube-state-metrics:v2.8.0"
         ports:
         - containerPort: 8080
           name: "http"
@@ -2636,7 +2636,7 @@ spec:
     spec:
       containers:
         - name: kube-prometheus-stack
-          image: "quay.io/prometheus-operator/prometheus-operator:v0.59.2"
+          image: "quay.io/prometheus-operator/prometheus-operator:v0.63.0"
           imagePullPolicy: "IfNotPresent"
           args:
             - --kubelet-service=kube-system/sumologic-kube-prometheus-kubelet
@@ -3950,7 +3950,7 @@ spec:
   alerting:
     alertmanagers:
       []
-  image: "quay.io/prometheus/prometheus:v2.39.0"
+  image: "quay.io/prometheus/prometheus:v2.42.0"
   version: v2.39.0
   externalUrl: http://sumologic-kube-prometheus-prometheus.monitoring:9090
   paused: false
