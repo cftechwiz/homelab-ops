@@ -56,98 +56,98 @@ spec:
           requests:
             cpu: 100m
             memory: 128Mi
-  kube-prometheus-stack:
-    prometheusOperator:
-      resources:
-        limits:
-          cpu: 200m
-          memory: 200Mi
-        requests:
-          cpu: 100m
-          memory: 100Mi
-    prometheus-node-exporter:
-      resources:
-        limits:
-          cpu: 200m
-          memory: 50Mi
-        requests:
-          cpu: 100m
-          memory: 30Mi
-    kube-state-metrics:
-      resources:
-        limits:
-          cpu: 100m
-          memory: 200Mi
-        requests:
-          cpu: 10m
-          memory: 32Mi
-  otelcolInstrumentation:
-    statefulset:
-      resources:
-        limits:
-          cpu: 2000m
-          memory: 4Gi
-        requests:
-          cpu: 500m
-          memory: 768Mi
-  tracesSampler:
-    deployment:
-      resources:
-        limits:
-          cpu: 2000m
-          memory: 4Gi
-        requests:
-          cpu: 200m
-          memory: 384Mi
-  metadata:
-    metrics:
+    kube-prometheus-stack:
+      prometheusOperator:
+        resources:
+          limits:
+            cpu: 200m
+            memory: 200Mi
+          requests:
+            cpu: 100m
+            memory: 100Mi
+      prometheus-node-exporter:
+        resources:
+          limits:
+            cpu: 200m
+            memory: 50Mi
+          requests:
+            cpu: 100m
+            memory: 30Mi
+      kube-state-metrics:
+        resources:
+          limits:
+            cpu: 100m
+            memory: 200Mi
+          requests:
+            cpu: 10m
+            memory: 32Mi
+    otelcolInstrumentation:
       statefulset:
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4Gi
+          requests:
+            cpu: 500m
+            memory: 768Mi
+    tracesSampler:
+      deployment:
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 4Gi
+          requests:
+            cpu: 200m
+            memory: 384Mi
+    metadata:
+      metrics:
+        statefulset:
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1Gi
+            requests:
+              cpu: 500m
+              memory: 768Mi
+      logs:
+        statefulset:
+          resources:
+            limits:
+              cpu: 1000m
+              memory: 1Gi
+            requests:
+              cpu: 500m
+              memory: 768Mi
+    traceGateway:
+      deployment:
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2Gi
+          requests:
+            cpu: 50m
+            memory: 196Mi
+    otelevents:
+      statefulset:
+        resources:
+          limits:
+            cpu: 2000m
+            memory: 2Gi
+          requests:
+            cpu: 500m
+            memory: 200Mi
+    otellogs:
+      daemonset:
         resources:
           limits:
             cpu: 1000m
             memory: 1Gi
           requests:
-            cpu: 500m
-            memory: 768Mi
-    logs:
-      statefulset:
-        resources:
-          limits:
-            cpu: 1000m
-            memory: 1Gi
-          requests:
-            cpu: 500m
-            memory: 768Mi
-  traceGateway:
-    deployment:
-      resources:
-        limits:
-          cpu: 1000m
-          memory: 2Gi
-        requests:
-          cpu: 50m
-          memory: 196Mi
-  otelevents:
-    statefulset:
-      resources:
-        limits:
-          cpu: 2000m
-          memory: 2Gi
-        requests:
-          cpu: 500m
-          memory: 200Mi
-  otellogs:
-    daemonset:
-      resources:
-        limits:
-          cpu: 1000m
-          memory: 1Gi
-        requests:
-          cpu: 100m
-          memory: 32Mi
-  tailing-sidecar-operator:
-    enabled: true
-  opentelemetry-operator:
-    enabled: true
-    createDefaultInstrumentation: true
-    instrumentationNamespaces: "default"
+            cpu: 100m
+            memory: 32Mi
+    tailing-sidecar-operator:
+      enabled: true
+    opentelemetry-operator:
+      enabled: true
+      createDefaultInstrumentation: true
+      instrumentationNamespaces: "default"
