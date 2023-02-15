@@ -32,6 +32,10 @@ spec:
       cleanupEnabled: true
       envFromSecret:
         - name: sumologic-secret
+      collectorName: homelab-ops
+      clusterName: homelab
+      # cluster:
+      #   host: https://172.16.0.254
     events:
       persistence:
         persistentVolume:
