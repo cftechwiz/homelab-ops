@@ -57,7 +57,7 @@ spec:
       enabled: false
     persistence:
       enabled: true
-      storageClassName: local-path
+      storageClassName: ceph-filesystem
       size: 100Mi
     affinity:
       podAntiAffinity:
