@@ -78,7 +78,7 @@ spec:
         mountPath: /config
         accessMode: ReadWriteOnce
         size: 1Gi
-        storageClass: ceph-block
+        storageClass: ceph-filesystem
     persistence:
       media:
         enabled: true

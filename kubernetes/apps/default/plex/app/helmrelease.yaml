@@ -105,7 +105,7 @@ spec:
         mountPath: /config
         accessMode: ReadWriteOnce
         size: 100Gi
-        storageClass: ceph-block
+        storageClass: ceph-filesystem
         labels:
           snapshot.home.arpa/enabled: "true"
     persistence:

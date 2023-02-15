@@ -90,7 +90,7 @@ spec:
         mountPath: /data
         accessMode: ReadWriteOnce
         size: 5Gi
-        storageClass: ceph-block
+        storageClass: ceph-filesystem
         labels:
           snapshot.home.arpa/enabled: "true"
     persistence:
