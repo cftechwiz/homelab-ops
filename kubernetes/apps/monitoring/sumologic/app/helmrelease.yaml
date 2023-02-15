@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: sumologic
+  name: sumoClusterMonitoring
   namespace: monitoring
 spec:
   interval: 15m
@@ -43,13 +43,6 @@ spec:
       multiline:
         enabled: true
         first_line_regex: "^\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}"
-    metadata:
-      persistence:
-        enabled: true
-        storageClass: ceph-filesystem
-        accessMode: ReadWriteOnce
-        size: 10g
-  sumologic:
     metrics:
       remoteWriteProxy:
         resources:
@@ -109,15 +102,6 @@ spec:
         requests:
           cpu: 500m
           memory: 768Mi
-  traceGateway:
-    deployment:
-      resources:
-        limits:
-          cpu: 1000m
-          memory: 2Gi
-        requests:
-          cpu: 50m
-          memory: 196Mi
   tracesSampler:
     deployment:
       resources:
@@ -137,7 +121,6 @@ spec:
           requests:
             cpu: 500m
             memory: 768Mi
-  metadata:
     logs:
       statefulset:
         resources:
@@ -147,3 +130,36 @@ spec:
           requests:
             cpu: 500m
             memory: 768Mi
+  traceGateway:
+    deployment:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 2Gi
+        requests:
+          cpu: 50m
+          memory: 196Mi
+  otelevents:
+    statefulset:
+      resources:
+        limits:
+          cpu: 2000m
+          memory: 2Gi
+        requests:
+          cpu: 500m
+          memory: 200Mi
+  otellogs:
+    daemonset:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1Gi
+        requests:
+          cpu: 100m
+          memory: 32Mi
+  tailing-sidecar-operator:
+    enabled: true
+  opentelemetry-operator:
+    enabled: true
+    createDefaultInstrumentation: true
+    instrumentationNamespaces: "default"
