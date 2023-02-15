@@ -3,7 +3,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: sumologicmonitor
+  name: sumologic
   namespace: monitoring
 spec:
   interval: 15m
@@ -34,8 +34,7 @@ spec:
         - name: sumologic-secret
       collectorName: homelab-ops
       clusterName: homelab
-      # cluster:
-      #   host: https://172.16.0.254
+
     events:
       persistence:
         persistentVolume:
