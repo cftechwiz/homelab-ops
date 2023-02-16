@@ -7,6 +7,15 @@ metadata:
   namespace: monitoring
 spec:
   interval: 15m
+  valuesFrom:
+      - kind: Secret
+        name: sumologic-secret
+        valuesKey: SUMOLOGIC_ACCESSID
+        targetPath: .Values.sumologic.accessId
+      - kind: Secret
+        name: sumologic-secret
+        valuesKey: SUMOLOGIC_ACCESSKEY
+        targetPath: .Values.sumologic.accessKey
   chart:
     spec:
       chart: sumologic
@@ -15,13 +24,6 @@ spec:
         kind: HelmRepository
         name: sumologic
         namespace: flux-system
-      valuesFrom:
-        - kind: Secret
-          name: sumologic-secret
-          valuesKey: SUMOLOGIC_ACCESSID
-        - kind: Secret
-          name: sumologic-secret
-          valuesKey: SUMOLOGIC_ACCESSKEY
   maxHistory: 3
   install:
     createNamespace: true
