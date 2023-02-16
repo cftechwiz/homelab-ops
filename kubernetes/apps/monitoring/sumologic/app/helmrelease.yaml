@@ -30,20 +30,11 @@ spec:
   values:
     sumologic:
       setupEnabled: true
-      cleanupEnabled: true
-      # envFromSecret:
-      #   - name: sumologic-secret
+      cleanupEnabled: false
+      envFromSecret:
+        - name: sumologic-secret
       collectorName: homelab-ops
       clusterName: homelab
-      valuesFrom:
-        - kind: Secret
-          name: sumologic-secret
-          valuesKey: SUMOLOGIC_ACCESSID
-          targetPath: accessId
-        - kind: Secret
-          name: sumologic-secret
-          valuesKey: SUMOLOGIC_ACCESSKEY
-          targetPath: accessKey
     events:
       persistence:
         persistentVolume:
