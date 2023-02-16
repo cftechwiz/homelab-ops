@@ -6,6 +6,7 @@ namespace: monitoring
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
+  - ./secrets.sops.yaml
 
 # patchesStrategicMerge:
   # - ./patches/env.yaml

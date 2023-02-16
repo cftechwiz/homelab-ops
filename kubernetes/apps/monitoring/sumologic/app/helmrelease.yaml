@@ -15,6 +15,13 @@ spec:
         kind: HelmRepository
         name: sumologic
         namespace: flux-system
+      valuesFrom:
+        - kind: Secret
+        name: sumologic-secret
+        valuesKey: SUMOLOGIC_ACCESSID
+        - kind: Secret
+        name: sumologic-secret
+        valuesKey: SUMOLOGIC_ACCESSKEY
   maxHistory: 3
   install:
     createNamespace: true
@@ -30,17 +37,6 @@ spec:
     sumologic:
       setupEnabled: true
       cleanupEnabled: true
-      env:
-        SUMOLOGIC_ACCESSID:
-          valueFrom:
-            secretKeyRef:
-              name: sumologic-secret
-              key: SUMOLOGIC_ACCESSID
-        SUMOLOGIC_ACCESSKEY:
-          valueFrom:
-            secretKeyRef:
-              name: sumologic-secret
-              key: SUMOLOGIC_ACCESSKEY
       # envFromSecret:
       #   - name: sumologic-secret
       collectorName: homelab-ops
