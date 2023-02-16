@@ -30,8 +30,8 @@ spec:
     sumologic:
       setupEnabled: true
       cleanupEnabled: true
-      envFromSecret:
-        - name: sumologic-secret
+      # envFromSecret:
+      #   - name: sumologic-secret
       collectorName: homelab-ops
       clusterName: homelab
 
