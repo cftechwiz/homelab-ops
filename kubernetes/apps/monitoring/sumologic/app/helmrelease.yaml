@@ -17,11 +17,11 @@ spec:
         namespace: flux-system
       valuesFrom:
         - kind: Secret
-        name: sumologic-secret
-        valuesKey: SUMOLOGIC_ACCESSID
+          name: sumologic-secret
+          valuesKey: SUMOLOGIC_ACCESSID
         - kind: Secret
-        name: sumologic-secret
-        valuesKey: SUMOLOGIC_ACCESSKEY
+          name: sumologic-secret
+          valuesKey: SUMOLOGIC_ACCESSKEY
   maxHistory: 3
   install:
     createNamespace: true
