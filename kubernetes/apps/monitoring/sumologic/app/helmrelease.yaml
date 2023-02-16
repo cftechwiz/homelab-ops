@@ -28,15 +28,7 @@ spec:
   uninstall:
     keepHistory: false
   values:
-    valuesFrom:
-      - kind: Secret
-        name: sumologic-secret
-        valuesKey: SUMOLOGIC_ACCESSID
-        targetPath: .Values.sumologic.accessId
-      - kind: Secret
-        name: sumologic-secret
-        valuesKey: SUMOLOGIC_ACCESSKEY
-        targetPath: .Values.sumologic.accessKey
+
     sumologic:
       setupEnabled: true
       cleanupEnabled: true
@@ -44,7 +36,15 @@ spec:
       #   - name: sumologic-secret
       collectorName: homelab-ops
       clusterName: homelab
-
+      valuesFrom:
+        - kind: Secret
+          name: sumologic-secret
+          valuesKey: SUMOLOGIC_ACCESSID
+          targetPath: sumologic.accessId
+        - kind: Secret
+          name: sumologic-secret
+          valuesKey: SUMOLOGIC_ACCESSKEY
+          targetPath: sumologic.accessKey
     events:
       persistence:
         persistentVolume:
