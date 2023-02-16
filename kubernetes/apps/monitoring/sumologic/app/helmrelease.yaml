@@ -30,6 +30,17 @@ spec:
     sumologic:
       setupEnabled: true
       cleanupEnabled: true
+      env:
+        SUMOLOGIC_ACCESSID:
+          valueFrom:
+            secretKeyRef:
+              name: sumologic-secret
+              key: SUMOLOGIC_ACCESSID
+        SUMOLOGIC_ACCESSKEY:
+          valueFrom:
+            secretKeyRef:
+              name: sumologic-secret
+              key: SUMOLOGIC_ACCESSKEY
       # envFromSecret:
       #   - name: sumologic-secret
       collectorName: homelab-ops
