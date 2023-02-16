@@ -28,7 +28,6 @@ spec:
   uninstall:
     keepHistory: false
   values:
-
     sumologic:
       setupEnabled: true
       cleanupEnabled: true
@@ -40,11 +39,11 @@ spec:
         - kind: Secret
           name: sumologic-secret
           valuesKey: SUMOLOGIC_ACCESSID
-          targetPath: sumologic.accessId
+          targetPath: accessId
         - kind: Secret
           name: sumologic-secret
           valuesKey: SUMOLOGIC_ACCESSKEY
-          targetPath: sumologic.accessKey
+          targetPath: accessKey
     events:
       persistence:
         persistentVolume:
