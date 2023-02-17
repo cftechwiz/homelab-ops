@@ -99,6 +99,14 @@ spec:
           requests:
             cpu: 200m
             memory: 384Mi
+      config:
+        receivers:
+          otlp:
+            protocols:
+              grpc:
+                endpoint: "localhost:4317"
+              http:
+                endpoint: "localhost:4318"
     metadata:
       metrics:
         statefulset:
@@ -127,6 +135,14 @@ spec:
           requests:
             cpu: 50m
             memory: 196Mi
+      config:
+        receivers:
+          otlp:
+            protocols:
+              grpc:
+                endpoint: "localhost:4317"
+              http:
+                endpoint: "localhost:4318"
     otelevents:
       statefulset:
         resources:
