@@ -1,0 +1,124 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
+sumologic:
+  setupEnabled: true
+  cleanupEnabled: false
+  collectorName: homelab-ops
+  clusterName: homelab
+setup:
+  debug: false
+events:
+  persistence:
+    persistentVolume:
+      enabled: true
+      storageClass: ceph-filesystem
+      accessMode: ReadWriteOnce
+      size: 10g
+logs:
+  multiline:
+    enabled: true
+    first_line_regex: "^\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}"
+metrics:
+  remoteWriteProxy:
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 256Mi
+      requests:
+        cpu: 50m
+        memory: 128Mi
+kube-prometheus-stack:
+  prometheusOperator:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 200Mi
+      requests:
+        cpu: 50m
+        memory: 100Mi
+  prometheus-node-exporter:
+    resources:
+      limits:
+        cpu: 200m
+        memory: 50Mi
+      requests:
+        cpu: 50m
+        memory: 30Mi
+  kube-state-metrics:
+    resources:
+      limits:
+        cpu: 100m
+        memory: 200Mi
+      requests:
+        cpu: 10m
+        memory: 32Mi
+otelcolInstrumentation:
+  statefulset:
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 4Gi
+      requests:
+        cpu: 100m
+        memory: 768Mi
+tracesSampler:
+  deployment:
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 4Gi
+      requests:
+        cpu: 100m
+        memory: 384Mi
+metadata:
+  metrics:
+    statefulset:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1Gi
+        requests:
+          cpu: 100m
+          memory: 768Mi
+  logs:
+    statefulset:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1Gi
+        requests:
+          cpu: 100m
+          memory: 768Mi
+traceGateway:
+  deployment:
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 2Gi
+      requests:
+        cpu: 50m
+        memory: 196Mi
+otelevents:
+  statefulset:
+    resources:
+      limits:
+        cpu: 2000m
+        memory: 2Gi
+      requests:
+        cpu: 500m
+        memory: 200Mi
+otellogs:
+  daemonset:
+    resources:
+      limits:
+        cpu: 1000m
+        memory: 1Gi
+      requests:
+        cpu: 100m
+        memory: 32Mi
+tailing-sidecar-operator:
+  enabled: true
+opentelemetry-operator:
+  enabled: true
+  createDefaultInstrumentation: true
+  instrumentationNamespaces: "default"
