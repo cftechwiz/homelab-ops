@@ -28,6 +28,7 @@ resources:
   - ./n8n/ks.yaml
   - ./navidrome/ks.yaml
   - ./overseerr/ks.yaml
+  # - ./otel-demo/ks.yaml
   # - ./plex/ks.yaml
   - ./prowlarr/ks.yaml
   # - ./qbittorrent/ks.yaml
