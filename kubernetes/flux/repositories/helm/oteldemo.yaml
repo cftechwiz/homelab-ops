@@ -7,4 +7,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 2h
-  url: https://github.com/cfallwell/opentelemetry-demo/tree/main/sumo_deployments/helm/sumo-opentelemetry-demo
+  url: https://github.com/cfallwell/opentelemetry-demo/tree/main/sumo_deployments/helm/sumo-opentelemetry-demo/chart.yaml

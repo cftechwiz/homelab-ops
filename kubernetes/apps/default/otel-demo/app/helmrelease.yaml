@@ -10,10 +10,9 @@ spec:
   chart:
     spec:
       chart: oteldemo
-      version: 0.18.1
       sourceRef:
         kind: HelmRepository
-        name: opentelemetry-demo
+        name: sumo-demo
         namespace: flux-system
   maxHistory: 3
   install:
@@ -33,15 +32,4 @@ spec:
     replicaCount: 1
     sumologic:
       rumUrl: "${SUMOLOGIC_RUMURL}"
-    default:
-      opentelemetry-collector:
-        config:
-          exporters:
-            otlphttp/example:
-              endpoint: http://sumologic-sumologic-otelagent.monitoring:4318
-      service:
-        pipelines:
-          traces:
-            receivers: [otlp]
-            processors: [batch]
-            exporters: [otlphttp/example]
+
