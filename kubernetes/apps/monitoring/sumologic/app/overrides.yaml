@@ -5,6 +5,8 @@ sumologic:
   cleanupEnabled: false
   collectorName: homelab-ops
   clusterName: homelab
+cluster:
+  host: "https://172.16.0.254:6443"
 setup:
   debug: false
 events:
@@ -88,6 +90,7 @@ metadata:
         requests:
           cpu: 100m
           memory: 768Mi
+  apiServerUrl: "https://172.16.0.254:6443"
   logs:
     statefulset:
       resources:
