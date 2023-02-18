@@ -63,6 +63,9 @@ otelcolInstrumentation:
       requests:
         cpu: 100m
         memory: 768Mi
+    extraEnvVars:
+      - name: GODEBUG
+        value: netdns=go
 tracesSampler:
   deployment:
     resources:
@@ -72,6 +75,9 @@ tracesSampler:
       requests:
         cpu: 100m
         memory: 384Mi
+    extraEnvVars:
+      - name: GODEBUG
+        value: netdns=go
   config:
     receivers:
       otlp:
@@ -90,6 +96,9 @@ metadata:
         requests:
           cpu: 100m
           memory: 768Mi
+      extraEnvVars:
+        - name: GODEBUG
+          value: netdns=go
   apiServerUrl: "https://172.16.0.254:6443"
   logs:
     statefulset:
@@ -109,6 +118,9 @@ traceGateway:
       requests:
         cpu: 50m
         memory: 196Mi
+    extraEnvVars:
+      - name: GODEBUG
+        value: netdns=go
   config:
     receivers:
       otlp:
@@ -126,6 +138,9 @@ otelevents:
       requests:
         cpu: 500m
         memory: 200Mi
+    extraEnvVars:
+      - name: GODEBUG
+        value: netdns=go
 otellogs:
   daemonset:
     resources:
@@ -135,6 +150,9 @@ otellogs:
       requests:
         cpu: 100m
         memory: 32Mi
+    extraEnvVars:
+      - name: GODEBUG
+        value: netdns=go
 tailing-sidecar-operator:
   enabled: true
 opentelemetry-operator:

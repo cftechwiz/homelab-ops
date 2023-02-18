@@ -52,7 +52,7 @@ spec:
               - *host
       resources:
         requests:
-          cpu: 15m
+          cpu: 100m
           memory: 64M
         limits:
           memory: 64M
