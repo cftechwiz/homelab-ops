@@ -27,10 +27,10 @@ spec:
         image: kubops/github-runner:latest
         resources:
           limits:
-            cpu: 500m
+            cpu:
             memory: 512Mi
           requests:
-            cpu: 500m
+            cpu:
             memory: 512Mi
         volumeMounts:
           - name:  runner-storage
