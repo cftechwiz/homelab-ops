@@ -22,6 +22,8 @@ spec:
           emptyDir: {}
         - name: runner-storage
           emptyDir: {}
+        - name: certificates
+          emptyDir: {}
       containers:
       - name: runner
         image: kubops/github-runner:latest
