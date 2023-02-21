@@ -37,7 +37,7 @@ spec:
             mountPath: /home/runner/workspace
         env:
         - name: NODE_EXTRA_CA_CERTS
-          value: /var/lib/rancher/k3s/server/tls/
+          value: /var/lib/rancher/k3s/server/tls/server-ca.crt
         - name: DOCKER_HOST
           value: 127.0.0.1
         - name: DOCKER_BUILDKIT
