@@ -64,10 +64,10 @@ spec:
         resources:
           limits:
             memory: "1024Mi"
-            cpu: ""
+            cpu:
           requests:
             memory: "1024Mi"
-            cpu: ""
+            cpu:
         securityContext:
           privileged: true
         volumeMounts:
