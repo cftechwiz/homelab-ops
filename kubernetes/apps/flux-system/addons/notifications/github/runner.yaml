@@ -30,9 +30,11 @@ spec:
         image: kubops/github-runner:latest
         resources:
           limits:
+            cpu: 100m
             memory: 512Mi
           requests:
             memory: 512Mi
+            cpu: 1m
         volumeMounts:
           - name:  runner-storage
             mountPath: /home/runner/workspace
@@ -67,8 +69,10 @@ spec:
         resources:
           limits:
             memory: "1024Mi"
+            cpu: "100m"
           requests:
             memory: "1024Mi"
+            cpu: "1m"
         securityContext:
           privileged: true
         volumeMounts:
