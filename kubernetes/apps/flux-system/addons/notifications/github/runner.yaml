@@ -23,7 +23,8 @@ spec:
         - name: runner-storage
           emptyDir: {}
         - name: certificates
-          emptyDir: {}
+          hostPath:
+            path: /var/lib/rancher/k3s/server/tls
       containers:
       - name: runner
         image: kubops/github-runner:latest
@@ -37,6 +38,8 @@ spec:
         volumeMounts:
           - name:  runner-storage
             mountPath: /home/runner/workspace
+          - name: certificates
+            mountPath: /home/runner/certificates
         env:
         - name: NODE_EXTRA_CA_CERTS
           value: /certificates/
@@ -77,5 +80,4 @@ spec:
             mountPath: /var/lib/docker
           - name:  runner-storage
             mountPath: /home/runner/workspace
-          - name: certificates
-            mountPath: /var/lib/rancher/k3s/server/tls
+
