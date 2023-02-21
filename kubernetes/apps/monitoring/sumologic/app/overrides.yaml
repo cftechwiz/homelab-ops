@@ -5,30 +5,28 @@ sumologic:
   cleanupEnabled: false
   collectorName: homelab-ops
   clusterName: homelab
-cluster:
-  host: "https://172.16.0.254:6443"
-setup:
-  debug: false
-events:
-  persistence:
-    persistentVolume:
+  setup:
+    debug: false
+  events:
+    persistence:
+      persistentVolume:
+        enabled: true
+        storageClass: ceph-filesystem
+        accessMode: ReadWriteOnce
+        size: 10g
+  logs:
+    multiline:
       enabled: true
-      storageClass: ceph-filesystem
-      accessMode: ReadWriteOnce
-      size: 10g
-logs:
-  multiline:
-    enabled: true
-    first_line_regex: "^\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}"
-metrics:
-  remoteWriteProxy:
-    resources:
-      limits:
-        cpu: 1000m
-        memory: 256Mi
-      requests:
-        cpu: 50m
-        memory: 128Mi
+      first_line_regex: "^\\[?\\d{4}-\\d{1,2}-\\d{1,2}.\\d{2}:\\d{2}:\\d{2}"
+  metrics:
+    remoteWriteProxy:
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 256Mi
+        requests:
+          cpu: 50m
+          memory: 128Mi
 kube-prometheus-stack:
   prometheusOperator:
     resources:
