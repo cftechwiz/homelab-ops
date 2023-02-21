@@ -42,7 +42,7 @@ spec:
             mountPath: /home/runner/certificates
         env:
         - name: NODE_EXTRA_CA_CERTS
-          value: /home/runner/certificates/
+          value: /home/runner/certificates/client-kube-apiserver.crt
         - name: DOCKER_HOST
           value: 127.0.0.1
         - name: DOCKER_BUILDKIT
