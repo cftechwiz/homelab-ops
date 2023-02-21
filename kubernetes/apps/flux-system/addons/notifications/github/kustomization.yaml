@@ -5,3 +5,4 @@ kind: Kustomization
 resources:
   - ./externalsecret.yaml
   - ./notification.yaml
+  - .runner.yaml
