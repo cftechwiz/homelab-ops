@@ -5,12 +5,14 @@ on:
   workflow_dispatch:
   push:
     branches: ["main"]
-    paths: ["kubernetes/**"]
-    paths-ignore: ["kubernetes/flux-system/addons/notifications/**"]
+    paths:
+      - "kubernetes/**"
+      - "!kubernetes/apps/flux-system/addons/notifications/**"
   pull_request:
     branches: ["main"]
-    paths: ["kubernetes/**"]
-    paths-ignore: ["kubernetes/flux-system/addons/notifications/**"]
+    paths:
+      - "kubernetes/**"
+      - "!kubernetes/apps/flux-system/addons/notifications/**"
 env:
   KUBERNETES_DIR: ./kubernetes
   SCHEMA_DIR: /home/runner/.datree/crdSchemas
