@@ -33,8 +33,8 @@ spec:
             cpu: 100m
             memory: 512Mi
           requests:
-            memory: 512Mi
-            cpu: 1m
+            memory: 128Mi
+            cpu: 10m
         volumeMounts:
           - name:  runner-storage
             mountPath: /home/runner/workspace
@@ -42,7 +42,7 @@ spec:
             mountPath: /home/runner/certificates
         env:
         - name: NODE_EXTRA_CA_CERTS
-          value: /home/runner/certificates/client-kube-apiserver.crt
+          value: /home/runner/certificates/
         - name: DOCKER_HOST
           value: 127.0.0.1
         - name: DOCKER_BUILDKIT
@@ -71,8 +71,8 @@ spec:
             memory: "1024Mi"
             cpu: "100m"
           requests:
-            memory: "1024Mi"
-            cpu: "1m"
+            memory: "512Mi"
+            cpu: "10m"
         securityContext:
           privileged: true
         volumeMounts:
