@@ -44,17 +44,17 @@ spec:
           valueFrom:
             secretKeyRef:
               name: github-token-secret
-              key: github-token
+              key: GITHUB_TOKEN
         - name: GITHUB_OWNER
           valueFrom:
             secretKeyRef:
               name: github-token-secret
-              key: github_owner
+              key: GITHUB_OWNER
         - name: GITHUB_REPOSITORY
           valueFrom:
             secretKeyRef:
               name: github-token-secret
-              key: github_repository
+              key: GITHUB_REPOSITORY
       - name: dind
         image: docker:19.03.13-dind
         command: ["dockerd"]
