@@ -75,5 +75,5 @@ spec:
             mountPath: /var/lib/docker
           - name:  runner-storage
             mountPath: /home/runner/workspace
-          - name: certificates
+          - name: certs
             mountPath: /var/lib/rancher/k3s/server/tls
