@@ -23,7 +23,7 @@ spec:
       namespace: monitoring
   interval: 30m
   retryInterval: 1m
-  timeout: 3m
+  timeout: 10m
 
 # ---
 # # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/kustomization_v1beta2.json
