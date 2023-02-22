@@ -30,6 +30,7 @@ spec:
     monitoring:
       enabled: true
       createPrometheusRules: true
+
     ingress:
       dashboard:
         ingressClassName: nginx
@@ -56,6 +57,10 @@ spec:
           compression:
             # TODO: Test out enabling this on next cluster rebuild
             enabled: false
+      mgr:
+        modules:
+          - name: rook
+            enabled: true
       crashCollector:
         disable: false
       dashboard:
