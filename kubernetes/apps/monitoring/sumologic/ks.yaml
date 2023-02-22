@@ -8,8 +8,9 @@ metadata:
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
-  # dependsOn:
-  #   - name: cluster-apps-external-secrets-stores
+  dependsOn:
+    - name: cluster-apps-external-secrets-stores
+    - name: cluster-apps-rook-ceph-cluster
   path: ./kubernetes/apps/monitoring/sumologic/app
   prune: true
   sourceRef:
