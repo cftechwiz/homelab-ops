@@ -37,7 +37,7 @@ spec:
       amount: 1
       duration: 30m
   minReplicas: 1
-  maxReplicas: 3
+  maxReplicas: 5
   metrics:
     - type: TotalNumberOfQueuedAndInProgressWorkflowRuns
       repositoryNames: ["homelab-ops"]
