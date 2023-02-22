@@ -67,7 +67,7 @@ spec:
         mountPath: /data/database
         accessMode: ReadWriteOnce
         size: 1Gi
-        storageClass: ceph-filesystem
+        storageClass: ceph-block
         labels:
           snapshot.home.arpa/enabled: "true"
     resources:
