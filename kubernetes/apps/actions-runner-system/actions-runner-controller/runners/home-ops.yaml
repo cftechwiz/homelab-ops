@@ -3,7 +3,7 @@
 apiVersion: actions.summerwind.dev/v1alpha1
 kind: RunnerDeployment
 metadata:
-  name: home-ops
+  name: homelab-ops
   namespace: actions-runner-system
 spec:
   template:
