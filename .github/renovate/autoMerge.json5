@@ -7,6 +7,7 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "auto",
+      "platformAutomerge": "true",
       "ignoreTests": true,
       "matchUpdateTypes": ["digest"],
       "matchPackagePattern": ["ghcr.io/onedr0p"]
@@ -17,6 +18,7 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "auto",
+      "platformAutomerge": "true",
       "ignoreTests": true,
       "matchUpdateTypes": ["minor", "patch"],
       "matchPackageNames": ["ghcr.io/onedr0p/prowlarr-nightly"]
@@ -28,6 +30,7 @@
       "automerge": true,
       "ignoreTests": true,
       "automergeType": "pr",
+      "platformAutomerge": "true",
       "automergeStrategy": "auto",
       "matchUpdateTypes": ["minor", "patch"]
     },
@@ -37,6 +40,7 @@
       "ignoreTests": false,
       "automergeType": "pr",
       "automergeStrategy": "auto",
+      "platformAutomerge": "true",
       "matchUpdateTypes": ["minor", "patch"]
     }
   ]
