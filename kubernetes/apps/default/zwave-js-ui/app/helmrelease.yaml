@@ -82,7 +82,7 @@ spec:
         mountPath: /usr/src/app/store
         accessMode: ReadWriteOnce
         size: 1Gi
-        storageClass: ceph-filesystem
+        storageClass: ceph-block
         labels:
           snapshot.home.arpa/enabled: "true"
     persistence:

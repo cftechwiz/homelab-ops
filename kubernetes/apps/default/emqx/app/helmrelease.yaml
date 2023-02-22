@@ -57,7 +57,7 @@ spec:
       enabled: false
     persistence:
       enabled: true
-      storageClassName: ceph-filesystem
+      storageClassName: ceph-block
       size: 100Mi
     affinity:
       podAntiAffinity:

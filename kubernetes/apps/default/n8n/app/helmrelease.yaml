@@ -77,7 +77,7 @@ spec:
         mountPath: /home/node/.n8n
         accessMode: ReadWriteOnce
         size: 1Gi
-        storageClass: ceph-filesystem
+        storageClass: ceph-block
         labels:
           snapshot.home.arpa/enabled: "true"
     resources:

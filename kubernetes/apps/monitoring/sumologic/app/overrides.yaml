@@ -11,7 +11,7 @@ sumologic:
     persistence:
       persistentVolume:
         enabled: true
-        storageClass: ceph-filesystem
+        storageClass: ceph-block
         accessMode: ReadWriteOnce
         size: 10g
   logs:
