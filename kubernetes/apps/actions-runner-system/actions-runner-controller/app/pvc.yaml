@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/instance: *name
     excluded_from_alerts: "true"
 spec:
-  storageClassName: ceph-bucket
+  storageClassName: ceph-filesystem
   accessModes: ["ReadWriteMany"]
   resources:
     requests:
