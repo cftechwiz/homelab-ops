@@ -11,6 +11,7 @@ spec:
   dependsOn:
     - name: cluster-apps-local-path-provisioner
     - name: cluster-apps-external-secrets-stores
+    - name: cluster-apps-rook-ceph-cluster
   path: ./kubernetes/apps/default/cloudnative-pg/app
   prune: true
   sourceRef:
