@@ -31,7 +31,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/cfallwell/jellyfin
-      tag: 10.8.9@sha256:01a6497a1290b73f63251aebe6d01327c15b3413c3e1013c2a396ffe116ced4d
+      tag: 10.8.9@sha256:f36b741e5465d490f1f323f3da51c3b331824a858e5affeec9e662b181d18b5a
     env:
       TZ: America/Chicago
     service:
