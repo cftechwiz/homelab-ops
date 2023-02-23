@@ -31,7 +31,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/cfallwell/plex
-      tag: 1.31.0.6654-02189b09f@sha256:ef7a8610f1ef4280e035bb026cc6939c5c943fb7b9c9070e747ec438dae95d4f
+      tag: 1.31.0.6654-02189b09f@sha256:15faa5fb5cca471646d4380d49c8b674d300edc59f1884142ab5d20f1dc7f604
     env:
       TZ: America/Chicago
     service:
