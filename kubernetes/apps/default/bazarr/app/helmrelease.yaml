@@ -30,7 +30,7 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/onedr0p/bazarr
+      repository: ghcr.io/cfallwell/bazarr
       tag: 1.1.4@sha256:b5ff5d86f309c7af0ac5de96df7f1b8ff399d3d671a45f5e7a8f41526831aa97
     env:
       TZ: America/Chicago
