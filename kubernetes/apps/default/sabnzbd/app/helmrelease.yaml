@@ -31,7 +31,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/cfallwell/sabnzbd
-      tag: 3.7.2@sha256:c8754b0ef01f50a5b4a78f88e6f2f2b7a3ca1651226ca3145fa62e3790251ef1
+      tag: 3.7.2@sha256:fd986177c391edc637bb7104f423b9c4c0b249dc6a3099b0ba578593004b4e92
     env:
       TZ: America/Chicago
       SABNZBD__PORT: &port 80
