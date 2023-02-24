@@ -13,11 +13,11 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  healthChecks:
-    - apiVersion: apiextensions.k8s.io/v1
-      kind: CustomResourceDefinition
-      name: kubevirts.kubevirt.io
-      namespace: kubevirt
+  # healthChecks:
+  #   - apiVersion: apiextensions.k8s.io/v1
+  #     kind: CustomResourceDefinition
+  #     name: kubevirts.kubevirt.io
+  #     namespace: kubevirt
   interval: 30m
   retryInterval: 1m
   timeout: 3m
