@@ -49,7 +49,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-kubevirt
+  name: cluster-apps-kubevirt-kvms
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
