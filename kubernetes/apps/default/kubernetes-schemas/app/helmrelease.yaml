@@ -32,7 +32,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: ghcr.io/cfallwell/kubernetes-schemas-web
-      tag: latest@sha256:ee72e9fb01aa23305ffd72f1216985a31fe2798c1ff9cd9290a7e30e0bc2fa57
+      tag: latest@sha256:90c724e87e91857beda82a4a1e7fb58c7b26e9d34b190bc6cfd21fecae3753e4
     service:
       main:
         ports:
