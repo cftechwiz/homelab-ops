@@ -90,12 +90,6 @@ spec:
         labels:
           snapshot.home.arpa/enabled: "true"
     persistence:
-      downloads:
-        enabled: true
-        type: nfs
-        server: falhallanas.lab
-        path: /nfs/Downloads
-        mountPath: /downloads
       media:
         enabled: true
         type: nfs
