@@ -8,7 +8,7 @@ resources:
   - ./nfs-pvc.yaml
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-  - ./volsync.yaml
+  # - ./volsync.yaml
 configMapGenerator:
   - name: frigate-configmap
     files:
