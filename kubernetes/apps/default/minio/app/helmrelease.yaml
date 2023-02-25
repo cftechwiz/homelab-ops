@@ -120,9 +120,9 @@ spec:
           - hosts:
               - *api-host
     podSecurityContext:
-      runAsUser: 1004
-      runAsGroup: 1000
-      fsGroup: 1000
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
       fsGroupChangePolicy: "OnRootMismatch"
       supplementalGroups:
         - 100

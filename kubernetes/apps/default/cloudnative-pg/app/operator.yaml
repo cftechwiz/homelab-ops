@@ -11407,8 +11407,8 @@ spec:
             drop:
             - ALL
           readOnlyRootFilesystem: true
-          runAsGroup: 10001
-          runAsUser: 10001
+          runAsGroup: 5681
+          runAsUser: 5681
         volumeMounts:
         - mountPath: /controller
           name: scratch-data
