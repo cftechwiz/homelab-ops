@@ -25,13 +25,13 @@ resources:
   - ./media-browser/ks.yaml
   - ./miniflux/ks.yaml
   - ./minio/ks.yaml
-  # - ./n8n/ks.yaml
+  - ./n8n/ks.yaml
   - ./navidrome/ks.yaml
   - ./overseerr/ks.yaml
   # - ./otel-demo/ks.yaml
   # - ./plex/ks.yaml
   - ./prowlarr/ks.yaml
-  # - ./qbittorrent/ks.yaml
+  - ./qbittorrent/ks.yaml
   - ./radarr/ks.yaml
   - ./recyclarr/ks.yaml
   - ./redis/ks.yaml
