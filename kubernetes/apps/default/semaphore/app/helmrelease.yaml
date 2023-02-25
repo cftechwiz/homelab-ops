@@ -56,10 +56,10 @@ spec:
         enabled: true
         ingressClassName: nginx
         annotations:
-          external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
           hajimari.io/icon: mdi:ansible
+          hajimari.io/group: Intranet Apps
         hosts:
-          - host: &host "{{ .Release.Name }}.falhalla.com"
+          - host: &host "{{ .Release.Name }}.intra.falhalla.com"
             paths:
               - path: /
                 pathType: Prefix

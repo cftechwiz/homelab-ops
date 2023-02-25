@@ -46,10 +46,10 @@ spec:
         enabled: true
         ingressClassName: nginx
         annotations:
-          external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
           hajimari.io/icon: mdi:eye-circle
+          hajimari.io/group: Intranet Apps
         hosts:
-          - host: &host requests.falhalla.com
+          - host: &host requests.intra.falhalla.com
             paths:
               - path: /
                 pathType: Prefix
