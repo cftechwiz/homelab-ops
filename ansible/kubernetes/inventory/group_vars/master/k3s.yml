@@ -38,7 +38,7 @@ k3s_server:
     - "--audit-log-maxage=2"
     - "anonymous-auth=true"
     # - "--enable-admission-plugins"
-    # - "--enable-admission-plugins='Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota'"
+    #- enable-admission-plugins=Initializers,NamespaceLifecycle,LimitRanger,ServiceAccount,DefaultStorageClass,DefaultTolerationSeconds,NodeRestriction,MutatingAdmissionWebhook,ValidatingAdmissionWebhook,ResourceQuota
     # https://github.com/k3s-io/k3s/issues/1264
     - "default-not-ready-toleration-seconds=20"
     - "default-unreachable-toleration-seconds=20"
