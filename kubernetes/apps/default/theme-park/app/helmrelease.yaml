@@ -31,8 +31,8 @@ spec:
       replicas: 3
       strategy: RollingUpdate
     image:
-      repository: ghcr.io/onedr0p/theme-park
-      tag: 1.13.4@sha256:9ae7e589787428206bb933aeb94227a1e91d4fc54cb2215a52d8e17e9c5d531a
+      repository: ghcr.io/cfallwell/theme-park
+      tag: 1.13.4@sha256:17742c7dfdd9ebce75563da884eaff99049f278975d8d88d576d903073dea10f
     service:
       main:
         ports:

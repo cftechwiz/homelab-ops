@@ -28,8 +28,8 @@ spec:
     keepHistory: false
   values:
     image:
-      repository: ghcr.io/onedr0p/unpackerr
-      tag: 0.10.1@sha256:56fa7f83c15de614b43825c0d50fd2179c611019576ecba4fcd53f459f5fa2b7
+      repository: ghcr.io/cfallwell/unpackerr
+      tag: 0.11.1@sha256:86609b7a7cd4b1801a1c5532233fdcf559363d94664125d61670df72d230636e
     env:
       TZ: America/Chicago
       UN_SONARR_0_URL: http://sonarr.default.svc.cluster.local

@@ -32,7 +32,7 @@ spec:
       annotations:
         reloader.stakater.com/auto: "true"
     image:
-      repository: ghcr.io/onedr0p/flood
+      repository: ghcr.io/cfallwell/flood
       tag: 4.7.0@sha256:4c34f81d4952f6f9d04e7fb2b515b26bf46d58b77dce1a4f4669eb5ca35f66e3
     env:
       TZ: America/Chicago

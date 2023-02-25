@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubevirt.io: ""
+    pod-security.kubernetes.io/enforce: "privileged"
+    goldilocks.fairwinds.com/enabled: "true"
+    kustomize.toolkit.fluxcd.io/prune: disabled
+  name: kubevirt

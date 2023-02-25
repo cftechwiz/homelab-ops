@@ -30,8 +30,8 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/onedr0p/plex
-      tag: 1.31.0.6654-02189b09f@sha256:908f25c634f04ea03f4598a90b4b8e62853adc8102b6c7b70c22ec56962f8b66
+      repository: ghcr.io/cfallwell/plex
+      tag: 1.31.0.6654-02189b09f@sha256:c9f35eb81f243525a26e46e5a5c724afaaf6cb2eece492c15f8648623d3dd6d9
     env:
       TZ: America/Chicago
     service:

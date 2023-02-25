@@ -30,8 +30,8 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/onedr0p/tautulli
-      tag: 2.11.1@sha256:7eed9224c97af9c4da9d00c0b637a37c15a4412d6d5a409631f17ad5a7e96cc4
+      repository: ghcr.io/cfallwell/tautulli
+      tag: 2.11.1@sha256:9266e6e04ec9e41308967455cb03b73bc6daa9dc18e46165513ac86ac1ae002c
     env:
       TZ: America/Chicago
     service:

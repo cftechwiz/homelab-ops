@@ -32,8 +32,8 @@ spec:
       annotations:
         reloader.stakater.com/auto: "true"
     image:
-      repository: ghcr.io/onedr0p/navidrome
-      tag: 0.49.3@sha256:f2e1226e967a22857791943fba23816e3a48aa9587a6856807ed1298658546b7
+      repository: ghcr.io/cfallwell/navidrome
+      tag: 0.49.3@sha256:940770b97cead94563af3346b295cfdefaf1a66abbb1db07f9437285f620ec5e
     env:
       TZ: America/Chicago
       ND_DATAFOLDER: /config

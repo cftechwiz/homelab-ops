@@ -7,9 +7,10 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "auto",
+      "platformAutomerge": "true",
       "ignoreTests": true,
       "matchUpdateTypes": ["digest"],
-      "matchPackagePattern": ["ghcr.io/onedr0p"]
+      "matchPackagePattern": ["ghcr.io/cfallwell"]
     },
     {
       "description": "Auto merge containers",
@@ -17,9 +18,10 @@
       "automerge": true,
       "automergeType": "pr",
       "automergeStrategy": "auto",
+      "platformAutomerge": "true",
       "ignoreTests": true,
       "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": ["ghcr.io/onedr0p/prowlarr-nightly"]
+      "matchPackageNames": ["ghcr.io/cfallwell/prowlarr-nightly"]
     },
     {
       "description": "Auto merge GitHub Actions",
@@ -28,6 +30,7 @@
       "automerge": true,
       "ignoreTests": true,
       "automergeType": "pr",
+      "platformAutomerge": "true",
       "automergeStrategy": "auto",
       "matchUpdateTypes": ["minor", "patch"]
     },
@@ -37,6 +40,7 @@
       "ignoreTests": false,
       "automergeType": "pr",
       "automergeStrategy": "auto",
+      "platformAutomerge": "true",
       "matchUpdateTypes": ["minor", "patch"]
     }
   ]
