@@ -2,6 +2,7 @@ apiVersion: kubevirt.io/v1
 kind: VirtualMachineInstance
 metadata:
   name: testvmi-nocloud
+  namespace: kuvevirt
 spec:
   terminationGracePeriodSeconds: 30
   domain:
