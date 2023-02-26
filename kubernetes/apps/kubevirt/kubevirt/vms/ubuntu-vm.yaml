@@ -1,0 +1,63 @@
+apiVersion: kubevirt.io/v1alpha3
+kind: VirtualMachine
+metadata:
+  creationTimestamp: null
+  labels:
+    kubevirt.io/vm: vm-centos-datavolume
+  name: vm-centos-datavolume
+spec:
+  dataVolumeTemplates:
+  - metadata:
+      creationTimestamp: null
+      name: centos-dv
+    spec:
+      pvc:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 100G
+        storageClassName: rook-ceph-block
+      source:
+        http:
+          url: https://releases.ubuntu.com/22.04.2/ubuntu-22.04.2-live-server-amd64.iso
+  running: false
+  template:
+    metadata:
+      labels:
+        kubevirt.io/vm: vm-datavolume
+    spec:
+      domain:
+        devices:
+          disks:
+          - disk:
+              bus: virtio
+            name: datavolumevolume
+          - disk:
+              bus: virtio
+            name: cloudinit
+        machine:
+          type: ""
+        resources:
+          requests:
+            memory: 4G
+      terminationGracePeriodSeconds: 0
+      volumes:
+      - dataVolume:
+          name: centos-dv
+        name: datavolumevolume
+      - cloudInitNoCloud:
+          userData: |
+            #cloud-config
+            users:
+              - name: "${ADMIN_USER}"
+                gecos: Colin Fallwell
+                sudo:  ALL=(ALL) NOPASSWD:ALL
+                password: "${ADMIN_PASSWD}"
+                chpasswd: { expire: False }
+            package_update: true
+            ssh_authorized_keys:
+              - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN86YhNge6aXGq18CQcz4NR5t+PO+6yCuyO+S9yIkB1q cfallwell@sumologic.com
+        name: cloudinit
+
+

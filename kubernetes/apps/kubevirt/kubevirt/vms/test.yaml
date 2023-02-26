@@ -1,14 +1,14 @@
 apiVersion: kubevirt.io/v1
 kind: VirtualMachineInstance
 metadata:
-  name: testvmi-nocloud
+  name: hass
   namespace: default
 spec:
   terminationGracePeriodSeconds: 30
   domain:
     resources:
       requests:
-        memory: 1024M
+        memory: 2048M
     devices:
       disks:
       - name: containerdisk
