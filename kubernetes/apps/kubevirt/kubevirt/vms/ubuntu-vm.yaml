@@ -2,6 +2,7 @@ apiVersion: kubevirt.io/v1alpha3
 kind: VirtualMachine
 metadata:
   creationTimestamp: null
+  namespace: default
   labels:
     kubevirt.io/vm: vm-centos-datavolume
   name: vm-centos-datavolume
