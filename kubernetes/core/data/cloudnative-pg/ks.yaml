@@ -37,7 +37,7 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-cloudnative-pg
-  path: ./kubernetes/core.data/cloudnative-pg/cluster
+  path: ./kubernetes/core/data/cloudnative-pg/cluster
   prune: true
   sourceRef:
     kind: GitRepository
