@@ -33,7 +33,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/cfallwell/prowlarr-nightly
-      tag: 1.3.1.2772@sha256:208f8b425891a2b1e958ca01800ce5afcc00f75b8f8d3a896c13d658ce80cf15
+      tag: 1.3.1.2796@sha256:c1a340917eb37fdac0b5425614d56a61ef9d1b906b7e1ee9892bd1b938971d26
     env:
       TZ: America/Chicago
       PROWLARR__INSTANCE_NAME: Prowlarr
