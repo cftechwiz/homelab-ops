@@ -4,7 +4,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-kubevirt-kubevirt
+  name: cluster-apps-kubevirt-operator
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
@@ -30,7 +30,7 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-kubevirt
+  name: cluster-apps-kubevirt-crd
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
@@ -39,7 +39,7 @@ spec:
     - name: cluster-apps-external-secrets-stores
     - name: cluster-apps-rook-ceph-cluster
     - name: cluster-apps-kubevirt-kubevirt
-  path: ./kubernetes/apps/kubevirt/kubevirt/crd
+  path: ./kubernetes/apps/kubevirt/kubevirt/crds
   prune: true
   sourceRef:
     kind: GitRepository
