@@ -3,14 +3,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-flux-monitoring
+  name: cluster-core-flux-monitoring
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-external-secrets
-    - name: cluster-apps-external-secrets-stores
+    - name: cluster-core-external-secrets
+    - name: cluster-core-external-secrets-stores
   path: ./kubernetes/core/flux-system/addons/monitoring
   prune: true
   sourceRef:
@@ -25,14 +25,14 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-flux-notifications
+  name: cluster-core-flux-notifications
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-external-secrets
-    - name: cluster-apps-external-secrets-stores
+    - name: cluster-core-external-secrets
+    - name: cluster-core-external-secrets-stores
   path: ./kubernetes/core/flux-system/addons/notifications
   prune: true
   sourceRef:
@@ -47,14 +47,14 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-flux-webhooks
+  name: cluster-core-flux-webhooks
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-external-secrets
-    - name: cluster-apps-external-secrets-stores
+    - name: cluster-core-external-secrets
+    - name: cluster-core-external-secrets-stores
   path: ./kubernetes/core/flux-system/addons/webhooks
   prune: true
   sourceRef:

@@ -3,13 +3,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-ingress-nginx-certificates
+  name: cluster-core-ingress-nginx-certificates
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-cert-manager-issuers
+    - name: cluster-core-cert-manager-issuers
   path: ./kubernetes/core/networking/ingress-nginx/certificates
   prune: true
   sourceRef:
@@ -24,13 +24,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-ingress-nginx
+  name: cluster-core-ingress-nginx
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-ingress-nginx-certificates
+    - name: cluster-core-ingress-nginx-certificates
   path: ./kubernetes/core/networking/ingress-nginx/app
   prune: true
   sourceRef:

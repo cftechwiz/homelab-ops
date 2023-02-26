@@ -3,13 +3,13 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-intel-device-plugin-operator
+  name: cluster-core-intel-device-plugin-operator
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-node-feature-discovery
+    - name: cluster-core-node-feature-discovery
   path: ./kubernetes/core/kube-system/intel-device-plugin/app
   prune: true
   sourceRef:
@@ -28,13 +28,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-intel-device-plugin-gpu
+  name: cluster-core-intel-device-plugin-gpu
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-intel-device-plugin-operator
+    - name: cluster-core-intel-device-plugin-operator
   path: ./kubernetes/core/kube-system/intel-device-plugin/gpu
   prune: true
   sourceRef:
@@ -53,13 +53,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-intel-device-plugin-gpu-exporter
+  name: cluster-core-intel-device-plugin-gpu-exporter
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-intel-device-plugin-gpu
+    - name: cluster-core-intel-device-plugin-gpu
   path: ./kubernetes/core/kube-system/intel-device-plugin/exporter
   prune: true
   sourceRef:
