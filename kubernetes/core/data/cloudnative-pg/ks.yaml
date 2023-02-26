@@ -11,7 +11,7 @@ spec:
   dependsOn:
     - name: cluster-core-external-secrets-stores
     - name: cluster-core-rook-ceph-cluster
-  path: ./kubernetes/apps/default/cloudnative-pg/app
+  path: ./kubernetes/core/default/cloudnative-pg/app
   prune: true
   sourceRef:
     kind: GitRepository
