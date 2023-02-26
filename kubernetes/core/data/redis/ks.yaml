@@ -11,7 +11,7 @@ spec:
   dependsOn:
     - name: cluster-core-external-secrets-stores
     - name: cluster-core-rook-ceph-cluster
-  path: ./kubernetes/core/default/redis/app
+  path: ./kubernetes/core/data/redis/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -36,7 +36,7 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-redis
-  path: ./kubernetes/apps/default/redis/lb
+  path: ./kubernetes/core/data/redis/lb
   prune: true
   sourceRef:
     kind: GitRepository
