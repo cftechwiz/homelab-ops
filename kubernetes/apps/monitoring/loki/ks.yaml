@@ -9,9 +9,9 @@ metadata:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-apps-external-secrets-stores
+    - name: cluster-core-external-secrets-stores
     - name: cluster-apps-minio
-    - name: cluster-apps-rook-ceph-cluster
+    - name: cluster-core-rook-ceph-cluster
   path: ./kubernetes/apps/monitoring/loki/app
   prune: true
   sourceRef:
