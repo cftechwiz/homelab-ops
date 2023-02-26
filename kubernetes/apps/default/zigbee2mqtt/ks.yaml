@@ -10,8 +10,8 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-emqx
-    - name: cluster-apps-external-secrets-stores
-    - name: cluster-apps-rook-ceph-cluster
+    - name: cluster-core-external-secrets-stores
+    - name: cluster-core-rook-ceph-cluster
     - name: cluster-apps-volsync
   path: ./kubernetes/apps/default/zigbee2mqtt/app
   prune: true

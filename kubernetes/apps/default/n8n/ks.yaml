@@ -10,8 +10,8 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-cloudnative-pg
-    - name: cluster-apps-external-secrets-stores
-    - name: cluster-apps-rook-ceph-cluster
+    - name: cluster-core-external-secrets-stores
+    - name: cluster-core-rook-ceph-cluster
     - name: cluster-apps-volsync
   path: ./kubernetes/apps/default/n8n/app
   prune: true
