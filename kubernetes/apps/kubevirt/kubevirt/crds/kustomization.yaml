@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   # Flux-Kustomizations
   - ./datavolumes.yaml
-  - ./kubevirt-cr.yaml
+  # - ./kubevirt-cr.yaml
