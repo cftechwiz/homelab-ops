@@ -9,7 +9,7 @@ metadata:
     substitution.flux.home.arpa/enabled: "true"
 spec:
   dependsOn:
-    - name: cluster-core-authelia
+    - name: cluster-apps-authelia
     - name: cluster-core-external-secrets-stores
     - name: cluster-core-rook-ceph-cluster
   path: ./kubernetes/core/flux-system/weave-gitops/app

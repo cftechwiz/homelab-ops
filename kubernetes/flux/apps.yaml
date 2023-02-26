@@ -7,7 +7,8 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: cluster-core
+    - name: cluster-core-rook-ceph-cluster
+    - name: cluster-core-external-secrets
   interval: 10m
   path: ./kubernetes/apps
   prune: true
