@@ -35,7 +35,7 @@ spec:
     env:
       TZ: America/Chicago
       QBITTORRENT__PORT: &port 80
-      QBITTORRENT__BT_PORT: &port-bt 50413
+      QBITTORRENT__BT_PORT: &port-bt 11590
     service:
       main:
         ports:
