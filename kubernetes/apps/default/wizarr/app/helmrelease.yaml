@@ -58,16 +58,16 @@ spec:
           - hosts:
               - *host
     podSecurityContext:
-      runAsUser: root
-      runAsGroup: root
-      fsGroup: root
+      runAsUser: 568
+      runAsGroup: 568
+      fsGroup: 568
       fsGroupChangePolicy: "OnRootMismatch"
     volumeClaimTemplates:
       - name: config
         mountPath: /data/database
         accessMode: ReadWriteOnce
         size: 1Gi
-        storageClass: ceph-block
+        storageClass: local-path
         labels:
           snapshot.home.arpa/enabled: "true"
     resources:
