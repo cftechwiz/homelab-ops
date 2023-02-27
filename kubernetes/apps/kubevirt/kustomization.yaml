@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   # Pre Flux-Kustomizations
   # Flux-Kustomizations
-  # - ./kubevirt/ks.yaml
+  - ./kubevirt/ks.yaml
