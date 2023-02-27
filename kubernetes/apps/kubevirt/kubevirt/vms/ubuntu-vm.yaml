@@ -5,7 +5,7 @@ metadata:
   labels:
     kubevirt.io/vm: vm-centos-datavolume
   name: vm-centos-datavolume
-  namespace: kubevirt
+  namespace: default
 spec:
   dataVolumeTemplates:
   - metadata:

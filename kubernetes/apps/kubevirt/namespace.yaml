@@ -7,4 +7,4 @@ metadata:
     pod-security.kubernetes.io/enforce: "privileged"
     goldilocks.fairwinds.com/enabled: "false"
     kustomize.toolkit.fluxcd.io/prune: disabled
-  name: kubevirt
+  name: default
