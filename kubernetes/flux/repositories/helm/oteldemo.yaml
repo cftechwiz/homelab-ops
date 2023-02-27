@@ -6,5 +6,8 @@ metadata:
   name: opentelemetry-demo
   namespace: flux-system
 spec:
-  interval: 2h
-  url: https://github.com/cfallwell/opentelemetry-demo/tree/main/sumo_deployments/helm/sumo-opentelemetry-demo/chart.yaml
+  interval: 10m
+  provider: generic
+  timeout: "60s"
+  url:
+
