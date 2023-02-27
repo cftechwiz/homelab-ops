@@ -34,7 +34,7 @@ spec:
       tag: 2.0.2
     env:
       TZ: America/Chicago
-      APP_URL: https://wizarr.falhalla.com
+      APP_URL: https://wizarr.intra.falhalla.com
       DISABLE_BUILTIN_AUTH: "true"
     service:
       main:
@@ -58,9 +58,9 @@ spec:
           - hosts:
               - *host
     podSecurityContext:
-      runAsUser: 568
-      runAsGroup: 568
-      fsGroup: 568
+      runAsUser: root
+      runAsGroup: root
+      fsGroup: root
       fsGroupChangePolicy: "OnRootMismatch"
     volumeClaimTemplates:
       - name: config
