@@ -160,6 +160,8 @@ spec:
           requests:
             cpu:
             memory: 32Mi
+    falco:
+      enabled: true
     tailing-sidecar-operator:
       enabled: true
     opentelemetry-operator:
