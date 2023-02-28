@@ -36,4 +36,5 @@ resources:
   - ./stakater.yaml
   - ./tf-controller.yaml
   - ./weave-gitops.yaml
+  - ./oteldemo.yaml
 

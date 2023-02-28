@@ -9,5 +9,5 @@ spec:
   interval: 10m
   provider: generic
   timeout: "60s"
-  url:
+  url: https://open-telemetry.github.io/opentelemetry-helm-charts
 
