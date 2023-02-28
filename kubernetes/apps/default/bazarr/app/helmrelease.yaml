@@ -31,7 +31,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/cfallwell/bazarr
-      tag: 1.1.4@sha256:7d22f7c6b68030d3a629c7659f07ca964c8002e9e8139f2055048c7ba6b3c4ae
+      tag: 1.1.4@sha256:a8a4fba425aabdc3d14f685ba8a19d2e1a48e465238b7d1ab4bac555e9930382
     env:
       TZ: America/Chicago
     service:
