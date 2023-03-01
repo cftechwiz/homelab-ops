@@ -11,7 +11,6 @@ spec:
   dependsOn:
     - name: cluster-core-external-secrets-stores
     - name: cluster-core-rook-ceph-cluster
-    - name: cluster-apps-volsync
   path: ./kubernetes/apps/default/otel-demo/otel-demo
   prune: true
   sourceRef:
@@ -24,4 +23,4 @@ spec:
       namespace: default
   interval: 30m
   retryInterval: 1m
-  timeout: 3m
+  timeout: 4m
