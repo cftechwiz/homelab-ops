@@ -3,7 +3,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: opentelemetry-demo
+  name: cluster-apps-otel-demo
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
@@ -12,7 +12,7 @@ spec:
     - name: cluster-core-external-secrets-stores
     - name: cluster-core-rook-ceph-cluster
     - name: cluster-apps-volsync
-  path: ./kubernetes/apps/default/otel-demo/app
+  path: ./kubernetes/apps/default/otel-demo/otel-demo
   prune: true
   sourceRef:
     kind: GitRepository
@@ -20,7 +20,7 @@ spec:
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
-      name: n8n
+      name: otel-demo
       namespace: default
   interval: 30m
   retryInterval: 1m
