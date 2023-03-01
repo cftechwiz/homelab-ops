@@ -33,8 +33,6 @@ spec:
       envFromSecret: sumologic-secret
       collectorName: homelab-ops
       clusterName: homelab
-    setup:
-      debug: true
     events:
       persistence:
         persistentVolume:
