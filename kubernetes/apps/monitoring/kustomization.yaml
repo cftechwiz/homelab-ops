@@ -6,13 +6,13 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
-  - ./blackbox-exporter/ks.yaml
+  # - ./blackbox-exporter/ks.yaml
   - ./goldilocks/ks.yaml
   - ./kubernetes-dashboard/ks.yaml
-  - ./smartctl-exporter/ks.yaml
-  - ./snmp-exporter/ks.yaml
+  # - ./smartctl-exporter/ks.yaml
+  # - ./snmp-exporter/ks.yaml
   - ./sumologic/ks.yaml
-  - ./unpoller/ks.yaml
+  # - ./unpoller/ks.yaml
   - ./vpa/ks.yaml
   # Standard Resources
   # - ./miscellaneous
