@@ -5,6 +5,6 @@ kind: Kustomization
 namespace: networking
 resources:
   # - ./adguard.yaml
-  - ./pikvm.yaml
+  # - ./pikvm.yaml
   # - ./unifi.yaml
   # - ./valetudo.yaml
