@@ -59,6 +59,4 @@ components:
           - hosts:
               - *host
   frontend:
-    env:
-      - name: PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-        value: ${ SUMOLOGIC_RUMURL }
+    envFromSecret: oteldemo-secret
