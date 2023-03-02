@@ -5,3 +5,6 @@ kind: Kustomization
 resources:
   - ./helmrelease.yaml
   - ./externalsecret.yaml
+
+patchesStrategicMerge:
+  - ./patches/otdemo.yaml
