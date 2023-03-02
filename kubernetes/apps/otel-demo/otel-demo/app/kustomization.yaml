@@ -7,5 +7,5 @@ resources:
   - ./helmrelease.yaml
 
 
-# patchesStrategicMerge:
-#   - ../patches/otdemo.yaml
+patchesStrategicMerge:
+  - ../patches/otdemo.yaml
