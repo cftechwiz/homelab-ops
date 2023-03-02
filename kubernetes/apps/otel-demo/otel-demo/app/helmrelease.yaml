@@ -26,39 +26,39 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-values:
-  components:
-    frontendProxy:
-      service:
-        type: LoadBalancer
-        externalIPs: ["${SVC_OTDEMO_ADDR}"]
-        externalTrafficPolicy: Local
-      ingress:
-        dashboard:
-          enabled: true
-          ingressClassName: nginx
-          annotations:
-            hajimari.io/appName: "OTDEMO"
-            hajimari.io/icon: simple-icons:eclipsemosquitto
-            hajimari.io/group: Intranet Apps
-          path: /
-          pathType: Prefix
-          hosts:
-            - &host otdemo.intra.falhalla.com
-          tls:
-            - hosts:
-                - *host
-    frontend:
-      envFromSecret: oteldemo-secret
-
-    opentelemetry-collector:
-      config:
-        exporters:
-          otlpgrpc:
-            endpoint: http://sumologic-sumologic-otelagent.monitoring:4317
+  values:
+    components:
+      frontendProxy:
         service:
-          pipelines:
-            traces:
-              receivers: [otlp]
-              processors: [batch]
-              exporters: [otlpgrpc]
+          type: LoadBalancer
+          externalIPs: ["${SVC_OTDEMO_ADDR}"]
+          externalTrafficPolicy: Local
+        ingress:
+          dashboard:
+            enabled: true
+            ingressClassName: nginx
+            annotations:
+              hajimari.io/appName: "OTDEMO"
+              hajimari.io/icon: simple-icons:eclipsemosquitto
+              hajimari.io/group: Intranet Apps
+            path: /
+            pathType: Prefix
+            hosts:
+              - &host otdemo.intra.falhalla.com
+            tls:
+              - hosts:
+                  - *host
+      frontend:
+        envFromSecret: oteldemo-secret
+
+      opentelemetry-collector:
+        config:
+          exporters:
+            otlpgrpc:
+              endpoint: http://sumologic-sumologic-otelagent.monitoring:4317
+          service:
+            pipelines:
+              traces:
+                receivers: [otlp]
+                processors: [batch]
+                exporters: [otlpgrpc]
