@@ -1,42 +1,34 @@
----
-# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
-metadata:
-  name: opentelemetry-demo
-  namespace: otel-demo
-spec:
-  values:
-    frontendProxy:
-      service:
-        type: LoadBalancer
-        externalIPs: ["${SVC_OTDEMO_ADDR}"]
-        externalTrafficPolicy: Local
-      ingress:
-        dashboard:
-          enabled: true
-          ingressClassName: nginx
-          annotations:
-            hajimari.io/appName: "OTDEMO"
-            hajimari.io/icon: simple-icons:eclipsemosquitto
-            hajimari.io/group: Intranet Apps
-          path: /
-          pathType: Prefix
-          hosts:
-            - &host otdemo.intra.falhalla.com
-          tls:
-            - hosts:
-                - *host
-    frontend:
-      envFromSecret: oteldemo-secret
-    opentelemetry-collector:
-      config:
-        exporters:
-          otlpgrpc:
-            endpoint: http://sumologic-sumologic-otelagent.monitoring:4317
-        service:
-          pipelines:
-            traces:
-              receivers: [otlp]
-              processors: [batch]
-              exporters: [otlpgrpc]
+
+frontendProxy:
+  service:
+    type: LoadBalancer
+    externalIPs: ["${SVC_OTDEMO_ADDR}"]
+    externalTrafficPolicy: Local
+  ingress:
+    dashboard:
+      enabled: true
+      ingressClassName: nginx
+      annotations:
+        hajimari.io/appName: "OTDEMO"
+        hajimari.io/icon: simple-icons:eclipsemosquitto
+        hajimari.io/group: Intranet Apps
+      path: /
+      pathType: Prefix
+      hosts:
+        - &host otdemo.intra.falhalla.com
+      tls:
+        - hosts:
+            - *host
+frontend:
+  envFromSecret: oteldemo-secret
+opentelemetry-collector:
+  config:
+    exporters:
+      otlpgrpc:
+        endpoint: http://sumologic-sumologic-otelagent.monitoring:4317
+    service:
+      pipelines:
+        traces:
+          receivers: [otlp]
+          processors: [batch]
+          exporters: [otlpgrpc]
