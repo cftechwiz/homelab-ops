@@ -26,17 +26,6 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-opentelemetry-collector:
-  config:
-    exporters:
-      otlpgrpc:
-        endpoint: http://sumologic-sumologic-otelagent.monitoring:4317
-    service:
-      pipelines:
-        traces:
-          receivers: [otlp]
-          processors: [batch]
-          exporters: [otlpgrpc]
 components:
   frontendProxy:
     service:
@@ -60,3 +49,15 @@ components:
               - *host
   frontend:
     envFromSecret: oteldemo-secret
+
+  opentelemetry-collector:
+    config:
+      exporters:
+        otlpgrpc:
+          endpoint: http://sumologic-sumologic-otelagent.monitoring:4317
+      service:
+        pipelines:
+          traces:
+            receivers: [otlp]
+            processors: [batch]
+            exporters: [otlpgrpc]
