@@ -5,4 +5,4 @@ kind: Kustomization
 namespace: otel-demo
 resources:
   - ./namespace.yaml
-  - ./otel-demo/ks.yaml
+  # - ./otel-demo/ks.yaml
