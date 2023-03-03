@@ -3773,7 +3773,7 @@ tracesSampler:
       ## There are two levels that could be used: `debug` and `info` with the former
       ## being much more verbose and including (sampled) spans content
       # logging:
-      #   loglevel: debug
+        loglevel: debug
       otlphttp:
         traces_endpoint: ${SUMO_ENDPOINT_DEFAULT_TRACES_SOURCE}
         compression: gzip

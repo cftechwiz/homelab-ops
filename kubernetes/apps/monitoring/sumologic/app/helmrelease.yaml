@@ -79,6 +79,7 @@ spec:
             cpu:
             memory: 32Mi
     otelcolInstrumentation:
+      loglevel: debug
       statefulset:
         resources:
           limits:
@@ -106,6 +107,7 @@ spec:
                 endpoint: "localhost:4318"
     metadata:
       metrics:
+        loglevel: debug
         statefulset:
           resources:
             limits:
@@ -115,6 +117,7 @@ spec:
               cpu:
               memory: 768Mi
       logs:
+        loglevel: debug
         statefulset:
           resources:
             limits:
@@ -124,6 +127,7 @@ spec:
               cpu:
               memory: 768Mi
     traceGateway:
+      loglevel: debug
       deployment:
         resources:
           limits:
@@ -147,6 +151,7 @@ spec:
                   allowed_headers:
                     - "*"
     otelevents:
+      loglevel: debug
       statefulset:
         resources:
           limits:
@@ -156,6 +161,7 @@ spec:
             cpu:
             memory: 200Mi
     otellogs:
+      loglevel: debug
       daemonset:
         resources:
           limits:
