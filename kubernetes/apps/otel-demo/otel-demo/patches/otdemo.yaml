@@ -1,34 +1,84 @@
+components:
+  frontend:
+    envOverrides:
+      # envFromSecret:
+      #   - name: oteldemo-secret
+      - name: PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
+        value: https://rum-collectors.us2.sumologic.com/receiver/v1/rum/ZaVnC4dhaV071Szsa4FNmwvaUNgNfxG2sz5HrQSqlB0Ee7V46rYz6oHt9vCalNNH26gDrqMWy7s-q8TkIUZyN5-NeqkhHykvPdEJMDjhs1ETOcsUjJavrQ==
 
-frontendProxy:
-  service:
-    type: LoadBalancer
-    externalIPs: ["${SVC_OTDEMO_ADDR}"]
-    externalTrafficPolicy: Local
-  ingress:
-    dashboard:
-      enabled: true
-      ingressClassName: nginx
-      annotations:
-        hajimari.io/appName: "OTDEMO"
-        hajimari.io/icon: simple-icons:eclipsemosquitto
-        hajimari.io/group: Intranet Apps
-      path: /
-      pathType: Prefix
-      hosts:
-        - &host otdemo.intra.falhalla.com
-      tls:
-        - hosts:
-            - *host
-frontend:
-  envFromSecret: oteldemo-secret
+
+  # frontendProxy:
+  #   service:
+  #     type: LoadBalancer
+  # frontendProxy:
+  #   ingress:
+  #     enabled: true
+  #     ingressClassName: nginx
+  #     annotations:
+  #       hajimari.io/appName: "OTDEMO"
+  #       hajimari.io/icon: simple-icons:eclipsemosquitto
+  #       hajimari.io/group: Intranet Apps
+  #     hosts:
+  #       - "demo.intra.falhalla.com"
+  #     tls:
+  #       - hosts:
+  #         - "demo.intra.falhalla.com"
+
 opentelemetry-collector:
+  ingress:
+    enabled: true
+    hosts:
+      - host: otel-demo-collector.example.com
+        paths:
+          - path: /
+            pathType: Prefix
+            port: 4318
   config:
     exporters:
-      otlpgrpc:
-        endpoint: http://sumologic-sumologic-otelagent.monitoring:4317
+      otlphttp:
+        endpoint: http://sumologic-sumologic-otelagent.monitoring:4318
     service:
       pipelines:
         traces:
           receivers: [otlp]
           processors: [batch]
-          exporters: [otlpgrpc]
+          exporters: [otlphttp]
+
+
+
+
+
+# components:
+#   frontendProxy:
+#     service:
+#       type: LoadBalancer
+#       externalIPs: ["${SVC_OTDEMO_ADDR}"]
+#       externalTrafficPolicy: Local
+#   frontend:
+#     envFromSecret: oteldemo-secret
+# opentelemetry-collector:
+#   config:
+#     exporters:
+#       otlpgrpc:
+#         endpoint: http://sumologic-sumologic-otelagent.monitoring:4317
+#     service:
+#       pipelines:
+#         traces:
+#           receivers: [otlp]
+#           processors: [batch]
+#           exporters: [otlpgrpc]
+# ingress:
+#   dashboard:
+#     enabled: true
+#     ingressClassName: nginx
+#     annotations:
+#       hajimari.io/appName: "OTDEMO"
+#       hajimari.io/icon: simple-icons:eclipsemosquitto
+#       hajimari.io/group: Intranet Apps
+#     path: /
+#     pathType: Prefix
+#     hosts:
+#       - &host otdemo.intra.falhalla.com
+#     tls:
+#       - hosts:
+#           - *host
