@@ -3722,6 +3722,12 @@ tracesSampler:
             endpoint: "0.0.0.0:4317"
           http:
             endpoint: "0.0.0.0:4318"
+            cors:
+              allowed_origins:
+                - "http://*"
+                - "https://*"
+              allowed_headers:
+                - "*"
     processors:
       ## The memory_limiter processor is used to prevent out of memory situations on the collector.
       memory_limiter:

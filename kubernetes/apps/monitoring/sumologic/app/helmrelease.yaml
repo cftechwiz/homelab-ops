@@ -140,6 +140,12 @@ spec:
                 endpoint: "localhost:4317"
               http:
                 endpoint: "localhost:4318"
+                cors:
+                  allowed_origins:
+                    - "http://*"
+                    - "https://*"
+                  allowed_headers:
+                    - "*"
     otelevents:
       statefulset:
         resources:
