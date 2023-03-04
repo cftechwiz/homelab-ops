@@ -1,10 +1,9 @@
 components:
   frontend:
     envOverrides:
-      # envFromSecret:
-      #   - name: oteldemo-secret
       - name: PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-        value: https://rum-collectors.us2.sumologic.com/receiver/v1/rum/ZaVnC4dhaV071Szsa4FNmwvaUNgNfxG2sz5HrQSqlB0Ee7V46rYz6oHt9vCalNNH26gDrqMWy7s-q8TkIUZyN5-NeqkhHykvPdEJMDjhs1ETOcsUjJavrQ==
+        value: ${ SUMOLOGIC_RUMURL}
+
 
 
   # frontendProxy:
