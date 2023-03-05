@@ -53,139 +53,139 @@ spec:
             requests:
               cpu:
               memory: 128Mi
-      kube-prometheus-stack:
-        prometheusOperator:
+    kube-prometheus-stack:
+      prometheusOperator:
+        resources:
+          limits:
+            cpu:
+            memory: 200Mi
+          requests:
+            cpu:
+            memory: 100Mi
+      prometheus-node-exporter:
+        resources:
+          limits:
+            cpu:
+            memory: 50Mi
+          requests:
+            cpu:
+            memory: 30Mi
+      prometheus:
+        prometheusSpec:
+          scrapeInterval: "15s"
+          retention: "1d"
           resources:
-            limits:
-              cpu:
-              memory: 200Mi
             requests:
-              cpu:
-              memory: 100Mi
-        prometheus-node-exporter:
-          resources:
+              cpu: 511m
+              memory: 3482M
             limits:
-              cpu:
-              memory: 50Mi
-            requests:
-              cpu:
-              memory: 30Mi
-        prometheus:
-          prometheusSpec:
-            scrapeInterval: "15s"
-            retention: "1d"
-            resources:
-              limits:
-                cpu:
-                memory: 8Gi
-              requests:
-                cpu:
-                memory: 1Gi
-        kube-state-metrics:
-          resources:
-            limits:
-              cpu:
-              memory: 200Mi
-            requests:
-              cpu:
-              memory: 32Mi
-      otelcolInstrumentation:
+              cpu: 511m
+              memory: 3482M
+      kube-state-metrics:
+        resources:
+          limits:
+            cpu:
+            memory: 200Mi
+          requests:
+            cpu:
+            memory: 32Mi
+    otelcolInstrumentation:
+      logLevel: debug
+      statefulset:
+        resources:
+          limits:
+            cpu:
+            memory: 4Gi
+          requests:
+            cpu:
+            memory: 768Mi
+    tracesSampler:
+      deployment:
+        resources:
+          limits:
+            cpu:
+            memory: 4Gi
+          requests:
+            cpu:
+            memory: 384Mi
+      config:
+        receivers:
+          otlp:
+            protocols:
+              grpc:
+                endpoint: "localhost:4317"
+              http:
+                endpoint: "localhost:4318"
+    metadata:
+      metrics:
         logLevel: debug
         statefulset:
-          resources:
-            limits:
-              cpu:
-              memory: 4Gi
-            requests:
-              cpu:
-              memory: 768Mi
-      tracesSampler:
-        deployment:
-          resources:
-            limits:
-              cpu:
-              memory: 4Gi
-            requests:
-              cpu:
-              memory: 384Mi
-        config:
-          receivers:
-            otlp:
-              protocols:
-                grpc:
-                  endpoint: "localhost:4317"
-                http:
-                  endpoint: "localhost:4318"
-      metadata:
-        metrics:
-          logLevel: debug
-          statefulset:
-            resources:
-              limits:
-                cpu:
-                memory: 1Gi
-              requests:
-                cpu:
-                memory: 768Mi
-        logs:
-          logLevel: debug
-          statefulset:
-            resources:
-              limits:
-                cpu:
-                memory: 1Gi
-              requests:
-                cpu:
-                memory: 768Mi
-      traceGateway:
-        logLevel: debug
-        deployment:
-          resources:
-            limits:
-              cpu:
-              memory: 2Gi
-            requests:
-              cpu:
-              memory: 196Mi
-        config:
-          receivers:
-            otlp:
-              protocols:
-                grpc:
-                  endpoint: "localhost:4317"
-                http:
-                  endpoint: "localhost:4318"
-                  cors:
-                    allowed_origins:
-                      - "http://*"
-                      - "https://*"
-                    allowed_headers:
-                      - "*"
-      otelevents:
-        logLevel: debug
-        statefulset:
-          resources:
-            limits:
-              cpu:
-              memory: 2Gi
-            requests:
-              cpu:
-              memory: 200Mi
-      otellogs:
-        logLevel: debug
-        daemonset:
           resources:
             limits:
               cpu:
               memory: 1Gi
             requests:
               cpu:
-              memory: 32Mi
-      falco:
-        enabled: true
-      tailing-sidecar-operator:
-        enabled: true
-      opentelemetry-operator:
-        enabled: true
-        createDefaultInstrumentation: true
-        instrumentationNamespaces: "default"
+              memory: 768Mi
+      logs:
+        logLevel: debug
+        statefulset:
+          resources:
+            limits:
+              cpu:
+              memory: 1Gi
+            requests:
+              cpu:
+              memory: 768Mi
+    traceGateway:
+      logLevel: debug
+      deployment:
+        resources:
+          limits:
+            cpu:
+            memory: 2Gi
+          requests:
+            cpu:
+            memory: 196Mi
+      config:
+        receivers:
+          otlp:
+            protocols:
+              grpc:
+                endpoint: "localhost:4317"
+              http:
+                endpoint: "localhost:4318"
+                cors:
+                  allowed_origins:
+                    - "http://*"
+                    - "https://*"
+                  allowed_headers:
+                    - "*"
+    otelevents:
+      logLevel: debug
+      statefulset:
+        resources:
+          limits:
+            cpu:
+            memory: 2Gi
+          requests:
+            cpu:
+            memory: 200Mi
+    otellogs:
+      logLevel: debug
+      daemonset:
+        resources:
+          limits:
+            cpu:
+            memory: 1Gi
+          requests:
+            cpu:
+            memory: 32Mi
+    falco:
+      enabled: true
+    tailing-sidecar-operator:
+      enabled: true
+    opentelemetry-operator:
+      enabled: true
+      createDefaultInstrumentation: true
+      instrumentationNamespaces: "default"
