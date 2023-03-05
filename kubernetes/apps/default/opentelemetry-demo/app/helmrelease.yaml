@@ -731,8 +731,8 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: '{{ include "otel-demo.name" . }}'
-        app.kubernetes.io/instance: '{{ include "otel-demo.name" . }}'
+        app.kubernetes.io/name: opentelemetry-demo
+        app.kubernetes.io/instance: opentelemetry-demo
         app.kubernetes.io/component: frontend
     spec:
       containers:
@@ -780,7 +780,7 @@ spec:
             - name: SHIPPING_SERVICE_ADDR
               value: '{{ include "otel-demo.name" . }}-shippingservice:8080'
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: http://{{ include "sumo-opentelemetry-demo-otelagent-svc-name" . }}:4317
+              value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
             - name: FRONTEND_PORT
               value: "8080"
             - name: SUMO_LOGIC_RUM_ENABLED
@@ -792,7 +792,7 @@ spec:
             - name: PUBLIC_SUMO_LOGIC_RUM_RESOURCE_ATTRIBUTES
               value: '{"deployment.environment":"development"}'
             - name: PUBLIC_SUMO_LOGIC_RUM_URL
-              value: '{{ include "sumo-rum-url" . }}'
+              value: https://rum-collectors.us2.sumologic.com/receiver/v1/rum/ZaVnC4dhaV3bea_joQEtUS7Ac-X8w73grVGyEl3nUAWjnfrxlKC5HIULRgn2CJTyGAcDW_t7HddDpWx0ShtmEEolP8VwkqNiNIBRsxVojUh-po60qw7BXw==
             - name: OTEL_RESOURCE_ATTRIBUTES
               # yamllint disable-line rule:line-length
               value: deployment.environment=development,application=opentelemetry-demo,service.name=$(OTEL_SERVICE_NAME),k8s.namespace.name=$(OTEL_K8S_NAMESPACE),k8s.node.name=$(OTEL_K8S_NODE_NAME),k8s.pod.name=$(OTEL_K8S_POD_NAME)
@@ -804,7 +804,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: opentelemetry-demo-frontend'
+  name: opentelemetry-demo-frontend
   labels:
     helm.sh/chart: opentelemetry-demo-0.19.4
     app.kubernetes.io/name: opentelemetry-demo
@@ -815,6 +815,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
+  template: {}
   ports:
     - port: 8080
       name: service
