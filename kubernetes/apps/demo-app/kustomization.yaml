@@ -6,5 +6,5 @@ resources:
   # Pre Flux-Kustomizations
   - ./namespace.yaml
   # Flux-Kustomizations
-  # - ./opentelemetry-demo/ks.yaml
+  - ./opentelemetry-demo/ks.yaml
 
