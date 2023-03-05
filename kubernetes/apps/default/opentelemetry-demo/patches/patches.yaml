@@ -1,7 +1,0 @@
----
-# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
-  values:
-    default:
-      env:
-        - name: PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-          value: $(SUMOLOGIC_RUMURL)
