@@ -132,7 +132,7 @@ spec:
         statefulset:
           resources:
             limits:
-              cpu: 500m
+              cpu: 1000m
               memory: 1Gi
             requests:
               cpu: 100m
@@ -147,7 +147,7 @@ spec:
         statefulset:
           resources:
             limits:
-              cpu: 500m
+              cpu: 200m
               memory: 1Gi
             requests:
               cpu: 100m
@@ -192,7 +192,7 @@ spec:
       daemonset:
         resources:
           limits:
-            cpu: 200m
+            cpu: 1000m
             memory: 1Gi
           requests:
             cpu: 100m
