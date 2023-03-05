@@ -4554,7 +4554,7 @@ pvcCleaner:
   job:
     image:
       repository: public.ecr.aws/sumologic/kubernetes-tools
-      tag: 2.15.0
+      tag: 2.19.0
       pullPolicy: IfNotPresent
 
     resources:
