@@ -64,7 +64,7 @@ spec:
       #    value: "someConstantValue"
       envFrom:
         - secretRef:
-          name: otel-secret
+            name: otel-secret
       image:
         repository: ghcr.io/open-telemetry/demo
         # Overrides the image tag whose default is the chart appVersion.
