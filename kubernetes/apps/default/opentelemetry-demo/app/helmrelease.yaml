@@ -518,13 +518,13 @@ spec:
 
     observability:
       otelcol:
-        enabled: true
+        enabled: false
       jaeger:
-        enabled: true
+        enabled: false
       prometheus:
-        enabled: true
+        enabled: false
       grafana:
-        enabled: true
+        enabled: false
 
     opentelemetry-collector:
       nameOverride: otelcol
