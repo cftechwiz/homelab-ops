@@ -34,15 +34,9 @@ spec:
               name: service
           env:
             - name: OTEL_SERVICE_NAME
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.labels['app.kubernetes.io/component']
+              value: frontend
             - name: OTEL_K8S_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.namespace
+              value: demo
             - name: OTEL_K8S_NODE_NAME
               valueFrom:
                 fieldRef:
@@ -70,7 +64,7 @@ spec:
             - name: SHIPPING_SERVICE_ADDR
               value: opentelemetry-demo-shippingservice:8080
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
-              value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
+              value: http://sumologic-sumologic-otelagent.demo.svc.cluster.local.:4317
             - name: FRONTEND_PORT
               value: "8080"
             - name: SUMO_LOGIC_RUM_ENABLED
