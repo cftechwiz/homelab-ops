@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../opentelemetry-helm-charts"
+		},
+		{
+			"path": "../opentelemetry-demo"
+		},
+		{
+			"path": "../archives/opentelemetry-demo/sumo_deployments/helm/sumo-opentelemetry-demo"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"*.json5": "jsonc",
+			"**/ansible/**/*.yml": "ansible",
+			"**/ansible/**/*.sops.yml": "yaml",
+			"**/ansible/**/inventory/**/*.yml": "yaml",
+			"**/provision/terraform/**/*.tf": "terraform",
+			"**/kubernetes/**/*.sops.toml": "plaintext"
+		},
+		"yaml.schemaStore.enable": true,
+		"yaml.schemas": {
+			"ansible": "ansible/**/*.yml",
+			"kubernetes": "kubernetes/**/*.yaml"
+		},
+		"explorer.autoReveal": false
+	}
+}
