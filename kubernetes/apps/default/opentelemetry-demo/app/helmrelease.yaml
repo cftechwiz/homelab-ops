@@ -713,7 +713,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: '{{ include "otel-demo.name" . }}-frontendclicker'
+  name: opentelemetry-demo-frontendclicker
   labels:
     helm.sh/chart: opentelemetry-demo-0.19.4
     app.kubernetes.io/name: '{{ include "otel-demo.name" . }}'
