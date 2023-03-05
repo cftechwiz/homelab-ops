@@ -1,0 +1,24 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: opentelemetry-demo-frontend
+  labels:
+    helm.sh/chart: opentelemetry-demo-0.19.4
+    app.kubernetes.io/name: opentelemetry-demo
+    app.kubernetes.io/instance: opentelemetry-demo
+    app.kubernetes.io/component: frontend
+    app.kubernetes.io/version: "1.2.1"
+    app.kubernetes.io/part-of: opentelemetry-demo
+    app.kubernetes.io/managed-by: Helm
+spec:
+  type: ClusterIP
+  template: {}
+  ports:
+    - port: 8080
+      name: service
+      targetPort: 8080
+  selector:
+    app.kubernetes.io/name: opentelemetry-demo
+    app.kubernetes.io/instance: opentelemetry-demo
+    app.kubernetes.io/component: frontend

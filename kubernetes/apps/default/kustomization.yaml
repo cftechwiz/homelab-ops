@@ -27,7 +27,6 @@ resources:
   # - ./n8n/ks.yaml
   - ./navidrome/ks.yaml
   - ./overseerr/ks.yaml
-  # - ./opentelemetry-demo/ks.yaml
   # - ./plex/ks.yaml
   - ./prowlarr/ks.yaml
   - ./qbittorrent/ks.yaml
