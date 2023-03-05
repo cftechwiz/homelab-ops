@@ -3,6 +3,7 @@
 Thumbs.db
 # temp folders
 .private/
+kubernetes/apps/default/opentelemetry-demo/.secrets
 .secrets/
 .cluster/
 # ansible
