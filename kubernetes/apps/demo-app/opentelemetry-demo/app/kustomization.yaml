@@ -6,7 +6,7 @@ namespace: demo
 resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
-  - ./frontend-rum.yaml
+  - ./frontend.yaml
   - ./frontend-rum-svc.yaml
   - ./frontendclicker.yaml
   - ./ingress.yaml

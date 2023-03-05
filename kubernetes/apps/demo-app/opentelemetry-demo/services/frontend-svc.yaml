@@ -13,7 +13,6 @@ metadata:
     app.kubernetes.io/managed-by: Helm
 spec:
   type: ClusterIP
-  template: {}
   ports:
     - port: 8080
       name: service
