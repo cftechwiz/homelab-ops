@@ -75,12 +75,12 @@ spec:
           scrapeInterval: "15s"
           retention: "1d"
           resources:
-          requests:
-            cpu: 511m
-            memory: 3482M
-          limits:
-            cpu: 511m
-            memory: 3482M
+            requests:
+              cpu: 511m
+              memory: 3482M
+            limits:
+              cpu: 511m
+              memory: 3482M
       kube-state-metrics:
         resources:
           limits:
