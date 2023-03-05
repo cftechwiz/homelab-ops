@@ -132,7 +132,7 @@ spec:
         statefulset:
           resources:
             limits:
-              cpu: 300m
+              cpu: 500m
               memory: 1Gi
             requests:
               cpu: 100m
@@ -147,7 +147,7 @@ spec:
         statefulset:
           resources:
             limits:
-              cpu: 300m
+              cpu: 500m
               memory: 1Gi
             requests:
               cpu: 100m
@@ -207,9 +207,9 @@ spec:
       instrumentationNamespaces: "default"
     pvcCleaner:
       metrics:
-        enabled: true
+        enabled: false
       logs:
-        enabled: true
+        enabled: false
       resources:
         limits:
           memory: 256Mi
