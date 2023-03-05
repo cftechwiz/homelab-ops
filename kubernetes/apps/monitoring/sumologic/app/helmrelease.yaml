@@ -137,11 +137,11 @@ spec:
             requests:
               cpu: 100m
               memory: 768Mi
-        autoscaling:
-          enabled: true
-          minReplicas: 3
-          maxReplicas: 10
-          targetCPUUtilizationPercentage: 80
+          autoscaling:
+            enabled: true
+            minReplicas: 3
+            maxReplicas: 10
+            targetCPUUtilizationPercentage: 80
       logs:
         logLevel: debug
         statefulset:
@@ -152,11 +152,11 @@ spec:
             requests:
               cpu: 100m
               memory: 768Mi
-        autoscaling:
-          enabled: true
-          minReplicas: 3
-          maxReplicas: 10
-          targetCPUUtilizationPercentage: 80
+          autoscaling:
+            enabled: true
+            minReplicas: 3
+            maxReplicas: 10
+            targetCPUUtilizationPercentage: 80
     traceGateway:
       deployment:
         resources:
