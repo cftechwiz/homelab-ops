@@ -17,10 +17,10 @@ spec:
     kind: GitRepository
     name: flux-system
   healthChecks:
-    - apiVersion: apps/v1
-      kind: Deployment
-      name: sumologic-sumologic-remote-write-proxy
-      namespace: monitoring
+    - apiVersion: helm.toolkit.fluxcd.io/v2beta1
+      kind: HelmRelease
+      name: opentelemetry-demo
+      namespace: default
   interval: 30m
   retryInterval: 1m
   timeout: 10m
