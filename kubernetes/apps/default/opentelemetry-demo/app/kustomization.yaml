@@ -8,4 +8,4 @@ resources:
   - ./helmrelease.yaml
 
 patchesStrategicMerge:
-  - ../.secrets/patches.yaml
+  - ../patches/patches.yaml
