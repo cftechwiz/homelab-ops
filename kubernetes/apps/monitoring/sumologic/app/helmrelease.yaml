@@ -53,60 +53,65 @@ spec:
             requests:
               cpu:
               memory: 128Mi
+    metrics-server:
+      enabled: true
     kube-prometheus-stack:
+      alertmanager:
+        enabled: true
       prometheusOperator:
         resources:
           limits:
-            cpu:
+            cpu: 200m
             memory: 200Mi
           requests:
-            cpu:
+            cpu: 100m
             memory: 100Mi
+      kube-state-metrics:
+        resources:
+          limits:
+            cpu: 100m
+            memory: 64Mi
+          requests:
+            cpu: 10m
+            memory: 32Mi
       prometheus-node-exporter:
         resources:
           limits:
-            cpu:
+            cpu: 200m
             memory: 50Mi
           requests:
-            cpu:
+            cpu: 100m
             memory: 30Mi
       prometheus:
         prometheusSpec:
           scrapeInterval: "15s"
           retention: "1d"
           resources:
-            requests:
-              cpu: 511m
-              memory: 3482M
             limits:
-              cpu: 511m
-              memory: 3482M
-      kube-state-metrics:
-        resources:
-          limits:
-            cpu:
-            memory: 200Mi
-          requests:
-            cpu:
-            memory: 32Mi
+              cpu: 800m
+              memory: 8Gi
+            requests:
+              cpu: 500m
+              memory: 1Gi
+          serviceMonitor:
+            selfMonitor: true
     otelcolInstrumentation:
-      logLevel: debug
       statefulset:
         resources:
           limits:
-            cpu:
+            cpu: 400m
             memory: 4Gi
           requests:
-            cpu:
+            cpu: 50m
             memory: 768Mi
     tracesSampler:
       deployment:
         resources:
           limits:
-            cpu:
+            cpu: 200m
             memory: 4Gi
           requests:
-            cpu:
+            cpu: 100m
             memory: 384Mi
       config:
         receivers:
@@ -117,44 +122,55 @@ spec:
               http:
                 endpoint: "localhost:4318"
     metadata:
+      persistence:
+        enabled: true
+        storageClass: ceph-block
+        accessMode: ReadWriteOnce
+        size: 10Gi
       metrics:
         logLevel: debug
         statefulset:
           resources:
             limits:
-              cpu:
+              cpu: 300m
               memory: 1Gi
             requests:
-              cpu:
+              cpu: 100m
               memory: 768Mi
+        autoscaling:
+          enabled: true
+          minReplicas: 3
+          maxReplicas: 10
+          targetCPUUtilizationPercentage: 80
       logs:
         logLevel: debug
         statefulset:
           resources:
             limits:
-              cpu:
+              cpu: 300m
               memory: 1Gi
             requests:
-              cpu:
+              cpu: 100m
               memory: 768Mi
+        autoscaling:
+          enabled: true
+          minReplicas: 3
+          maxReplicas: 10
+          targetCPUUtilizationPercentage: 80
     traceGateway:
-      logLevel: debug
       deployment:
         resources:
           limits:
-            cpu:
+            cpu: 200m
             memory: 2Gi
           requests:
-            cpu:
+            cpu: 100m
             memory: 196Mi
       config:
         receivers:
           otlp:
             protocols:
-              grpc:
-                endpoint: "localhost:4317"
               http:
-                endpoint: "localhost:4318"
                 cors:
                   allowed_origins:
                     - "http://*"
@@ -166,20 +182,20 @@ spec:
       statefulset:
         resources:
           limits:
-            cpu:
-            memory: 2Gi
+            cpu: 200m
+            memory: 1Gi
           requests:
-            cpu:
+            cpu: 100m
             memory: 200Mi
     otellogs:
       logLevel: debug
       daemonset:
         resources:
           limits:
-            cpu:
+            cpu: 200m
             memory: 1Gi
           requests:
-            cpu:
+            cpu: 100m
             memory: 32Mi
     falco:
       enabled: true
@@ -189,3 +205,15 @@ spec:
       enabled: true
       createDefaultInstrumentation: true
       instrumentationNamespaces: "default"
+    pvcCleaner:
+      metrics:
+        enabled: true
+      logs:
+        enabled: true
+      resources:
+        limits:
+          memory: 256Mi
+          cpu: 200m
+        requests:
+          memory: 64Mi
+          cpu: 100m
