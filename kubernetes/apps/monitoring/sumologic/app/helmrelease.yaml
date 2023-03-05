@@ -54,7 +54,7 @@ spec:
               cpu:
               memory: 128Mi
     metrics-server:
-      enabled: true
+      enabled: false
     kube-prometheus-stack:
       alertmanager:
         enabled: true
