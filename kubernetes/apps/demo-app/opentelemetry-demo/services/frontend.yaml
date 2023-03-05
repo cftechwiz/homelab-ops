@@ -56,19 +56,19 @@ spec:
             - name: FRONTEND_ADDR
               value: :8080
             - name: AD_SERVICE_ADDR
-              value: '{{ include "otel-demo.name" . }}-adservice:8080'
+              value: opentelemetry-demo-adservice:8080'
             - name: CART_SERVICE_ADDR
-              value: '{{ include "otel-demo.name" . }}-cartservice:8080'
+              value: opentelemetry-demo-cartservice:8080'
             - name: CHECKOUT_SERVICE_ADDR
-              value: '{{ include "otel-demo.name" . }}-checkoutservice:8080'
+              value: 'opentelemetry-demo-checkoutservice:8080'
             - name: CURRENCY_SERVICE_ADDR
-              value: '{{ include "otel-demo.name" . }}-currencyservice:8080'
+              value: opentelemetry-demo-currencyservice:8080'
             - name: PRODUCT_CATALOG_SERVICE_ADDR
-              value: '{{ include "otel-demo.name" . }}-productcatalogservice:8080'
+              value: opentelemetry-demo-productcatalogservice:8080'
             - name: RECOMMENDATION_SERVICE_ADDR
-              value: '{{ include "otel-demo.name" . }}-recommendationservice:8080'
+              value: opentelemetry-demo-recommendationservice:8080'
             - name: SHIPPING_SERVICE_ADDR
-              value: '{{ include "otel-demo.name" . }}-shippingservice:8080'
+              value: opentelemetry-demo-shippingservice:8080'
             - name: OTEL_EXPORTER_OTLP_ENDPOINT
               value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
             - name: FRONTEND_PORT
