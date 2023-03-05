@@ -86,7 +86,7 @@ spec:
           env: true
         env:
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
             value: cumulative
           - name: KAFKA_SERVICE_ADDR
@@ -103,7 +103,7 @@ spec:
           port: 8080
         env:
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: AD_SERVICE_PORT
             value: "8080"
           - name: FEATURE_FLAG_GRPC_SERVICE_ADDR
@@ -124,7 +124,7 @@ spec:
           - name: REDIS_ADDR
             value: '{{ include "otel-demo.name" . }}-redis:6379'
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: CART_SERVICE_PORT
             value: "8080"
         resources:
@@ -151,7 +151,7 @@ spec:
           - name: EMAIL_SERVICE_ADDR
             value: 'http://{{ include "otel-demo.name" . }}-emailservice:8080'
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: CHECKOUT_SERVICE_PORT
             value: "8080"
           - name: KAFKA_SERVICE_ADDR
@@ -170,7 +170,7 @@ spec:
           - name: PORT
             value: "8080"
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: CURRENCY_SERVICE_PORT
             value: "8080"
         resources:
@@ -189,9 +189,9 @@ spec:
           - name: PORT
             value: "8080"
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4318/v1/traces
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4318/v1/traces
           - name: EMAIL_SERVICE_PORT
             value: "8080"
         resources:
@@ -217,7 +217,7 @@ spec:
           - name: DATABASE_URL
             value: 'ecto://ffs:ffs@{{ include "otel-demo.name" . }}-ffspostgres:5432/ffs'
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
         resources:
           limits:
             memory: 175Mi
@@ -234,7 +234,7 @@ spec:
           env: true
         env:
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
             value: cumulative
           - name: KAFKA_SERVICE_ADDR
@@ -267,13 +267,13 @@ spec:
           - name: SHIPPING_SERVICE_ADDR
             value: '{{ include "otel-demo.name" . }}-shippingservice:8080'
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: WEB_OTEL_SERVICE_NAME
             value: frontend-web
           - name: FRONTEND_PORT
             value: "8080"
           - name: PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-            value: http://$(SUMOLOGIC_RUMURL)
+            value: https://rum-collectors.us2.sumologic.com/receiver/v1/rum/ZaVnC4dhaV3bea_joQEtUS7Ac-X8w73grVGyEl3nUAWjnfrxlKC5HIULRgn2CJTyGAcDW_t7HddDpWx0ShtmEEolP8VwkqNiNIBRsxVojUh-po60qw7BXw==
         resources:
           limits:
             memory: 200Mi
@@ -308,7 +308,7 @@ spec:
           - name: OTEL_COLLECTOR_PORT
             value: "4317"
           - name: OTEL_COLLECTOR_HOST
-            value: $(OTEL_COLLECTOR_NAME)
+            value: sumologic-sumologic-otelagent.monitoring.svc.cluster.local.
           - name: ENVOY_PORT
             value: "8080"
         resources:
@@ -343,7 +343,7 @@ spec:
           - name: PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION
             value: python
           - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4318/v1/traces
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4318/v1/traces
           - name: LOADGENERATOR_PORT
             value: "8089"
         resources:
@@ -358,7 +358,7 @@ spec:
           port: 8080
         env:
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: PAYMENT_SERVICE_PORT
             value: "8080"
         resources:
@@ -373,7 +373,7 @@ spec:
           port: 8080
         env:
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
             value: cumulative
           - name: PRODUCT_CATALOG_SERVICE_PORT
@@ -392,7 +392,7 @@ spec:
           port: 8080
         env:
           - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4318/v1/traces
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4318/v1/traces
           - name: OTEL_PHP_AUTOLOAD_ENABLED
             value: "true"
           - name: QUOTE_SERVICE_PORT
@@ -417,7 +417,7 @@ spec:
           - name: PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION
             value: python
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: FEATURE_FLAG_GRPC_SERVICE_ADDR
             value: '{{ include "otel-demo.name" . }}-featureflagservice:50053'
           - name: RECOMMENDATION_SERVICE_PORT
@@ -438,7 +438,7 @@ spec:
           - name: PORT
             value: "8080"
           - name: OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317/v1/traces
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317/v1/traces
           - name: SHIPPING_SERVICE_PORT
             value: "8080"
           - name: QUOTE_SERVICE_ADDR
@@ -485,7 +485,7 @@ spec:
           - name: KAFKA_ADVERTISED_LISTENERS
             value: 'PLAINTEXT://{{ include "otel-demo.name" . }}-kafka:9092'
           - name: OTEL_EXPORTER_OTLP_ENDPOINT
-            value: http://$(OTEL_COLLECTOR_NAME):4317
+            value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
           - name: OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE
             value: cumulative
           - name: KAFKA_HEAP_OPTS
