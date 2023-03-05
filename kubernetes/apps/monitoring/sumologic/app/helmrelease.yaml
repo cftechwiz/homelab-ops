@@ -71,14 +71,15 @@ spec:
               cpu:
               memory: 30Mi
         prometheus:
-          additionalServiceMonitors: []
           prometheusSpec:
-            scrapeInterval: "30s"
+            scrapeInterval: "15s"
             retention: "1d"
             resources:
               limits:
+                cpu:
                 memory: 8Gi
               requests:
+                cpu:
                 memory: 1Gi
         kube-state-metrics:
           resources:
