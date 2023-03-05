@@ -737,7 +737,8 @@ spec:
     spec:
       containers:
         - name: frontendclicker
-          image: '{{ printf "%s:%s" .Values.sumologic.deployments.frontendclicker.image.repository .Values.sumologic.deployments.frontendclicker.image.tag }}'
+          imageRepository: public.ecr.aws/v0i4b3p5/ot-demo
+          tag: frontendrum-v1.0
           imagePullPolicy: IfNotPresent
           ports: []
           env:
