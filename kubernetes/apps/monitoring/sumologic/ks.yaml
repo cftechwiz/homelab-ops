@@ -24,30 +24,3 @@ spec:
   interval: 30m
   retryInterval: 1m
   timeout: 10m
-
-# ---
-# # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/kustomization_v1beta2.json
-# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-# kind: Kustomization
-# metadata:
-#   name: cluster-apps-sumologic-services
-#   namespace: flux-system
-#   labels:
-#     substitution.flux.home.arpa/enabled: "true"
-# spec:
-#   dependsOn:
-#     - name: cluster-apps-cloudnative-pg
-#     - name: cluster-core-external-secrets-stores
-#   path: ./kubernetes/apps/monitoring/sumologic/services
-#   prune: true
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   healthChecks:
-#     - apiVersion: apps/v1
-#       kind: Service
-#       name: kube-prometheus-stack-kube-proxy
-#       namespace: kube-system
-#   interval: 30m
-#   retryInterval: 1m
-#   timeout: 3m
