@@ -158,6 +158,7 @@ spec:
         #   maxReplicas: 10
         #   targetCPUUtilizationPercentage: 80
     traceGateway:
+      enabled: false
       deployment:
         resources:
           limits:
