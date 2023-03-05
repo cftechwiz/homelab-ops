@@ -34,9 +34,15 @@ spec:
               name: service
           env:
             - name: OTEL_SERVICE_NAME
-              value: frontend
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.labels['app.kubernetes.io/component']
             - name: OTEL_K8S_NAMESPACE
-              value: demo
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
             - name: OTEL_K8S_NODE_NAME
               valueFrom:
                 fieldRef:
