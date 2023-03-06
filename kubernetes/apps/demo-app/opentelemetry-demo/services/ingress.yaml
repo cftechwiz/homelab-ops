@@ -16,6 +16,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: opentelemetry-demo-frontend
+            name: opentelemetry-demo-frontend-svc
             port:
               number: 8080
