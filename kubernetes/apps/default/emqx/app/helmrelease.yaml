@@ -59,6 +59,13 @@ spec:
       enabled: true
       storageClassName: ceph-block
       size: 100Mi
+    resources:
+      requests:
+        cpu: 63m
+        memory: 226M
+      limits:
+        cpu: 63m
+        memory: 226M
     affinity:
       podAntiAffinity:
         preferredDuringSchedulingIgnoredDuringExecution:

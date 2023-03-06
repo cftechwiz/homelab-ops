@@ -62,7 +62,8 @@ spec:
             app.kubernetes.io/name: *app
     resources:
       requests:
-        cpu: 1m
-        memory: 50Mi
+        cpu: 15m
+        memory: 64M
       limits:
-        memory: 100Mi
+        cpu: 15m
+        memory: 64M

@@ -82,7 +82,8 @@ spec:
         mountPath: /complete
     resources:
       requests:
-        cpu: 1m
-        memory: 250Mi
+        cpu: 15m
+        memory: 64M
       limits:
-        memory: 1000Mi
+        cpu: 15m
+        memory: 64M
