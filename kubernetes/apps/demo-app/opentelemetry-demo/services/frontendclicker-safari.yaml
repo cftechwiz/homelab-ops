@@ -13,7 +13,7 @@ metadata:
     app.kubernetes.io/part-of: opentelemetry-demo
     app.kubernetes.io/managed-by: Helm
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app.kubernetes.io/name: opentelemetry-demo
@@ -33,7 +33,7 @@ spec:
           ports: []
           env:
             - name: BROWSER
-              value: "chrome"
+              value: "safaris"
             - name: DELAY
               value: "2"
             - name: SHOP_URL

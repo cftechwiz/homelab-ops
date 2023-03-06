@@ -6,5 +6,6 @@ namespace: demo
 resources:
   - ./frontend.yaml
   - ./frontend-svc.yaml
-  - ./frontendclicker.yaml
+  - ./frontendclicker-chrome.yaml
+  - ./frontendclicker-safari.yaml
   - ./ingress.yaml

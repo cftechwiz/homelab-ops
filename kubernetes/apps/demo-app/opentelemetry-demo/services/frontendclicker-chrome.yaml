@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opentelemetry-demo-frontendclicker
+  namespace: demo
+  labels:
+    helm.sh/chart: opentelemetry-demo-0.19.4
+    app.kubernetes.io/name: opentelemetry-demo
+    app.kubernetes.io/instance: opentelemetry-demo
+    app.kubernetes.io/component: frontendclicker
+    app.kubernetes.io/version: "1.2.1"
+    app.kubernetes.io/part-of: opentelemetry-demo
+    app.kubernetes.io/managed-by: Helm
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: opentelemetry-demo
+      app.kubernetes.io/instance: opentelemetry-demo
+      app.kubernetes.io/component: frontendclicker
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: opentelemetry-demo
+        app.kubernetes.io/instance: opentelemetry-demo
+        app.kubernetes.io/component: frontendclicker
+    spec:
+      containers:
+        - name: frontendclicker
+          image: public.ecr.aws/v0i4b3p5/ot-demo:frontendclicker-v1.0
+          imagePullPolicy: IfNotPresent
+          ports: []
+          env:
+            - name: BROWSER
+              value: "chrome"
+            - name: DELAY
+              value: "4"
+            - name: SHOP_URL
+              value: http://opentelemetry-demo-frontend:8080
+          resources:
+            limits:
+              cpu: 300m
+              memory: 768Mi
