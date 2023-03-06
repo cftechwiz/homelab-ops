@@ -40,5 +40,5 @@ spec:
               value: http://opentelemetry-demo-frontend:8080
           resources:
             limits:
-              cpu: 200m
+              cpu: 300m
               memory: 768Mi
