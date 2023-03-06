@@ -32,9 +32,10 @@ spec:
     pspEnable: false
     monitoring:
       enabled: true
-    resources:
-      requests:
-        cpu: 1m
-        memory: 128Mi
-      limits:
-        memory: 256Mi
+      resources:
+        requests:
+          cpu: 108m
+          memory: 164M
+        limits:
+          cpu: 630m
+          memory: 349M

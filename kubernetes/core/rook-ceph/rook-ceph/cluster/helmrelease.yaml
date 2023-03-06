@@ -63,6 +63,13 @@ spec:
             enabled: true
       crashCollector:
         disable: false
+        resources:
+          requests:
+            cpu: 15m
+            memory: 64M
+          limits:
+            cpu: 23m
+            memory: 64M
       dashboard:
         enabled: true
         urlPrefix: /
@@ -120,10 +127,11 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 100m
-                memory: 4Gi
+                cpu: 62m
+                memory: 1236M
               limits:
-                memory: 4Gi
+                cpu: 166m
+                memory: 2640M
         storageClass:
           enabled: true
           isDefault: false
@@ -156,10 +164,11 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 100m
-                memory: 1Gi
+                cpu: 10m
+                memory: 32M
               limits:
-                memory: 2Gi
+                cpu: 23m
+                memory: 32M
             instances: 1
           healthCheck:
             bucket:
