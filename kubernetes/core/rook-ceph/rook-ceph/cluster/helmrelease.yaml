@@ -63,13 +63,13 @@ spec:
             enabled: true
       crashCollector:
         disable: false
-        resources:
-          requests:
-            cpu: 15m
-            memory: 64M
-          limits:
-            cpu: 23m
-            memory: 64M
+        # resources:
+        #   requests:
+        #     cpu: 15m
+        #     memory: 64M
+        #   limits:
+        #     cpu: 23m
+        #     memory: 64M
       dashboard:
         enabled: true
         urlPrefix: /
@@ -115,13 +115,13 @@ spec:
           metadataServer:
             activeCount: 1
             activeStandby: true
-            resources:
-              requests:
-                cpu: 62m
-                memory: 1236M
-              limits:
-                cpu: 166m
-                memory: 2640M
+            # resources:
+            #   requests:
+            #     cpu: 62m
+            #     memory: 1236M
+            #   limits:
+            #     cpu: 166m
+            #     memory: 2640M
         storageClass:
           enabled: true
           isDefault: false
@@ -152,13 +152,13 @@ spec:
           preservePoolsOnDelete: true
           gateway:
             port: 80
-            resources:
-              requests:
-                cpu: 20m
-                memory: 204M
-              limits:
-                cpu: 80m
-                memory: 432M
+            # resources:
+            #   requests:
+            #     cpu: 20m
+            #     memory: 204M
+            #   limits:
+            #     cpu: 80m
+            #     memory: 432M
             instances: 1
           healthCheck:
             bucket:
