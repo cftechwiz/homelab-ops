@@ -72,8 +72,7 @@ spec:
           snapshot.home.arpa/enabled: "true"
     resources:
       requests:
-        cpu: 15m
-        memory: 164M
+        cpu: 10m
+        memory: 100Mi
       limits:
-        cpu: 150m
-        memory: 164M
+        memory: 500Mi

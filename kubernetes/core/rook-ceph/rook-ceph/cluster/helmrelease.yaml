@@ -63,13 +63,6 @@ spec:
             enabled: true
       crashCollector:
         disable: false
-        # resources:
-        #   requests:
-        #     cpu: 15m
-        #     memory: 64M
-        #   limits:
-        #     cpu: 23m
-        #     memory: 64M
       dashboard:
         enabled: true
         urlPrefix: /
@@ -79,6 +72,16 @@ spec:
         useAllDevices: true
         config:
           osdsPerDevice: "1"
+        # nodes:
+        #   - name: server1
+        #     devices:
+        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_194688900123
+        #   - name: server2
+        #     devices:
+        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD454202
+        #   - name: server3
+        #     devices:
+        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD455903
     cephBlockPools:
       - name: ceph-blockpool
         spec:
@@ -115,13 +118,12 @@ spec:
           metadataServer:
             activeCount: 1
             activeStandby: true
-            # resources:
-            #   requests:
-            #     cpu: 62m
-            #     memory: 1236M
-            #   limits:
-            #     cpu: 166m
-            #     memory: 2640M
+            resources:
+              requests:
+                cpu: 100m
+                memory: 4Gi
+              limits:
+                memory: 4Gi
         storageClass:
           enabled: true
           isDefault: false
@@ -152,13 +154,12 @@ spec:
           preservePoolsOnDelete: true
           gateway:
             port: 80
-            # resources:
-            #   requests:
-            #     cpu: 20m
-            #     memory: 204M
-            #   limits:
-            #     cpu: 80m
-            #     memory: 432M
+            resources:
+              requests:
+                cpu: 100m
+                memory: 1Gi
+              limits:
+                memory: 2Gi
             instances: 1
           healthCheck:
             bucket:

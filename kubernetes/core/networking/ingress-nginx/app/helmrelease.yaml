@@ -88,8 +88,8 @@ spec:
           cpu: 100m
           memory: 272M
         limits:
-          cpu: 200m
-          memory: 577M
+          cpu: 800m
+          memory: 1024M
     defaultBackend:
       enabled: true
       image:

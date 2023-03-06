@@ -99,8 +99,7 @@ spec:
         readOnly: true
     resources:
       requests:
-        cpu: 15m
-        memory: 184M
+        cpu: 1m
+        memory: 250Mi
       limits:
-        cpu: 100m
-        memory: 184M
+        memory: 2000Mi

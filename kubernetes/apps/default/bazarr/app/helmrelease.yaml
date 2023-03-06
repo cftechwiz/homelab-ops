@@ -86,8 +86,7 @@ spec:
         mountPath: /add-ons
     resources:
       requests:
-        cpu: 10m
-        memory: 183M
+        cpu: 1m
+        memory: 250Mi
       limits:
-        cpu: 100m
-        memory: 378M
+        memory: 2000Mi
