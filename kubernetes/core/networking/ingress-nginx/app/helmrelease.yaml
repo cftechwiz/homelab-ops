@@ -85,10 +85,11 @@ spec:
         configmap.reloader.stakater.com/reload: "cloudflare-proxied-networks"
       resources:
         requests:
-          cpu: 1m
-          memory: 250Mi
+          cpu: 15m
+          memory: 272M
         limits:
-          memory: 500Mi
+          cpu: 23m
+          memory: 577M
     defaultBackend:
       enabled: true
       image:
