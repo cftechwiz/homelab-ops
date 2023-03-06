@@ -209,11 +209,11 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 10m
-                memory: 32M
+                cpu: 20m
+                memory: 204M
               limits:
-                cpu: 23m
-                memory: 32M
+                cpu: 80m
+                memory: 432M
             instances: 1
           healthCheck:
             bucket:
