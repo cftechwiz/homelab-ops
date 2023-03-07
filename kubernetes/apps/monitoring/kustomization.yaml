@@ -14,6 +14,7 @@ resources:
   - ./sumologic/ks.yaml
   # - ./unpoller/ks.yaml
   - ./vpa/ks.yaml
+  - ./kyberno/ks.yaml
   # Standard Resources
   # - ./miscellaneous
   # OSS Monitoring
