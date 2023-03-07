@@ -10,12 +10,12 @@ resources:
   - ./authelia/ks.yaml
   # - ./bazarr/ks.yaml
   # - ./changedetection/ks.yaml
-  - ./EMQX/ks.yaml
+  - ./eqmx/ks.yaml
   - ./excalidraw/ks.yaml
   # - ./frigate/ks.yaml
   - ./glauth/ks.yaml
   - ./hajimari/ks.yaml
-  # - ./home-assistant/ks.yaml
+  - ./home-assistant/ks.yaml
   # - ./immich/ks.yaml
   # - ./jellyfin/ks.yaml
   - ./kubernetes-schemas/ks.yaml
