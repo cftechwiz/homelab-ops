@@ -56,9 +56,9 @@ spec:
             path: /metrics
             interval: 2m
             scrapeTimeout: 20s
-    resources:
-      requests:
-        cpu: 1m
-        memory: 100Mi
-      limits:
-        memory: 500Mi
+    # resources:
+    #   requests:
+    #     cpu: 1m
+    #     memory: 100Mi
+    #   limits:
+    #     memory: 500Mi

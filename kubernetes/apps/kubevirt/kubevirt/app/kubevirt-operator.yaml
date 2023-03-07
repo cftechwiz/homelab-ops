@@ -6691,10 +6691,10 @@ spec:
             scheme: HTTPS
           initialDelaySeconds: 5
           timeoutSeconds: 10
-        resources:
-          requests:
-            cpu: 10m
-            memory: 400Mi
+        # resources:
+        #   requests:
+        #     cpu: 10m
+        #     memory: 400Mi
         securityContext:
           allowPrivilegeEscalation: false
           capabilities:

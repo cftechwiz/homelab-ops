@@ -11396,8 +11396,8 @@ spec:
             scheme: HTTPS
         resources:
           limits:
-            cpu: 10m
-            memory: 200Mi
+            cpu:
+            memory:
           requests:
             cpu: 10m
             memory: 100Mi
