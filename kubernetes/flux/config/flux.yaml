@@ -65,7 +65,10 @@ spec:
                   resources:
                     requests:
                       cpu: 300m
-                      memory: 4G
+                      memory: 500Mi
+                    limites:
+                      cpu:
+                      memory:
       target:
         kind: Deployment
         name: "(kustomize-controller|helm-controller|source-controller)"
