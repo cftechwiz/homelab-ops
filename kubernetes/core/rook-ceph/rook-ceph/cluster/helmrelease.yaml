@@ -30,7 +30,6 @@ spec:
     monitoring:
       enabled: true
       createPrometheusRules: true
-
     ingress:
       dashboard:
         ingressClassName: nginx
@@ -46,6 +45,13 @@ spec:
               - *host
     toolbox:
       enabled: true
+      resources:
+        limits:
+          cpu:
+          memory:
+        requests:
+          cpu: 10m
+          memory: 512Mi
     configOverride: |
       [global]
       bdev_enable_discard = true
@@ -67,6 +73,60 @@ spec:
         enabled: true
         urlPrefix: /
         ssl: false
+      resources:
+        mgr:
+          limits:
+            cpu:
+            memory:
+          requests:
+            cpu: "50m"
+            memory: "512Mi"
+        mon:
+          limits:
+            cpu:
+            memory:
+          requests:
+            cpu: "10m"
+            memory: "1Gi"
+        osd:
+          limits:
+            cpu:
+            memory:
+          requests:
+            cpu: "10m"
+            memory: "4Gi"
+      prepareosd:
+        requests:
+          cpu: "50m"
+          memory: "50Mi"
+      mgr-sidecar:
+        limits:
+          cpu:
+          memory:
+        requests:
+          cpu: "10m"
+          memory: "40Mi"
+      crashcollector:
+        limits:
+          cpu:
+          memory:
+        requests:
+          cpu: "10m"
+          memory: "60Mi"
+      logcollector:
+        limits:
+          cpu:
+          memory:
+        requests:
+          cpu: "10m"
+          memory: "100Mi"
+      cleanup:
+        limits:
+          cpu:
+          memory:
+        requests:
+          cpu: "50m"
+          memory: "100Mi"
       storage:
         useAllNodes: true
         useAllDevices: true
@@ -120,10 +180,10 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 100m
+                cpu: 10m
                 memory: 4Gi
               limits:
-                memory: 4Gi
+                memory: 8Gi
         storageClass:
           enabled: true
           isDefault: false
@@ -156,7 +216,7 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 100m
+                cpu: 10m
                 memory: 1Gi
               limits:
                 memory: 2Gi
