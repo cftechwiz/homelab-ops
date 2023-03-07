@@ -30,12 +30,19 @@ spec:
     crds:
       enabled: true
     pspEnable: false
+    resources:
+    limits:
+      cpu:
+      memory:
+    requests:
+      cpu: 10m
+      memory: 128Mi
     monitoring:
       enabled: true
       resources:
         requests:
-          cpu: 108m
+          cpu: 10m
           memory: 164M
         limits:
-          cpu: 630m
-          memory: 349M
+          cpu:
+          memory:
