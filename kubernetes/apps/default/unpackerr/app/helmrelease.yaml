@@ -80,9 +80,9 @@ spec:
         server: falhallanas.lab
         path: /nfs/Media/Downloads/qbittorrent/complete
         mountPath: /complete
-    resources:
-      requests:
-        cpu: 1m
-        memory: 250Mi
-      limits:
-        memory: 1000Mi
+    # resources:
+    #   requests:
+    #     cpu: 1m
+    #     memory: 250Mi
+    #   limits:
+    #     memory: 1000Mi
