@@ -51,7 +51,7 @@ spec:
               cpu:
               memory: 256Mi
             requests:
-              cpu:
+              cpu: 10m
               memory: 128Mi
     metrics-server:
       enabled: false
@@ -61,7 +61,7 @@ spec:
       prometheusOperator:
         resources:
           limits:
-            cpu: 200m
+            cpu:
             memory: 200Mi
           requests:
             cpu: 100m
@@ -69,7 +69,7 @@ spec:
       kube-state-metrics:
         resources:
           limits:
-            cpu: 100m
+            cpu:
             memory: 64Mi
           requests:
             cpu: 10m
@@ -77,7 +77,7 @@ spec:
       prometheus-node-exporter:
         resources:
           limits:
-            cpu: 200m
+            cpu:
             memory: 50Mi
           requests:
             cpu: 100m
@@ -88,7 +88,7 @@ spec:
           retention: "1d"
           resources:
             limits:
-              cpu: 800m
+              cpu:
               memory: 8Gi
             requests:
               cpu: 500m
@@ -99,7 +99,7 @@ spec:
       statefulset:
         resources:
           limits:
-            cpu: 400m
+            cpu:
             memory: 4Gi
           requests:
             cpu: 50m
@@ -108,7 +108,7 @@ spec:
       deployment:
         resources:
           limits:
-            cpu: 200m
+            cpu:
             memory: 4Gi
           requests:
             cpu: 100m
@@ -124,7 +124,7 @@ spec:
         statefulset:
           resources:
             limits:
-              cpu: 1000m
+              cpu:
               memory: 1Gi
             requests:
               cpu: 100m
@@ -139,7 +139,7 @@ spec:
         statefulset:
           resources:
             limits:
-              cpu: 200m
+              cpu:
               memory: 1Gi
             requests:
               cpu: 100m
@@ -154,7 +154,7 @@ spec:
       deployment:
         resources:
           limits:
-            cpu: 200m
+            cpu:
             memory: 2Gi
           requests:
             cpu: 100m
@@ -175,7 +175,7 @@ spec:
       statefulset:
         resources:
           limits:
-            cpu: 200m
+            cpu:
             memory: 1Gi
           requests:
             cpu: 100m
@@ -185,7 +185,7 @@ spec:
       daemonset:
         resources:
           limits:
-            cpu: 1000m
+            cpu:
             memory: 1Gi
           requests:
             cpu: 100m
@@ -206,7 +206,7 @@ spec:
       resources:
         limits:
           memory: 256Mi
-          cpu: 200m
+          cpu:
         requests:
           memory: 64Mi
           cpu: 100m

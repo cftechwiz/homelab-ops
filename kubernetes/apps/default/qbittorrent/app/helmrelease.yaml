@@ -101,9 +101,9 @@ spec:
         type: emptyDir
     # nodeSelector:
       # node-role.kubernetes.io/worker: "true"
-    resources:
-      requests:
-        cpu: 1m
-        memory: 250Mi
-      limits:
-        memory: 6000Mi
+    # resources:
+    #   requests:
+    #     cpu: 1m
+    #     memory: 250Mi
+    #   limits:
+    #     memory: 6000Mi

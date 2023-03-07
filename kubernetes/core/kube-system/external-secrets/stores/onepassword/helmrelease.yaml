@@ -90,9 +90,9 @@ spec:
         enabled: true
         type: emptyDir
         mountPath: /home/opuser/.op/data
-    resources:
-      requests:
-        cpu: 5m
-        memory: 10Mi
-      limits:
-        memory: 100Mi
+    # resources:
+    #   requests:
+    #     cpu: 5m
+    #     memory: 10Mi
+    #   limits:
+    #     memory: 100Mi

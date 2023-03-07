@@ -88,9 +88,9 @@ spec:
         server: falhallanas.lab
         path: /nfs/Media
         mountPath: /media
-    resources:
-      requests:
-        cpu: 1m
-        memory: 250Mi
-      limits:
-        memory: 2000Mi
+    # resources:
+    #   requests:
+    #     cpu: 1m
+    #     memory: 250Mi
+    #   limits:
+    #     memory: 2000Mi

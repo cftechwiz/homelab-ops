@@ -82,9 +82,9 @@ spec:
         storageClass: ceph-block
         labels:
           snapshot.home.arpa/enabled: "true"
-    resources:
-      requests:
-        cpu: 1m
-        memory: 100Mi
-      limits:
-        memory: 500Mi
+    # resources:
+    #   requests:
+    #     cpu: 1m
+    #     memory: 100Mi
+    #   limits:
+    #     memory: 500Mi
