@@ -39,5 +39,5 @@ spec:
             - (name): "*"
               resources:
                 requests:
-                  +(memory): "100Mi"
-                  +(cpu): "50m"
+                  +(memory): "512Mi"
+                  +(cpu): "10m"
