@@ -28,13 +28,13 @@ spec:
     keepHistory: false
   values:
     controller:
-      # resources:
-      #   requests:
-      #     cpu: 10m
-      #     memory: 145M
-      #   limits:
-      #     memory: 174M
-      #     cpu: 100m
+      resources:
+        requests:
+          cpu: 10m
+          memory: 145M
+        limits:
+          memory: 174M
+          cpu: 100m
     dashboard:
       replicaCount: 1
       ingress:
@@ -51,10 +51,10 @@ spec:
         tls:
           - hosts:
               - *host
-      # resources:
-      #   requests:
-      #     cpu: 10m
-      #     memory: 64M
-      #   limits:
-      #     memory: 64M
-      #     cpu: 100m
+      resources:
+        requests:
+          cpu: 10m
+          memory: 64M
+        limits:
+          memory: 64M
+          cpu: 100m
