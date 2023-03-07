@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: opentelemetry-demo-frontendclicker
+  name: opentelemetry-demo-frontendclicker-safari
   namespace: demo
   labels:
     helm.sh/chart: opentelemetry-demo-0.19.4
