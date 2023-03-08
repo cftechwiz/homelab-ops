@@ -38,7 +38,7 @@ spec:
               value: "4"
             - name: SHOP_URL
               value: http://opentelemetry-demo-frontend:8080
-          # resources:
-          #   limits:
-          #     cpu:
-          #     memory:
+          resources:
+            limits:
+              cpu:
+              memory:
