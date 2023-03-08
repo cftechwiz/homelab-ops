@@ -1,0 +1,44 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  # Pre Flux-Kustomizations
+  - ./namespace.yaml
+  # Flux-Kustomizations
+  - ./opentelemetry-demo/ks.yaml
+  - ./audiobookshelf/ks.yaml
+  - ./authelia/ks.yaml
+  - ./bazarr/ks.yaml
+  - ./changedetection/ks.yaml
+  - ./emqx/ks.yaml
+  - ./excelidraw/ks.yaml
+  - ./frigate/ks.yaml
+  - ./glauth/ks.yaml
+  - ./hajimari/ks.yaml
+  - ./immich/ks.yaml
+  - ./jellyfin/ks.yaml
+  - ./kubernetes-schemas/ks.yaml
+  - ./letsblockit/ks.yaml
+  - ./lidarr/ks.yaml
+  - ./media-browser/ks.yaml
+  - ./miniflux/ks.yaml
+  - ./minio/ks.yaml
+  - ./n8n/ks.yaml
+  - ./navidrome/ks.yaml
+  - ./overseerr/ks.yaml
+  # - ./plex/ks.yaml
+  - ./prowlarr/ks.yaml
+  - ./qbitorrent/ks.yaml
+  - ./radarr/ks.yaml
+  - ./recyclarr/ks.yaml
+  - ./sabnzbd/ks.yaml
+  - ./semaphore/ks.yaml
+  # - ./shlink/ks.yaml
+  - ./sonarr/ks.yaml
+  - ./tautulli/ks.yaml
+  - ./theme-park/ks.yaml
+  - ./unpackerr/ks.yaml
+  - ./wizarr/ks.yaml
+
+
