@@ -47,7 +47,7 @@ spec:
         enabled: true
         image:
           repository: ghcr.io/hassio-addons/nodered/amd64
-          tag: 14.0.4
+          tag: fd376cb
         env:
           TZ: America/Chicago
         workingDir: /opt
