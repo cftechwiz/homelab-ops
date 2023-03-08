@@ -28,7 +28,7 @@ resources:
   - ./overseerr/ks.yaml
   # - ./plex/ks.yaml
   - ./prowlarr/ks.yaml
-  - ./qbitorrent/ks.yaml
+  - ./qbittorrent/ks.yaml
   - ./radarr/ks.yaml
   - ./recyclarr/ks.yaml
   - ./sabnzbd/ks.yaml
