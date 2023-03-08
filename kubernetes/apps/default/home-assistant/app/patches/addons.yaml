@@ -41,13 +41,10 @@ spec:
         volumeMounts:
           - name: config
             mountPath: /config
-
-
       nodered:
         enabled: true
         image:
-          repository: ghcr.io/hassio-addons/nodered/amd64
-          tag: fd376cb
+          repository: ghcr.io/hassio-addons/nodered/amd64:fd376cb
         env:
           TZ: America/Chicago
         workingDir: /opt
