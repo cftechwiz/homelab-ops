@@ -50,23 +50,23 @@ spec:
           tag: 14.0.4
         env:
           TZ: America/Chicago
-        workingDir: /config
+        workingDir: /opt
         args:
           - --auth
           - "none"
-          - --user-data-dir
-          - "/config/.vscode"
-          - --extensions-dir
-          - "/config/.vscode"
+          # - --user-data-dir
+          # - "/config/.vscode"
+          # - --extensions-dir
+          # - "/config/.vscode"
         ingress:
           enabled: true
           ingressClassName: nginx
           annotations:
-            hajimari.io/appName: "Hass Config"
-            hajimari.io/icon: cib:visual-studio-code
+            hajimari.io/appName: "Node Red"
+            hajimari.io/icon: mdi:atom-variant
             hajimari.io/group: Intranet Apps
           hosts:
-            - host: &host hass-code.intra.falhalla.com
+            - host: &host nodered.intra.falhalla.com
               paths:
                 - path: /
                   pathType: Prefix
