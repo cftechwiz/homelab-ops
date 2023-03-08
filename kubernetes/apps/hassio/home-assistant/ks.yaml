@@ -14,7 +14,7 @@ spec:
     - name: cluster-core-external-secrets-stores
     - name: cluster-core-rook-ceph-cluster
     - name: cluster-apps-volsync
-  path: ./kubernetes/apps/default/home-assistant/app
+  path: ./kubernetes/apps/hassio/home-assistant/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -23,7 +23,7 @@ spec:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
       name: home-assistant
-      namespace: default
+      namespace: hassio
   interval: 30m
   retryInterval: 1m
   timeout: 3m
