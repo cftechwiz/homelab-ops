@@ -90,4 +90,4 @@ spec:
           resources:
             limits:
               cpu:
-              memory:
+              memory: 1Gi
