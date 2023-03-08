@@ -41,3 +41,38 @@ spec:
         volumeMounts:
           - name: config
             mountPath: /config
+
+
+      nodered:
+        enabled: true
+        image:
+          repository: ghcr.io/hassio-addons/nodered/amd64
+          tag: 14.0.4
+        env:
+          TZ: America/Chicago
+        workingDir: /config
+        args:
+          - --auth
+          - "none"
+          - --user-data-dir
+          - "/config/.vscode"
+          - --extensions-dir
+          - "/config/.vscode"
+        ingress:
+          enabled: true
+          ingressClassName: nginx
+          annotations:
+            hajimari.io/appName: "Hass Config"
+            hajimari.io/icon: cib:visual-studio-code
+            hajimari.io/group: Intranet Apps
+          hosts:
+            - host: &host hass-code.intra.falhalla.com
+              paths:
+                - path: /
+                  pathType: Prefix
+          tls:
+            - hosts:
+                - *host
+        volumeMounts:
+          - name: config
+            mountPath: /config
