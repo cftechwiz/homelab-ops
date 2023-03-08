@@ -217,7 +217,7 @@ spec:
             value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
         resources:
           limits:
-            memory: 175Mi
+            memory:
         livenessProbe:
           httpGet:
             path: /featureflags/
