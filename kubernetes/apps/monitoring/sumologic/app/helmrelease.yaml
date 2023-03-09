@@ -40,6 +40,11 @@ spec:
             storageClass: ceph-block
             accessMode: ReadWriteOnce
             size: 10Gi
+            ## Add compatibility for K8s 1.16+
+      container:
+        k8sMetadataFilter:
+          tagToMetadataRegexp: '.+?\.containers\.(?<pod>[^_]+)_(?<namespace>[^_]+)_(?<container>.+)-(?<docker_id>[a-z0-9]{64})\.log$'
+            ### End block
       logs:
         multiline:
           enabled: true
@@ -95,7 +100,22 @@ spec:
               memory: 2Gi
           serviceMonitor:
             selfMonitor: true
+        ### Added for Kv1.16 compat
+        # additionalScrapeConfigs:
+        #   - job_name: "Kubernetes-pods"
+        #     kubernetes_sd_configs:
+        #       - role: pod
+        #     relabel_configs:
+        #       - source_labels: [__meta_kubernetes_pod]
+        #         separator: ;
+        #         regex: (.*)
+        #         target_label: pod
+        #         replacement: $1
+        #         action: replace
     otelcolInstrumentation:
+      # sourceMetadata:
+      #   sourceName: "%{k8s.namespace.name}.%{k8s.pod.pod}.%{k8s.container.name}"
+      #   source_Category: "%{k8s.namespace.name}/%{k8s.pod.pod}"
       statefulset:
         resources:
           limits:
