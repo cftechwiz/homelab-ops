@@ -95,38 +95,38 @@ spec:
           requests:
             cpu: "10m"
             memory: "4Gi"
-      prepareosd:
-        requests:
-          cpu: "50m"
-          memory: "50Mi"
-      mgr-sidecar:
-        limits:
-          cpu:
-          memory:
-        requests:
-          cpu: "10m"
-          memory: "40Mi"
-      crashcollector:
-        limits:
-          cpu:
-          memory:
-        requests:
-          cpu: "10m"
-          memory: "60Mi"
-      logcollector:
-        limits:
-          cpu:
-          memory:
-        requests:
-          cpu: "10m"
-          memory: "100Mi"
-      cleanup:
-        limits:
-          cpu:
-          memory:
-        requests:
-          cpu: "50m"
-          memory: "100Mi"
+        prepareosd:
+          requests:
+            cpu: "50m"
+            memory: "50Mi"
+        mgr-sidecar:
+          limits:
+            cpu:
+            memory:
+          requests:
+            cpu: "10m"
+            memory: "40Mi"
+        crashcollector:
+          limits:
+            cpu:
+            memory:
+          requests:
+            cpu: "10m"
+            memory: "60Mi"
+        logcollector:
+          limits:
+            cpu:
+            memory:
+          requests:
+            cpu: "10m"
+            memory: "100Mi"
+        cleanup:
+          limits:
+            cpu:
+            memory:
+          requests:
+            cpu: "50m"
+            memory: "100Mi"
       storage:
         useAllNodes: true
         useAllDevices: true
