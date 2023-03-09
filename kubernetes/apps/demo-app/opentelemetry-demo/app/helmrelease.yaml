@@ -239,42 +239,6 @@ spec:
         resources:
           limits:
             memory:
-
-      # frontend:
-      #   enabled: true
-      #   useDefault:
-      #     env: true
-      #   service:
-      #     port: 8080
-      #   env:
-      #     - name: FRONTEND_ADDR
-      #       value: :8080
-      #     - name: AD_SERVICE_ADDR
-      #       value: '{{ include "otel-demo.name" . }}-adservice:8080'
-      #     - name: CART_SERVICE_ADDR
-      #       value: '{{ include "otel-demo.name" . }}-cartservice:8080'
-      #     - name: CHECKOUT_SERVICE_ADDR
-      #       value: '{{ include "otel-demo.name" . }}-checkoutservice:8080'
-      #     - name: CURRENCY_SERVICE_ADDR
-      #       value: '{{ include "otel-demo.name" . }}-currencyservice:8080'
-      #     - name: PRODUCT_CATALOG_SERVICE_ADDR
-      #       value: '{{ include "otel-demo.name" . }}-productcatalogservice:8080'
-      #     - name: RECOMMENDATION_SERVICE_ADDR
-      #       value: '{{ include "otel-demo.name" . }}-recommendationservice:8080'
-      #     - name: SHIPPING_SERVICE_ADDR
-      #       value: '{{ include "otel-demo.name" . }}-shippingservice:8080'
-      #     - name: OTEL_EXPORTER_OTLP_ENDPOINT
-      #       value: http://sumologic-sumologic-otelagent.monitoring.svc.cluster.local.:4317
-      #     - name: WEB_OTEL_SERVICE_NAME
-      #       value: frontend-web
-      #     - name: FRONTEND_PORT
-      #       value: "8080"
-      #     - name: PUBLIC_OTEL_EXPORTER_OTLP_TRACES_ENDPOINT
-      #       value: https://rum-collectors.us2.sumologic.com/receiver/v1/rum/ZaVnC4dhaV3bea_joQEtUS7Ac-X8w73grVGyEl3nUAWjnfrxlKC5HIULRgn2CJTyGAcDW_t7HddDpWx0ShtmEEolP8VwkqNiNIBRsxVojUh-po60qw7BXw==
-      #   resources:
-      #     limits:
-      #       memory: 200Mi
-
       frontendProxy:
         enabled: true
         useDefault:
