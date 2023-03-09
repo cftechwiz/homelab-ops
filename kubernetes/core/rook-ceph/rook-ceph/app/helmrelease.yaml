@@ -38,7 +38,7 @@ spec:
         cpu: 10m
         memory: 128Mi
     csi:
-      enableOMAPGenerator: true
+      enableOMAPGenerator: false
       csiRBDProvisionerResource: |
         - name : csi-provisioner
           resource:
