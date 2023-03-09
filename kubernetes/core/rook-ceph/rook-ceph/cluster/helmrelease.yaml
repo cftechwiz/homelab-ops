@@ -73,60 +73,60 @@ spec:
         enabled: true
         urlPrefix: /
         ssl: false
-      resources:
-        mgr:
-          limits:
-            cpu:
-            memory:
-          requests:
-            cpu: "50m"
-            memory: "512Mi"
-        mon:
-          limits:
-            cpu:
-            memory:
-          requests:
-            cpu: "10m"
-            memory: "1Gi"
-        osd:
-          limits:
-            cpu:
-            memory:
-          requests:
-            cpu: "10m"
-            memory: "4Gi"
-        prepareosd:
-          requests:
-            cpu: "50m"
-            memory: "50Mi"
-        mgr-sidecar:
-          limits:
-            cpu:
-            memory:
-          requests:
-            cpu: "10m"
-            memory: "40Mi"
-        crashcollector:
-          limits:
-            cpu:
-            memory:
-          requests:
-            cpu: "10m"
-            memory: "60Mi"
-        logcollector:
-          limits:
-            cpu:
-            memory:
-          requests:
-            cpu: "10m"
-            memory: "100Mi"
-        cleanup:
-          limits:
-            cpu:
-            memory:
-          requests:
-            cpu: "50m"
-            memory: "100Mi"
+      # resources:
+      #   mgr:
+      #     limits:
+      #       cpu:
+      #       memory:
+      #     requests:
+      #       cpu: "50m"
+      #       memory: "512Mi"
+      #   mon:
+      #     limits:
+      #       cpu:
+      #       memory:
+      #     requests:
+      #       cpu: "10m"
+      #       memory: "1Gi"
+      #   osd:
+      #     limits:
+      #       cpu:
+      #       memory:
+      #     requests:
+      #       cpu: "10m"
+      #       memory: "4Gi"
+      #   prepareosd:
+      #     requests:
+      #       cpu: "50m"
+      #       memory: "50Mi"
+      #   mgr-sidecar:
+      #     limits:
+      #       cpu:
+      #       memory:
+      #     requests:
+      #       cpu: "10m"
+      #       memory: "40Mi"
+      #   crashcollector:
+      #     limits:
+      #       cpu:
+      #       memory:
+      #     requests:
+      #       cpu: "10m"
+      #       memory: "60Mi"
+      #   logcollector:
+      #     limits:
+      #       cpu:
+      #       memory:
+      #     requests:
+      #       cpu: "10m"
+      #       memory: "100Mi"
+      #   cleanup:
+      #     limits:
+      #       cpu:
+      #       memory:
+      #     requests:
+      #       cpu: "50m"
+      #       memory: "100Mi"
       storage:
         useAllNodes: true
         useAllDevices: true
