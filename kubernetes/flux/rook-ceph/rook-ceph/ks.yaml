@@ -8,7 +8,7 @@ metadata:
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
-  path: ./kubernetes/core/rook-ceph/rook-ceph/app
+  path: ./kubernetes/flux/rook-ceph/rook-ceph/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -33,7 +33,7 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-core-rook-ceph
-  path: ./kubernetes/core/rook-ceph/rook-ceph/cluster
+  path: ./kubernetes/flux/rook-ceph/rook-ceph/cluster
   prune: true
   sourceRef:
     kind: GitRepository
