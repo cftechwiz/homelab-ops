@@ -180,7 +180,7 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 10m
+                cpu: 500m
                 memory: 4Gi
               limits:
                 memory: 8Gi
@@ -216,7 +216,7 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 10m
+                cpu: 500m
                 memory: 1Gi
               limits:
                 memory: 2Gi
