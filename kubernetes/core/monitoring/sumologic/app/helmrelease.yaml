@@ -56,7 +56,7 @@ spec:
               cpu:
               memory: 256Mi
             requests:
-              cpu: 10m
+              cpu: 100m
               memory: 128Mi
     metrics-server:
       enabled: false
@@ -69,7 +69,7 @@ spec:
             cpu:
             memory: 200Mi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 100Mi
       kube-state-metrics:
         resources:
@@ -77,7 +77,7 @@ spec:
             cpu:
             memory: 64Mi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 32Mi
       prometheus-node-exporter:
         resources:
@@ -85,7 +85,7 @@ spec:
             cpu:
             memory: 50Mi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 30Mi
       prometheus:
         prometheusSpec:
@@ -96,7 +96,7 @@ spec:
               cpu:
               memory:
             requests:
-              cpu: 10m
+              cpu: 100m
               memory: 2Gi
           serviceMonitor:
             selfMonitor: true
@@ -122,7 +122,7 @@ spec:
             cpu:
             memory: 4Gi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 768Mi
     tracesSampler:
       deployment:
@@ -131,7 +131,7 @@ spec:
             cpu:
             memory: 4Gi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 384Mi
     metadata:
       persistence:
@@ -147,7 +147,7 @@ spec:
               cpu:
               memory: 1Gi
             requests:
-              cpu: 10m
+              cpu: 100m
               memory: 768Mi
         # autoscaling:
         #   enabled: true
@@ -162,7 +162,7 @@ spec:
               cpu:
               memory: 1Gi
             requests:
-              cpu: 10m
+              cpu: 100m
               memory: 768Mi
         # autoscaling:
         #   enabled: true
@@ -177,7 +177,7 @@ spec:
             cpu:
             memory: 2Gi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 196Mi
       config:
         receivers:
@@ -198,7 +198,7 @@ spec:
             cpu:
             memory: 1Gi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 200Mi
     otellogs:
       logLevel: debug
@@ -208,7 +208,7 @@ spec:
             cpu:
             memory: 1Gi
           requests:
-            cpu: 10m
+            cpu: 100m
             memory: 32Mi
     falco:
       enabled: true
@@ -229,4 +229,4 @@ spec:
           cpu:
         requests:
           memory: 64Mi
-          cpu: 10m
+          cpu: 100m
