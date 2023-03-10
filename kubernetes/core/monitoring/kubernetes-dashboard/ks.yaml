@@ -3,14 +3,12 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-vpa
+  name: cluster-apps-kubernetes-dashboard
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
-  # dependsOn:
-  #   - name: cluster-apps-thanos
-  path: ./kubernetes/apps/monitoring/vpa/app
+  path: ./kubernetes/core/monitoring/kubernetes-dashboard/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -18,7 +16,7 @@ spec:
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
-      name: vpa
+      name: kubernetes-dashboard
       namespace: monitoring
   interval: 30m
   retryInterval: 1m

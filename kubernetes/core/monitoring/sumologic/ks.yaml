@@ -3,12 +3,15 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: cluster-apps-kubernetes-dashboard
+  name: cluster-apps-sumologic
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
 spec:
-  path: ./kubernetes/apps/monitoring/kubernetes-dashboard/app
+  dependsOn:
+    - name: cluster-core-external-secrets-stores
+    - name: cluster-core-rook-ceph-cluster
+  path: ./kubernetes/core/monitoring/sumologic/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -16,8 +19,8 @@ spec:
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
-      name: kubernetes-dashboard
+      name: sumologic
       namespace: monitoring
   interval: 30m
   retryInterval: 1m
-  timeout: 3m
+  timeout: 10m
