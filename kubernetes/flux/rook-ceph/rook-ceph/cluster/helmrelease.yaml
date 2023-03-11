@@ -30,7 +30,6 @@ spec:
     monitoring:
       enabled: true
       createPrometheusRules: true
-
     ingress:
       dashboard:
         ingressClassName: nginx
