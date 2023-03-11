@@ -11,7 +11,7 @@ resources:
   - ./kubernetes-dashboard/ks.yaml
   # - ./smartctl-exporter/ks.yaml
   # - ./snmp-exporter/ks.yaml
-  - ./sumologic/ks.yaml
+  # - ./sumologic/ks.yaml
   # - ./unpoller/ks.yaml
   - ./vpa/ks.yaml
   # Standard Resources
