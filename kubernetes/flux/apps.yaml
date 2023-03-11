@@ -1,51 +1,51 @@
 ---
-# # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/kustomization_v1beta2.json
-# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-# kind: Kustomization
-# metadata:
-#   name: cluster-apps
-#   namespace: flux-system
-# spec:
-#   dependsOn:
-#     - name: cluster-apps-cloudnative-pg-cluster
-#     - name: cluster-core-rook-ceph-cluster
-#     - name: cluster-core-external-secrets
-#     - name: cluster-apps-redis
-#   interval: 10m
-#   path: ./kubernetes/apps
-#   prune: true
-#   sourceRef:
-#     kind: GitRepository
-#     name: flux-system
-#   decryption:
-#     provider: sops
-#     secretRef:
-#       name: sops-age
-#   postBuild:
-#     substituteFrom:
-#       - kind: ConfigMap
-#         name: cluster-settings
-#       - kind: Secret
-#         name: cluster-secrets
-#   patches:
-#     - patch: |-
-#         apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-#         kind: Kustomization
-#         metadata:
-#           name: not-used
-#         spec:
-#           decryption:
-#             provider: sops
-#             secretRef:
-#               name: sops-age
-#           postBuild:
-#             substituteFrom:
-#               - kind: ConfigMap
-#                 name: cluster-settings
-#               - kind: Secret
-#                 name: cluster-secrets
-#       target:
-#         group: kustomize.toolkit.fluxcd.io
-#         version: v1beta2
-#         kind: Kustomization
-#         labelSelector: substitution.flux.home.arpa/disabled notin (true)
+# YAML-LANGUAGE-SERVER: $SCHEMA=HTTPS://KUBERNETES-SCHEMAS.FALHALLA.COM/KUSTOMIZATION_V1BETA2.JSON
+APIVERSION: KUSTOMIZE.TOOLKIT.FLUXCD.IO/V1BETA2
+KIND: KUSTOMIZATION
+METADATA:
+  NAME: CLUSTER-APPS
+  NAMESPACE: FLUX-SYSTEM
+SPEC:
+  DEPENDSON:
+    - NAME: CLUSTER-APPS-CLOUDNATIVE-PG-CLUSTER
+    - NAME: CLUSTER-CORE-ROOK-CEPH-CLUSTER
+    - NAME: CLUSTER-CORE-EXTERNAL-SECRETS
+    - NAME: CLUSTER-APPS-REDIS
+  INTERVAL: 10M
+  PATH: ./KUBERNETES/APPS
+  PRUNE: TRUE
+  SOURCEREF:
+    KIND: GITREPOSITORY
+    NAME: FLUX-SYSTEM
+  DECRYPTION:
+    PROVIDER: SOPS
+    SECRETREF:
+      NAME: SOPS-AGE
+  POSTBUILD:
+    SUBSTITUTEFROM:
+      - KIND: CONFIGMAP
+        NAME: CLUSTER-SETTINGS
+      - KIND: SECRET
+        NAME: CLUSTER-SECRETS
+  PATCHES:
+    - PATCH: |-
+        APIVERSION: KUSTOMIZE.TOOLKIT.FLUXCD.IO/V1BETA2
+        KIND: KUSTOMIZATION
+        METADATA:
+          NAME: NOT-USED
+        SPEC:
+          DECRYPTION:
+            PROVIDER: SOPS
+            SECRETREF:
+              NAME: SOPS-AGE
+          POSTBUILD:
+            SUBSTITUTEFROM:
+              - KIND: CONFIGMAP
+                NAME: CLUSTER-SETTINGS
+              - KIND: SECRET
+                NAME: CLUSTER-SECRETS
+      TARGET:
+        GROUP: KUSTOMIZE.TOOLKIT.FLUXCD.IO
+        VERSION: V1BETA2
+        KIND: KUSTOMIZATION
+        LABELSELECTOR: SUBSTITUTION.FLUX.HOME.ARPA/DISABLED NOTIN (TRUE)

@@ -5,7 +5,6 @@ kind: Kustomization
 namespace: default
 resources:
   - ./externalsecret.yaml
-  #- ./operator.yaml
   - ./helmrelease.yaml
 configMapGenerator:
   - name: cloudnative-pg-dashboard
