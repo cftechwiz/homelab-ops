@@ -65,7 +65,6 @@ spec:
       prometheusOperator:
         resources:
           limits:
-            cpu:
             memory: 200Mi
           requests:
             cpu: 100m
@@ -90,7 +89,7 @@ spec:
           retention: "1d"
           resources:
             limits:
-              memory:
+              memory: 4Gi
             requests:
               cpu: 100m
               memory: 2Gi
