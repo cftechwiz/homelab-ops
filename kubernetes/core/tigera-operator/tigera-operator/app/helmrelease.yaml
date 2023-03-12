@@ -41,7 +41,7 @@ spec:
         ipPools:
           - blockSize: 26
             cidr: "${NET_POD_CIDR}"
-            encapsulation: none
+            encapsulation: None
             natOutgoing: Enabled
             nodeSelector: all()
         multiInterfaceMode: None
