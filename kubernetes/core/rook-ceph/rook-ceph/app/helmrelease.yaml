@@ -241,7 +241,3 @@ spec:
               cpu: 500m
     monitoring:
       enabled: true
-      resources:
-        requests:
-          cpu: 1000m
-          memory: 1024M
