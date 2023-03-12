@@ -7,8 +7,6 @@ metadata:
   name: cluster-core
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: cluster-core-rook-ceph-cluster
   interval: 10m
   path: ./kubernetes/core
   prune: true
