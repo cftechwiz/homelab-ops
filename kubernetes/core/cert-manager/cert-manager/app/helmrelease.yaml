@@ -29,13 +29,13 @@ spec:
   values:
     installCRDs: true
     extraArgs:
-      - --dns01-recursive-nameservers=1.1.1.1:53,9.9.9.9:53
+      - --dns01-recursive-nameservers=10.42.116.130:53,172.16.70.1:53
       - --dns01-recursive-nameservers-only
     podDnsPolicy: None
     podDnsConfig:
       nameservers:
-        - "1.1.1.1"
-        - "9.9.9.9"
+        - "10.42.116.130"
+        - "172.16.70.1"
     prometheus:
       enabled: true
       servicemonitor:
