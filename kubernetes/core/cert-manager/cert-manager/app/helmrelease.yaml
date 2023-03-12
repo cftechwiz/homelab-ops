@@ -35,7 +35,7 @@ spec:
     podDnsPolicy: None
     podDnsConfig:
       nameservers:
-        - "kube-dns.kube-system.svc.cluster.local"
+        - "172.16.0.254"
         - "172.16.70.1"
     prometheus:
       enabled: true
