@@ -55,7 +55,7 @@ spec:
         connections:
           compression:
             # TODO: Test out enabling this on next cluster rebuild
-            enabled: false
+            enabled: true
       mgr:
         modules:
           - name: rook
@@ -71,16 +71,6 @@ spec:
         useAllDevices: true
         config:
           osdsPerDevice: "1"
-        # nodes:
-        #   - name: server1
-        #     devices:
-        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_194688900123
-        #   - name: server2
-        #     devices:
-        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD454202
-        #   - name: server3
-        #     devices:
-        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD455903
     cephBlockPools:
       - name: ceph-blockpool
         spec:
@@ -119,7 +109,7 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 100m
+                cpu: 300m
                 memory: 2Gi
         storageClass:
           enabled: true
@@ -153,7 +143,7 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 100m
+                cpu: 300m
                 memory: 1Gi
             instances: 1
           healthCheck:
