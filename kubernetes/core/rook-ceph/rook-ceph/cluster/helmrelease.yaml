@@ -1,5 +1,5 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrelease_v2beta1.json
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/helmrelease_v2beta1.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: rook-ceph-cluster
-      version: v1.10.12
+      version: v1.11.1
       sourceRef:
         kind: HelmRepository
         name: rook-ceph
@@ -34,11 +34,12 @@ spec:
       dashboard:
         ingressClassName: nginx
         annotations:
+          nginx.ingress.kubernetes.io/whitelist-source-range: |
+            10.0.0.0/8,172.16.0.0/12,192.168.0.0/16
           hajimari.io/appName: "Rook"
           hajimari.io/icon: mdi:chess-rook
-          external-dns.alpha.kubernetes.io/target: ipv4.falhalla.com
         host:
-          name: &host rook.falhalla.com
+          name: &host rook.devbu.io
           path: /
         tls:
           - hosts:
@@ -55,11 +56,7 @@ spec:
         connections:
           compression:
             # TODO: Test out enabling this on next cluster rebuild
-            enabled: true
-      mgr:
-        modules:
-          - name: rook
-            enabled: true
+            enabled: false
       crashCollector:
         disable: false
       dashboard:
@@ -71,6 +68,16 @@ spec:
         useAllDevices: true
         config:
           osdsPerDevice: "1"
+        # nodes:
+        #   - name: k8s-3
+        #     devices:
+        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_194688900123
+        #   - name: k8s-4
+        #     devices:
+        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD454202
+        #   - name: k8s-5
+        #     devices:
+        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD455903
     cephBlockPools:
       - name: ceph-blockpool
         spec:
@@ -109,8 +116,10 @@ spec:
             activeStandby: true
             resources:
               requests:
-                cpu: 300m
-                memory: 2Gi
+                cpu: 1000m
+                memory: 4Gi
+              limits:
+                memory: 4Gi
         storageClass:
           enabled: true
           isDefault: false
@@ -143,8 +152,10 @@ spec:
             port: 80
             resources:
               requests:
-                cpu: 300m
+                cpu: 1000m
                 memory: 1Gi
+              limits:
+                memory: 2Gi
             instances: 1
           healthCheck:
             bucket:
