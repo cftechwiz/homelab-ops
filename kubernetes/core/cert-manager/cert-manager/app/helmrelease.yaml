@@ -30,13 +30,13 @@ spec:
     installCRDs: true
     extraArgs:
       - --cluster-issuer-ambient-credentials
-      - --dns01-recursive-nameservers=kube-dns.kube-system.svc.cluster.local:53,172.16.70.1:53
+      - --dns01-recursive-nameservers=1.1.1.1:53,1.0.0.1:53
       - --dns01-recursive-nameservers-only
     podDnsPolicy: None
     podDnsConfig:
       nameservers:
-        - "172.16.0.254"
-        - "172.16.70.1"
+        - "1.1.1.1"
+        - "1.0.0.1"
     prometheus:
       enabled: true
       servicemonitor:
