@@ -29,6 +29,7 @@ spec:
   values:
     installCRDs: true
     extraArgs:
+      - --cluster-issuer-ambient-credentials
       - --dns01-recursive-nameservers=10.42.116.130:53,172.16.70.1:53
       - --dns01-recursive-nameservers-only
     podDnsPolicy: None
