@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   type: alertmanager
-  address: http://kube-prometheus-stack-alertmanager.monitoring.svc.cluster.local:9093/api/v2/alerts/
+  address: http://alertmanager-sumologic-kube-prometheus-alertmanager.monitoring.svc.cluster.local:9093/api/v2/alerts/
   interval: 10m
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/alert_v1beta2.json
