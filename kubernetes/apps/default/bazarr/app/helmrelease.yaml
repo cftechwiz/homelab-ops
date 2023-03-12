@@ -84,9 +84,9 @@ spec:
         enabled: true
         type: emptyDir
         mountPath: /add-ons
-    # resources:
-    #   requests:
-    #     cpu: 1m
-    #     memory: 250Mi
-    #   limits:
-    #     memory: 2000Mi
+    resources:
+      requests:
+        cpu: 1m
+        memory: 250Mi
+      limits:
+        memory: 2000Mi

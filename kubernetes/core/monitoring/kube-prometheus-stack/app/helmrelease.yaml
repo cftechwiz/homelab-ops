@@ -214,12 +214,12 @@ spec:
               resources:
                 requests:
                   storage: 20Gi
-        # resources:
-        #   requests:
-        #     cpu: 150m
-        #     memory: 2000Mi
-        #   limits:
-        #     memory: 7000Mi
+        resources:
+          requests:
+            cpu: 150m
+            memory: 2000Mi
+          limits:
+            memory: 8000Mi
         additionalScrapeConfigs:
           - job_name: pikvm
             scrape_interval: 1m

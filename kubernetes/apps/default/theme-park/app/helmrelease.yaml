@@ -60,10 +60,9 @@ spec:
         labelSelector:
           matchLabels:
             app.kubernetes.io/name: *app
-    # resources:
-    #   requests:
-    #     cpu: 15m
-    #     memory: 64M
-    #   limits:
-    #     cpu: 100m
-    #     memory: 64M
+    resources:
+      requests:
+        cpu: 15m
+        memory: 64Mi
+      limits:
+        memory: 256Mi

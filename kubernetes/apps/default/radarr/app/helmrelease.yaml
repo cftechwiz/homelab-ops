@@ -99,9 +99,9 @@ spec:
         mountPath: /scripts/pushover-notify.sh
         defaultMode: 0775
         readOnly: true
-    # resources:
-    #   requests:
-    #     cpu: 1m
-    #     memory: 250Mi
-    #   limits:
-    #     memory: 2000Mi
+    resources:
+      requests:
+        cpu: 1m
+        memory: 250Mi
+      limits:
+        memory: 2000Mi

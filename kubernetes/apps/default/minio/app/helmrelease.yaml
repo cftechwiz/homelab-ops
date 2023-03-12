@@ -131,9 +131,9 @@ spec:
         enabled: true
         existingClaim: minio-nfs
         mountPath: /data
-    # resources:
-    #   requests:
-    #     memory: 100Mi
-    #     cpu: 10m
-    #   limits:
-    #     memory: 750Mi
+    resources:
+      requests:
+        memory: 100Mi
+        cpu: 10m
+      limits:
+        memory: 750Mi

@@ -33,8 +33,7 @@ spec:
           cpu: 10m
           memory: 145M
         limits:
-          memory:
-          cpu:
+          memory: 1024Mi
     dashboard:
       replicaCount: 1
       ingress:
@@ -56,5 +55,4 @@ spec:
           cpu: 10m
           memory: 64M
         limits:
-          memory:
-          cpu:
+          memory:512Mi

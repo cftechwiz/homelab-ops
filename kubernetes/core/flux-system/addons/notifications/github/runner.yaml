@@ -30,7 +30,6 @@ spec:
         image: kubops/github-runner:latest
         resources:
           limits:
-            cpu: 100m
             memory: 512Mi
           requests:
             memory: 128Mi
@@ -69,7 +68,6 @@ spec:
         resources:
           limits:
             memory: "1024Mi"
-            cpu: "100m"
           requests:
             memory: "512Mi"
             cpu: "10m"

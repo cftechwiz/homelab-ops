@@ -95,9 +95,9 @@ spec:
         path: /nfs/Media/Library/Music
         mountPath: /music
         readOnly: true
-    # resources:
-    #   requests:
-    #     cpu: 1m
-    #     memory: 250Mi
-    #   limits:
-    #     memory: 750Mi
+    resources:
+      requests:
+        cpu: 1m
+        memory: 250Mi
+      limits:
+        memory: 750Mi

@@ -93,9 +93,9 @@ spec:
         hostPathType: CharDevice
     nodeSelector:
       aeotec.feature.node.kubernetes.io/zwave: "true"
-    # resources:
-    #   requests:
-    #     cpu: 1m
-    #     memory: 100Mi
-    #   limits:
-    #     memory: 500Mi
+    resources:
+      requests:
+        cpu: 1m
+        memory: 100Mi
+      limits:
+        memory: 500Mi
