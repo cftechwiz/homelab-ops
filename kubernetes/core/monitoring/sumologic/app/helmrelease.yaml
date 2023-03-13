@@ -205,7 +205,7 @@ spec:
     opentelemetry-operator:
       enabled: true
       createDefaultInstrumentation: true
-      instrumentationNamespaces: "default"
+      instrumentationNamespaces: "default, demo"
     pvcCleaner:
       metrics:
         enabled: false
