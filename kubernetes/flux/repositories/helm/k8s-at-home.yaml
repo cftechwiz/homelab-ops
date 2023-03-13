@@ -7,4 +7,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 2h
-  url: hhttps://k8s-at-home.com/charts
+  url: https://k8s-at-home.com/charts
