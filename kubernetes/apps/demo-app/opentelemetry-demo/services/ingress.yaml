@@ -3,11 +3,10 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: demo.intra.falhalla.com
-
-spec:
-  ingressClassName: nginx
   annotations:
     hajimari.io/icon: mdi:monitor-share
+spec:
+  ingressClassName: nginx
   rules:
   - host: demo.intra.falhalla.com
     http:
