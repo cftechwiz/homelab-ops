@@ -40,7 +40,7 @@ spec:
         instrumentation.opentelemetry.io/inject-python: "true"
     image:
       repository: ghcr.io/home-assistant/home-assistant
-      tag: 2023.3.4@sha256:97ca847f710f1261cca0a4a6b196eaf07f0c1fc98a9e912604736db9d26f8f5c
+      tag: 2023.3.5@sha256:6821a143f3d1589db0ed007084139dc17eeeaf74a2c37df8b00ef6af4cfb8d4f
     env:
       TZ: America/Chicago
       POSTGRES_HOST: postgres-rw.default.svc.cluster.local
