@@ -31,7 +31,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/cfallwell/tautulli
-      tag: 2.12.1@sha256:b7c0c73d084b2a9bf08cdc5ac0c34f50a4b3a245d2687e3019a6ce7bee0e480d
+      tag: 2.12.2@sha256:58237984b105fab2df07caaaaae95ebc815bbecff61b7f0f0d8be07f38a001b5
     env:
       TZ: America/Chicago
     service:
