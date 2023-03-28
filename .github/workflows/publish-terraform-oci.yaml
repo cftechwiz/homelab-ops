@@ -25,14 +25,14 @@ jobs:
           private_key: "${{ secrets.BOT_APP_PRIVATE_KEY }}"
 
       - name: Checkout
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
         with:
           token: "${{ steps.generate-token.outputs.token }}"
           fetch-depth: 0
 
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@4e680e146a8e1b530a912f0a1fdc2f0ace7d1bb7 # v35.7.1
+        uses: tj-actions/changed-files@db5dd7c176cf59a19ef6561bf1936f059dee4b74 # v35.7.7
         with:
           dir_names: true
           dir_names_max_depth: 2
@@ -65,7 +65,7 @@ jobs:
           private_key: "${{ secrets.BOT_APP_PRIVATE_KEY }}"
 
       - name: Checkout
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
         with:
           token: "${{ steps.generate-token.outputs.token }}"
 

@@ -23,12 +23,12 @@ jobs:
           private_key: "${{ secrets.BOT_APP_PRIVATE_KEY }}"
 
       - name: Checkout
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3 # v3.5.0
         with:
           token: "${{ steps.generate-token.outputs.token }}"
 
       - name: Build docs
-        uses: docker://ghcr.io/bjw-s/mdbook:0.4.28@sha256:a8a45bc791374befc91e0936c4e2cb654b8e78b2beefb3c4d061e871ab94a83c
+        uses: docker://ghcr.io/bjw-s/mdbook:0.4.28@sha256:6355bdf6560b2f3be7aa9b69bd1635628225eb130919b697c291f06c8ae9730e
         with:
           args: mdbook build docs
 
