@@ -41,7 +41,7 @@ spec:
     image:
       repository: ghcr.io/authelia/authelia
       # TODO Switch to Authelia release tag on next release
-      tag: master@sha256:c321198b60c50c44bafeb34fdf268b702211147e52040762c5dd24cc3ed50460
+      tag: master@sha256:397ba3dea6872da9ed9db08366277aa96e221637fc477917c9cd8b45a4161f72
     args: ["--config", "/config/configuration.yml", "--config.experimental.filters", "expand-env"]
     envFrom:
       - secretRef:
