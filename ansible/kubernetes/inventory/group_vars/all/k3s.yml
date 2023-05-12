@@ -14,7 +14,7 @@ k3s_become: true
 k3s_debug: false
 # (bool) Enable etcd embedded datastore
 k3s_etcd_datastore: true
-k3s_registration_address: 172.16.0.254
+k3s_registration_address: 172.16.70.30
 k3s_use_unsupported_config: true
 k3s_registries:
   mirrors:
