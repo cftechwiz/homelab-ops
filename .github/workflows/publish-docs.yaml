@@ -28,7 +28,7 @@ jobs:
           token: "${{ steps.generate-token.outputs.token }}"
 
       - name: Build docs
-        uses: docker://ghcr.io/bjw-s/mdbook:0.4.28@sha256:69a32d44deb78da8fc27cfe9984fc6f7d6fc8c617a77d362a264db96017a6eba
+        uses: docker://ghcr.io/bjw-s/mdbook:0.4.28@sha256:1922be7fe6c517cb15b8bc09107027a7dd819194e7789f3310f184ef4271ff2a
         with:
           args: mdbook build docs
 

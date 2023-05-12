@@ -29,7 +29,7 @@ spec:
   values:
     image:
       repository: ghcr.io/cfallwell/unpackerr
-      tag: 0.11.1@sha256:cb5fca89cd431692ba85fbb75449dfcd2518e4fd97c10b54d7ba4421165146f6
+      tag: 0.11.1@sha256:26399ffd30f5e901fa164ec6e0d959d50757534dff273f0976a812a11a5345e7
     env:
       TZ: America/Chicago
       UN_SONARR_0_URL: http://sonarr.default.svc.cluster.local
