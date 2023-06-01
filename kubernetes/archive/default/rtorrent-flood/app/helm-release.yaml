@@ -33,7 +33,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/onedr0p/flood
-      tag: 4.7.0@sha256:aff594f9eacd395b6bc56901677bae905b461dea7e0071b2c905b6c773093768
+      tag: 4.7.0@sha256:8b8c1aeea893025b84518fc7758aa80e8e04020f33ea5a00fa387d66f06294bb
     env:
       TZ: America/Chicago
       FLOOD_OPTION_auth: "none"
