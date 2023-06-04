@@ -30,7 +30,7 @@ metadata:
   namespace: flux-system
   labels:
     substitution.flux.home.arpa/enabled: "true"
-spetask ansible:nukec:
+spec:
   dependsOn:
     - name: cluster-apps-rook-ceph
   path: ./kubernetes/apps/rook-ceph/rook-ceph/cluster
