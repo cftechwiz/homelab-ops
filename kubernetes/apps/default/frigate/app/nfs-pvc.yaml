@@ -10,7 +10,7 @@ spec:
   accessModes: ["ReadWriteMany"]
   persistentVolumeReclaimPolicy: Retain
   nfs:
-    server: falhallanas.lab
+    server: falhallanas.falhalla.lab
     path: /nfs/Apps/Frigate
   # Note: The first two options are strictly for NFSv4.2
   mountOptions: ["nfsvers=4.2", "nconnect=8", "hard", "noatime"]

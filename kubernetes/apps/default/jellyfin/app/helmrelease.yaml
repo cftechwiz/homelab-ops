@@ -78,7 +78,7 @@ spec:
       media:
         enabled: true
         type: nfs
-        server: falhallanas.lab
+        server: falhallanas.falhalla.lab
         path: /nfs/Media
         mountPath: /media
         readOnly: true

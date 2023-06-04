@@ -77,7 +77,7 @@ spec:
       complete:
         enabled: true
         type: nfs
-        server: falhallanas.lab
+        server: falhallanas.falhalla.lab
         path: /nfs/Media/Downloads/qbittorrent/complete
         mountPath: /complete
     resources:

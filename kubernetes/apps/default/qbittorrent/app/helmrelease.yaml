@@ -93,13 +93,13 @@ spec:
       downloads:
         enabled: true
         type: nfs
-        server: falhallanas.lab
+        server: falhallanas.falhalla.lab
         path: /nfs/Downloads
         mountPath: /downloads
       media:
         enabled: true
         type: nfs
-        server: falhallanas.lab
+        server: falhallanas.falhalla.lab
         path: /nfs/Media
         mountPath: /media
       incomplete:
