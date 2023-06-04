@@ -43,7 +43,7 @@ jobs:
 
       - name: Get changed files
         id: changed-files
-        uses: tj-actions/changed-files@5a331a4999f9f21a3ef2a6459edee90393a8b92a # v35.5.5
+        uses: tj-actions/changed-files@b2d17f51244a144849c6b37a3a6791b98a51d86f # v35.9.2
         with:
           files: |
             kubernetes/**/helmrelease.yaml
