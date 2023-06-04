@@ -38,20 +38,20 @@ provider "registry.terraform.io/datadrivers/nexus" {
 }
 
 provider "registry.terraform.io/hashicorp/kubernetes" {
-  version     = "2.18.0"
-  constraints = "2.18.0"
+  version     = "2.21.0"
+  constraints = "2.21.0"
   hashes = [
-    "h1:3YX+zbXcer0lYgDVB6TxBCkgdx9AvtabqyRqdUPSRj4=",
-    "h1:42iWPnVHQYjopA83W35BxsWmhBnfycUZV3ThuAVmP4s=",
-    "h1:EKU7HMvXEORi/2AhPgps41lrARkEZqOAVI7ve1Y6QP8=",
-    "h1:G8Ab241HvkcGZ/d5LeWgIarxLYpa3ovv4W2Bxc9y3Ko=",
-    "h1:GREBMrbNpCcyey+l31ksZe6nGgbMHy3QLJN5ezbbf7g=",
-    "h1:H81uBnhN5NDpFrZ39Q9mEIY2bcjZv9oyT4+BlQgeFzM=",
-    "h1:SQfBL8eRvkJ2APTHSWP/rMPPlOESb4F5LSZNSqIQ/Lk=",
-    "h1:Uj7CXaHY99d06Izn43A3OFDuYJyhTE0nuI62sGxuT0Q=",
-    "h1:c2jabnZjZzHyh3nS3FFqMqNLeuy0hxEM32aEQFNEFLA=",
-    "h1:sdvkDFh9ZZUE4aJ03Y9s77jS8cxfTAnBXVymxWKPzTg=",
-    "h1:xYhwDBDSznW9a6EnAPmaPyJxQl05ucnkaxzrNCOG/KM=",
+    "h1:09MAwpWKU5Phg8qLowe0P5vt0L6FSMWDa5rjUZBzlkA=",
+    "h1:2r5dhGHKkC70eHPUZXIipj6hkAAjHX+sKSYsI+y5K9I=",
+    "h1:IJmvD0Ok9EZUMXm29TXV1xIzH4wuH61XRge6PsZfyk4=",
+    "h1:K8p+L+NVQ+D/st1Khv94J3udp1EX8jM7Pth1a6Al0Ww=",
+    "h1:M/x1Ud+gHQQeCNGcNf4aidwvEBv2oNCl9mw/A5S4lFU=",
+    "h1:Ue9pm7z33+vezNo5dwN81tmGz6yADFWaD/dTGNaj0A0=",
+    "h1:VBBI1FvLe3sGDU8kZnSTfClnPdgxOg4i7lrvvNAYQQI=",
+    "h1:W29/nOK0xn7IFomP4XpCXuCQ97K7/6GB+a6OPfa+hKo=",
+    "h1:o9NatajMSigifst8kMCilCc4vxjitvchzTm96HM9tXI=",
+    "h1:p7jWJXy25zIiWYijal+vhYLwHX67GeUnLe91rw9ZG6M=",
+    "h1:zYLjyvnKchYdfMQqb3m8QIpcwScFt+WxKH7wXICidQ0=",
   ]
 }
 
