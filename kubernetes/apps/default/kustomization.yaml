@@ -7,7 +7,7 @@ resources:
   - ./namespace.yaml
   # Flux-Kustomizations
   - ./audiobookshelf/ks.yaml
-  - ./authelia/ks.yaml
+  # - ./authelia/ks.yaml
   # - ./bazarr/ks.yaml
   - ./changedetection/ks.yaml
   - ./cloudnative-pg/ks.yaml
@@ -24,7 +24,7 @@ resources:
   # - ./lidarr/ks.yaml
   # - ./media-browser/ks.yaml
   # - ./miniflux/ks.yaml
-  - ./minio/ks.yaml
+  # - ./minio/ks.yaml
   - ./n8n/ks.yaml
   # - ./navidrome/ks.yaml
   # - ./overseerr/ks.yaml
