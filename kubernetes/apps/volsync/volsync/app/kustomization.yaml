@@ -10,3 +10,5 @@ labels:
   - pairs:
       app.kubernetes.io/name: volsync
       app.kubernetes.io/instance: volsync
+      app.kubernetes.io/managed-by: Helm
+      meta.helm.sh/release-namespace: volsync
