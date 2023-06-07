@@ -1,10 +1,10 @@
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/helmrepository_v1beta2.json
 apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: OCIRepository
+kind: HelmRepository
 metadata:
   name: pulse-prysm
   namespace: flux-system
 spec:
   interval: 2h
-  url: oci://cfallwell.github.io/pulse-prysm-helm/
+  url: https://cfallwell.github.io/pulse-prysm-helm/
