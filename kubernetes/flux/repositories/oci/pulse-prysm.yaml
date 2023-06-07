@@ -7,4 +7,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 2h
-  url: oci://cfallwell.github.io/helm-charts
+  url: oci://cfallwell.github.io/pulse-prysm-helm/
