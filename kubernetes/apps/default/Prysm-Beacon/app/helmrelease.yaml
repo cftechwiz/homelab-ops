@@ -57,11 +57,10 @@ spec:
       - name: data
         mountPath: /blockchain
         accessMode: ReadWriteOnce
-        size: 800G
+        size: 100Gi
         storageClass: ceph-filesystem
         labels:
           snapshot.home.arpa/enabled: "true"
-    persistence:
     metrics:
       enabled: true
     nodeConfigDir: "/config"
