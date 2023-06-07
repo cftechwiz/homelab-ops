@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.3.1
+      version: 1.5.1
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -28,8 +28,13 @@ spec:
     keepHistory: false
   values:
     image:
+<<<<<<< HEAD
       repository: ghcr.io/cfallwell/unpackerr
       tag: 0.10.1@sha256:56fa7f83c15de614b43825c0d50fd2179c611019576ecba4fcd53f459f5fa2b7
+=======
+      repository: ghcr.io/onedr0p/unpackerr
+      tag: 0.11.2@sha256:05db8faac039716d8dc209023a30d30c9e73c2faf4e7fc092dfb1a70fa6f4c94
+>>>>>>> c2e4348be42073ebec6394cf38f7b885e36d9fd1
     env:
       TZ: America/Chicago
       UN_SONARR_0_URL: http://sonarr.default.svc.cluster.local
