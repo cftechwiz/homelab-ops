@@ -30,7 +30,7 @@ resources:
   # - ./overseerr/ks.yaml
   # - ./plex/ks.yaml
   # - ./prowlarr/ks.yaml
-  #- ./Prysm-Beacon/ks.yaml
+  - ./Prysm-Beacon/ks.yaml
   # - ./qbittorrent/ks.yaml
   # - ./radarr/ks.yaml
   # - ./recyclarr/ks.yaml
