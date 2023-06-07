@@ -29,11 +29,7 @@ spec:
   values:
     initContainers:
       init-db:
-<<<<<<< HEAD
         image: ghcr.io/cfallwell/postgres-initdb:14.7
-=======
-        image: ghcr.io/onedr0p/postgres-initdb:14.8
->>>>>>> c2e4348be42073ebec6394cf38f7b885e36d9fd1
         envFrom:
           - secretRef:
               name: semaphore-secret
