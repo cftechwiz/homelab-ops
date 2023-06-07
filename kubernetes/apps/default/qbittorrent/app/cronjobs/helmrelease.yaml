@@ -36,7 +36,7 @@ spec:
         schedule: "@hourly"
     restartPolicy: OnFailure
     image:
-      repository: ghcr.io/onedr0p/qbittorrent-scripts
+      repository: ghcr.io/cfallwell/qbittorrent-scripts
       tag: v1.0.3@sha256:96232a288c6d3a84f63b09ed49c6a2a01f48ffcc2bd17ee353583bf2f9495099
       env:
         QB_HOST: http://qbittorrent:80

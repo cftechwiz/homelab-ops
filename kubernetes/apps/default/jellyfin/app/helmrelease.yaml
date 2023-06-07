@@ -30,7 +30,7 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/onedr0p/jellyfin
+      repository: ghcr.io/cfallwell/jellyfin
       tag: 10.8.9@sha256:ed845a77d7923e8bbfdb8a4eef125d41b6e5e3b2799668369464fe58ca980fd0
     env:
       TZ: America/Chicago

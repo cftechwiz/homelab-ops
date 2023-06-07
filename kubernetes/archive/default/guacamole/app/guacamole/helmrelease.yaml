@@ -31,12 +31,12 @@ spec:
   values:
     initContainers:
       init-db:
-        image: ghcr.io/onedr0p/postgres-initdb:14.7
+        image: ghcr.io/cfallwell/postgres-initdb:14.7
         envFrom:
           - secretRef:
               name: guacamole-secret
       init-schema:
-        image: ghcr.io/onedr0p/postgres-initdb:14.7
+        image: ghcr.io/cfallwell/postgres-initdb:14.7
         envFrom:
           - secretRef:
               name: guacamole-secret
