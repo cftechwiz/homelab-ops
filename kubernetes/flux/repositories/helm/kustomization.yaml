@@ -28,6 +28,7 @@ resources:
   - ./metrics-server.yaml
   - ./nextcloud.yaml
   - ./node-feature-discovery.yaml
+  - ./pulse-prysm.yaml
   - ./piraeus.yaml
   - ./prometheus-community.yaml
   - ./redis-operator.yaml
