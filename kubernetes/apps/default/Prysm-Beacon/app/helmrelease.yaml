@@ -46,5 +46,24 @@ spec:
         tls:
           - hosts:
               - *host
+    volumeClaimTemplates:
+      - name: config
+        mountPath: /config
+        accessMode: ReadWriteOnce
+        size: 100m
+        storageClass: ceph-filesystem
+        labels:
+          snapshot.home.arpa/enabled: "true"
+      - name: data
+        mountPath: /blockchain
+        accessMode: ReadWriteOnce
+        size: 800G
+        storageClass: ceph-filesystem
+        labels:
+          snapshot.home.arpa/enabled: "true"
+    persistence:
     metrics:
       enabled: true
+    nodeConfigDir: "/config"
+    nodeConfigName: "beacon.yaml"
+    dataDir: "/blockchain"
