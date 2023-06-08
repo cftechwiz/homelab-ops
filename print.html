@@ -118,7 +118,7 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        <a href="https://github.com/cfallwell/homelab-ops" title="Git repository" aria-label="Git repository">
+                        <a href="https://github.com/cftechwiz/homelab-ops" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
 
@@ -621,7 +621,7 @@ spec:
 <p>Big shout out to all the authors and contributors to the projects that we are using in this repository.</p>
 <p>Community member @Whazor created <a href="https://whazor.github.io/k8s-at-home-search/">this website</a> as a creative way to search Helm Releases across GitHub. You may use it as a means to get ideas on how to configure an applications' Helm values.</p>
 <p>Many people have shared their awesome repositories over at <a href="https://github.com/k8s-at-home/awesome-home-kubernetes">awesome-home-kubernetes</a>.</p>
-<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/introduction.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="nas"><a class="header" href="#nas">NAS</a></h1>
+<footer id="open-on-gh"><a href="https://github.com/cftechwiz/homelab-ops/edit/main/docs/src/introduction.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="nas"><a class="header" href="#nas">NAS</a></h1>
 <p>Outside of using <a href="https://github.com/ansible/ansible">Ansible</a> for configuring the OS, there are some manual steps I did to set it up.</p>
 <h2 id="zfs"><a class="header" href="#zfs">ZFS</a></h2>
 <h3 id="mirrored-zpool"><a class="header" href="#mirrored-zpool">Mirrored Zpool</a></h3>
@@ -739,7 +739,7 @@ sudo chown -R colin:users /share/PVCs
 </code></pre>
 <h3 id="lenovo-sa120"><a class="header" href="#lenovo-sa120">Lenovo SA120</a></h3>
 <p>Due to the loudness of the fans, they can be adjusted by using <ins><a href="https://github.com/AndrewX192/lenovo-sa120-fanspeed-utility.git">AndrewX192/lenovo-sa120-fanspeed-utility</a></ins>.</p>
-<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/notes/nas.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="opnsense"><a class="header" href="#opnsense">Opnsense</a></h1>
+<footer id="open-on-gh"><a href="https://github.com/cftechwiz/homelab-ops/edit/main/docs/src/notes/nas.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="opnsense"><a class="header" href="#opnsense">Opnsense</a></h1>
 <h2 id="bgp"><a class="header" href="#bgp">BGP</a></h2>
 <p>Instead of using Metallb for L2/L3 load balancer IPs I am using the Kubernetes Calico CNI with BGP which allows me to advertise load balancer IPs directly over BGP. This has some benefits like having equal cost multipath (ECMP) for scaled workloads in my cluster.</p>
 <ol>
@@ -951,7 +951,7 @@ Threads bound to CPUs          enabled          n/a
 </code></pre>
 </li>
 </ol>
-<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/notes/opnsense.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="pikvm"><a class="header" href="#pikvm">PiKVM</a></h1>
+<footer id="open-on-gh"><a href="https://github.com/cftechwiz/homelab-ops/edit/main/docs/src/notes/opnsense.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="pikvm"><a class="header" href="#pikvm">PiKVM</a></h1>
 <h2 id="update-pikvm"><a class="header" href="#update-pikvm">Update PiKVM</a></h2>
 <pre><code class="language-sh">rw; pacman -Syyu
 reboot
@@ -1187,7 +1187,7 @@ systemctl start promtail.service
 </code></pre>
 </li>
 </ol>
-<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/notes/pikvm.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="proxmox-considerations"><a class="header" href="#proxmox-considerations">Proxmox Considerations</a></h1>
+<footer id="open-on-gh"><a href="https://github.com/cftechwiz/homelab-ops/edit/main/docs/src/notes/pikvm.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="proxmox-considerations"><a class="header" href="#proxmox-considerations">Proxmox Considerations</a></h1>
 <p>I am using bare metal nodes but here's some considerations when using Kubernetes on Proxmox. These are just my opinions gathered from experiance I've witnessed first or second hand. I will always <strong>advocate for bare metal Kubernetes</strong> due to the overhead of VMs and disk concerns, however following along below will net you a very stable Kubernetes cluster on PVE.</p>
 <div id="admonition-warning" class="admonition warning">
 <div class="admonition-title">
@@ -1230,7 +1230,7 @@ systemctl start promtail.service
 </li>
 <li>Instead of Longhorn, consider setting up a <ins><a href="https://pve.proxmox.com/wiki/Deploy_Hyper-Converged_Ceph_Cluster">Ceph cluster on your PVE nodes</a></ins> and use <ins><a href="https://rook.io/docs/rook/v1.10/CRDs/Cluster/external-cluster/">Rook to consume it</a></ins> for stateful applications. Due to the way Ceph works in this scenerio, it is fine to use HDDs over SSDs or NVMe here.</li>
 </ol>
-<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/notes/proxmox-considerations.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="s3-buckets"><a class="header" href="#s3-buckets">S3 buckets</a></h1>
+<footer id="open-on-gh"><a href="https://github.com/cftechwiz/homelab-ops/edit/main/docs/src/notes/proxmox-considerations.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="s3-buckets"><a class="header" href="#s3-buckets">S3 buckets</a></h1>
 <p>Alternatively creating s3 buckets can be automated with Terraform.</p>
 <h2 id="b2"><a class="header" href="#b2">b2</a></h2>
 <div id="admonition-info" class="admonition info">
@@ -1417,7 +1417,7 @@ EOF
 <h3 id="sharing-an-object-in-a-bucket"><a class="header" href="#sharing-an-object-in-a-bucket">Sharing an object in a bucket</a></h3>
 <pre><code class="language-sh">mc share download --expire=7d &quot;minio/&lt;bucket-name&gt;/&lt;file&gt;.&lt;ext&gt;&quot; --json  | jq -r .share | pbcopy
 </code></pre>
-<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/notes/s3-buckets.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="secret-variations-with-flux"><a class="header" href="#secret-variations-with-flux">Secret variations with Flux</a></h1>
+<footer id="open-on-gh"><a href="https://github.com/cftechwiz/homelab-ops/edit/main/docs/src/notes/s3-buckets.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="secret-variations-with-flux"><a class="header" href="#secret-variations-with-flux">Secret variations with Flux</a></h1>
 <p>There are several different ways to utilize Kubernetes secrets when using <ins><a href="https://fluxcd.io/">Flux</a></ins> and <ins><a href="https://github.com/mozilla/sops">SOPS</a></ins>, here’s a breakdown of some common methods.</p>
 <p><em>I will not be covering how to integrate SOPS into Flux for that be sure to check out the <ins><a href="https://fluxcd.io/docs/guides/mozilla-sops/">Flux documentation on integrating SOPS</a></ins></em></p>
 <h2 id="example-secret"><a class="header" href="#example-secret">Example Secret</a></h2>
@@ -1545,7 +1545,7 @@ spec:
 <p>The last method should be used when all other methods are not an option, or used when you have a “global” secret used by a bunch of YAML manifests.</p>
 </li>
 </ul>
-<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/notes/secret-variations-with-flux.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="yaml-madness"><a class="header" href="#yaml-madness">YAML Madness</a></h1>
+<footer id="open-on-gh"><a href="https://github.com/cftechwiz/homelab-ops/edit/main/docs/src/notes/secret-variations-with-flux.md">Edit this page on GitHub</a></footer><div style="break-before: page; page-break-before: always;"></div><h1 id="yaml-madness"><a class="header" href="#yaml-madness">YAML Madness</a></h1>
 <p>YAML aliases, anchors and overrides are a great way to keep your manifests DRY (<strong>D</strong>o not <strong>R</strong>epeat <strong>Y</strong>ourself) but only on a very basic level.</p>
 <h2 id="anchors-and-aliases"><a class="header" href="#anchors-and-aliases">Anchors and Aliases</a></h2>
 <div id="admonition-note" class="admonition note">
@@ -1618,7 +1618,7 @@ spec:
 <li>You absolutely cannot concat, or do any advanced string functions on anchors, aliases or overrides.</li>
 <li>Try to make sure your YAML is comprehensible, don't get hung up on making DRY an absolute rule to follow.</li>
 </ul>
-<footer id="open-on-gh"><a href="https://github.com/cfallwell/homelab-ops/edit/main/docs/src/notes/yaml-madness.md">Edit this page on GitHub</a></footer>
+<footer id="open-on-gh"><a href="https://github.com/cftechwiz/homelab-ops/edit/main/docs/src/notes/yaml-madness.md">Edit this page on GitHub</a></footer>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
