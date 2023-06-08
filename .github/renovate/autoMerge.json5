@@ -9,7 +9,7 @@
       "automergeStrategy": "auto",
       "ignoreTests": true,
       "matchUpdateTypes": ["digest"],
-      "matchPackagePattern": ["ghcr.io/cfallwell"]
+      "matchPackagePattern": ["ghcr.io/cftechwiz"]
     },
     {
       "description": "Auto merge containers",
@@ -19,7 +19,7 @@
       "automergeStrategy": "auto",
       "ignoreTests": true,
       "matchUpdateTypes": ["minor", "patch"],
-      "matchPackageNames": ["ghcr.io/cfallwell/prowlarr-nightly"]
+      "matchPackageNames": ["ghcr.io/cftechwiz/prowlarr-nightly"]
     },
     {
       "description": "Auto merge GitHub Actions",
