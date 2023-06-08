@@ -29,7 +29,6 @@ spec:
   values:
     initContainers:
       init-db:
-
         image: ghcr.io/cftechwiz/postgres-initdb:14.7
         envFrom:
           - secretRef:
@@ -40,7 +39,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: docker.io/n8nio/n8n
-      tag: 0.215.2
+      tag: 0.232.0
     env:
       GENERIC_TIMEZONE: America/Chicago
       TZ: America/Chicago

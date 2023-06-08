@@ -32,6 +32,7 @@ spec:
     initContainers:
       init-db:
         image: ghcr.io/cftechwiz/postgres-initdb:14.7
+
         envFrom:
           - secretRef:
               name: guacamole-secret
