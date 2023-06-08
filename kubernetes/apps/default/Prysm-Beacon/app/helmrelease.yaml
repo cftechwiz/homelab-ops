@@ -46,19 +46,19 @@ spec:
         tls:
           - hosts:
               - *host
-    volumeClaimTemplates:
+    PersistentVolume:
       - name: config
         mountPath: /config
         accessMode: ReadWriteOnce
         size: 100m
-        storageClass: ceph-filesystem
+        storageClass: ceph-block
         labels:
           snapshot.home.arpa/enabled: "true"
       - name: data
         mountPath: /blockchain
         accessMode: ReadWriteOnce
         size: 100Gi
-        storageClass: ceph-filesystem
+        storageClass: ceph-block
         labels:
           snapshot.home.arpa/enabled: "true"
     metrics:
