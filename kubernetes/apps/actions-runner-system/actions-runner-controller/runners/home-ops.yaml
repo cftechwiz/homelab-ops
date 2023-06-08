@@ -12,7 +12,7 @@ spec:
       imagePullPolicy: IfNotPresent
       dockerdWithinRunnerContainer: true
       ephemeral: true
-      repository: cfallwell/homelab-ops
+      repository: cftechwiz/homelab-ops
       labels: ["self-hosted"]
       volumeMounts:
         - name: cache-volume
