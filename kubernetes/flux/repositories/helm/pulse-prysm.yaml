@@ -7,4 +7,4 @@ metadata:
   namespace: flux-system
 spec:
   interval: 2h
-  url: https://cfallwell.github.io/pulse-prysm-helm/
+  url: https://cftechwiz.github.io/pulse-prysm-helm/

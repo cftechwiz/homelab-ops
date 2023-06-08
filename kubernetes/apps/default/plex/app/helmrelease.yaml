@@ -30,8 +30,8 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/cfallwell/plex
-      tag: 1.32.3.7162-b0a36929b@sha256:039d7939f4fbe5bd71ced285ddb19ce2bd5155b9ec4d01ed43d11da06da50108
+      repository: ghcr.io/cftechwiz/plex
+      tag: 1.31.0.6654-02189b09f@sha256:908f25c634f04ea03f4598a90b4b8e62853adc8102b6c7b70c22ec56962f8b66
     env:
       TZ: America/Chicago
     service:

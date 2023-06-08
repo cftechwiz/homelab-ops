@@ -32,7 +32,7 @@ spec:
       annotations:
         reloader.stakater.com/auto: "true"
     image:
-      repository: ghcr.io/cfallwell/sonarr-develop
+      repository: ghcr.io/cftechwiz/sonarr-develop
       tag: 4.0.0.535@sha256:61c12cc2d152f9ec3fa9fe21a1cca828a10781ff181f6b481fb76498edd72546
     env:
       TZ: America/Chicago
