@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: vpa
-      version: 1.6.1
+      version: 1.7.5
       sourceRef:
         kind: HelmRepository
         name: fairwinds
@@ -30,7 +30,7 @@ spec:
     recommender:
       enabled: true
       image:
-        repository: k8s.gcr.io/autoscaling/vpa-recommender
+        repository: registry\.k8s\.io/autoscaling/vpa-recommender
         tag: 0.13.0
       resources:
         requests:

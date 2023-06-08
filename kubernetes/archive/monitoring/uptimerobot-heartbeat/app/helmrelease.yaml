@@ -34,8 +34,8 @@ spec:
         schedule: "* * * * *"
     restartPolicy: OnFailure
     image:
-      repository: ghcr.io/cfallwell/kubernetes-kubectl
-      tag: 1.27.2@sha256:e4e2972cc4e941f3fc2ecd7d4b00df457c3c9bae93773c24911297b5f6b17565
+      repository: ghcr.io/cftechwiz/kubernetes-kubectl
+      tag: 1.26.1@sha256:1ad7bc0bfab00c9f616112fa355833ae35b9f335d113af2da893eb2e8494271c
     command: ["/bin/bash", "/app/uptimerobot-heartbeat.sh"]
     envFrom:
       - secretRef:
