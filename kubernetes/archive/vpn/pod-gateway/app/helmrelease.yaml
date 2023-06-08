@@ -43,7 +43,7 @@ spec:
         image:
           # TODO: Replace with ghcr.io/qdm12/gluetun when a versioned tag is available
           repository: docker.io/qmcgaw/gluetun
-          tag: v3.32.0
+          tag: v3.34.3
         env:
           - name: VPN_SERVICE_PROVIDER
             value: mullvad
@@ -101,4 +101,4 @@ spec:
       gatewayDefault: false
       image:
         repository: ghcr.io/angelnu/gateway-admision-controller
-        tag: v3.7.0
+        tag: v3.9.0
