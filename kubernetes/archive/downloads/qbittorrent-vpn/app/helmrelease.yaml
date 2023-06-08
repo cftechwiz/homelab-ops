@@ -30,7 +30,7 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/cfallwell/qbittorrent
+      repository: ghcr.io/cftechwiz/qbittorrent
       tag: 4.5.1@sha256:754ef0663ef61704b058d73b94775c6e9863e86257d1785397bf9211945c6002
     env:
       TZ: America/Chicago
