@@ -36,7 +36,7 @@ spec:
         schedule: "@hourly"
     restartPolicy: OnFailure
     image:
-      repository: ghcr.io/cfallwell/jbops
+      repository: ghcr.io/cftechwiz/jbops
       tag: 1.0.890@sha256:913da95041b300345b1860a5ebfaa0f6e975ae2bc03d472ef3375f24c72e8cad
     args: ["/entrypoint.sh", "--playlists", "Smart Toons"]
     env:
