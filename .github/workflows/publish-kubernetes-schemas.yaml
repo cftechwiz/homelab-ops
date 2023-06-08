@@ -71,7 +71,7 @@ jobs:
 
       - name: Publish schemas as OCI
         run: |
-          flux push artifact oci://ghcr.io/cfallwell/kubernetes-schemas-oci:latest \
+          flux push artifact oci://ghcr.io/cftechwiz/kubernetes-schemas-oci:latest \
               --path="/home/runner/.datree/crdSchemas" \
               --source="${{ github.repositoryUrl }}" \
               --revision="main"
@@ -96,5 +96,5 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           labels: |
-            org.opencontainers.image.source="https://github.com/cfallwell/homelab-ops"
+            org.opencontainers.image.source="https://github.com/cftechwiz/homelab-ops"
             org.opencontainers.image.authors="Colin Fallwell <colinfallwell@gmail.com>"
