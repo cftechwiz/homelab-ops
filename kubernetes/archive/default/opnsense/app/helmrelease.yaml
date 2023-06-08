@@ -34,7 +34,7 @@ spec:
         schedule: "@daily"
     restartPolicy: OnFailure
     image:
-      repository: ghcr.io/cfallwell/alpine
+      repository: ghcr.io/cftechwiz/alpine
       tag: 3.17.2@sha256:4e256e77366cbea00404a0e79831fc902cfb3c1c8d913f45a3fe0293c885acc3
     command: ["/bin/bash", "/app/opnsense-backup.sh"]
     env:
