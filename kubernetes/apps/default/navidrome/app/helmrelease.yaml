@@ -33,7 +33,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/cftechwiz/navidrome
-      tag: 0.49.3@sha256:5ce3d0c20b1c8bac22f8644edf18e4fd85a49fc41f1c9ad07171a1625dc2a21b
+      tag: 0.49.3@sha256:2513fb78ab8e87b6e618bbcf42a635c7266685cf8c3b061ff4e16297a7c259ac
     env:
       TZ: America/Chicago
       ND_DATAFOLDER: /config
