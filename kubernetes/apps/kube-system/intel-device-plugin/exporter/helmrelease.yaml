@@ -30,7 +30,7 @@ spec:
     controller:
       type: daemonset
     image:
-      repository: ghcr.io/cfallwell/intel-gpu-exporter
+      repository: ghcr.io/cftechwiz/intel-gpu-exporter
       tag: rolling@sha256:4cd82687d0c8afbfa318220f01e762949a967537a2e087b5ea525a329261cd4f
     service:
       main:
