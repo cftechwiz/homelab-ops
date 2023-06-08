@@ -34,7 +34,7 @@ spec:
         schedule: "@hourly"
     restartPolicy: OnFailure
     image:
-      repository: ghcr.io/cfallwell/kubernetes-kubectl
+      repository: ghcr.io/cftechwiz/kubernetes-kubectl
       tag: 1.26.1@sha256:1ad7bc0bfab00c9f616112fa355833ae35b9f335d113af2da893eb2e8494271c
     command: ["/bin/bash", "/app/cloudflare-ddns.sh"]
     envFrom:

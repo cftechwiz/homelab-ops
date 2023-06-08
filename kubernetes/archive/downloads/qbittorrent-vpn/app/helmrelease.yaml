@@ -30,8 +30,8 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/cfallwell/qbittorrent
-      tag: 4.5.3@sha256:60094c679b2cb58ca112a4c3498bcbcf6f45396727d1baa2d8841bf60c5160aa
+      repository: ghcr.io/cftechwiz/qbittorrent
+      tag: 4.5.1@sha256:754ef0663ef61704b058d73b94775c6e9863e86257d1785397bf9211945c6002
     env:
       TZ: America/Chicago
       QBITTORRENT__PORT: &port 80

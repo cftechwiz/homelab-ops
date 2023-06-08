@@ -30,7 +30,7 @@ spec:
     controller:
       type: statefulset
     image:
-      repository: ghcr.io/cfallwell/sabnzbd
+      repository: ghcr.io/cftechwiz/sabnzbd
       tag: 3.7.2@sha256:cbc7bdb5c70c75dc07eb7c2f967dfb74c48c4cf2531c28e81cff8d72f76cfc8c
     env:
       TZ: America/Chicago

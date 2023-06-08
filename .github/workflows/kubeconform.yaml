@@ -41,7 +41,7 @@ jobs:
       - name: Download CRDs
         run: |
           mkdir -p ${{ env.SCHEMA_DIR }}
-          flux pull artifact oci://ghcr.io/cfallwell/kubernetes-schemas-oci:latest \
+          flux pull artifact oci://ghcr.io/cftechwiz/kubernetes-schemas-oci:latest \
               --output=${{ env.SCHEMA_DIR }}
 
       - name: Run kubeconform
