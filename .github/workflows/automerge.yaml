@@ -6,9 +6,6 @@ on:
   pull_request_review:
     types:
       - submitted
-  check_suite:
-    types:
-      - completed
   status: {}
 jobs:
   automerge:
@@ -30,3 +27,7 @@ jobs:
           UPDATE_LABELS: ""
           UPDATE_METHOD: "rebase"
           PULL_REQUEST: "1234"
+      - name: feedback
+        if: steps.automerge.outputs.mergeResult == "merged"
+        run: |
+          echo "Pull request ${{ steps.automerge.outputs.pullRequestNumber }} merged!"
