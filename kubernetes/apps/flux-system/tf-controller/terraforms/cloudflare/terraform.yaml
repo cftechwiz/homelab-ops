@@ -7,7 +7,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1m
-  url: oci://ghcr.io/cfallwell/terraform-cloudflare-oci
+  url: oci://ghcr.io/cftechwiz/terraform-cloudflare-oci
   ref:
     tag: main
   verify:
