@@ -12,7 +12,7 @@ images:
 commonLabels:
   app.kubernetes.io/name: system-upgrade-controller
   app.kubernetes.io/instance: system-upgrade-controller
-patchesStrategicMerge:
+patches:
   - |
     $patch: delete
     apiVersion: v1

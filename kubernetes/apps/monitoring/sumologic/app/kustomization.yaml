@@ -8,5 +8,5 @@ resources:
   - ./helmrelease.yaml
   - ./secrets.sops.yaml
 
-# patchesStrategicMerge:
+# patches:
   # - ./patches/env.yaml

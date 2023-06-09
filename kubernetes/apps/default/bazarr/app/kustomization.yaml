@@ -6,5 +6,5 @@ namespace: default
 resources:
   - ./helmrelease.yaml
   - ./volsync.yaml
-patchesStrategicMerge:
+patches:
   - ./patches/subcleaner.yaml

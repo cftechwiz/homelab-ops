@@ -5,7 +5,7 @@ kind: Kustomization
 namespace: default
 resources:
   - helm-release.yaml
-patchesStrategicMerge:
+patches:
   - patches/rtorrent.yaml
 configMapGenerator:
   - name: rtorrent-flood-configmap
