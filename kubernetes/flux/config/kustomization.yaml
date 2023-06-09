@@ -5,4 +5,4 @@ kind: Kustomization
 resources:
   - ./flux.yaml
   - ./cluster.yaml
-  - ./crd/kustomize.yaml
+  - ./bundle.yaml
