@@ -9,7 +9,7 @@ terraform {
   required_providers {
     kubernetes = {
       source  = "hashicorp/kubernetes"
-      version = "2.21.1"
+      version = "2.22.0"
     }
     nexus = {
       source  = "datadrivers/nexus"
