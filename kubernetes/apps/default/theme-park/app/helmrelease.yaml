@@ -32,7 +32,7 @@ spec:
       strategy: RollingUpdate
     image:
       repository: ghcr.io/cftechwiz/theme-park
-      tag: 1.13.9@sha256:30462d678b867cec6b0dda27372fc180e6a5163e5d5f838f1cc05b1dd8f42238
+      tag: 1.13.9@sha256:5b1d775128f40cd5d32bdfa29ad491f8bee2c624a205df643aa0f5eaf6376faf
     service:
       main:
         ports:
