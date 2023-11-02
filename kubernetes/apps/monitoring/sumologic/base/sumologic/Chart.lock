@@ -1,0 +1,24 @@
+dependencies:
+- name: fluent-bit
+  repository: https://fluent.github.io/helm-charts
+  version: 0.34.2
+- name: kube-prometheus-stack
+  repository: https://prometheus-community.github.io/helm-charts
+  version: 40.5.0
+- name: falco
+  repository: https://falcosecurity.github.io/charts
+  version: 3.3.0
+- name: metrics-server
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.4.3
+- name: telegraf-operator
+  repository: https://helm.influxdata.com/
+  version: 1.3.11
+- name: tailing-sidecar-operator
+  repository: https://sumologic.github.io/tailing-sidecar
+  version: 0.8.0
+- name: opentelemetry-operator
+  repository: https://open-telemetry.github.io/opentelemetry-helm-charts
+  version: 0.33.0
+digest: sha256:ba119c4faf1550dd890ff923e0aef4b9248465ca596869fdf8f6e596799a9fc6
+generated: "2023-07-28T11:10:36.629290455Z"

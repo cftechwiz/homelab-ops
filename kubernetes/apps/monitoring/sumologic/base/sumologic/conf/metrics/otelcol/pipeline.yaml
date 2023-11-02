@@ -1,0 +1,33 @@
+exporters:
+  - sumologic/default
+  - sumologic/apiserver
+  - sumologic/control_plane
+  - sumologic/controller
+  - sumologic/kubelet
+  - sumologic/node
+  - sumologic/scheduler
+  - sumologic/state
+processors:
+  - memory_limiter
+  - metricstransform
+  - groupbyattrs
+  - resource
+  - k8s_tagger
+  - source
+{{- if .Values.sumologic.metrics.otelcol.extraProcessors }}
+{{- range $processor := .Values.sumologic.metrics.otelcol.extraProcessors }}
+{{ printf "- %s" ( $processor | keys | first ) | indent 2 }}
+{{- end }}
+{{- end }}
+  - resource/remove_k8s_pod_pod_name
+  - resource/delete_source_metadata
+  - sumologic_schema
+  - transform/set_name
+  - groupbyattrs/group_by_name
+  - transform/remove_name
+  - batch
+  - transform/prepare_routing
+  - routing
+receivers:
+  - telegraf
+  - otlp

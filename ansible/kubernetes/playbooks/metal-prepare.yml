@@ -15,6 +15,25 @@
         - name: Locale | Set timezone
           community.general.timezone:
             name: "{{ timezone | default('Etc/UTC') }}"
+    - name: Gather installed packages
+      ansible.builtin.package_facts:
+        manager: auto
+    - name: Packages | Uninstall Snap
+      block:
+        - name: Packages | Uninstall Snap | Check if snap is installed
+          ansible.builtin.debug:
+            msg: "snapd is installed"
+          register: snapd_check
+        - name: Packages | Uninstall Snap | Remove snap packages
+          ansible.builtin.command: snap remove {{ item }}
+          loop: ["yq", "core18", "lxd", "core20", "snapd"]
+          when: snapd_check.failed is defined
+        - name: Packages | Uninstall Snap | Remove snap from packages
+          ansible.builtin.apt:
+            name: snapd
+            state: absent
+            autoremove: true
+      when: "'snapd' in ansible_facts.packages"
     - name: Networking & Initial Upgrades
       block:
         - name: Run "apt-get update"
@@ -35,7 +54,7 @@
         - name: Make sure a service unit is running
           ansible.builtin.systemd:
             state: started
-            name: network-manager.service
+            name: NetworkManager.service
         - name: Networking | Set hostname to inventory hostname
           ansible.builtin.hostname:
             name: "{{ inventory_hostname }}"
@@ -51,7 +70,6 @@
             src: ../playbooks/templates/00-installer-config.yml
             dest: /etc/netplan/00-installer-config.yaml
 
-
         # - name: System Configuration (2) | Configure Bridge Network
         #   ansible.builtin.template:
         #     mode: 0644
@@ -60,11 +78,11 @@
 
     - name: Continue with packages installation
       block:
-        - name: Packages | Install required packages
-          ansible.builtin.apt:
-            name: "{{ packages | default([]) }}"
-            state: present
-            update_cache: true
+        # - name: Packages | Install required packages
+        #   ansible.builtin.apt:
+        #     name: "{{ packages | default([]) }}"
+        #     state: present
+        #     update_cache: true
         - name: Packages | Remove leaf packages
           ansible.builtin.apt:
             autoremove: true
@@ -92,13 +110,43 @@
           community.general.modprobe:
             name: "{{ item }}"
             state: present
-          loop: [rbd, bridge, br_netfilter, ip_tables, ip6_tables, ip_vs, netlink_diag, nf_nat, overlay, xt_conntrack, nf_conntrack, vxlan, overlay]
+          loop:
+            [
+              rbd,
+              bridge,
+              br_netfilter,
+              ip_tables,
+              ip6_tables,
+              ip_vs,
+              netlink_diag,
+              nf_nat,
+              overlay,
+              xt_conntrack,
+              nf_conntrack,
+              vxlan,
+              overlay,
+            ]
         - name: System Configuration (2) | Enable kernel modules on boot
           ansible.builtin.copy:
             mode: 0644
             content: "{{ item }}"
             dest: "/etc/modules-load.d/{{ item }}.conf"
-          loop: [rbd, bridge, br_netfilter, ip_tables, ip6_tables, ip_vs, netlink_diag, nf_nat, overlay, xt_conntrack, nf_conntrack, vxlan, overlay]
+          loop:
+            [
+              rbd,
+              bridge,
+              br_netfilter,
+              ip_tables,
+              ip6_tables,
+              ip_vs,
+              netlink_diag,
+              nf_nat,
+              overlay,
+              xt_conntrack,
+              nf_conntrack,
+              vxlan,
+              overlay,
+            ]
         - name: System Configuration (2) | Set sysctls
           ansible.posix.sysctl:
             name: "{{ item.key }}"
@@ -127,13 +175,13 @@
               vm.max_map_count: 262144
         - name: System Configuration (3) | Set * Nofile soft
           pam_limits:
-            domain: '*'
+            domain: "*"
             limit_type: soft
             limit_item: nofile
             value: 1048576
         - name: System Configuration (3) | Set * nofile hard
           pam_limits:
-            domain: '*'
+            domain: "*"
             limit_type: hard
             limit_item: nofile
             value: 1048576
@@ -151,13 +199,13 @@
             value: 1048576
         - name: System Configuration (3) | Set * memlock soft
           pam_limits:
-            domain: '*'
+            domain: "*"
             limit_type: soft
             limit_item: memlock
             value: unlimited
         - name: System Configuration (3) | Set * memlock hard
           pam_limits:
-            domain: '*'
+            domain: "*"
             limit_type: hard
             limit_item: memlock
             value: unlimited
@@ -181,40 +229,59 @@
             path: /etc/fstab
             regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
             replace: '# \1'
-    # - name: finalize configuration with storage configuration
-    #   block:
-    #     - name: Perform a discovery on 172.16.70.155 and show available target nodes
-    #       community.general.open_iscsi:
-    #         show_nodes: true
-    #         discover: true
-    #         ip: 172.16.70.155
+    - name: System Configuration (4)
+      block:
+        - name: System Configuration (4) | Disable ufw
+          ansible.builtin.systemd:
+            service: ufw.service
+            enabled: false
+            masked: true
+            state: stopped
+        - name: System Configuration (4) | Enable fstrim
+          ansible.builtin.systemd:
+            service: fstrim.timer
+            enabled: true
+        - name: System Configuration (4) | Disable cloud-init
+          ansible.builtin.file:
+            dest: /etc/cloud/cloud-init.disabled
+            state: touch
+            owner: root
+            mode: 0775
+            modification_time: preserve
+            access_time: preserve
+      # - name: finalize configuration with storage configuration
+      #   block:
+      #     - name: Perform a discovery on 172.16.70.155 and show available target nodes
+      #       community.general.open_iscsi:
+      #         show_nodes: true
+      #         discover: true
+      #         ip: 172.16.70.155
 
-    #     - name: Connect to the named target, after updating the local persistent database (cache)
-    #       community.general.open_iscsi:
-    #         login: true
-    #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server1.67e5db
-    #       when: ansible_host == server1
+      #     - name: Connect to the named target, after updating the local persistent database (cache)
+      #       community.general.open_iscsi:
+      #         login: true
+      #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server1.67e5db
+      #       when: ansible_host == server1
 
-    #     - name: Connect to the named target, after updating the local persistent database (cache)
-    #       community.general.open_iscsi:
-    #         login: true
-    #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server2.67e5db
-    #       when: ansible_host == server2
+      #     - name: Connect to the named target, after updating the local persistent database (cache)
+      #       community.general.open_iscsi:
+      #         login: true
+      #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server2.67e5db
+      #       when: ansible_host == server2
 
-    #     - name: Connect to the named target, after updating the local persistent database (cache)
-    #       community.general.open_iscsi:
-    #         login: true
-    #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server3.67e5db
-    #       when: ansible_host == server3
+      #     - name: Connect to the named target, after updating the local persistent database (cache)
+      #       community.general.open_iscsi:
+      #         login: true
+      #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.server3.67e5db
+      #       when: ansible_host == server3
 
-    #     - name: Connect to the named target, after updating the local persistent database (cache)
-    #       community.general.open_iscsi:
-    #         login: true
-    #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.shared.67e5db
+      #     - name: Connect to the named target, after updating the local persistent database (cache)
+      #       community.general.open_iscsi:
+      #         login: true
+      #         target: iqn.2004-04.com.qnap:ts-832px:iscsi.shared.67e5db
 
       notify: Reboot
   handlers:
     - name: Reboot
       ansible.builtin.reboot:
         msg: Rebooting nodes
-
