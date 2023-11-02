@@ -38,7 +38,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/sentriz/gonic
-      tag: v0.15.2
+      tag: v0.16.0
     env:
       TZ: America/Chicago
       GONIC_MUSIC_PATH: /media/Library/Music
