@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: hoime-kubernetes
+  name: home-kubernetes
   labels:
     goldilocks.fairwinds.com/enabled: "true"
     kustomize.toolkit.fluxcd.io/prune: disabled
