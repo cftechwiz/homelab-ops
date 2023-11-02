@@ -31,7 +31,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/cftechwiz/tautulli
-      tag: 2.11.1@sha256:9266e6e04ec9e41308967455cb03b73bc6daa9dc18e46165513ac86ac1ae002c
+      tag: 2.12.4@sha256:a8b988501a557faa821ade953fb9c75be0a86f29d99b743d502960ebf578f512
     env:
       TZ: America/Chicago
     service:
