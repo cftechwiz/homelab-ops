@@ -31,7 +31,7 @@ spec:
       type: statefulset
     image:
       repository: ghcr.io/cftechwiz/qbittorrent-beta
-      tag: 4.5.1@sha256:cf4e240bf252530beeba6042bc2af95425558448f9436d056b0d1d63c5584dda
+      tag: 4.5.3@sha256:ae9f0e27df319bfee00562da6c65f8efe30e937099982da01f9f41dc52c26962
     env:
       TZ: America/Chicago
       QBITTORRENT__PORT: &port 80
