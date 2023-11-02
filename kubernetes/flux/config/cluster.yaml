@@ -1,9 +1,9 @@
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/gitrepository_v1beta2.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/source.toolkit.fluxcd.io/gitrepository_v1.json
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: flux-system
+  name: home-kubernetes
   namespace: flux-system
 spec:
   interval: 30m
@@ -18,7 +18,7 @@ spec:
     # include kubernetes directory
     !/kubernetes
 ---
-# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/kustomization_v1beta2.json
+# yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/kustomize.toolkit.fluxcd.io/kustomization_v1.json
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
@@ -31,7 +31,7 @@ spec:
   wait: false
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: home-kubernetes
   decryption:
     provider: sops
     secretRef:
