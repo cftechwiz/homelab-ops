@@ -35,7 +35,7 @@ spec:
     restartPolicy: OnFailure
     image:
       repository: ghcr.io/cftechwiz/alpine
-      tag: 3.17.5@sha256:dd8292b780199b5c58f5cb9815e51b345965100e45ed0273bed4bb05f7e0a6fe
+      tag: 3.17.5@sha256:5c3ea62832c0280f47c9f61f99e0c946c5b7a9670ec3627aa2e0d09f97376309
     command: ["/bin/bash", "/app/opnsense-backup.sh"]
     env:
       OPNSENSE_URL: "http://opnsense.intra.falhalla.com"
