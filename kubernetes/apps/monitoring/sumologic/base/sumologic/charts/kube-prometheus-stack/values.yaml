@@ -1858,7 +1858,7 @@ prometheusOperator:
   ##
   image:
     repository: quay.io/prometheus-operator/prometheus-operator
-    tag: v0.59.2
+    tag: v0.68.0
     sha: ""
     pullPolicy: IfNotPresent
 
