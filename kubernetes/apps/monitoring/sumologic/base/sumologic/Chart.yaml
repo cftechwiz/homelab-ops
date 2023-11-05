@@ -4,7 +4,7 @@ dependencies:
 - condition: fluent-bit.enabled,sumologic.logs.enabled
   name: fluent-bit
   repository: https://fluent.github.io/helm-charts
-  version: 0.34.2
+  version: 0.39.0
 - condition: kube-prometheus-stack.enabled,sumologic.metrics.enabled
   name: kube-prometheus-stack
   repository: https://prometheus-community.github.io/helm-charts
