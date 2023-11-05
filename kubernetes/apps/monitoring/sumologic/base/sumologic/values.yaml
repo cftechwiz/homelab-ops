@@ -4538,7 +4538,7 @@ opentelemetry-operator:
   instrumentationJobImage:
     image:
       repository: sumologic/kubernetes-tools
-      tag: 2.14.0
+      tag: 2.21.0
 
   createDefaultInstrumentation: false
   instrumentationNamespaces: ""
