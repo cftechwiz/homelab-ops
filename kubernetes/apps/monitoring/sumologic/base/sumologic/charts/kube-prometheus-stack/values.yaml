@@ -1875,7 +1875,7 @@ prometheusOperator:
   prometheusConfigReloader:
     image:
       repository: quay.io/prometheus-operator/prometheus-config-reloader
-      tag: v0.69.1
+      tag: v0.70.0
       sha: ""
 
     # resource config for prometheusConfigReloader
