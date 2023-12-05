@@ -16,7 +16,7 @@ dependencies:
 - condition: metrics-server.enabled
   name: metrics-server
   repository: https://charts.bitnami.com/bitnami
-  version: 6.6.3
+  version: 6.6.4
 - condition: telegraf-operator.enabled
   name: telegraf-operator
   repository: https://helm.influxdata.com/
