@@ -2,5 +2,5 @@ helmCharts:
 - name: sumologic
   includeCRDs: true
   releaseName: sumologic
-  version: 3.17.0
+  version: 3.18.0
   repo: https://sumologic.github.io/sumologic-kubernetes-collection
