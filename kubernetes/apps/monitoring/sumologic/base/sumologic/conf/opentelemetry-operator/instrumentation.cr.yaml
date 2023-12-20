@@ -53,7 +53,7 @@ spec:
       - name: OTEL_EXPORTER_OTLP_ENDPOINT
         value: http://{{- include "sumologic.opentelemetry.operator.instrumentation.collector.endpoint" $ctx }}:4318
   nodejs:
-    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.44.0
+    image: ghcr.io/open-telemetry/opentelemetry-operator/autoinstrumentation-nodejs:0.46.0
     env:
       - name: OTEL_EXPORTER_OTLP_ENDPOINT
         value: http://{{- include "sumologic.opentelemetry.operator.instrumentation.collector.endpoint" $ctx }}:4317
