@@ -1,7 +1,7 @@
 dependencies:
 - name: fluent-bit
   repository: https://fluent.github.io/helm-charts
-  version: 0.40.0
+  version: 0.42.0
 - name: kube-prometheus-stack
   repository: https://prometheus-community.github.io/helm-charts
   version: 40.5.0
@@ -20,5 +20,5 @@ dependencies:
 - name: opentelemetry-operator
   repository: https://open-telemetry.github.io/opentelemetry-helm-charts
   version: 0.44.2
-digest: sha256:ea19b8666bf534ff93bbcd519f2e255a5e621a8ac5f8c449500c4aec88f2aaeb
-generated: "2023-12-15T16:58:34.678678166Z"
+digest: sha256:05b5f273783e54e146aa11cab14f8fb629958c191c7d4de4a5b2c60645cd57d0
+generated: "2024-01-05T15:18:29.550582464Z"
