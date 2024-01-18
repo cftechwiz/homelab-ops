@@ -29,7 +29,7 @@ pdb:
 manager:
   image:
     repository: ghcr.io/open-telemetry/opentelemetry-operator/opentelemetry-operator
-    tag: v0.92.0
+    tag: v0.92.1
   collectorImage:
     repository: otel/opentelemetry-collector-contrib
     tag: 0.92.0
