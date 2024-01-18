@@ -4,7 +4,7 @@ dependencies:
   version: 0.42.0
 - name: kube-prometheus-stack
   repository: https://prometheus-community.github.io/helm-charts
-  version: 40.5.0
+  version: 55.11.0
 - name: falco
   repository: https://falcosecurity.github.io/charts
   version: 3.3.0
@@ -20,5 +20,5 @@ dependencies:
 - name: opentelemetry-operator
   repository: https://open-telemetry.github.io/opentelemetry-helm-charts
   version: 0.46.0
-digest: sha256:79bce2c0e23b448b6644dfd5a51d3fd115e9658dce1b2f9ee397f2d18e8d2548
-generated: "2024-01-18T20:15:29.391494447Z"
+digest: sha256:0f9e8b3eb77b54618c65580900578b85f855806e7d9a1eb97da01d1515a12a7f
+generated: "2024-01-18T23:33:20.387841021Z"
