@@ -19,6 +19,6 @@ dependencies:
   version: 0.10.0
 - name: opentelemetry-operator
   repository: https://open-telemetry.github.io/opentelemetry-helm-charts
-  version: 0.47.0
-digest: sha256:a464e23bb1f8a9d77d63d21eb7d7414301c161507e6f8d9c54544623cd474c71
-generated: "2024-02-22T15:57:26.918921791Z"
+  version: 0.47.1
+digest: sha256:7808843486a7d1602cf612b310b2fd399cba9e08cfe2934d37ffc304ed74517a
+generated: "2024-02-24T00:56:26.683325473Z"
