@@ -13,12 +13,12 @@ dependencies:
   version: 6.13.1
 - name: telegraf-operator
   repository: https://helm.influxdata.com/
-  version: 1.3.12
+  version: 1.4.0
 - name: tailing-sidecar-operator
   repository: https://sumologic.github.io/tailing-sidecar
   version: 0.10.0
 - name: opentelemetry-operator
   repository: https://open-telemetry.github.io/opentelemetry-helm-charts
   version: 0.50.0
-digest: sha256:ca3c9b6907ec1fe82c98683bd79afaa6abfb6c82146997e215ba4f638a8c5b88
-generated: "2024-03-20T23:34:01.473794217Z"
+digest: sha256:2bab95189fcf151e702e2df1eecd61279682d4070aeea0dd3ad49aae6487a9fa
+generated: "2024-03-21T00:39:09.464748574Z"
