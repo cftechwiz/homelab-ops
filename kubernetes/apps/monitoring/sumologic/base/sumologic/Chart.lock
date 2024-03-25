@@ -16,9 +16,9 @@ dependencies:
   version: 1.4.0
 - name: tailing-sidecar-operator
   repository: https://sumologic.github.io/tailing-sidecar
-  version: 0.10.0
+  version: 0.11.0
 - name: opentelemetry-operator
   repository: https://open-telemetry.github.io/opentelemetry-helm-charts
   version: 0.52.0
-digest: sha256:ce9c9ca819e8dac69f8dc82f328c3f32a88b72aec8e52b6ba10bfb1d123ffbd3
-generated: "2024-03-22T20:10:02.631278907Z"
+digest: sha256:7431716445e45c10c75e30bdf8af30980161a7ae4e02e15e49e1b5b71d4f7d39
+generated: "2024-03-25T10:17:34.069484827Z"
