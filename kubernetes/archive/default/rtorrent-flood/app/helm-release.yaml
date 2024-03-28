@@ -33,7 +33,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/cftechwiz/flood
-      tag: 4.7.0@sha256:f6a091df9b52eb3a4a1ee21b943c55f1f7cc609c67f02eae3f0ef5a81d9f34b4
+      tag: 4.7.0@sha256:f4bba37ff9af25207dd2c18f914ba63d84e170472cc0618dba8a398384584cfc
     env:
       TZ: America/Chicago
       FLOOD_OPTION_auth: "none"
