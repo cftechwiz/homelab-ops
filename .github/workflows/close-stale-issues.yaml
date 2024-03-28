@@ -13,6 +13,7 @@ jobs:
     steps:
       - uses: actions/stale@v5
         with:
+          operations-per-run: 600
           days-before-issue-stale: 30
           days-before-issue-close: 0
           stale-issue-label: "stale"
