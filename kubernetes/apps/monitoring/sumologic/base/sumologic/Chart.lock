@@ -7,7 +7,7 @@ dependencies:
   version: 40.5.0
 - name: falco
   repository: https://falcosecurity.github.io/charts
-  version: 3.3.0
+  version: 4.2.5
 - name: metrics-server
   repository: https://charts.bitnami.com/bitnami
   version: 6.13.1
@@ -20,5 +20,5 @@ dependencies:
 - name: opentelemetry-operator
   repository: https://open-telemetry.github.io/opentelemetry-helm-charts
   version: 0.52.3
-digest: sha256:6e48872545c7c588dbfed6b432e6ecd7e922dda0444660a6bfd2df6ac322bbe9
-generated: "2024-03-27T17:33:44.129102009Z"
+digest: sha256:4046cca913ea9ca0372943adbd94ab4e5fb2136a16f91eb60a963ecb2b827762
+generated: "2024-03-28T17:57:03.438341026Z"
