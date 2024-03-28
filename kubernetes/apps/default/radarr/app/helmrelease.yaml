@@ -33,7 +33,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/cftechwiz/radarr-develop
-      tag: 4.4.1.6926@sha256:f5ffec33b203f9052caf1cf484b1d30f9dc0bc3268c8a439b45e67c3c4dbe5b2
+      tag: 5.4.3.8677@sha256:d6f6a5de5940de8a1c26097b9a69a40eeac37bb575c7f777dbd7e6c20aa35b9a
     env:
       TZ: America/Chicago
       PUSHOVER_DEBUG: "false"
