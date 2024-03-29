@@ -37,7 +37,7 @@ spec:
     restartPolicy: OnFailure
     image:
       repository: ghcr.io/cftechwiz/jbops
-      tag: 1.0.890@sha256:8c612e95e385ad110339f0638a5ba27d82d689015104a95852d70d4370e6aa66
+      tag: 1.0.893@sha256:68865a0f0d0f264cc6bfd178930498a89df2a4fd55981f8c5d6be886e0162812
     args: ["/entrypoint.sh", "--playlists", "Smart Toons"]
     env:
       TZ: America/Chicago
