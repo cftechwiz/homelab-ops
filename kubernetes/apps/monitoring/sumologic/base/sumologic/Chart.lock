@@ -10,7 +10,7 @@ dependencies:
   version: 3.3.0
 - name: metrics-server
   repository: https://charts.bitnami.com/bitnami
-  version: 6.13.1
+  version: 7.0.1
 - name: telegraf-operator
   repository: https://helm.influxdata.com/
   version: 1.4.0
@@ -20,5 +20,5 @@ dependencies:
 - name: opentelemetry-operator
   repository: https://open-telemetry.github.io/opentelemetry-helm-charts
   version: 0.52.4
-digest: sha256:7477a6c60b444524e7ca4579b1d02bb972b2f3a8e3daaf0b54da0a50c9f0cb9d
-generated: "2024-03-28T17:50:13.58599231Z"
+digest: sha256:d288ad612b83dc1d630ca04ed22684cc5870c84868e0739ad4efd7f3d7d17f12
+generated: "2024-03-29T00:32:59.649167126Z"
