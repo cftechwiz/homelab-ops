@@ -221,14 +221,29 @@
             limit_type: hard
             limit_item: memlock
             value: unlimited
-        - name: Disable SWAP since kubernetes can't work with swap enabled (1/2)
-          shell: |
-            swapoff -a
-        - name: Disable SWAP in fstab since kubernetes can't work with swap enabled (2/2)
-          replace:
-            path: /etc/fstab
-            regexp: '^([^#].*?\sswap\s+sw\s+.*)$'
-            replace: '# \1'
+        - name: System Configuration (2) | Disable swap at runtime
+          ansible.builtin.command: swapoff -a
+          when: ansible_swaptotal_mb > 0
+        - name: System Configuration (2) | Disable swap at boot
+          ansible.posix.mount:
+            name: "{{ item }}"
+            fstype: swap
+            state: absent
+          loop: ["none", "swap"]
+        - name: System Configuration (2) | Disable mitigations
+          ansible.builtin.replace:
+            path: /etc/default/grub
+            regexp: '^(GRUB_CMDLINE_LINUX=(?:(?![" ]{{ item.key | regex_escape }}=).)*)(?:[" ]{{ item.key | regex_escape }}=\S+)?(.*")$'
+            replace: '\1 {{ item.key }}={{ item.value }}\2'
+          with_dict: "{{ grub_config }}"
+          vars:
+            grub_config:
+              apparmor: "0"
+              mitigations: "off"
+          register: grub_status
+        - name: System Configuration (2) | Reconfigure grub and initramfs
+          ansible.builtin.command: update-grub
+          when: grub_status.changed
     - name: System Configuration (4)
       block:
         - name: System Configuration (4) | Disable ufw
