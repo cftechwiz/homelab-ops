@@ -20,7 +20,7 @@ network:
            optional: true
        eno7:
            dhcp4: true
-           mtu: 1500
+           mtu: 9216
        eno8:
            dhcp4: true
            optional: true
