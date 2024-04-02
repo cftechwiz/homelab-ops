@@ -2,7 +2,7 @@
 calico_bgp_peer_ip: 172.16.70.1
 calico_bgp_as_number: 64512
 calico_bgp_external_ips: 192.168.69.0/24
-k3s_release_version: "v1.27.2+k3s1"
+k3s_release_version: "v1.29.2+k3s1"
 k3s_install_hard_links: true
 # (bool) Escalate user privileges for all tasks
 k3s_become: true
