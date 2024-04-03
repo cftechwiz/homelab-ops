@@ -11,7 +11,7 @@ spec:
   chart:
     spec:
       chart: rook-ceph-cluster
-      version: v1.12.7
+      version: v1.13.7
       sourceRef:
         kind: HelmRepository
         name: rook-ceph
@@ -68,16 +68,16 @@ spec:
         useAllDevices: true
         config:
           osdsPerDevice: "1"
-        # nodes:
-        #   - name: server1
-        #     devices:
-        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_194688900123
-        #   - name: server2
-        #     devices:
-        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD454202
-        #   - name: server3
-        #     devices:
-        #       - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD455903
+        nodes:
+          - name: server1
+            devices:
+              - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_194688900123
+          - name: server2
+            devices:
+              - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD454202
+          - name: server3
+            devices:
+              - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD455903
     cephBlockPools:
       - name: ceph-blockpool
         spec:
