@@ -6,7 +6,7 @@ tasks:
     desc: Download kubeconfig from a remote k3s master node
     vars:
       MASTER_USERNAME: '{{.MASTER_USERNAME | default "cftechwiz"}}'
-      MASTER_HOST: '{{.MASTER_HOST | default "10.41.0.30"}}'
+      MASTER_HOST: '{{.MASTER_HOST | default "172.16.70.30"}}'
       KUBERNETES_API: '{{.KUBERNETES_API | default "172.16.0.254"}}'
     cmds:
     - rsync --verbose --progress --partial --rsync-path="sudo rsync" {{.MASTER_USERNAME}}@{{.MASTER_HOST}}:/etc/rancher/k3s/k3s.yaml "${KUBECONFIG}"

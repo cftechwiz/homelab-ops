@@ -266,11 +266,11 @@
             access_time: preserve
       # - name: finalize configuration with storage configuration
       #   block:
-      #     - name: Perform a discovery on 10.41.0.155 and show available target nodes
+      #     - name: Perform a discovery on 172.16.70.155 and show available target nodes
       #       community.general.open_iscsi:
       #         show_nodes: true
       #         discover: true
-      #         ip: 10.41.0.155
+      #         ip: 172.16.70.155
 
       #     - name: Connect to the named target, after updating the local persistent database (cache)
       #       community.general.open_iscsi:
