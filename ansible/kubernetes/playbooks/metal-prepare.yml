@@ -92,7 +92,11 @@
         #     mode: 0644
         #     src: ../playbooks/templates/05-bridge-config.yml.j2
         #     dest: /etc/netplan/05-bridge-config.yaml
-
+    - name: Configure oTel HostMetrics
+      block:
+        - name: Install OtelCollector
+          ansible.builtin.shell: |-
+            sudo curl -sL https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN={{SECRET_SUMOLOGIC_INSTALLATION_TOKEN}} sudo -E bash -s -- --install-hostmetrics --tag "host.group=cluster" --tag "deployment.environment=legacy" --api https://open-collectors.us2.sumologic.com/ || true
     - name: Continue with packages installation
       block:
         # - name: Packages | Install required packages
