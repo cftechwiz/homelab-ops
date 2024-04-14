@@ -1,0 +1,115 @@
+receivers:
+  hostmetrics/linux/localhost:
+    scrapers:
+      cpu:
+        metrics:
+          system.cpu.utilization:
+            enabled: true
+      load: null
+      memory:
+        metrics:
+          system.memory.utilization:
+            enabled: true
+      disk: null
+      filesystem:
+        metrics:
+          system.filesystem.utilization:
+            enabled: true
+      network: null
+      paging: null
+      process:
+        include:
+          match_type: strict
+          names:
+            - otelcol-sumo
+        mute_process_exe_error: true
+        mute_process_io_error: true
+        mute_process_name_error: true
+        metrics:
+          process.threads:
+            enabled: true
+          process.paging.faults:
+            enabled: true
+          process.cpu.utilization:
+            enabled: true
+          process.memory.utilization:
+            enabled: true
+          process.signals_pending:
+            enabled: true
+          process.open_file_descriptors:
+            enabled: true
+          process.context_switches:
+            enabled: true
+          process.disk.operations:
+            enabled: true
+  filelog/linux/logs/localhost:
+    storage: file_storage
+    include_file_name: false
+    include_file_path: true
+    operators:
+      - type: move
+        from: attributes["log.file.path"]
+        to: resource["log.file.path"]
+      - type: copy
+        from: resource["log.file.path"]
+        to: resource["_sourceName"]
+    include:
+      - /var/log/auth.log
+      - /var/log/syslog
+      - /var/log/daemon.log
+      - /var/log/dpkg.log
+      - /var/log/kern.log
+      - /var/log/audit/audit.log
+      - /var/log/secure
+      - /var/log/messages
+      - /var/log/yum.log
+      - /var/log/dnf.log
+processors:
+  resource/linux_resource_attributes/localhost:
+    attributes:
+      - key: sumo.datasource
+        value: linux
+        action: insert
+      - key: _contentType
+        value: OpenTelemetry
+        action: insert
+      - key: _sourceCategory
+        value: otel/linux
+        action: insert
+  resource/linux_resource_attributes/metrics/localhost:
+    attributes:
+      - key: _source
+        value: linux/hostmetrics
+        action: insert
+      - key: _sourceName
+        value: linux
+        action: insert
+  resource/linux_resource_attributes/logs/localhost:
+    attributes:
+      - key: _source
+        value: linux/filelog
+        action: insert
+service:
+  pipelines:
+    metrics/linux/localhost:
+      receivers:
+        - hostmetrics/linux/localhost
+      processors:
+        - memory_limiter
+        - resource/linux_resource_attributes/localhost
+        - resourcedetection/system
+        - resource/linux_resource_attributes/metrics/localhost
+        - batch
+      exporters:
+        - sumologic
+    logs/linux/localhost:
+      receivers:
+        - filelog/linux/logs/localhost
+      processors:
+        - memory_limiter
+        - resource/linux_resource_attributes/localhost
+        - resourcedetection/system
+        - resource/linux_resource_attributes/logs/localhost
+        - batch
+      exporters:
+        - sumologic
