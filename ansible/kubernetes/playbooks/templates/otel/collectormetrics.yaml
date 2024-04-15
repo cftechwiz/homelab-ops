@@ -14,7 +14,7 @@ service:
   telemetry:
     metrics:
       level: detailed
-      address: "localhost:8888"
+      address: "0.0.0.0:8888"
   pipelines:
     metrics:
       receivers: [prometheus]
