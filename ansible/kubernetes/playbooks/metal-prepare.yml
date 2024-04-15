@@ -114,7 +114,17 @@
             src: "../playbooks/templates/otel/{{ item }}"
             dest: "/etc/otelcol-sumo/conf.d/{{ item }}"
           loop:
-            [collectormetrics.yaml, customfiles.yaml.j2, hostmetrics.yaml, jsonlogs.yaml.j2]
+            [collectormetrics.yaml, hostmetrics.yaml]
+        - name: Install log templates
+          ansible.builtin.template:
+            mode: 0644
+            src: ../playbooks/templates/otel/customfiles.yaml.j2
+            dest: /etc/otelcol-sumo/conf.d/customfiles.yaml
+        - name: Install log templates
+          ansible.builtin.template:
+            mode: 0644
+            src: ../playbooks/templates/otel/jsonlogs.yaml.j2
+            dest: /etc/otelcol-sumo/conf.d/jsonlogs.yaml
         - name: Finish Setting up Otel Config
           ansible.builtin.copy:
             mode: 0644
