@@ -33,7 +33,7 @@ processors:
     log_statements:
       - context: resource
         statements:
-          - set(attributes["_sourceCategory"], "linux/system/{{host.name}}")
+          - set(attributes["_sourceCategory"], "linux/system/{{ hostvars[inventory_hostname]}})"
 service:
   pipelines:
     logs/json_logs:
