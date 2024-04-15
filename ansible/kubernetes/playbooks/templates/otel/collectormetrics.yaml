@@ -11,6 +11,10 @@ receivers:
               regex: ".*grpc_io.*"
               action: drop
 service:
+  telemetry:
+    metrics:
+      level: detailed
+      address: "localhost:8888"
   pipelines:
     metrics:
       receivers: [prometheus]
