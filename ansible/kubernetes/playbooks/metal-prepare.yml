@@ -57,8 +57,8 @@
             state: present
             update_cache: true
         - name: Packages | Install OhMyZSH
-        ansible.builtin.shell: |-
-          sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+          ansible.builtin.shell: |-
+            curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
         - name: Configure zshrc
         ansible.builtin.copy:
           mode: 0644
