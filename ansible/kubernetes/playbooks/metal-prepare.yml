@@ -53,9 +53,9 @@
             update_cache: true
         - name: Packages | Install zsh
             ansible.builtin.apt:
-              name: zsh
-              state: present
-              update_cache: true
+            name: zsh
+            state: present
+            update_cache: true
         - name: Packages | Install OhMyZSH
         ansible.builtin.shell: |-
           sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
