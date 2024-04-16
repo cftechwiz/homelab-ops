@@ -12,6 +12,10 @@ receivers:
               action: drop
 service:
   telemetry:
+  telemetry:
+    logs:
+      level: DEBUG
+      output_paths: /var/log/otelcol.log
     metrics:
       level: detailed
       address: "0.0.0.0:8888"
