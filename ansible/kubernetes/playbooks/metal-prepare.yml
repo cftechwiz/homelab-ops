@@ -106,7 +106,7 @@
           changed_when: False
         - name: Install OtelCollector
           ansible.builtin.shell: |-
-            sudo curl -sL https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN={{SECRET_SUMOLOGIC_INSTALLATION_TOKEN}} sudo -E bash -s -- --install-hostmetrics --tag "host.group=cluster" --tag "deployment.environment=legacy" --api https://open-collectors.us2.sumologic.com/ || true
+            curl -sL https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN={{SECRET_SUMOLOGIC_INSTALLATION_TOKEN}} sudo -E bash -s -- --install-hostmetrics --tag "host.group=cluster" --tag "deployment.environment=legacy" --api https://open-collectors.us2.sumologic.com/ || true
           when: otc_exists == 0
         - name: Install Otel Config
           ansible.builtin.copy:
