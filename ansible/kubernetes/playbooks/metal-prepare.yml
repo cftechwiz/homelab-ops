@@ -52,7 +52,7 @@
             state: present
             update_cache: true
         - name: Packages | Install zsh
-            ansible.builtin.apt:
+          ansible.builtin.apt:
             name: zsh
             state: present
             update_cache: true
