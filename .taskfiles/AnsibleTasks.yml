@@ -50,7 +50,7 @@ tasks:
     - ansible-playbook -i {{.ANSIBLE_INVENTORY_DIR}}/hosts.yml {{.ANSIBLE_PLAYBOOK_DIR}}/cluster-nuke.yml
     - task: reboot
 
-  nuke-otel:
+  otel-nuke:
     desc: Uninstall Kubernetes on the nodes
     dir: ansible
     interactive: true
