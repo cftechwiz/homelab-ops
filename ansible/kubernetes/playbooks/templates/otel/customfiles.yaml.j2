@@ -1,40 +1,30 @@
 receivers:
   filelog/custom_files:
-    storage: file_storage
-    include_file_name: false
-    include_file_path: true
-    operators:
-      - type: move
-        from: attributes["log.file.path"]
-        to: resource["log.file.path"]
-      - type: copy
-        from: resource["log.file.path"]
-        to: resource["_sourceName"]
     include:
-      - /var/log/dpkg.log
-      - /var/log/daemon.log
+      - /var/log/apt/dpkg.log
       - /var/log/debug
       - /var/log/audit/audit.log
       - /var/log/cron.log
       - /var/log/auth.log
       - /var/log/mail.log
       - /var/log/kern.log
+      - /var/log/syslog
+    include_file_name: true
+    include_file_path_resolved: true
 
 processors:
   groupbyattrs/custom_files:
     keys:
       - log.file.path_resolved
-  resource/linux_resource_attributes/localhost:
+  resource/custom_files:
     attributes:
       - key: sumo.datasource
         value: linux
         action: insert
-      - key: _contentType
-        value: OpenTelemetry
-        action: insert
   transform/custom_fields:
     log_statements:
-      - context: resource
+    - context: resource
+      statements:
         statements:
           - set(attributes["_sourceCategory"], "linux/system/{{ ansible_hostname}}")
   resource/linux_resource_attributes/logs/localhost:
@@ -50,10 +40,9 @@ service:
       processors:
         - memory_limiter
         - groupbyattrs/custom_files
-        - resource/linux_resource_attributes/localhost
-        - resourcedetection/system
+        - resource/custom_files
         - transform/custom_fields
-        - resource/linux_resource_attributes/logs/localhost
+        - resourcedetection/system
         - batch
       exporters:
         - sumologic

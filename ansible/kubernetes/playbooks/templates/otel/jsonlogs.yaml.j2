@@ -1,19 +1,13 @@
 receivers:
   filelog/json_files:
-    storage: file_storage
     include_file_name: false
-    include_file_path: true
+    include_file_path_resolved: true
     operators:
-      - type: move
-        from: attributes["log.file.path"]
-        to: resource["log.file.path"]
-      - type: copy
-        from: resource["log.file.path"]
-        to: resource["_sourceName"]
       - type: json_parser
         parse_to: body
     include:
       - /var/log/messages.json
+
 processors:
   groupbyattrs/json_files:
     keys:
@@ -23,16 +17,10 @@ processors:
       - key: sumo.datasource
         value: linux
         action: insert
-      - key: _contentType
-        value: OpenTelemetry
-        action: insert
-      - key: _source
-        value: linux/filelog
-        action: insert
   transform/custom_fields:
     log_statements:
-      - context: resource
-        statements:
+    - context: resource
+      statements:
           - set(attributes["_sourceCategory"], "linux/system/{{ ansible_hostname }}")
 service:
   pipelines:
@@ -40,11 +28,11 @@ service:
       receivers:
         - filelog/json_files
       processors:
-        - memory_limiter
-        - groupbyattrs/json_files
-        - resourcedetection/system
-        - resource/json_files
-        - transform/custom_fields
-        - batch
+      - memory_limiter
+      - groupbyattrs/json_files
+      - resource/json_files
+      - transform/custom_fields
+      - resourcedetection/system
+      - batch
       exporters:
         - sumologic
