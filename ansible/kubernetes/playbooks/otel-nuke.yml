@@ -13,5 +13,5 @@
   tasks:
     - name: Uninstall opentelemetry
       ansible.builtin.shell: |-
-      curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
+        curl -Ls https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | sudo -E bash -s -- -u -y -p
 
