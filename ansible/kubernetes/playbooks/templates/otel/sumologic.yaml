@@ -7,7 +7,7 @@ extensions:
   sumologic:
     installation_token: ${SUMOLOGIC_INSTALLATION_TOKEN}
     collector_credentials_directory: /var/lib/otelcol-sumo/credentials
-
+    time_zone: "America/Chicago"
   ## Configuration for Health Check Extension
   ## Health Check extension enables an HTTP url that can be probed to check the status of the OpenTelemetry Collector
   ## ref: https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/extension/healthcheckextension
