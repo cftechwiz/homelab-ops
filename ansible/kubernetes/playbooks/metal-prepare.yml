@@ -115,8 +115,8 @@
           shell: otelcol-sumo -v
           register: otc_exists
           ignore_errors: True
-          check_mode: false
-          changed_when: False
+#          check_mode: false
+#          changed_when: false
         - name: Install OtelCollector
           ansible.builtin.shell: |-
             curl -sL https://github.com/SumoLogic/sumologic-otel-collector/releases/latest/download/install.sh | SUMOLOGIC_INSTALLATION_TOKEN={{SECRET_SUMOLOGIC_INSTALLATION_TOKEN}} sudo -E bash -s -- --install-hostmetrics --tag "host.group=cluster" --tag "deployment.environment=legacy" --api https://open-collectors.us2.sumologic.com/ || true
