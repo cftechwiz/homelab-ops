@@ -10,11 +10,11 @@
       ansible.builtin.pause:
         seconds: 5
   tasks:
-    - name: Locale
-      block:
-        - name: Locale | Set timezone
-          community.general.timezone:
-            name: "{{ timezone | default('Etc/UTC') }}"
+    # - name: Locale
+      # block:
+      #   # - name: Locale | Set timezone
+      #   #   community.general.timezone:
+      #   #     name: "{{ timezone | default('Etc/UTC') }}"
     - name: Gather installed packages
       ansible.builtin.package_facts:
         manager: auto
