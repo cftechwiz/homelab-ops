@@ -35,4 +35,3 @@ resources:
   - ./sumologic.yaml
   - ./stakater.yaml
   - ./tf-controller.yaml
-  - ./weave-gitops.yaml
