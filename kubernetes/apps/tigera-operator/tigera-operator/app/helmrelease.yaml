@@ -36,7 +36,8 @@ spec:
       calicoNetwork:
         bgp: Enabled
         hostPorts: Disabled
-        linuxDataplane: BPF # or Iptables
+        linuxDataplane: BPF
+        BPFExternalServiceMode: DSR # or Iptables
         # Note: The ipPools section cannot be modified post-install.
         ipPools:
           - blockSize: 26
@@ -50,5 +51,7 @@ spec:
             - "${NET_NODE_CIDR}"
           interface:
             - eno7
+            - enp86s0
+            - eno1
       nodeMetricsPort: 9091
       typhaMetricsPort: 9093
