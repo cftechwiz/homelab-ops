@@ -154,16 +154,16 @@ spec:
       enabled: true
     kubeControllerManager:
       enabled: true
-      endpoints: ["172.16.70.200, 172.16.70.201"]
+      endpoints: ["172.16.70.200"]
     kubeScheduler:
       enabled: true
-      endpoints: ["172.16.70.200, 172.16.70.201"]
+      endpoints: ["172.16.70.200"]
     kubeProxy:
       enabled: false # Enable if not using eBPF
       # endpoints: ["172.16.70.30", "172.16.70.11", "172.16.70.12"]
     kubeEtcd:
       enabled: true
-      endpoints: ["172.16.70.200, 172.16.70.201"]
+      endpoints: ["172.16.70.200"]
       service:
         enabled: true
         port: 2381
