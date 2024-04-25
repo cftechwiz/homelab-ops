@@ -11,8 +11,8 @@ spec:
     k8s-app: calico-node
   ports:
     - name: http-metrics
-      port: 9091
-      targetPort: 9091
+      port: 9092
+      targetPort: 9092
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.falhalla.com/servicemonitor_v1.json
 apiVersion: monitoring.coreos.com/v1
