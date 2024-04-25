@@ -41,7 +41,7 @@ spec:
         valueFrom:
           secretKeyRef:
             name: onepassword-connect-secret
-            key: 1password-credentials
+            key: 1password-credentials.json
     service:
       main:
         ports:
