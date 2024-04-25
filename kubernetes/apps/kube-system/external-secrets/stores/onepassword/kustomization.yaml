@@ -6,5 +6,5 @@ resources:
   - ./secret.sops.yaml
   - ./helmrelease.yaml
   - ./clustersecretstore.yaml
-patches:
+patchesStrategicMerge:
   - ./patches/sync.yaml
