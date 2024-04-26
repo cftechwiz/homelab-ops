@@ -64,8 +64,8 @@ spec:
         urlPrefix: /
         ssl: false
       storage:
-        useAllNodes: true
-        useAllDevices: true
+        useAllNodes: false
+        useAllDevices: false
         config:
           osdsPerDevice: "1"
         nodes:
@@ -117,7 +117,7 @@ spec:
             resources:
               requests:
                 cpu: 100m
-                memory: 4Gi
+                memory: 2Gi
               limits:
                 memory: 4Gi
         storageClass:
@@ -156,7 +156,7 @@ spec:
                 memory: 1Gi
               limits:
                 memory: 4Gi
-            instances: 1
+            instances: 2
           healthCheck:
             bucket:
               interval: 60s
