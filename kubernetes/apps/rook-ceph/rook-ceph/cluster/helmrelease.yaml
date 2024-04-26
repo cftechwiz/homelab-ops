@@ -74,13 +74,43 @@ spec:
           - name: pg_autoscaler
             enabled: true
       storage:
-        useAllNodes: true
-        useAllDevices: true
-        deviceFilter:
-          - nvme0n1
-          - sda
-        config:
-          osdsPerDevice: "1"
+        nodes:
+          - name: server1
+            logicalDevices:
+              - db: db_lv1
+                wal: wal_lv1
+                data: data_lv1
+                dbVolumeGroup: db_vg
+                walVolumeGroup: wal_vg
+                dataVolumeGroup: data_vg
+            devices:
+              - name: nvme01
+                config:
+                  osdsPerDevice: 5
+          - name: server2
+            logicalDevices:
+              - db: db_lv1
+                wal: wal_lv1
+                data: data_lv1
+                dbVolumeGroup: db_vg
+                walVolumeGroup: wal_vg
+                dataVolumeGroup: data_vg
+            devices:
+              - name: nvme01
+                config:
+                  osdsPerDevice: 5
+          - name: server3
+            logicalDevices:
+              - db: db_lv1
+                wal: wal_lv1
+                data: data_lv1
+                dbVolumeGroup: db_vg
+                walVolumeGroup: wal_vg
+                dataVolumeGroup: data_vg
+            devices:
+              - name: nvme01
+                config:
+                  osdsPerDevice: 5
       placement:
         mgr: &placement
           nodeAffinity:
