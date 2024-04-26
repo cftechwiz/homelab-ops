@@ -75,7 +75,7 @@ spec:
             enabled: true
       storage:
         config:
-          osdsPerDevice: 5
+          osdsPerDevice: "5"
         nodes:
           - name: server1
             logicalDevices:
