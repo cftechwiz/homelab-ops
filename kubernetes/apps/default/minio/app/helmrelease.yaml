@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: app-template
-      version: 1.5.1
+      version: 3.1.0
       sourceRef:
         kind: HelmRepository
         name: bjw-s
@@ -128,9 +128,11 @@ spec:
         - 100
     persistence:
       config:
-        enabled: true
-        existingClaim: minio-nfs
-        mountPath: /data
+        type: hostPath
+        hostPath: /falhallanas/S3BbjectStore
+        hostPathType: Directory
+        globalMounts:
+          - path: /data
     resources:
       requests:
         memory: 100Mi
