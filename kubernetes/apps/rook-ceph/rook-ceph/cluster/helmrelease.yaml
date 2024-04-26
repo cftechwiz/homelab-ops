@@ -69,15 +69,33 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: server1
+          - name: "172.16.70.30"
             devices:
               - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_194688900123
-          - name: server2
+            resources:
+              limits:
+                memory: "4096Mi"
+              requests:
+                cpu: "2"
+                memory: "4096Mi"
+          - name: "172.16.70.31"
             devices:
               - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD454202
-          - name: server3
+            resources:
+              limits:
+                memory: "4096Mi"
+              requests:
+                cpu: "2"
+                memory: "4096Mi"
+          - name: "172.16.70.32"
             devices:
               - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD455903
+            resources:
+              limits:
+                memory: "4096Mi"
+              requests:
+                cpu: "2"
+                memory: "4096Mi"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
