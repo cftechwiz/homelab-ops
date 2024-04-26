@@ -74,6 +74,8 @@ spec:
           - name: pg_autoscaler
             enabled: true
       storage:
+        config:
+          osdsPerDevice: 5
         nodes:
           - name: server1
             logicalDevices:
@@ -85,8 +87,6 @@ spec:
                 dataVolumeGroup: data_vg
             devices:
               - name: nvme01
-                config:
-                  osdsPerDevice: 5
           - name: server2
             logicalDevices:
               - db: db_lv1
@@ -97,8 +97,6 @@ spec:
                 dataVolumeGroup: data_vg
             devices:
               - name: nvme01
-                config:
-                  osdsPerDevice: 5
           - name: server3
             logicalDevices:
               - db: db_lv1
@@ -109,8 +107,6 @@ spec:
                 dataVolumeGroup: data_vg
             devices:
               - name: nvme01
-                config:
-                  osdsPerDevice: 5
       placement:
         mgr: &placement
           nodeAffinity:
