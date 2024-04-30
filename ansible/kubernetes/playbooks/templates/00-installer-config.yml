@@ -27,9 +27,6 @@ network:
              - to: 172.16.30.0/24
                via: 172.16.70.100
                metric: 100
-             - to: 172.16.50.0/24
-               via: 172.16.70.100
-               metric: 100
        eno8:
            dhcp4: true
            optional: true
