@@ -11,7 +11,6 @@ network:
            optional: true
        eno4:
            dhcp4: true
-           optional: true
        eno5:
            dhcp4: true
            optional: true
@@ -21,7 +20,18 @@ network:
        eno7:
            dhcp4: true
            mtu: 9216
+           routes:
+             - to: 172.16.0.0/24
+               via: 172.16.70.100
+               metric: 100
+             - to: 172.16.30.0/24
+               via: 172.16.70.100
+               metric: 100
+             - to: 172.16.50.0/24
+               via: 172.16.70.100
+               metric: 100
        eno8:
            dhcp4: true
            optional: true
   version: 2
+  renderer: networkd
