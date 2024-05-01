@@ -51,18 +51,35 @@ spec:
               - *host
     toolbox:
       enabled: true
+      image: #quay.io/ceph/ceph:v18.2.2
+    containerSecurityContext:
+      runAsNonRoot: true
+      runAsUser: 2016
+      runAsGroup: 2016
+      capabilities:
+        drop: ["ALL"]
+    resources:
+    limits:
+      memory: "1Gi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
     configOverride: |
       [global]
       bdev_enable_discard = true
       bdev_async_discard = true
       osd_class_update_on_start = false
     cephClusterSpec:
+      CephVersion:
+        image: quay.io/ceph/ceph:v18.2.2
+
+      dataDirHostPath: /var/lib/rook
       network:
         provider: host
         connections:
           compression:
             enabled: true
-          requireMsg2: true
+          requireMsg2: false
       crashCollector:
         disable: false
       dashboard:
@@ -121,12 +138,14 @@ spec:
         mon: *placement
       resources:
         mgr:
+          count: 2
           requests:
             cpu: 100m
             memory: 512Mi
           limits:
             memory: 2Gi
         mon:
+          count: 1
           requests:
             cpu: 50m
             memory: 512Mi
