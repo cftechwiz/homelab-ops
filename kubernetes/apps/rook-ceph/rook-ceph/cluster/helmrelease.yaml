@@ -148,6 +148,9 @@ spec:
           limits:
             memory: 2Gi
         mon:
+          mon.a: 172.16.70.30:6789
+          mon.b: 172.16.70.31:6789
+          mon.c: 172.16.70.32:6789
           count: 1
           requests:
             cpu: 50m
