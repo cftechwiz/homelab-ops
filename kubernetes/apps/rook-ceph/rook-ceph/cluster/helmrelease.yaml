@@ -72,6 +72,9 @@ spec:
       public_network = 172.16.100.0/24
       cluster_network = 172.16.70.0/24
       mon_host = 172.16.70.30, 172.16.70.31, 172.16.70.32
+      mon.a: 172.16.70.30:6789
+      mon.b: 172.16.70.31:6789
+      mon.c: 172.16.70.32:6789
     cephClusterSpec:
       #   CephVersion:
       #     image: quay.io/ceph/ceph:v18.2.2
@@ -148,9 +151,6 @@ spec:
           limits:
             memory: 2Gi
         mon:
-          mon.a: 172.16.70.30:6789
-          mon.b: 172.16.70.31:6789
-          mon.c: 172.16.70.32:6789
           count: 1
           requests:
             cpu: 50m
