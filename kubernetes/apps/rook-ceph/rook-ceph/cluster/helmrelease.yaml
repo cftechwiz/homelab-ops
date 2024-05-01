@@ -10,7 +10,6 @@ spec:
   timeout: 15m
   chart:
     spec:
-      dataDirHostPath: /var/lib/rook
       chart: rook-ceph-cluster
       version: v1.14.2
       sourceRef:
