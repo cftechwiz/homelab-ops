@@ -111,7 +111,7 @@ spec:
         mon: *placement
       resources:
         mgr:
-          count: 2
+          count: 1
           requests:
             cpu: 100m
             memory: 512Mi
