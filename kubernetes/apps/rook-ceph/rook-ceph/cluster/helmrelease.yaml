@@ -71,15 +71,6 @@ spec:
       osd_class_update_on_start = false
       public_network = 172.16.100.0/24
       cluster_network = 172.16.70.0/24
-      mon_host = 172.16.70.30, 172.16.70.31, 172.16.70.32
-      [mon]
-        mon_initial_members = a,b,c
-      [mon.a]
-        mon_addr:: 172.16.70.30:6789
-      [mon.b]
-        mon_addr: 172.16.70.31:6789
-      [mon.c]
-        mon_addr: 172.16.70.32:6789
     cephClusterSpec:
       #   CephVersion:
       #     image: quay.io/ceph/ceph:v18.2.2
@@ -104,40 +95,11 @@ spec:
       storage:
         config:
           osdsPerDevice: "5"
-        nodes:
-          - name: server1
-            logicalDevices:
-              - db: db_lv1
-                wal: wal_lv1
-                data: data_lv1
-                dbVolumeGroup: db_vg
-                walVolumeGroup: wal_vg
-                dataVolumeGroup: data_vg
-            devices:
-              - name: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412424V
-              - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311360F
-          - name: server2
-            logicalDevices:
-              - db: db_lv1
-                wal: wal_lv1
-                data: data_lv1
-                dbVolumeGroup: db_vg
-                walVolumeGroup: wal_vg
-                dataVolumeGroup: data_vg
-            devices:
-              - name: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412421T
-              - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311423A
-          - name: server3
-            logicalDevices:
-              - db: db_lv1
-                wal: wal_lv1
-                data: data_lv1
-                dbVolumeGroup: db_vg
-                walVolumeGroup: wal_vg
-                dataVolumeGroup: data_vg
-            devices:
-              - name: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412435R
-              - name: /dev/disk/by-id/nvme-Samsung_SSD_970_EVO_Plus_2TB_S6S2NJ0T311426H
+        useAllNodes: true
+        useAllDevices: true
+        deviceFilter:
+          - nvme0n1
+          - sda
       placement:
         mgr: &placement
           nodeAffinity:
