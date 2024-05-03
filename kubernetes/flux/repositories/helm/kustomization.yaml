@@ -25,7 +25,6 @@ resources:
   - ./jetstack.yaml
   - ./kubernetes-dashboard.yaml
   - ./metrics-server.yaml
-  - ./k8s-at-home.yaml
   - ./nextcloud.yaml
   - ./node-feature-discovery.yaml
   - ./pulse-prysm.yaml
