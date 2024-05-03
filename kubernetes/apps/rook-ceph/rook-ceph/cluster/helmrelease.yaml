@@ -49,10 +49,14 @@ spec:
       bdev_enable_discard = true
       bdev_async_discard = true
       osd_class_update_on_start = false
-      cluster_network = 172.16.70.0/24
     cephClusterSpec:
       network:
         provider: host
+        addressRanges:
+          public:
+            - "172.16.100.0/24"
+          cluster:
+            - "172.16.70.0/24"
         connections:
           compression:
             enabled: true
