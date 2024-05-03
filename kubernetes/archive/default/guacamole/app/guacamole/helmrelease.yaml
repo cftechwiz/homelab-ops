@@ -99,7 +99,7 @@ spec:
         mountPath: /schemas/002-create-admin-user.sql
     resources:
       requests:
-        cpu: 250m
+        cpu: 25m
         memory: 100Mi
       limits:
         memory: 750Mi
