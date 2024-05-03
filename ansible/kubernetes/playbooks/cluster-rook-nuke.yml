@@ -36,4 +36,4 @@
             wipefs --all --force {{ item }}
           with_items:
             - "{{ rook_block_devices | default([]) }}"
-      ignore_errors: false
+      ignore_errors: true
