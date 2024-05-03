@@ -45,7 +45,7 @@ spec:
             encapsulation: None
             natOutgoing: Enabled
             nodeSelector: all()
-        multiInterfaceMode: multus
+        multiInterfaceMode: none
         nodeAddressAutodetectionV4:
           cidrs:
             - "${NET_NODE_CIDR}"
