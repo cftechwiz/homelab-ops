@@ -72,16 +72,16 @@ spec:
         nodes:
           - name: server1
             devices:
-              - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_194688900123
-              - name: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412424V
+              - name: nvme0n1
+              - name: sda
           - name: server2
             devices:
-              - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD454202
-              - name: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412421T
+              - name: nvme0n1
+              - name: sda
           - name: server3
             devices:
-              - name: /dev/disk/by-id/nvme-WDC_WDS100T2B0C-00PXH0_2014HD455903
-              - name: /dev/disk/by-id/ata-Samsung_SSD_870_EVO_2TB_S6PNNS0T412435R
+              - name: nvme0n1
+              - name: sda
     cephBlockPools:
       - name: ceph-blockpool
         spec:
