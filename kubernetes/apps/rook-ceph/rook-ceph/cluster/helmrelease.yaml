@@ -59,7 +59,7 @@ spec:
             enabled: true
           requireMsg2: true
       crashCollector:
-        disable: false
+        disable: true
       dashboard:
         enabled: true
         urlPrefix: /
