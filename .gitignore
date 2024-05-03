@@ -22,4 +22,4 @@ kubernetes/schemas
 # extras
 config.xml
 .config.env
-
+.multus/
