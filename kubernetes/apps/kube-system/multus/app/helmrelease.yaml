@@ -13,7 +13,7 @@ sourceRef:
   namespace: flux-system
 image:
   repository: ghcr.io/k8snetworkplumbingwg/multus-cni
-  tag: v3.7.1
+  tag: v4.0.2
   pullPolicy: IfNotPresent
 cni:
   image:
