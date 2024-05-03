@@ -74,14 +74,13 @@ spec:
     cephClusterSpec:
       #   CephVersion:
       #     image: quay.io/ceph/ceph:v18.2.2
-
       dataDirHostPath: /var/lib/rook
       network:
         provider: host
         connections:
           compression:
-            enabled: false
-          requireMsg2: false
+            enabled: true
+          requireMsg2: true
       crashCollector:
         disable: false
       dashboard:
