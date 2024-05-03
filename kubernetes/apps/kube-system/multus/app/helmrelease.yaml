@@ -5,25 +5,23 @@ kind: HelmRelease
 metadata:
   name: multus
   namespace: kube-system
-spec:
-  interval: 15m
-  chart:
-    spec:
-      chart: k8s-at-home/multus
-      sourceRef:
-        kind: HelmRepository
-        name: k8s-at-home
-        namespace: flux-system
+
+  spec:
+    chart: k8s-at-home/multus
+    sourceRef:
+      kind: HelmRepository
+      name: k8s-at-home
+      namespace: flux-system
+    image:
+      repository: ghcr.io/k8snetworkplumbingwg/multus-cni
+      tag: v3.7.1
+      pullPolicy: IfNotPresent
+    cni:
       image:
-        repository: ghcr.io/k8snetworkplumbingwg/multus-cni
-        tag: v3.7.1
+        repository: ghcr.io/k8s-at-home/cni-plugins
+        tag: v0.9.1
         pullPolicy: IfNotPresent
-      cni:
-        image:
-          repository: ghcr.io/k8s-at-home/cni-plugins
-          tag: v0.9.1
-          pullPolicy: IfNotPresent
-        paths:
-          config: /var/lib/rancher/k3s/agent/etc/cni/net.d
-          bin: /var/lib/rancher/k3s/data/current/bin
-        version: "0.3.1"
+      paths:
+        config: /var/lib/rancher/k3s/agent/etc/cni/net.d
+        bin: /var/lib/rancher/k3s/data/current/bin
+      version: "0.3.1"
