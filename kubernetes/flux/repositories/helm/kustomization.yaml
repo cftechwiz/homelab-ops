@@ -34,4 +34,4 @@ resources:
   - ./rook-ceph.yaml
   - ./sumologic.yaml
   - ./stakater.yaml
-  - ./tf-controller.yaml
+  # - ./tf-controller.yaml
