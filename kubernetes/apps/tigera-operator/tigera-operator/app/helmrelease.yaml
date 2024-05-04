@@ -45,13 +45,13 @@ spec:
             encapsulation: None
             natOutgoing: Enabled
             nodeSelector: all()
-        multiInterfaceMode: none
+        multiInterfaceMode: None
         nodeAddressAutodetectionV4:
           cidrs:
             - "${NET_NODE_CIDR}"
           interface:
             - eno7
             - enp86s0
-            - eno4
+            - eno1
       nodeMetricsPort: 9092
       typhaMetricsPort: 9093
