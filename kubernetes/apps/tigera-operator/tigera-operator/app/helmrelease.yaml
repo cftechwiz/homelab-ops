@@ -52,6 +52,6 @@ spec:
           interface:
             - eno7
             - enp86s0
-            - eno1
+            - eno4
       nodeMetricsPort: 9092
       typhaMetricsPort: 9093
