@@ -120,8 +120,8 @@ spec:
         enabled: true
         type: emptyDir
     # nodeSelector:
-      # node-role.kubernetes.io/worker: "true"
-      # intel.feature.node.kubernetes.io/gpu: "false"
+    # node-role.kubernetes.io/worker: "true"
+    # intel.feature.node.kubernetes.io/gpu: "false"
     # affinity:
     #   podAntiAffinity:
     #     requiredDuringSchedulingIgnoredDuringExecution:
@@ -134,7 +134,7 @@ spec:
     resources:
       requests:
         gpu.intel.com/i915: 0
-        cpu: 10m
+        # cpu: 10m
         memory: 2000Mi
       limits:
         gpu.intel.com/i915: 0

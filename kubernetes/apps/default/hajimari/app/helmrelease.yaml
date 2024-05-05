@@ -70,5 +70,5 @@ spec:
         type: emptyDir
     resources:
       requests:
-        cpu: 10m
+        # # cpu: 10m
         memory: 128M

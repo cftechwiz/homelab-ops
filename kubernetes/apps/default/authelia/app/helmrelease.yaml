@@ -41,7 +41,13 @@ spec:
     image:
       repository: ghcr.io/authelia/authelia
       tag: 4.38.7
-    args: ["--config", "/config/configuration.yml", "--config.experimental.filters", "expand-env"]
+    args:
+      [
+        "--config",
+        "/config/configuration.yml",
+        "--config.experimental.filters",
+        "expand-env",
+      ]
     envFrom:
       - secretRef:
           name: authelia-secret
@@ -54,18 +60,18 @@ spec:
           metrics:
             enabled: true
             port: 8080
-    # probes:
-    #   liveness: &probes
-    #     enabled: true
-    #     custom: true
-    #     spec:
-    #       httpGet:
-    #         path: /api/health
-    #         port: *port
-          # initialDelaySeconds: 0
-          # periodSeconds: 10
-          # timeoutSeconds: 1
-          # failureThreshold: 3
+      # probes:
+      #   liveness: &probes
+      #     enabled: true
+      #     custom: true
+      #     spec:
+      #       httpGet:
+      #         path: /api/health
+      #         port: *port
+      # initialDelaySeconds: 0
+      # periodSeconds: 10
+      # timeoutSeconds: 1
+      # failureThreshold: 3
       # readiness: *probes
       startup:
         enabled: false
@@ -120,7 +126,7 @@ spec:
             app.kubernetes.io/name: *app
     resources:
       requests:
-        cpu: 5m
+        # # cpu: 5m
         memory: 10Mi
       limits:
         memory: 100Mi

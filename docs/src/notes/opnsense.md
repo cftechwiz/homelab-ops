@@ -82,7 +82,7 @@ While kube-vip is very nice for having a API server ready to go and running in y
 
 ## Receive Side Scaling (RSS)
 
-RSS is used to distribute packets over CPU cores using a hashing function – either with support in the hardware which offloads the hashing for you, or in software. Click <ins>[here](https://forum.opnsense.org/index.php?topic=24409.0)</ins> to learn more about it.
+RSS is used to distribute packets over # cpu cores using a hashing function – either with support in the hardware which offloads the hashing for you, or in software. Click <ins>[here](https://forum.opnsense.org/index.php?topic=24409.0)</ins> to learn more about it.
 
 
 1. System > Settings > Tunables

@@ -32,8 +32,8 @@ spec:
         image: public.ecr.aws/docker/library/busybox:latest
         command: ["/bin/sh", "-c", "mkdir -p /data/cache"]
         volumeMounts:
-        - name: config
-          mountPath: /data
+          - name: config
+            mountPath: /data
     controller:
       type: statefulset
     image:
@@ -89,7 +89,7 @@ spec:
         readOnly: true
     resources:
       requests:
-        cpu: 10m
+        # cpu: 10m
         memory: 100Mi
       limits:
         memory: 500Mi

@@ -40,7 +40,7 @@ spec:
             port: 4822
     resources:
       requests:
-        cpu: 5m
+        # cpu: 5m
         memory: 10Mi
       limits:
         memory: 500Mi

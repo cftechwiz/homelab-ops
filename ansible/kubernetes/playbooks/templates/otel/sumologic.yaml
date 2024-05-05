@@ -59,7 +59,7 @@ processors:
     ## check_interval is the time between measurements of memory usage for the
     ## purposes of avoiding going over the limits. Defaults to zero, so no
     ## checks will be performed. Values below 1 second are not recommended since
-    ## it can result in unnecessary CPU consumption.
+    ## it can result in unnecessary # cpu consumption.
     check_interval: 5s
     ## Maximum amount of memory, in %, targeted to be allocated by the process heap.
     limit_percentage: 75

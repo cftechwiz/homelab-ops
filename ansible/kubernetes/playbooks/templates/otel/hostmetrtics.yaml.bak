@@ -1,9 +1,9 @@
 receivers:
   hostmetrics/linux/localhost:
     scrapers:
-      cpu:
+      # cpu:
         metrics:
-          system.cpu.utilization:
+          system.# cpu.utilization:
             enabled: true
       load: null
       memory:
@@ -30,7 +30,7 @@ receivers:
             enabled: true
           process.paging.faults:
             enabled: true
-          process.cpu.utilization:
+          process.# cpu.utilization:
             enabled: true
           process.memory.utilization:
             enabled: true
