@@ -6,7 +6,7 @@ metadata:
   name: home-kubernetes
   namespace: flux-system
 spec:
-  interval: 30m
+  interval: 5m
   url: ssh://git@github.com/cftechwiz/homelab-ops
   ref:
     branch: main
