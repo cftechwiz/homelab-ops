@@ -1,19 +1,4 @@
 # (string) Timezone for the servers
-timezone: "America/Chicago"
-
-# (list) Additional ssh public keys to add to the nodes
-ssh_authorized_keys: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID7tgppSBd2LgdTHuYEQdJwLa40YptDgnXtl2ntnUZmz
-sshd_Port: 22
-sshd_PermitRootLogin: 'yes'
-sshd_ChallengeResponseAuthentication: 'no'
-sshd_GSSAPICleanupCredentials: 'no'
-sshd_X11Forwarding: 'yes'
-sshd_ClientAliveInterval: 0
-sshd_ClientAliveCountMax: 3
-sshd_PasswordAuthentication: 'yes'
-sshd_Banner: 'none'
-packages_repositories:
-- ppa:fish-shell/release-3
 packages:
 - ansible
 - apt-utils
@@ -55,6 +40,21 @@ packages:
 - socat
 - software-properties-common
 - unzip
+
+# (list) Additional ssh public keys to add to the nodes
 packages_remove:
 - apparmor
 - ufw
+packages_repositories:
+- ppa:fish-shell/release-3
+ssh_authorized_keys: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAID7tgppSBd2LgdTHuYEQdJwLa40YptDgnXtl2ntnUZmz
+sshd_Banner: 'none'
+sshd_ChallengeResponseAuthentication: 'no'
+sshd_ClientAliveCountMax: 3
+sshd_ClientAliveInterval: 0
+sshd_GSSAPICleanupCredentials: 'no'
+sshd_PasswordAuthentication: 'yes'
+sshd_PermitRootLogin: 'yes'
+sshd_Port: 22
+sshd_X11Forwarding: 'yes'
+timezone: "America/Chicago"

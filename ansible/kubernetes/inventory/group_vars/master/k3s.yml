@@ -1,7 +1,6 @@
 k3s_control_node: true
 k3s_server:
   node-ip: "{{ ansible_host }}"
-  node-external-ip: "{ node_external_ip }"
   tls-san:
   - "{{ k3s_registration_address }}"
   https-listen-port: 6443
