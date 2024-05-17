@@ -71,7 +71,7 @@ spec:
         useAllNodes: true
         useAllDevices: true
         config:
-          osdsPerDevice: "2"
+          osdsPerDevice: "1"
         nodes:
           - name: server1
             devices:
