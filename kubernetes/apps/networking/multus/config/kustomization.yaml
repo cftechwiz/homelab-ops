@@ -3,6 +3,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./multus-daemonset.yaml
+  # - ./multus-daemonset.yaml
   - ./calico1.yaml
   - ./public.yaml
