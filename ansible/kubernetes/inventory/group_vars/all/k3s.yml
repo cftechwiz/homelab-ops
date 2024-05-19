@@ -1,5 +1,5 @@
 # Calico configuration
-calico_bgp_peer_ip: 172.16.100.1
+calico_bgp_peer_ip: 172.16.70.1
 calico_bgp_peer_as_number: 64513
 calico_bgp_external_ips: 192.168.69.0/24
 k3s_release_version: "v1.29.2+k3s1"
@@ -10,7 +10,7 @@ k3s_become: true
 k3s_debug: false
 # (bool) Enable etcd embedded datastore
 k3s_etcd_datastore: true
-k3s_registration_address: 172.16.100.1
+k3s_registration_address: 172.16.70.1
 k3s_use_unsupported_config: true
 k3s_server_manifests_templates:
 - calico-installation.yaml.j2
