@@ -16,7 +16,7 @@ reboot
             drivers:
                 tes:
                     type: tesmart
-                    host: 172.16.100.1
+                    host: 172.16.70.254
                     port: 5000
             scheme:
                 server0_led:

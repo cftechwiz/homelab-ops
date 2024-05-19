@@ -10,7 +10,7 @@ metadata:
     jobLabel: node-exporter
 subsets:
   - addresses:
-      - ip: 172.16.100.1
+      - ip: 172.16.70.254
     ports:
       - name: metrics
         port: 9100
