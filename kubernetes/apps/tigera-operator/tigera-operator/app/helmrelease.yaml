@@ -40,16 +40,23 @@ spec:
         BPFExternalServiceMode: DSR # or Iptables
         # Note: The ipPools section cannot be modified post-install.
         ipPools:
-          - blockSize: 26
+          - name: pod-pool
             cidr: "${NET_POD_CIDR}"
             encapsulation: none
             natOutgoing: Enabled
             nodeSelector: all()
+          # - name: pool-zone-2
+          #   cidr: "${NET_POD_CIDR_2}"
+          #   encapsulation: none
+          #   natOutgoing: Enabled
+          #   nodeSelector: all()
         multiInterfaceMode: None
         nodeAddressAutodetectionV4:
           cidrs:
             - "${NET_NODE_CIDR}"
+            # - "${NET_NODE_CIDR_2}"
           interface:
+            # - eno4
             - eno7
       nodeMetricsPort: 9092
       typhaMetricsPort: 9093

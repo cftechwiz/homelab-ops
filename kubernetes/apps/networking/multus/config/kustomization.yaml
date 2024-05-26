@@ -5,4 +5,4 @@ kind: Kustomization
 resources:
   # - ./multus-daemonset.yaml
   - ./calico1.yaml
-  - ./public.yaml
+  # - ./public.yaml

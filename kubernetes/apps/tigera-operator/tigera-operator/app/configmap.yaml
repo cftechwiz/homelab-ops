@@ -5,5 +5,5 @@ metadata:
   name: kubernetes-services-endpoint
   namespace: tigera-operator
 data:
-  KUBERNETES_SERVICE_HOST: "172.16.70.30"
+  KUBERNETES_SERVICE_HOST: "172.16.70.254"
   KUBERNETES_SERVICE_PORT: "6443"
