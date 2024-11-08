@@ -32,7 +32,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: quay.io/minio/minio
-      tag: RELEASE.2024-06-06T09-36-42Z@sha256:c97dbb0238dbd650ebe3f57dda68984993f466abad70d36c6e3ca306ceec3f58
+      tag: RELEASE.2024-11-07T00-52-20Z@sha256:ac591851803a79aee64bc37f66d77c56b0a4b6e12d9e5356380f4105510f2332
     env:
       TZ: America/Chicago
       MINIO_UPDATE: "off"
