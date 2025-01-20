@@ -4,7 +4,7 @@ collections:
 - name: community.general
   version: 8.6.9
 - name: kubernetes.core
-  version: 5.0.0
+  version: 5.1.0
 - name: community.sops
   version: 1.9.1
 roles:
