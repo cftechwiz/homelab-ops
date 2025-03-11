@@ -29,7 +29,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@b64ffcaf5b410884ad320a9cfac8866006a109aa # v4.8.0
         with:
-          python-version: "3.11"
+          python-version: "3.13"
 
       - name: Setup QEMU
         uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
