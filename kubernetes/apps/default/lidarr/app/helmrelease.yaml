@@ -33,7 +33,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: ghcr.io/cftechwiz/lidarr-develop
-      tag: 1.1.3.2982@sha256:bcf25566dae4a4fbe852d89f436cd63f2f12381602fd5ad63f2770a172b3b676
+      tag: 3.1.1.4876@sha256:17e675e71a361fcaaa85dc0f63e2e0912ac2228088e59489079d37d8e4432aaa
     env:
       TZ: America/Chicago
       LIDARR__INSTANCE_NAME: Lidarr
