@@ -29,7 +29,7 @@ spec:
   values:
     image:
       repository: ghcr.io/unpoller/unpoller
-      tag: v2.11.2
+      tag: v2.33.0
     env:
       TZ: America/Chicago
       UP_UNIFI_DEFAULT_ROLE: home-ops
