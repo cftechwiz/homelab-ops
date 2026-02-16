@@ -39,7 +39,7 @@ spec:
         reloader.stakater.com/auto: "true"
     image:
       repository: docker.io/n8nio/n8n
-      tag: 0.232.0
+      tag: 2.8.3
     env:
       GENERIC_TIMEZONE: America/Chicago
       TZ: America/Chicago
