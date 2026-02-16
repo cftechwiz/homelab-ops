@@ -24,7 +24,7 @@ jobs:
           token: "${{ steps.generate-token.outputs.token }}"
 
       - name: Restore lychee cache
-        uses: actions/cache@6f8efc29b200d32929f49075959781ed54ec270c # v3.5.0
+        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
         with:
           path: .lycheecache
           key: cache-lychee-${{ github.sha }}
