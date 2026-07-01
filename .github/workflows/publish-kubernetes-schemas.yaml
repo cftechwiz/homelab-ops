@@ -32,7 +32,7 @@ jobs:
           python-version: "3.14"
 
       - name: Setup QEMU
-        uses: docker/setup-qemu-action@2b82ce82d56a2a04d2637cd93a637ae1b359c0a7 # v2
+        uses: docker/setup-qemu-action@96fe6ef7f33517b61c61be40b68a1882f3264fb8 # v4
 
       - name: Setup Docker Buildx
         id: buildx
