@@ -13,7 +13,7 @@ terraform {
     }
     nexus = {
       source  = "datadrivers/nexus"
-      version = "1.21.2"
+      version = "3.0.1"
     }
     sops = {
       source  = "carlpett/sops"
